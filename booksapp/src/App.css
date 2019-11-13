@@ -5,37 +5,6 @@
 }
 
 
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 10vh;
-  background-color: rgb(1, 1, 26);
-  color: white;
-
-}
-.nav-links {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-}
-aside {
-height: 80vh;
-width: 30%;
-background-color: rgb(1, 1, 26);
-color: white;
-margin: 0;
-
-}
-
-footer {
- height: 5vh;
- background-color: rgb(1, 1, 26);
- color: white;
-bottom: 100%;
-width: 100%;
 
 
-}
+
