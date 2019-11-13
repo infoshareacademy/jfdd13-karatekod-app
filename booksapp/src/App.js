@@ -16,10 +16,11 @@ function App() {
         
         <Nav />
         <Aside />
-        
-        <Route path="/x" component={ComponentX} />
-        <Route path="/y" component={ComponentY} />
-        <Route path="/z" component={ComponentZ} />
+        <Switch>
+          <Route path="/x" exact component={ComponentX} />
+          <Route path="/y" exact component={ComponentY} />
+          <Route path="/z" exact component={ComponentZ} />
+        </Switch>
         <div className="clear"></div>
         <Footer />
       </div>
