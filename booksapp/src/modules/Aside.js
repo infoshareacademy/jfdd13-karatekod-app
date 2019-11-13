@@ -1,5 +1,7 @@
 import React from 'react';
 import '../modules/Aside.module.css';
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -8,10 +10,37 @@ function Aside() {
     <aside>
       <br></br>
       <br></br>
-      <p>side bar</p>
+      <p>Side bar Menu</p>
       <br></br>
+      <ul>
+        <link to = "/x">
+          <li>Menu1</li>
+        </link>
+        <link to = "/y">
+          <li>Menu1</li>
+        </link>
+        <link to = "/z">
+          <li>Menu1</li>
+        </link>
+        <link to = "/x">
+          <li>Menu1</li>
+        </link>
+        <link to = "/y">
+          <li>Menu1</li>
+        </link>
+        <link to = "/z">
+          <li>Menu1</li>
+        </link>
+        <link to = "/x">
+          <li>Menu1</li>
+        </link>
+        <link to = "/y">
+          <li>Menu1</li>
+        </link>
+        
+      </ul>
       <br></br>
-      <p>side menu</p>
+      
     </aside>
   );
 }
