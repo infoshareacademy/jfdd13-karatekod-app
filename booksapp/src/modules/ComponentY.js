@@ -1,12 +1,12 @@
 import React from 'react';
 import '../modules/Component.module.css';
 
-function ComponentX() {
+function ComponentY() {
   return (
     <div className="component">
-      To jest component X
+      cos tam w zaleznosci jak sie zmieni
     </div>
   );
 }
 
-export default ComponentX;
+export default ComponentY;

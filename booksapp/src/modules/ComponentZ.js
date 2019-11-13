@@ -1,12 +1,12 @@
 import React from 'react';
 import '../modules/Component.module.css';
 
-function ComponentX() {
+function ComponentZ() {
   return (
     <div className="component">
-      To jest component X
+      This is Z Component  
     </div>
   );
 }
 
-export default ComponentX;
+export default ComponentZ;
