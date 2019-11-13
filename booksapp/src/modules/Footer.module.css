@@ -1,9 +1,8 @@
 footer {
     height: 5vh;
-    background-color: rgb(1, 1, 26);
     color: white;
    bottom: 100%;
    width: 100%;
-   
-   
+   border: 1px solid black;
+   background-color:#f5bbd0
    }

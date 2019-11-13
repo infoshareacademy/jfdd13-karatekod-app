@@ -1,8 +1,9 @@
 aside {
     height: 85vh;
     width: 30%;
-    background-color: rgb(1, 1, 26);
     color: white;
     margin: 0;
+    border: 1px solid black;
+    background-color:#f5bbd0;
     
     }
