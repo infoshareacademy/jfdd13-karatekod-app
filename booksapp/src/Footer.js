@@ -1,13 +1,11 @@
 import React from 'react';
-import '../App.css';
+import './App.css';
 
 
 
 function Footer() {
   return (
-    <div className="App">
-      
-    </div>
+   <footer>Copy right karate kod</footer>
   );
 }
 

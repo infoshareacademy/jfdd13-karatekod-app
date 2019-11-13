@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -7,7 +9,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
+  height: 10vh;
   background-color: rgb(1, 1, 26);
   color: white;
 
@@ -20,15 +22,16 @@ nav {
   list-style: none;
 }
 aside {
-min-height: 80vh;
+height: 80vh;
 width: 30%;
 background-color: rgb(1, 1, 26);
 color: white;
+margin: 0;
 
 }
 
 footer {
- min-height: 10vh;
+ height: 5vh;
  background-color: rgb(1, 1, 26);
  color: white;
 bottom: 100%;
