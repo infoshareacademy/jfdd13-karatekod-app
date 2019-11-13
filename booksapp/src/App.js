@@ -14,8 +14,10 @@ function App() {
         
         <Nav />
         <Aside />
-        <Footer />
         
+        <ComponentX />
+        <div className="clear"></div>
+        <Footer />
       </div>
       </Router> 
   );

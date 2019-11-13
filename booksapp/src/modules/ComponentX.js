@@ -3,8 +3,8 @@ import '../modules/ComponentX.module.css';
 
 function ComponentX() {
   return (
-    <div className="ComponentX">
-      
+    <div className="componentX">
+      cos tam w zaleznosci jak sie zmieni
     </div>
   );
 }

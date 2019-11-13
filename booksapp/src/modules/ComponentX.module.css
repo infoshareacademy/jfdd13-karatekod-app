@@ -1,7 +1,8 @@
 .componentX {
-    width: 70%;
-    float: left;
+    width: 100%;
     
+    background-color: grey;
     height: 85vh;
+    float: left;
 
 }
