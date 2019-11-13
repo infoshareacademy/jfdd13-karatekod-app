@@ -1,13 +1,20 @@
 import React from 'react';
+import '../App.css';
 
-import './App.css';
-
-function App() {
+function Nav() {
   return (
-    <div className="App">
-      
-    </div>
+    <nav>
+      <h3>LOGO</h3>
+      <ul className="nav-links">
+        <li>
+          About
+        </li>
+        <li>
+          Shop
+        </li>
+      </ul>
+    </nav>
   );
 }
 
-export default App;
+export default Nav;

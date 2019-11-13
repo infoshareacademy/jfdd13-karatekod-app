@@ -1,8 +1,7 @@
 import React from 'react';
+import '../App.css';
 
-import './App.css';
-
-function App() {
+function ComponentX() {
   return (
     <div className="App">
       
@@ -10,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default ComponentX;

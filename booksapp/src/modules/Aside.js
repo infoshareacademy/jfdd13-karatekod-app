@@ -1,8 +1,9 @@
 import React from 'react';
+import '../App.css';
 
-import  Aside from './modules/Aside';
 
-function App() {
+
+function Aside() {
   return (
     <div className="App">
       
