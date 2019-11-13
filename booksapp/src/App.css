@@ -19,3 +19,20 @@ nav {
   align-items: center;
   list-style: none;
 }
+aside {
+min-height: 80vh;
+width: 30%;
+background-color: rgb(1, 1, 26);
+color: white;
+
+}
+
+footer {
+ min-height: 10vh;
+ background-color: rgb(1, 1, 26);
+ color: white;
+bottom: 100%;
+width: 100%;
+
+
+}
