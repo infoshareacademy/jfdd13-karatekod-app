@@ -7,10 +7,10 @@ function Nav() {
       <h3>LOGO</h3>
       <ul className="nav-links">
         <li>
-          About
+          search-field
         </li>
         <li>
-          Shop
+          login/register
         </li>
       </ul>
     </nav>
