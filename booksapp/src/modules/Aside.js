@@ -13,30 +13,30 @@ function Aside() {
       <p>Side bar Menu</p>
       <br></br>
       <ul>
-        <link to = "/x">
+        <Link to = "/x">
           <li>Menu1</li>
-        </link>
-        <link to = "/y">
-          <li>Menu1</li>
-        </link>
-        <link to = "/z">
-          <li>Menu1</li>
-        </link>
-        <link to = "/x">
-          <li>Menu1</li>
-        </link>
-        <link to = "/y">
-          <li>Menu1</li>
-        </link>
-        <link to = "/z">
-          <li>Menu1</li>
-        </link>
-        <link to = "/x">
-          <li>Menu1</li>
-        </link>
-        <link to = "/y">
-          <li>Menu1</li>
-        </link>
+        </Link>
+        <Link to = "/y">
+          <li>Menu2</li>
+        </Link>
+        <Link to = "/z">
+          <li>Menu3</li>
+        </Link>
+        <Link to = "/x">
+          <li>Menu4</li>
+        </Link>
+        <Link to = "/y">
+          <li>Menu5</li>
+        </Link>
+        <Link to = "/z">
+          <li>Menu6</li>
+        </Link>
+        <Link to = "/x">
+          <li>Menu7</li>
+        </Link>
+        <Link to = "/y">
+          <li>Menu8</li>
+        </Link>
         
       </ul>
       <br></br>
