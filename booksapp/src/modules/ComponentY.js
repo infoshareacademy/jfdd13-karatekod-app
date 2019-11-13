@@ -4,7 +4,8 @@ import '../modules/Component.module.css';
 function ComponentY() {
   return (
     <div className="component">
-      cos tam w zaleznosci jak sie zmieni
+      <p>cos tam w zaleznosci jak sie zmieni</p>
+      <img src="http://via.placeholder.com/600x600"></img>
     </div>
   );
 }

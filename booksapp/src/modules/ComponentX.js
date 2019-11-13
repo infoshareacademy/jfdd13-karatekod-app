@@ -4,7 +4,8 @@ import '../modules/Component.module.css';
 function ComponentX() {
   return (
     <div className="component">
-      To jest component X
+      <p>To jest component X</p>
+      <img src="http://via.placeholder.com/200x400"></img>
     </div>
   );
 }
