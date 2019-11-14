@@ -3,9 +3,9 @@ import styles from './SearchText.module.css';
 
 function SearchText() {
   return (
-    <div className={styles.searchText}>
+    <input type="text" className={styles.searchText}>
      
-    </div>
+    </input>
   );
 }
 

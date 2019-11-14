@@ -3,11 +3,9 @@ import styles from './SearchChBox.module.css';
 
 function SearchChBox() {
   return (
-    <div className={styles.searchChBox}>
-      <p>To jest component X</p>
-      <img src="http://via.placeholder.com/200x400"></img>
-    </div>
+    <input type="checkbox"  className={styles.searchChBox}>
+    </input>
   );
 }
 
-export default SearchChBox   ;
+export default SearchChBox;

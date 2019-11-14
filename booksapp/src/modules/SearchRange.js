@@ -1,13 +1,12 @@
 import React from 'react';
-import styles from './Component.module.css';
+import styles from './SearchRange.module.css';
 
-function ComponentX() {
+function SearchRange() {
   return (
-    <div className={styles.component}>
-      <p>To jest component X</p>
-      <img src="http://via.placeholder.com/200x400"></img>
-    </div>
+    <input type="range" value="1" step="5" min="100" max="100" className={styles.searchRange}>
+      
+    </input>
   );
 }
 
-export default ComponentX;
+export default SearchRange;

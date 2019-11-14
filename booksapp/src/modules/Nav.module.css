@@ -8,3 +8,6 @@ nav {
     color: white;
   
   }
+  nav form {
+    display: flex;
+  }
