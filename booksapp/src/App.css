@@ -6,7 +6,10 @@
   grid-template-areas: 
   "nav nav"
   "aside main"
-  "footer footer"
+  "footer footer";
+  height: 100vh;
+  row-gap: 0;
+
 }
 .clear {
   clear: both;

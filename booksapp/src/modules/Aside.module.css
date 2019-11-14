@@ -1,11 +1,11 @@
 aside {
-    height: 85vh;
-    width: 30%;
+    
+    width: 100%;
     color: white;
     margin: 0;
     border: 1px solid black;
     background-color:#f5bbd0;
-    
+    align-self: stretch;
     grid-area: aside;
-    column-width: 30%;
+    
     }
