@@ -7,7 +7,7 @@ function ComponentY() {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    
+    maxHeight: "800px"
 
     
   }
