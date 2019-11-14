@@ -1,4 +1,5 @@
 import React from 'react';
+import Main from '../src/modules/Main';
 import  Aside from '../src/modules/Aside';
 import Footer from '../src/modules/Footer';
 import Nav from '../src/modules/Nav'
@@ -17,6 +18,7 @@ function App() {
         <Nav />
         <Aside />
         <Switch>
+          <Route path="/" exact component={Main} />
           <Route path="/x" exact component={ComponentX} />
           <Route path="/y" exact component={ComponentY} />
           <Route path="/z" exact component={ComponentZ} />

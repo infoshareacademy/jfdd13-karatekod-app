@@ -13,6 +13,9 @@ function Aside() {
       <p>Side bar Menu</p>
       <br></br>
       <ul>
+      <Link to = "/">
+          <li>Main page</li>
+        </Link>
         <Link to = "/x">
           <li>Menu1</li>
         </Link>
