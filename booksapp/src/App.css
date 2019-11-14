@@ -7,7 +7,8 @@
   "nav nav"
   "aside main"
   "footer footer";
-  height: 100vh;
+  height: 10Ovh;
+  width: 100%;
   row-gap: 0;
 
 }

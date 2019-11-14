@@ -7,5 +7,6 @@ aside {
     background-color:#f5bbd0;
     align-self: stretch;
     grid-area: aside;
+    height: 100%;
     
     }
