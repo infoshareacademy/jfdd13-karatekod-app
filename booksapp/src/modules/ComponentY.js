@@ -9,14 +9,14 @@ function ComponentY() {
     flexDirection: "column",
     maxHeight: "800px"
 
-    
+
   }
 
   const imag = {
-    
-    
+
+
     maxWidth: "60%"
-    
+
   }
   return (
     <div style={mystyle} >
