@@ -22,7 +22,7 @@ function ComponentY() {
   return (
     <div style={mystyle} >
       <p>cos tam w zaleznosci jak sie zmieni</p>
-      <div style={imag}><img src="http://via.placeholder.com/600x600"></img></div>
+      <div style={imag}><img src="http://via.placeholder.com/600x1300" width="60%"></img></div>
     </div>
   );
 }
