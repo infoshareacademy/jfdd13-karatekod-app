@@ -15,7 +15,7 @@ function App() {
         <Nav />
         <Aside />
         <ComponentX />
-        <div className="clear"></div>
+        
         <Footer />
         
       </div>

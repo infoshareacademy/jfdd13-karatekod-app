@@ -5,5 +5,7 @@ aside {
     margin: 0;
     border: 1px solid black;
     background-color:#f5bbd0;
-    float: left;
+    
+    grid-area: aside;
+    column-width: 30%;
     }
