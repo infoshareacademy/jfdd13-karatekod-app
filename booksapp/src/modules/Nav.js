@@ -3,9 +3,24 @@ import './Nav.module.css';
 import SearchText from "./SearchText";
 import SearchChBox from "./SearchChBox"
 import SearchRange from "./SearchRange"
+import { anyTypeAnnotation } from '@babel/types';
 
 
 
+// class BooksProvider extends Component {
+//   state = {
+//     search: '',  //autor lub tytul
+//     radius: 0,
+//     genere: 'any',
+
+
+
+//   }
+// }
+
+handleChange = (event) => {
+  
+}
 
 function Nav() {
   return (
