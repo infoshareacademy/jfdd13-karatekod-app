@@ -6,11 +6,15 @@ function ComponentY() {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+    
+
+    
   }
 
   const imag = {
-    height: "60vh",
+    
+    
     maxWidth: "60%"
     
   }
