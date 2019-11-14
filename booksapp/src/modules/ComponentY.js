@@ -3,10 +3,11 @@ import React from 'react';
 
 function ComponentY() {
   const mystyle = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
+    // flexDirection: "column",
+   width: "100%"
     
 
     
@@ -15,13 +16,13 @@ function ComponentY() {
   const imag = {
     
     
-    maxWidth: "100%"
+    width: "100%"
     
   }
   return (
     <div style={mystyle} >
       <p>cos tam w zaleznosci jak sie zmieni</p>
-      <div style={imag}><img src="http://via.placeholder.com/600x600" width="100%"></img></div>
+      <div style={imag}><img src="http://via.placeholder.com/600x600"></img></div>
     </div>
   );
 }

@@ -7,13 +7,17 @@
   "nav nav"
   "aside main"
   "footer footer";
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+   
+  
   row-gap: 0;
+  width: 100%;
+  
+  
 
 }
-.clear {
-  clear: both;
-}
+
 
 
