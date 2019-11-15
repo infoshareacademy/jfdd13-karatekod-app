@@ -1,30 +1,39 @@
 import React from 'react';
-import '../modules/Aside.module.css';
-import { Link } from 'react-router-dom'
+import styles from '../modules/Aside.module.css';
+import { NavLink } from 'react-router-dom'
 
 function Aside() {
   return (
     <aside>
-      <br></br>
-      <br></br>
-      <p>Side bar Menu</p>
-      <br></br>
+      <div className={styles.asideMenu}>
+        <p>Side bar Menu</p>
+      </div>
       <ul>
-        <Link to = "/x">
-          <li>Menu1</li>
-        </Link>
-        <Link to = "/y">
-          <li>Menu2</li>
-        </Link>
-        <Link to = "/z">
-          <li>Menu3</li>
-        </Link>
-        <Link to = "/x">
-          <li>Menu4</li>
-        </Link>
-        <Link to = "/y">
-          <li>Menu5</li>
-        </Link>
+        <div>
+          <NavLink activeClassName={styles.activeLink} className={styles.noActiveLink} to = "/x" exact>
+            <li>Menu1</li>
+          </NavLink>
+        </div>
+        <div className={styles.asideButton}>
+          <NavLink to = "/y">
+            <li>Menu2</li>
+          </NavLink>
+        </div>
+        <div className={styles.asideButton}>
+          <NavLink to = "/z">
+            <li>Menu3</li>
+          </NavLink>
+        </div>
+        <div className={styles.asideButton}>
+          <NavLink to = "/x">
+            <li>Menu4</li>
+          </NavLink>
+        </div>
+        <div className={styles.asideButton}>
+          <NavLink to = "/y">
+            <li>Menu5</li>
+          </NavLink>
+        </div>
         
       </ul>
       <br></br>
