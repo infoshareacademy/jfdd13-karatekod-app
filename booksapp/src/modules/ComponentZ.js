@@ -4,7 +4,7 @@ import '../modules/Component.module.css';
 function ComponentZ() {
   return (
     <div className="component">
-      This is Z Component  
+      This is Z Component
     </div>
   );
 }
