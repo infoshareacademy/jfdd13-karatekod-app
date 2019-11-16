@@ -1,3 +1,27 @@
-.div{
-    font-size: 30px
+
+.mainNav{
+    background: pink;
+    padding: 0 30px 30px 0;
 }
+
+.mainNav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    transition: .2s;
+}
+
+.mainNav a:hover{
+    transform: translateX(20px)
+}
+
+.mainNav a .active{
+    color: white
+}
+ul{
+    list-style-type: none;
+}
+

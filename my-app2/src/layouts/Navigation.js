@@ -3,14 +3,13 @@ import styles from "../styles/Navigation.module.css";
 import {NavLink} from 'react-router-dom'
 
 
-
 const list = [
     {name: 'start', path: '/'},
     {name: 'products', path: '/products'},
     {name: 'contact', path: '/contact'},
     {name: 'admin panel', path: '/admin'},
-
 ]
+
 const Navigation = () => {
     const menu = list.map(item => (
         <li key={item.name}>
@@ -18,7 +17,7 @@ const Navigation = () => {
         </li>
     ))
     return (
-        <nav className={styles.div}>
+        <nav className={styles.mainNav}>
             <ul>
                 {menu}
             </ul>
