@@ -28,10 +28,10 @@ function App() {
           <Route path="/x" exact component={ComponentX} />
           <Route path="/y" exact component={ComponentY} />
           <Route path="/z" exact component={ComponentZ} />
-          <Route path="/about" exact component={About} />
-          <Route path="/home" exact component={Home} />
-          <Route path="/product" exact component={SingleProduct} />
-          <Route path="/default" exact component={Default} />
+          <Route path="/about" component={About} />
+          <Route path="/" exact component={Home} />
+          <Route path="/product:id" component={SingleProduct} />
+          <Route component={Default} />
           <Route path="/products" exact component={Products} />
           
         </Switch>

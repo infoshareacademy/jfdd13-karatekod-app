@@ -13,9 +13,9 @@ function Nav() {
     <nav>
       <img src="http://via.placeholder.com/50x50"></img>
       <form>
-        <SearchText />
+        {/* <SearchText />
         <SearchChBox />
-        <SearchRange />
+        <SearchRange /> */}
         <button>Search</button>
       </form>
       <h3>login/register</h3>
