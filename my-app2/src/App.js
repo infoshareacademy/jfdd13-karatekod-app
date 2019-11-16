@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, NavLink, Route} from 'react-router-dom'
+import {BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -17,6 +17,12 @@ const News = () => {
 const Contact = () => {
   return (
   <h1>Contact us</h1>
+  )
+}
+
+const Error = () => {
+  return (
+    <h1>404 not found</h1>
   )
 }
 
@@ -39,9 +45,12 @@ function App() {
           </nav>
 
           <section>
-          <Route path="/" exact strict sesitive component={Home}/>
-          <Route path="/news" component={News}/>
-          <Route path="/contact" component={Contact}/>
+            <Switch>
+              <Route path="/" exact strict sesitive component={Home}/>
+              <Route path="/news" component={News}/>
+              <Route path="/contact" component={Contact}/>
+              <Route component={Error} />
+            </Switch>
           </section>
 
 
