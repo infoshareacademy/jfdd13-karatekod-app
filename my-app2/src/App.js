@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import {BrowserRouter as Router, NavLink, Route} from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -27,13 +27,19 @@ function App() {
       <div>
         <heder>
           <nav>
-            <li><Link to="/">Start</Link></li>
-            <li><Link to="/news">News</Link></li>
-            <li><Link to="/contact">Contact us</Link></li>
+            <ul>
+              {/* NavLink dodje klase active do aktywnego elementu */}
+              <li><NavLink to="/" exact strict sensitive activeClassName=
+              "home_selected" activeStyle={{
+                backgroundColor: 'black'
+              }}>Start</NavLink></li>
+              <li><NavLink to="/news" activeClassName="news_selected">News</NavLink></li>
+              <li><NavLink to="/contact" activeClassName="contact_selected">Contact us</NavLink></li>
+            </ul>
           </nav>
 
           <section>
-          <Route path="/" exact component={Home}/>
+          <Route path="/" exact strict sesitive component={Home}/>
           <Route path="/news" component={News}/>
           <Route path="/contact" component={Contact}/>
           </section>
