@@ -6,7 +6,7 @@ import styles from "../styles/Navigation.module.css";
 
 const list = [
     {name: 'start', path: '/', exact: true},
-    {name: 'products', path: '/products'},
+    {name: 'books', path: '/books'},
     {name: 'contact', path: '/contact'},
     {name: 'admin panel', path: '/admin'},
 ]
