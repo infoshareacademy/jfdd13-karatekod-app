@@ -21,18 +21,21 @@ export default class App extends Component {
   }
 
   render() {
+    
   return (
+    
     <Router>     
       <div className="App">
       
         <Header style={{position:"sticky", top:"0px,", zIndex:"10"}} />
         <Aside />
-        <Switch>
+        {/* <Switch>
           <Route path="/x" exact component={ComponentX} />
           <Route path="/y" exact component={ComponentY} />
           <Route path="/z" exact component={ComponentZ} />
-          <Route path="/search" exact component={SearchSection} />
-        </Switch>
+          <Route path="/search" exact component={SearchSection}  />
+        </Switch> */}
+        <SearchSection listingsData = {this.state.listingsData} />
         <div className="clear"></div>
         <Footer />
       </div>
