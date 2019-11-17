@@ -1,6 +1,6 @@
 import React from 'react';
 import  Aside from '../src/modules/Aside';
-import Footer from '../src/modules/Footer';
+// import Footer from '../src/modules/Footer';
 import Nav from '../src/modules/Nav';
 import ComponentX from '../src/modules/ComponentX';
 import ComponentY from '../src/modules/ComponentY';
@@ -13,6 +13,9 @@ import SingleProduct from './pages/SingleProductPage';
 import Products from './pages/ProductsPage'
 import About from './pages/AboutPage'
 import Default from './pages/DefaultPage'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Sidebar from './components/Sidebar'
 
 
 
@@ -22,15 +25,16 @@ function App() {
     <Router>     
       <div className="App">
         
-        <Nav />
-        <Aside />
+        <Navbar />
+        <Sidebar />
+        {/* <Aside /> */}
         <Switch>
-          <Route path="/x" exact component={ComponentX} />
+          {/* <Route path="/x" exact component={ComponentX} />
           <Route path="/y" exact component={ComponentY} />
-          <Route path="/z" exact component={ComponentZ} />
+          <Route path="/z" exact component={ComponentZ} /> */}
           <Route path="/about" component={About} />
           <Route path="/" exact component={Home} />
-          <Route path="/product:id" component={SingleProduct} />
+          <Route path="/products:id" component={SingleProduct} />
           <Route component={Default} />
           <Route path="/products" exact component={Products} />
           
