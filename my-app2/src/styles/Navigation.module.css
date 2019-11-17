@@ -1,10 +1,10 @@
 
-.mainNav{
+nav.mainNav{
     background: pink;
     padding: 0 30px 30px 0;
 }
 
-.mainNav a{
+nav.mainNav a{
     display: block;
     text-decoration: none;
     color: black;
@@ -14,13 +14,33 @@
     transition: .2s;
 }
 
-.mainNav a:hover{
+
+nav.mainNav a:hover{
     transform: translateX(20px)
 }
 
-.mainNav a .active{
-    color: white
+nav.mainNav a.active{
+    color: white;
+    border-left: 10px solid pink;
+    transform: translateX(0)
 }
+
+nav.mainNav li:nth-child(1) a.active{
+    border-left-color: #6b092a
+}
+
+nav.mainNav li:nth-child(2) a.active{
+    border-left-color: #a31e4a
+}
+
+nav.mainNav li:nth-child(3) a.active{
+    border-left-color: #f70052
+}
+
+nav.mainNav li:nth-child(4) a.active{
+    border-left-color: #fd5f94
+}
+
 ul{
     list-style-type: none;
 }
