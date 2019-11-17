@@ -4,11 +4,15 @@ import Filter from './Filter'
 
 
 export class SearchSection extends Component {
+    constructor(){
+        super();
+    }
+    
     render() {
         return (
             <section>
                 <Filter />
-                <Listing />
+                <Listing listingData = {this.props.listingData} />
             </section>
         )
     }
