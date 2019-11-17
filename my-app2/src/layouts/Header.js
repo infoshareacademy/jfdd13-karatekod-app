@@ -19,13 +19,13 @@ const Header = () => {
                 <Route path="/" exact render={() =>(
                      <img src={photo1} alt="photo1" />
               )} />
-               <Route path="/products" render={() =>(
+               <Route path="/books" exact render={() =>(
                   <img src={photo2} alt="photo2" />
                 )} />
-            <Route path="/contact" render={() =>(
+            <Route path="/contact" exact render={() =>(
                  <img src={photo3} alt="photo3" />
              )} />
-            <Route path="/admin" render={() =>(
+            <Route path="/admin" exact render={() =>(
                    <img src={photo4} alt="photo4" />
              )} />
                  <Route render={() =>(
