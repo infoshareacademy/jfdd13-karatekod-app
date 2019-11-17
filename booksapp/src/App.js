@@ -22,8 +22,8 @@ export default class App extends Component {
   return (
     <Router>     
       <div className="App">
-        
-        <Header />
+      
+        <Header style={{position:"sticky", top:"0px,", zIndex:"10"}} />
         <Aside />
         <Switch>
           <Route path="/x" exact component={ComponentX} />

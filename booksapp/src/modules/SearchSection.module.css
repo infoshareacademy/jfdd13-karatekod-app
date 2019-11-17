@@ -1,5 +1,14 @@
 .filter {
 background: pink;
+position: sticky;
+z-index: 0;
+top: 50px;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
 }
 
 .forms {
