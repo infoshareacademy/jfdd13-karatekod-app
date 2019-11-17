@@ -5,6 +5,7 @@ import Header from '../src/modules/Header'
 import ComponentX from '../src/modules/ComponentX'
 import ComponentY from '../src/modules/ComponentY'
 import ComponentZ from '../src/modules/ComponentZ'
+import SearchSection from './modules/SearchSection'
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -28,6 +29,7 @@ export default class App extends Component {
           <Route path="/x" exact component={ComponentX} />
           <Route path="/y" exact component={ComponentY} />
           <Route path="/z" exact component={ComponentZ} />
+          <Route path="/search" exact component={SearchSection} />
         </Switch>
         <div className="clear"></div>
         <Footer />
