@@ -8,13 +8,15 @@ import ComponentZ from '../src/modules/ComponentZ'
 import SearchSection from './modules/SearchSection'
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import listingsData from './Data/Database'
 
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      name: "bookswaap"
+      name: "bookswaap",
+      listingsData,
     }
   }
 

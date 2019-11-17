@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from "uuid";
 
-const data = [ 
+const listingsData = [ 
     
     {   id: uuid(),
         author: 'Mickiewicz',
@@ -95,4 +95,4 @@ const data = [
 
 ];
 
-export default data;
+export default listingsData;
