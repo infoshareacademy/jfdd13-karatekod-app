@@ -51,7 +51,7 @@ const BooksPage = () => {
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap',
-            justifyContent: 'space-around'
+            justifyContent: 'space-evenly'
         }}>
             {booksList}
         </div>

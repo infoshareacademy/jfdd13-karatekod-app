@@ -4,6 +4,7 @@ import HomePage from '../pages/HomePage';
 import BooksPage from '../pages/BooksPage';
 import ContactPage from '../pages/ContactPage';
 import AdminPage from '../pages/AdminPage';
+import LoginPage from '../pages/LoginPage';
 import ErrorPage from '../pages/ErrorPage';
 import styles from '../styles/Page.module.css';
 
@@ -28,6 +29,11 @@ const Page = () => {
                  <Route path="/books"  
                 render={() => (
                     <BooksPage/>
+
+                )} />
+                   <Route path="/login"  
+                render={() => (
+                    <LoginPage/>
 
                 )} />
                  <Route  

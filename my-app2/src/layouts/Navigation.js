@@ -9,6 +9,7 @@ const list = [
     {name: 'books', path: '/books'},
     {name: 'contact', path: '/contact'},
     {name: 'admin panel', path: '/admin'},
+    {path: '/login'}
 ]
 
 const Navigation = () => {
