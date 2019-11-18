@@ -12,7 +12,7 @@ import styles from './SearchSection.module.css'
                 </div>
                 
                 <div className = {styles.sortbyArea}>
-                    <div>200 books found</div>
+                    <div className = {styles.results}>200 books found</div>
                     <div className = {styles.sortOptions}>
                         <select name = "sortby" className = {styles.sortby}>
                             <option value= "price-asc">distance</option>
@@ -29,16 +29,17 @@ import styles from './SearchSection.module.css'
                     <div className= {styles.listing}>
                         <div className= {styles.listingImg}>
                             <span className = {styles.adress}>Adress</span>
-                            <div className = {styles.userImg}></div>
-                            <div className = {styles.userDetails}>
-                                <span className = {styles.userName}>Karol</span>
-                                <span className = {styles.postDate}>05.05.2019</span>
-                            </div>
-                            <div className = {styles.listingDetails}>
-                            <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                            <div className = {styles.details}>
+                                <div className = {styles.userImg}></div>
+                                <div className = {styles.userDetails}>
+                                    <span className = {styles.userName}>Karol</span>
+                                    <span className = {styles.postDate}>05.05.2019</span>
+                                </div>
+                                <div className = {styles.listingDetails}>
+                                <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
                                 <span>More info</span>
+                                </div>
                             </div>
-                            
                         </div>
                         <div className= {styles.bottomInfo}>
                             <span>Author</span>
