@@ -9,11 +9,7 @@ const Book = (props) => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center',
-                
-
-                                            
-                
+                alignItems: 'center', 
             }}>
                 <div style={{
                     fontSize: '18px',

@@ -5,6 +5,7 @@ import photo1 from '../images/photo1.jpg';
 import photo2 from '../images/photo2.jpg';
 import photo3 from '../images/photo3.jpg';
 import photo4 from '../images/photo4.jpg';
+import photo5 from '../images/photo5.jpg';
 
 
 
@@ -27,6 +28,9 @@ const Header = () => {
              )} />
             <Route path="/admin" exact render={() =>(
                    <img className={styles.headerImg} src={photo4} alt="photo4" />
+             )} />
+              <Route path="/book"  render={() =>(
+                   <img className={styles.headerImg} src={photo5} alt="photo5" />
              )} />
                  <Route render={() =>(
                <img className={styles.headerImg} src={photo1} alt="photo1" />

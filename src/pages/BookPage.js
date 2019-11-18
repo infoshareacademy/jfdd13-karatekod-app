@@ -1,13 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Book from '../components/Book'
+import Product from '../components/Product.js'
 
-const BookPage = () => {
+const BookPage = ({match}) => {
     return (
         <>
-        <div>Strona produktu</div>
-        <Book/>
-        <Link to="/books">back to product list</Link>
+            <div>
+            strona pojedynczej książki
+            </div> 
+         <Product/>
+         
+            <Link to="/books">back to books list</Link>
         </>
     )
 }
