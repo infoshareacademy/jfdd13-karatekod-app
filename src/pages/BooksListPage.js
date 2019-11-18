@@ -12,6 +12,7 @@ const books = [
         title: "Metro 2033",
         autor: "Dmitry Glukhovsky",
         type: "fantasy",
+        
     },
     {
         id: uuid.v4(),
@@ -66,6 +67,7 @@ const books = [
         title: "Dziady cz. II",
         autor: "Adam Mickiewicz",
         type: "poetry",
+
     }
 ]
 
