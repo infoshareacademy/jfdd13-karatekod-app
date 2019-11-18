@@ -6,7 +6,7 @@ const permission = true;
 const AdminPage = () => {
     return (
         <Route render={() =>(
-            permission ? (<h3>admin pannel - hello</h3>) :
+            permission ? (<h3>Welcome to BookSwap App!</h3>) :
             (<Redirect to="/login" /> )
     )} />
     )

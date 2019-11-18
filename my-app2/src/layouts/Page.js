@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import BooksPage from '../pages/BooksPage';
+import BooksListPage from '../pages/BooksListPage';
 import ContactPage from '../pages/ContactPage';
 import AdminPage from '../pages/AdminPage';
 import LoginPage from '../pages/LoginPage';
@@ -28,7 +28,7 @@ const Page = () => {
                 )} />
                  <Route path="/books"  
                 render={() => (
-                    <BooksPage/>
+                    <BooksListPage/>
 
                 )} />
                    <Route path="/login"  

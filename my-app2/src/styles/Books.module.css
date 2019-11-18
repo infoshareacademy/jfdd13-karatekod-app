@@ -1,0 +1,17 @@
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+
+.books a{
+    color: rgba(8, 7, 7, 0.801);
+    text-decoration: none;
+}
+
+.books a:hover{
+    text-decoration: underline;
+    color: black
+}

@@ -1,0 +1,50 @@
+.search{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+
+}
+.input{
+    border: 2px solid #c2185b;
+    width: 500px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.input:focus{
+    outline: none
+}
+
+.input::placeholder{
+    padding-left: 10px;
+    color: pink;
+    font-size: 20px;
+   
+}
+
+.button{
+    border: none;
+    height: 40px;
+    width: 120px;
+    background: #c2185b;
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    margin-top: 10px
+    
+}
+
+
+.button:hover{
+    background: #FF9800;
+    color: white
+}
+
+.logo{
+    width: 200px;
+    height: 30px
+}

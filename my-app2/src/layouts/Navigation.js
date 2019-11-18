@@ -6,10 +6,10 @@ import styles from "../styles/Navigation.module.css";
 
 const list = [
     {name: 'start', path: '/', exact: true},
-    {name: 'books', path: '/books'},
+    {name: 'your profile', path: '/admin'},
+    {name: 'book list', path: '/books'},
     {name: 'contact', path: '/contact'},
-    {name: 'admin panel', path: '/admin'},
-    {path: '/login'}
+    
 ]
 
 const Navigation = () => {

@@ -29,7 +29,7 @@ class ContactPage extends React.Component {
                     <h3>Write to us</h3>
                     <textarea value={this.state.value}
                     onChange={this.handleChange} placeholder="type message here"></textarea>
-                    <button>send</button>
+                    <button className={styles.button}>send</button>
                 </form>
                 <Prompt
                     when={this.state.value}
