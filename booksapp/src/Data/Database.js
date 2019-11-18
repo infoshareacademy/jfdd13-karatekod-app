@@ -35,7 +35,7 @@ const listingsData = [
         name: 'Olga',
         genere: 'drama',
         radius: 80,
-        image: './images/',
+        image: './images/tokarczuk',
         title: 'Before-age and other times'
     },
 
@@ -62,32 +62,31 @@ const listingsData = [
         name: 'Umberto',
         genere: 'drama',
         radius: 50,
-        image: './images/',
-        title: 'Rose\'s name'
+        image: './images/eco.jpg',
+        title: 'Name of Rose'
     },
 
-    {
+    {   
+        id: uuid(),
         author: 'King',
         name: 'Stephen',
         genere: 'horror',
         radius: 5,
-        image: './images/',
-        name: 'Anna',
-        genere: 'poetry',
-        radius: 70,
-        image: '',
-        title: 'Poetry-Collection'
+        image: './images/king.jpg',
         title: 'Kingdom'
     },
-
-    {   id: uuid(),
+    {
+        id: uuid(),
         author: 'Achmatova',
         name: 'Anna',
         genere: 'poetry',
         radius: 70,
-        image: './images/',
+        image: '.images/achmatova.jpg',
         title: 'Poetry-Collection'
+        
     },
+
+    
 
     {   id: uuid(),
         author: 'Kristeva',
