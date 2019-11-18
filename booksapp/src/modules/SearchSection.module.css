@@ -1,7 +1,6 @@
 .filter {
 background: pink;
-position: sticky;
-z-index: 0;
+
 top: 50px;
 height: 100px;
 display: flex;
@@ -13,4 +12,31 @@ align-items: center;
 
 .forms {
     display: flex;
+}
+
+.listings {
+    background-color: grey;
+}
+
+.searchArea {
+    background-color: antiquewhite;
+}
+.listingsResults {
+
+}
+
+.sortbyArea {
+
+}
+.pagination {
+
+}
+.sortOptions {
+
+}
+.sortby {
+
+}
+.listing {
+    
 }

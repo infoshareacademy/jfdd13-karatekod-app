@@ -3,16 +3,20 @@ import Listing from './Listing';
 import Filter from './Filter'
 
 
+
+
+
 export class SearchSection extends Component {
     constructor(){
         super();
     }
     
+
     render() {
         return (
             <section>
                 <Filter />
-                <Listing listingData = {this.props.listingData} />
+                <Listing listingData = {this.props.listingsData} />
             </section>
         )
     }

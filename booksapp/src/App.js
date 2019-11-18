@@ -5,11 +5,12 @@ import Header from '../src/modules/Header'
 import ComponentX from '../src/modules/ComponentX'
 import ComponentY from '../src/modules/ComponentY'
 import ComponentZ from '../src/modules/ComponentZ'
-import SearchSection from './modules/SearchSection'
+// import SearchSection from './modules/SearchSection'
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import listingsData from './Data/Database'
-
+import Filter from './modules/Filter'
+import Listings from './modules/Listing'
 
 export default class App extends Component {
   constructor() {
@@ -27,7 +28,7 @@ export default class App extends Component {
     <Router>     
       <div className="App">
       
-        <Header style={{position:"sticky", top:"0px,", zIndex:"10"}} />
+        <Header style={{position:"sticky", top:"0px,"}} />
         <Aside />
         {/* <Switch>
           <Route path="/x" exact component={ComponentX} />
@@ -35,7 +36,11 @@ export default class App extends Component {
           <Route path="/z" exact component={ComponentZ} />
           <Route path="/search" exact component={SearchSection}  />
         </Switch> */}
-        <SearchSection listingsData = {this.state.listingsData} />
+        {/* <SearchSection listingsData = {this.state.listingsData} /> */}
+        <section id="content-area">
+          <Filter />
+          <Listings />
+        </section>
         <div className="clear"></div>
         <Footer />
       </div>
