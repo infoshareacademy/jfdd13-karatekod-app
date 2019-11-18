@@ -8,12 +8,25 @@ const Book = (props) => {
                 margin: '20px',
                 display: 'flex',
                 flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                
+
                                             
                 
             }}>
-                <h4>{props.title}</h4>
-                <h4>{props.autor}</h4>
-                <h5>{props.type}</h5>
+                <div style={{
+                    fontSize: '18px',
+                    fontWeight: 'bold'
+                }}>{props.title}</div>
+                <div style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                }}>{props.autor}</div>
+                <div style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold'}}>
+                        {props.type}</div>
             </div>
     )
 }

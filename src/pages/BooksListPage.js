@@ -12,6 +12,7 @@ const books = [
         title: "Metro 2033",
         autor: "Dmitry Glukhovsky",
         type: "fantasy",
+        imageUrl: 'http://placekitten.com/140/190'
         
     },
     {
@@ -19,61 +20,76 @@ const books = [
         title: "Harry Potter",
         autor: "J. K. Rowling",
         type: "fantasy",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Dziady cz. II",
         autor: "Adam Mickiewicz",
         type: "poetry",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Zielona Mila",
         autor: "Stephen King",
         type: "horror",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Wstrząs",
         autor: "Robin Cook",
         type: "thriller",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Dziady cz. II",
         autor: "Adam Mickiewicz",
         type: "poetry",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Dziady cz. II",
         autor: "Adam Mickiewicz",
         type: "poetry",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Zielona Mila",
         autor: "Stephen King",
         type: "horror",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Wstrząs",
         autor: "Robin Cook",
         type: "thriller",
+        imageUrl: 'http://placekitten.com/140/190'
     },
     {
         id: uuid.v4(),
         title: "Dziady cz. II",
         autor: "Adam Mickiewicz",
         type: "poetry",
+        imageUrl: 'http://placekitten.com/140/190'
 
     }
 ]
 
 const BooksListPage = () => {
     const booksList = books.map(book => (
-        <Link to={`/book/${book.id}`}><Book key={book.id} {...book} /></Link>
+        <Link to={`/book/${book.id}`}>
+            <div className={styles.singleBook}>
+            <img src={book.imageUrl}/>
+            <Book key={book.id} {...book} src={book.imageUrl}  />
+            </div>
+            
+        </Link>
       ))
   
   
