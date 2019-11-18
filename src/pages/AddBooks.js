@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from "../styles/AddBooks.module.css";
+import {books} from '../pages/BooksListPage'
 
-const booksList=[];
+
 
 class AddBooks extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            booksList:booksList
+            booksList:books
         }
     }
 
@@ -46,9 +47,11 @@ class AddBooks extends React.Component{
                 this.addBook();
                 console.log('added')
                 console.log(this.state)
+                
             }}>
                 Add this book 
             </button>
+            <ul>{this.state.booksList.map(book => <li>{book.title}</li>)}</ul>
            
             </div>
         )
