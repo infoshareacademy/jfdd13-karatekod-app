@@ -19,8 +19,11 @@ export default class App extends Component {
       
       listingsData
     }
+    this.change = this.change.bind(this)
   }
-
+  change(event) {
+    console.log(event.target.name)
+  }
   render() {
     
   return (
@@ -28,8 +31,8 @@ export default class App extends Component {
     <Router>     
       <div className="App">
       
-        <Header style={{position:"sticky", top:"0px,"}} />
-        {/* <Aside /> */}
+        <Header style={{position:"sticky", top:"0px"}} />
+        <Aside />
         {/* <Switch>
           <Route path="/x" exact component={ComponentX} />
           <Route path="/y" exact component={ComponentY} />
@@ -38,7 +41,7 @@ export default class App extends Component {
         </Switch> */}
         {/* <SearchSection listingsData = {this.state.listingsData} /> */}
         <section id="content-area">
-          <Filter />
+          <Filter change={this.change} />
           <Listings listingsData= {this.state.listingsData} />
         </section>
         <div className="clear"></div>

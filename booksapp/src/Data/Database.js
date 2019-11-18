@@ -8,7 +8,7 @@ const listingsData = [
         name: 'Adam',
         genere: 'drama',
         radius: 50,
-        image: './images/mickiewicz.jpg',
+        image: 'https://m.media-amazon.com/images/I/71POgs4xodL._AC_UY218_ML3_.jpg',
         title: 'Sonety Krymskie'
     },
 
@@ -17,7 +17,7 @@ const listingsData = [
         name: 'Franz',
         genere: 'drama',
         radius: 20,
-        image: './images/kafka.jpg',
+        image: 'https://m.media-amazon.com/images/I/71nOuOkfieL._AC_UY218_ML3_.jpg',
         title: 'Trial'
     },
 
@@ -26,7 +26,7 @@ const listingsData = [
         name: 'Philip',
         genere: 'sci-fi',
         radius: 10,
-        image: './images/dick.jpg',
+        image: 'https://m.media-amazon.com/images/I/818R7hS2I1L._AC_UY218_ML3_.jpg',
         title: 'Valis'
     },
 
@@ -35,7 +35,7 @@ const listingsData = [
         name: 'Olga',
         genere: 'drama',
         radius: 80,
-        image: './images/tokarczuk',
+        image: 'https://m.media-amazon.com/images/I/71vT+W7LigL._AC_UY218_ML3_.jpg',
         title: 'Before-age and other times'
     },
 
@@ -44,7 +44,7 @@ const listingsData = [
         name: 'Virginia',
         genere: 'drama',
         radius: 10,
-        image: './images/orlando.jpg',
+        image: 'https://m.media-amazon.com/images/I/71u0+xPr12L._AC_UY218_ML3_.jpg',
         title: 'Orlando'
     },
 
@@ -53,7 +53,7 @@ const listingsData = [
         name: 'Zofia',
         genere: 'drama',
         radius: 90,
-        image: './images/nalkowska.jpg',
+        image: 'https://m.media-amazon.com/images/I/8152BeGLkTL._AC_UY218_ML3_.jpg',
         title: 'Boundary'
     },
 
@@ -62,7 +62,7 @@ const listingsData = [
         name: 'Umberto',
         genere: 'drama',
         radius: 50,
-        image: './images/eco.jpg',
+        image: 'https://m.media-amazon.com/images/I/91H9StSOJGL._AC_UY218_ML3_.jpg',
         title: 'Name of Rose'  
     },
 
@@ -73,7 +73,7 @@ const listingsData = [
         name: 'Stephen',
         genere: 'horror',
         radius: 5,
-        image: './images/king.jpg',
+        image: 'https://m.media-amazon.com/images/I/91DkmcRi4sL._AC_UY218_ML3_.jpg',
         title: 'Kingdom'
     },
     {
@@ -82,7 +82,7 @@ const listingsData = [
         name: 'Anna',
         genere: 'poetry',
         radius: 70,
-        image: '.images/achmatova.jpg',
+        image: 'https://m.media-amazon.com/images/I/91ewNSl222L._AC_UY218_ML3_.jpg',
         title: 'Poetry-Collection'
         
     },
@@ -94,7 +94,7 @@ const listingsData = [
         name: 'Julia',
         genere: 'science',
         radius: 23,
-        image: './images/kristeva.jpg',
+        image: 'https://m.media-amazon.com/images/I/91lMICvbU3L._AC_UY218_ML3_.jpg',
         title: 'Intertextuality'
     }
 

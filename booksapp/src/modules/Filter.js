@@ -24,7 +24,7 @@ export class Filter extends Component {
                     
                     <input type="text" placeholder='author or title' />
                     <label>choose genere
-                        <select name="genere">
+                        <select name="genere" onChange = {this.props.change}>
                             <option>Any</option>
                             <option>Action</option>
                             <option>Comedy</option>

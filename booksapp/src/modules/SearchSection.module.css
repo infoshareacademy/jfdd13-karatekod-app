@@ -90,7 +90,6 @@ border-radius: 5px;
 
 }
 .listingImg {
-    background: url(https://images-na.ssl-images-amazon.com/images/I/51U2hIUQgqL._AC_US218_.jpg) no-repeat center center;
     background-size: cover;
     min-height: 200px;
     color: white;

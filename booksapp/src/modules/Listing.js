@@ -3,14 +3,56 @@ import styles from './SearchSection.module.css'
 
 
 
+
  class Listings extends Component {
      constructor() {
          super()
          this.state = {
 
          }
+         this.loopListings = this.loopListings.bind(this);
      }
 
+     loopListings () {
+        const {listingsData} = this.props;
+
+        return listingsData.map((listing, index) => {
+            return (
+                <div className = {styles.listingsResults} key={index}>
+                <div className= {styles.listing}>
+                    <div className= {styles.listingImg}
+                    style={{
+                        background:`url("${listing.image}") no-repeat center center`
+                    
+                    }}>
+                        
+                        
+                        <div className = {styles.details}>
+                            <div className = {styles.userImg}></div>
+                            <div className = {styles.userDetails}>
+                                <span className = {styles.userName}>Anna</span>
+                                <span className = {styles.postDate}>05.05.2019</span>
+                            </div>
+                            <div className = {styles.listingDetails}>
+                            <div className = {styles.moreDetails}>  </div>
+                            <span>More info</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className= {styles.bottomInfo}>
+                        <p className= {styles.title}>"{listing.title}"" by: {listing.author} {listing.name}</p>
+                        <p className={styles.location}>{listing.radius} km away</p>
+                    </div>
+                </div>
+            </div>
+            )
+
+        }
+        
+        
+        )
+
+     }
      
 
     render() {
@@ -34,30 +76,8 @@ import styles from './SearchSection.module.css'
                     </div>
                 </div>
                 <div className={styles.grid}>
-                        <div className = {styles.listingsResults}>
-                            <div className= {styles.listing}>
-                                <div className= {styles.listingImg}>
-                                    
-                                    
-                                    <div className = {styles.details}>
-                                        <div className = {styles.userImg}></div>
-                                        <div className = {styles.userDetails}>
-                                            <span className = {styles.userName}>Karol</span>
-                                            <span className = {styles.postDate}>05.05.2019</span>
-                                        </div>
-                                        <div className = {styles.listingDetails}>
-                                        <div className = {styles.moreDetails}>  </div>
-                                        <span>More info</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className= {styles.bottomInfo}>
-                                    <span className= {styles.title}>Title</span>
-                                    <span className={styles.location}>Location</span>
-                                </div>
-                            </div>
-                        </div>
                        
+                       {this.loopListings()}
                         
                 </div>
                 <div className = {styles.pagination}>
