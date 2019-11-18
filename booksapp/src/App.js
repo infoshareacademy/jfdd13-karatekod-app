@@ -16,8 +16,8 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      name: "bookswaap",
-      listingsData,
+      
+      listingsData
     }
   }
 
@@ -29,7 +29,7 @@ export default class App extends Component {
       <div className="App">
       
         <Header style={{position:"sticky", top:"0px,"}} />
-        <Aside />
+        {/* <Aside /> */}
         {/* <Switch>
           <Route path="/x" exact component={ComponentX} />
           <Route path="/y" exact component={ComponentY} />
@@ -39,7 +39,7 @@ export default class App extends Component {
         {/* <SearchSection listingsData = {this.state.listingsData} /> */}
         <section id="content-area">
           <Filter />
-          <Listings />
+          <Listings listingsData= {this.state.listingsData} />
         </section>
         <div className="clear"></div>
         <Footer />

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import uuid from "uuid";
 
 const listingsData = [ 
@@ -54,7 +54,7 @@ const listingsData = [
         genere: 'drama',
         radius: 90,
         image: './images/nalkowska.jpg',
-        title: 'Border'
+        title: 'Boundary'
     },
 
     {   id: uuid(),
@@ -63,11 +63,12 @@ const listingsData = [
         genere: 'drama',
         radius: 50,
         image: './images/eco.jpg',
-        title: 'Name of Rose'
+        title: 'Name of Rose'  
     },
 
+
     {   
-        id: uuid(),
+       
         author: 'King',
         name: 'Stephen',
         genere: 'horror',
