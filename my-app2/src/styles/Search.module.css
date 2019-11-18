@@ -1,9 +1,12 @@
 .search{
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
 
 }
+.form{
+    margin: 0 auto
+}
+
 .input{
     border: 2px solid #c2185b;
     width: 500px;
@@ -45,6 +48,7 @@
 }
 
 .logo{
-    width: 200px;
-    height: 30px
+    width: 270px;
+    height: 40px;
+    margin-top: 15px
 }
