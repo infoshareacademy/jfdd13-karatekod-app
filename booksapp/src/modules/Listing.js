@@ -24,34 +24,242 @@ import styles from './SearchSection.module.css'
                         </div>
                     </div>
                 </div>
-
-                <div className = {styles.listingsResults}>
-                    <div className= {styles.listing}>
-                        <div className= {styles.listingImg}>
-                            <span className = {styles.adress}>Adress</span>
-                            <div className = {styles.details}>
-                                <div className = {styles.userImg}></div>
-                                <div className = {styles.userDetails}>
-                                    <span className = {styles.userName}>Karol</span>
-                                    <span className = {styles.postDate}>05.05.2019</span>
+                <div className={styles.grid}>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className = {styles.listingDetails}>
-                                <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
-                                <span>More info</span>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
                                 </div>
                             </div>
                         </div>
-                        <div className= {styles.bottomInfo}>
-                            <span>Author</span>
-                            <span>Title</span>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className = {styles.listingsResults}>
+                            <div className= {styles.listing}>
+                                <div className= {styles.listingImg}>
+                                    <span className = {styles.adress}>Adress</span>
+                                    
+                                    <div className = {styles.details}>
+                                        <div className = {styles.userImg}></div>
+                                        <div className = {styles.userDetails}>
+                                            <span className = {styles.userName}>Karol</span>
+                                            <span className = {styles.postDate}>05.05.2019</span>
+                                        </div>
+                                        <div className = {styles.listingDetails}>
+                                        <div className = {styles.moreDetails}>  </div>{/*class name  floor space*/}
+                                        <span>More info</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className= {styles.bottomInfo}>
+                                    <span className= {styles.title}>Title</span>
+                                    <span className={styles.location}>Location</span>
+                                </div>
+                            </div>
+                        </div>
                 </div>
-
                 <div className = {styles.pagination}>
-                    <ul className={styles.paginationNums}>
-                        <li>Prev</li>
-                        <li>1</li>
+                    <ul className={styles.pages}>
+                        <li >Prev</li>
+                        <li className={styles.active}>1</li>
                         <li>2</li>
                         <li>3</li>
                         <li>4</li>
