@@ -8,7 +8,7 @@ const listingsData = [
         name: 'Adam',
         genere: 'drama',
         radius: 50,
-        image: '',
+        image: './images/mickiewicz.jpg',
         title: 'Sonety Krymskie'
     },
 
@@ -17,7 +17,7 @@ const listingsData = [
         name: 'Franz',
         genere: 'drama',
         radius: 20,
-        image: '',
+        image: './images/kafka.jpg',
         title: 'Trial'
     },
 
@@ -26,7 +26,7 @@ const listingsData = [
         name: 'Philip',
         genere: 'sci-fi',
         radius: 10,
-        image: '',
+        image: './images/dick.jpg',
         title: 'Valis'
     },
 
@@ -35,7 +35,7 @@ const listingsData = [
         name: 'Olga',
         genere: 'drama',
         radius: 80,
-        image: '',
+        image: './images/',
         title: 'Before-age and other times'
     },
 
@@ -44,7 +44,7 @@ const listingsData = [
         name: 'Virginia',
         genere: 'drama',
         radius: 10,
-        image: '',
+        image: './images/orlando.jpg',
         title: 'Orlando'
     },
 
@@ -53,7 +53,7 @@ const listingsData = [
         name: 'Zofia',
         genere: 'drama',
         radius: 90,
-        image: '',
+        image: './images/nalkowska.jpg',
         title: 'Border'
     },
 
@@ -62,7 +62,7 @@ const listingsData = [
         name: 'Umberto',
         genere: 'drama',
         radius: 50,
-        image: '',
+        image: './images/',
         title: 'Rose\'s name'
     },
 
@@ -71,7 +71,12 @@ const listingsData = [
         name: 'Stephen',
         genere: 'horror',
         radius: 5,
+        image: './images/',
+        name: 'Anna',
+        genere: 'poetry',
+        radius: 70,
         image: '',
+        title: 'Poetry-Collection'
         title: 'Kingdom'
     },
 
@@ -80,7 +85,7 @@ const listingsData = [
         name: 'Anna',
         genere: 'poetry',
         radius: 70,
-        image: '',
+        image: './images/',
         title: 'Poetry-Collection'
     },
 
@@ -89,7 +94,7 @@ const listingsData = [
         name: 'Julia',
         genere: 'science',
         radius: 23,
-        image: '',
+        image: './images/kristeva.jpg',
         title: 'Intertextuality'
     }
 

@@ -28,7 +28,7 @@ import styles from './SearchSection.module.css'
                         <div className = {styles.listingsResults}>
                             <div className= {styles.listing}>
                                 <div className= {styles.listingImg}>
-                                    <span className = {styles.adress}>Adress</span>
+                                    
                                     
                                     <div className = {styles.details}>
                                         <div className = {styles.userImg}></div>
