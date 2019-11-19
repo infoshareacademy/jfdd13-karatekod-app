@@ -1,9 +1,22 @@
-import React from 'react';
+
+import React, { Component } from 'react'
+
 import styles from "../styles/Search.module.css";
 import logo from '../images/logo.png';
+import Listing from './Listing.js';
+import Filter from './Filter.js'
+
+import listingsData from '../Data/Database.js'
 
 
-const SearchBar = () => {
+
+
+class SearchBar extends Component {
+    constructror() {
+        super()
+    }
+
+    render () {
     return (
         <div className={styles.search}>
                 <img src={logo} className={styles.logo}/>
@@ -13,6 +26,7 @@ const SearchBar = () => {
                 </form>
         </div>
     )
+}
 }
 
 export default SearchBar
