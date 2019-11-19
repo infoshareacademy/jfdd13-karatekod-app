@@ -38,7 +38,8 @@ export default class App extends Component {
 
   filteredData() {
     const newData = this.state.listingsData.filter((item) => {
-      return item.radius <= this.state.range || item.genere == this.state.genere && this.state.genere == 'any' && item.radius <= this.state.range
+      return (this.state.genere === 'any') ? (item.radius <= this.state.range) :
+       (item.genere == this.state.genere && item.radius <= this.state.range)
     })
     this.setState({
       filteredData: newData
