@@ -60,9 +60,9 @@ import styles from './SearchSection.module.css'
     render() {
         return (
             <div className={styles.listings}>
-                <div className = {styles.searchArea}> 
+                {/* <div className = {styles.searchArea}> 
                     <input type="text" name ="search" placeholder="Filter by title" />
-                </div>
+                </div> */}
                 
                 <div className = {styles.sortbyArea}>
                     <div className = {styles.results}>200 books found</div>
