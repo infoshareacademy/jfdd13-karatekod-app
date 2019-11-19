@@ -18,9 +18,12 @@ export default class App extends Component {
     this.state = {
       // genere : '',
       listingsData,
-      range:1
+      range:1,
+      filteredData: listingsData
     }
     this.change = this.change.bind(this)
+    this.filteredData = this.filteredData.bind(this)
+
   }
   change(event) {
     const name = event.target.name
@@ -29,8 +32,19 @@ export default class App extends Component {
       [name]:value
     }, ()=> {
       console.log(this.state)
+      this.filteredData();
     })
   }
+
+  filteredData() {
+    const newData = this.state.listingsData.filter((item) => {
+      return item.radius <= this.state.range || item.genere == this.state.genere && this.state.genere == 'any' && item.radius <= this.state.range
+    })
+    this.setState({
+      filteredData: newData
+    })
+  }
+
   render() {
     
   return (
@@ -49,7 +63,7 @@ export default class App extends Component {
         {/* <SearchSection listingsData = {this.state.listingsData} /> */}
         <section id="content-area">
           <Filter change={this.change} globalState= {this.state} />
-          <Listings listingsData= {this.state.listingsData} />
+          <Listings listingsData= {this.state.filteredData} />
         </section>
         <div className="clear"></div>
         <Footer />

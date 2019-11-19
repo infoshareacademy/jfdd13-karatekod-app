@@ -15,7 +15,9 @@ import styles from './SearchSection.module.css'
 
      loopListings () {
         const {listingsData} = this.props;
-
+        if (listingsData == undefined || listingsData == 0) {
+            return "Sorry but there is no books to swap matching your criteria"
+        }
         return listingsData.map((listing, index) => {
             return (
                 <div className = {styles.listingsResults} key={index}>
