@@ -21,6 +21,7 @@ export default class App extends Component {
       range:50,
       filteredData: listingsData,
       genere: 'any',
+      search: ''
       
 
     }
@@ -40,13 +41,31 @@ export default class App extends Component {
   }
 
   filteredData() {
-    const newData = this.state.listingsData.filter((item) => {
+    let newData = this.state.listingsData.filter((item) => {
       return (this.state.genere === 'any') ? (item.radius <= this.state.range) :
        (item.genere == this.state.genere && item.radius <= this.state.range)
     })
+
+    if(this.state.search != '') {
+      newData = newData.filter((item) => {
+        const author = item.author.toLocaleLowerCase();
+        const searchText = this.state.search.toLocaleLowerCase();
+        const outcome = author.match(searchText)
+
+        if (outcome != null) {
+          return true
+        }
+      })
+    } 
+
+
+
     this.setState({
       filteredData: newData
     })
+    
+    
+
   }
 
   render() {
