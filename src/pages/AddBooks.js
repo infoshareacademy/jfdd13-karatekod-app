@@ -2,6 +2,8 @@ import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
 import uuid from "uuid";
 import {booksList} from '../pages/BooksListPage' // imports booksList from the bookListPage.js
+import Popup from './components/Popup'
+
 const initialState = {
     newTitle: "",
     newAutor: "",
