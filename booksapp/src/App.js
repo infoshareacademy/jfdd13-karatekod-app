@@ -18,8 +18,11 @@ export default class App extends Component {
     this.state = {
       // genere : '',
       listingsData,
-      range:1,
-      filteredData: listingsData
+      range:50,
+      filteredData: listingsData,
+      genere: 'any',
+      
+
     }
     this.change = this.change.bind(this)
     this.filteredData = this.filteredData.bind(this)
