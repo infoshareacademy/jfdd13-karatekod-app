@@ -22,30 +22,33 @@ export class Filter extends Component {
 
                 <div className={styles.forms}>
                     
-                    <input type="text" placeholder='author or title' />
+                    <input type="text" name="author" placeholder='author or title' onChange = {this.props.change}/>
                     <label>choose genere
                         <select name="genere" onChange = {this.props.change}>
-                            <option>Any</option>
-                            <option>Action</option>
-                            <option>Comedy</option>
-                            <option>Drama</option>
-                            <option>Fantasy</option>
-                            <option>Horror</option>
-                            <option>Poetry</option>
-                            <option>Romance</option>
-                            <option>Science</option>
-                            <option>Sience-Fiction</option>
+                            <option value="any">Any</option>
+                            <option value='action'>Action</option>
+                            <option value='comedy'>Comedy</option>
+                            <option value='drama'>Drama</option>
+                            <option value='fantasy'>Fantasy</option>
+                            <option value='horror'>Horror</option>
+                            <option value='poetry'>Poetry</option>
+                            <option value='romance'>Romance</option>
+                            <option value='science'>Science</option>
+                            <option value='sifi'>Sience-Fiction</option>
                         </select>
                     </label>
-                    <label>select distance
+                    
                        
-                        <InputRange
-                            maxValue={100}
-                            minValue={1}
-                            value={this.state.value} 
-                            onChange={value => this.setState({ value })}
+                        <input type="range" name="range" onChange = {this.props.change}
+                            max={100}
+                            min={1}
+                            step={1}
+                            value = {this.props.globalState.range}
+                            
+                            
+                          
                         />
-                    </label>
+                    
 
                 </div>
             </div>

@@ -16,13 +16,20 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      
-      listingsData
+      // genere : '',
+      listingsData,
+      range:1
     }
     this.change = this.change.bind(this)
   }
   change(event) {
-    console.log(event.target.name)
+    const name = event.target.name
+    const value = event.target.value
+    this.setState ({
+      [name]:value
+    }, ()=> {
+      console.log(this.state)
+    })
   }
   render() {
     
@@ -41,7 +48,7 @@ export default class App extends Component {
         </Switch> */}
         {/* <SearchSection listingsData = {this.state.listingsData} /> */}
         <section id="content-area">
-          <Filter change={this.change} />
+          <Filter change={this.change} globalState= {this.state} />
           <Listings listingsData= {this.state.listingsData} />
         </section>
         <div className="clear"></div>
