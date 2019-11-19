@@ -16,7 +16,7 @@ import styles from './SearchSection.module.css'
      loopListings () {
         const {listingsData} = this.props;
         if (listingsData == undefined || listingsData == 0) {
-            return "Sorry but there is no books to swap matching your criteria"
+            return <div style={{fontSize:"40px", gridColumn:"2/4"}}>Sorry but there is no books to swap matching your criteria"</div>
         }
         return listingsData.map((listing, index) => {
             return (
@@ -65,7 +65,7 @@ import styles from './SearchSection.module.css'
                 </div> */}
                 
                 <div className = {styles.sortbyArea}>
-                    <div className = {styles.results}>200 books found</div>
+                    <div className = {styles.results}>{this.props.length} books found</div>
                     <div className = {styles.sortOptions}>
                         <select name = "sortby" className = {styles.sortby}>
                             <option value= "price-asc">distance</option>
