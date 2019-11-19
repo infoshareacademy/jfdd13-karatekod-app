@@ -7,6 +7,7 @@ import AdminPage from '../pages/AdminPage';
 import LoginPage from '../pages/LoginPage';
 import ErrorPage from '../pages/ErrorPage';
 import AddBooks from '../pages/AddBooks'
+import BookPage from '../pages/BookPage';
 import styles from '../styles/Page.module.css';
 
 const Page = () => {
@@ -30,6 +31,11 @@ const Page = () => {
                  <Route path="/books"  
                 render={() => (
                     <BooksListPage/>
+
+                )} />
+                 <Route path="/book/:id"  
+                render={() => (
+                    <BookPage/>
 
                 )} />
                    <Route path="/login"  

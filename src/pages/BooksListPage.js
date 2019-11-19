@@ -98,10 +98,17 @@ export let books = (() => {
 
 
 
+
 const BooksListPage = () => {
     const booksList = JSON.parse(localStorage.getItem("bookslist")).map(book => (
 
-        <Link to={`/book/${book.id}`}><Book key={book.id} {...book} /></Link>
+        <Link to={`/book/${book.id}`}>
+        <div className={styles.singleBook}>
+        <img src={book.imageUrl}/>
+        <Book key={book.id} {...book} src={book.imageUrl}  />
+        </div>
+        
+    </Link>
     ))
 
 
@@ -117,4 +124,6 @@ const BooksListPage = () => {
 export let booksList = JSON.parse(localStorage.getItem("bookslist"))
 
 export default BooksListPage
+
+
 
