@@ -8,7 +8,7 @@ const list = [
     {name: 'start', path: '/', exact: true},
     {name: 'your profile', path: '/admin'},
     {name: 'book list', path: '/books'},
-    {name: 'contact', path: '/contact'},
+    {name: 'statistics', path: '/statistics'},
     
 ]
 
