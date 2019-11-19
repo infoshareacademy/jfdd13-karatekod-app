@@ -20,13 +20,11 @@ class AddBooks extends React.Component{ // AddBooks component
             error:{
                 newTitle:false,
                 newAutor:false,
-                newType: false,
-                newCondition:false,
             }
         }
     }
 
-    addBook = (e) => {   // method for adding new books (now it just adds the same xxx book... gotta get the values from inputs somehow)
+    addBook = (e) => {   
         e.preventDefault()
         const newBook = {
           id: uuid.v4(),
@@ -54,22 +52,7 @@ class AddBooks extends React.Component{ // AddBooks component
                 }
             }) 
             return
-        } else if (this.state.newType===""){
-            this.setState({
-                error:{
-                    newType:this.state.newType===""
-                }
-            }) 
-            return
-        } else if (this.state.newCondition===""){
-            this.setState({
-                error:{
-                    newCondition:this.state.newType===""
-                }
-            }) 
-            return
-        }
-        else {
+        } else {
         alert(`You added "${this.state.newTitle}`)
         this.setState({
             booksList:[...this.state.booksList, newBook],
@@ -116,9 +99,6 @@ class AddBooks extends React.Component{ // AddBooks component
     }
 
 
-
-
-
      componentDidUpdate() {
         localStorage.setItem("bookslist", JSON.stringify(this.state.booksList));    // local storage updates whenever something changes in this component
       }
@@ -139,16 +119,31 @@ class AddBooks extends React.Component{ // AddBooks component
         this.handleAutor(event.target.value);}} className={error.newAutor ? styles.inputError : styles.input}/>
 
       <label className={styles.label} >Genre:</label>
-      <input required className={styles.input} type="text" name="type" placeholder="Insert genre name here" value={newType} onChange={event => {
-        this.handleType(event.target.value);}} className={error.newType ? styles.inputError : styles.input}/>
+      <select className={styles.dropdown} type="text" name="type" value={newType} onChange={event => {
+        this.handleType(event.target.value);}}  name="genre">
+          <option value="fantasy">fantasy</option>
+          <option value="drama">drama</option>
+          <option value="romance">romance</option>
+          <option value="thriller">thriller</option>
+          <option value="guide">guide</option>
+          <option value="crime">crime</option>
+          <option value="biography">biography</option>
+          <option value="other">other</option>
+          </select>
 
       <label className={styles.label}>Cover photo:</label>
       <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
         this.handleImageUrl(event.target.value);}} />
 
       <label className={styles.label}>Condition:</label>
-      <input required className={styles.input} type="text" name="condition" placeholder="What is the condition of your book?" value={newCondition} onChange={event => {
-        this.handleCondition(event.target.value);}} className={error.newCondition ? styles.inputError : styles.input}/>
+      <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
+        this.handleType(event.target.value);}}  name="genre">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          </select>
     
     <button className={styles.button} onClick={(e)=>{
                 this.addBook(e);
