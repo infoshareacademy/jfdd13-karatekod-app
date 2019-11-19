@@ -29,10 +29,15 @@ class AddBooks extends React.Component{ // AddBooks component
           condition: this.state.newCondition
     
         }
+        if (this.state.newTitle==="" || this.state.newAutor==="" || this.state.newType==="" || this.state.newImageUrl==="" || this.state.newCondition==="") {
+            return 
+        } else {
+        alert(`You added "${this.state.newTitle}`)
         this.setState({
             booksList:[...this.state.booksList, newBook],
             ...initialState
         })
+    }
      };
 
      handleTitle = newValue =>{
@@ -105,8 +110,7 @@ class AddBooks extends React.Component{ // AddBooks component
     
     <button className={styles.button} onClick={(e)=>{
                 this.addBook(e);
-                // alert(`You added "${this.state.newTitle}`)
-                console.log('added')
+                
                 console.log(this.state)
                 
             }}>
