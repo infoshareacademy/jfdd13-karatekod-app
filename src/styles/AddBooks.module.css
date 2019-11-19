@@ -63,3 +63,15 @@
     flex-direction: column;
     align-items: center;
 }
+
+
+.inputError {
+    outline: 1px solid red;
+    width: 330px;
+    height: 40px;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 24px;
+}
