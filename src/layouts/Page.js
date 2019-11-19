@@ -6,6 +6,7 @@ import ContactPage from '../pages/ContactPage';
 import AdminPage from '../pages/AdminPage';
 import LoginPage from '../pages/LoginPage';
 import ErrorPage from '../pages/ErrorPage';
+import AddBooks from '../pages/AddBooks'
 import BookPage from '../pages/BookPage';
 import styles from '../styles/Page.module.css';
 
@@ -42,6 +43,12 @@ const Page = () => {
                     <LoginPage/>
 
                 )} />
+                    <Route path='/addBooks'  
+                render={() => (
+                   <AddBooks/>
+
+                )} />
+
                  <Route  
                 render={() => (
                    <ErrorPage/>

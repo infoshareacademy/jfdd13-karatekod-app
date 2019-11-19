@@ -9,6 +9,7 @@ const list = [
     {name: 'your profile', path: '/admin'},
     {name: 'book list', path: '/books'},
     {name: 'contact', path: '/contact'},
+    {name: 'add book', path: '/addBooks'}
     
 ]
 
