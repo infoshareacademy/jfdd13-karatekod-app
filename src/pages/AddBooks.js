@@ -29,7 +29,7 @@ class AddBooks extends React.Component{ // AddBooks component
           condition: this.state.newCondition
     
         }
-        if (this.state.newTitle==="" || this.state.newAutor==="" || this.state.newType==="" || this.state.newImageUrl==="" || this.state.newCondition==="") {
+        if (this.state.newTitle==="" || this.state.newAutor==="" || this.state.newType==="" || this.state.newCondition==="") {
             return 
         } else {
         alert(`You added "${this.state.newTitle}`)
