@@ -8,8 +8,10 @@ const list = [
     {name: 'start', path: '/', exact: true},
     {name: 'your profile', path: '/admin'},
     {name: 'book list', path: '/books'},
+
     {name: 'statistics', path: '/statistics'},
-    
+
+    {name: 'add book', path: '/addBooks'}   
 ]
 
 const Navigation = () => {
