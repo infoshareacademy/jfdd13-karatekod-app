@@ -8,12 +8,13 @@ import Page from './Page'
 import SearchBar from './SearchBar'
 
 
+
 function App() {
   return (
     <Router>
       <div className={styles.app}>
           <Header className={styles.header} />
-          <SearchBar className={styles.search} />
+          {/* <SearchBar className={styles.search} /> */}
           <main>
             <aside>
               <Navigation className={styles.navigation}/>
