@@ -15,28 +15,35 @@ export class Filter extends Component {
 
     render() {
         return (
+
+        <div>
+
+            <h4 className={styles.textHeader}>Select criteria for books searching</h4>
             <div className={styles.filter}>
-                <h4>Select criteria for books searching</h4>
+                
 
                 <div className={styles.forms}>
+                    <div className={styles.searchTextInputs}>
+                        <input type="text" name="search" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
+                        
+                        <input type="text" name="search" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
+                    </div>
+                    <div >
+                    <select name="genere" onChange = {this.props.change} className={styles.dropdown} >
+                        <option value="any">genere</option>
+                        <option value='action'>Action</option>
+                        <option value='comedy'>Comedy</option>
+                        <option value='drama'>Drama</option>
+                        <option value='fantasy'>Fantasy</option>
+                        <option value='horror'>Horror</option>
+                        <option value='poetry'>Poetry</option>
+                        <option value='romance'>Romance</option>
+                        <option value='science'>Science</option>
+                        <option value='sifi'>Sci-Fi</option>
+                    </select>
+                    </div>
                     
-                    <input type="text" name="search" placeholder='author or title' onChange = {this.props.change} className={styles.searchBar}/>
-                    <label>choose genere
-                        <select name="genere" onChange = {this.props.change}>
-                            <option value="any">Any</option>
-                            <option value='action'>Action</option>
-                            <option value='comedy'>Comedy</option>
-                            <option value='drama'>Drama</option>
-                            <option value='fantasy'>Fantasy</option>
-                            <option value='horror'>Horror</option>
-                            <option value='poetry'>Poetry</option>
-                            <option value='romance'>Romance</option>
-                            <option value='science'>Science</option>
-                            <option value='sifi'>Sience-Fiction</option>
-                        </select>
-                    </label>
-                    
-                       
+                    </div>   
                         <input type="range" name="range" onChange = {this.props.change}
                             max={100}
                             min={1}
@@ -48,8 +55,9 @@ export class Filter extends Component {
                         />
                     
 
-                </div>
+                
             </div>
+        </div>
         )
     }
 }
