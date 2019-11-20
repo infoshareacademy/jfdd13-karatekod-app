@@ -9,7 +9,7 @@ export default class Search extends Component {
     this.state = {
       
       listingsData,
-      range:50,
+      range:5,
       filteredData: listingsData,
       genere: 'any',
       search: ''

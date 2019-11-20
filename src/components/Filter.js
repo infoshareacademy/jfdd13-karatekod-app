@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../styles/SearchSection.module.css'
+import InputRange from 'react-input-range'
+import 'react-input-range/lib/css/index.css'
 
 
 
@@ -43,17 +45,23 @@ export class Filter extends Component {
                     </select>
                     </div>
                     
-                    </div>   
-                        <input type="range" name="range" onChange = {this.props.change}
+                       
+                    <InputRange
+                    name="range"
+        maxValue={20}
+        minValue={0}
+        value={this.props.globalState.range}
+        onChange={this.props.change} />
+
+
+
+                        {/* <input type="range" name="range" onChange = {this.props.change}
                             max={100}
                             min={1}
                             step={1}
                             value = {this.props.globalState.range}
-                            
-                            
-                          
-                        />
-                    
+                        > */}
+                    </div>
 
                 
             </div>
