@@ -1,11 +1,11 @@
 .filter {
-background: pink;
 
-top: 50px;
-height: 100px;
+
+min-height: 100px;
 display: flex;
 justify-content: center;
 align-items: center;
+margin-bottom: 50px;
 
 
 }
@@ -21,20 +21,7 @@ align-items: center;
     
 }
 
-.searchArea {
-    background-color: lightgray;
 
-}
-.searchArea input {
-    width: 70%;
-    background: transparent;
-    font-size: 2rem;
-    border: none;
-    border-bottom: 1px solid grey;
-    margin-bottom: 20px;
-    color: grey;
-    text-align: center;
-}
 .listingsResults {
     margin-bottom: 60px;
 
@@ -51,37 +38,14 @@ align-items: center;
     color: lightgrey;vertical-align: bottom;
     display: inline-block;
 }
-.pagination {
 
-}
-.sortOptions {
-    float:right;
 
-}
-.sortOptions select {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 0.8rem;
-    padding: 5px;
-    vertical-align: bottom;
-    
-}
-.view {
-    display: inline-block;
-    vertical-align: middle;
-}
-.view img {
-    margin-right: 5px;
-    padding: 5px;
-    vertical-align: top;
-    
-}
-.sortby {
 
-}
+
+
 .listing {
     
-    -webkit-box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
+-webkit-box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
 -moz-box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
 box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
 border-radius: 5px;
@@ -97,9 +61,7 @@ border-radius: 5px;
 
 
 }
-.adress {
 
-}
 .details {
 background: black;
 opacity: 0;
@@ -142,12 +104,7 @@ display: block;
     color: rgba(255, 255, 255, 0.6);
     display: block;
 }
-.listingDetails {
 
-}
-.moreDetails {
-
-}
 .bottomInfo {
     padding: 20px 15px;
 
@@ -170,9 +127,7 @@ display: block;
     cursor: pointer;
 }
 
-.title {
 
-}
 .location {
     float: right
 }

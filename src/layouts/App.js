@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div className={styles.app}>
           <Header className={styles.header} />
-          {/* <SearchBar className={styles.search} /> */}
+          
           <main>
             <aside>
               <Navigation className={styles.navigation}/>

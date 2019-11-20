@@ -59,24 +59,8 @@ import styles from '../styles/SearchSection.module.css'
 
     render() {
         return (
-            <div className={styles.listings}>
-                {/* <div className = {styles.searchArea}> 
-                    <input type="text" name ="search" placeholder="Filter by title" />
-                </div> */}
-                
-                <div className = {styles.sortbyArea}>
-                    <div className = {styles.results}>{this.props.length} books found</div>
-                    <div className = {styles.sortOptions}>
-                        <select name = "sortby" className = {styles.sortby}>
-                            <option value= "price-asc">distance</option>
-                            <option value= "pice-dsc">Autor</option>
-                        </select>
-                        <div className={styles.view}>
-                            <img src="../../src/images/list.svg" width="30px" height="30px" />
-                            <img src="../images/gallery.svg" width="30px" height="30px"/>
-                        </div>
-                    </div>
-                </div>
+            
+                <div>
                 <div className={styles.grid}>
                        
                        {this.loopListings()}
@@ -94,8 +78,8 @@ import styles from '../styles/SearchSection.module.css'
                     </ul>
                 </div>
 
-            
             </div>
+            
         )
     }
 }

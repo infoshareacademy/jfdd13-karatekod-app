@@ -20,7 +20,7 @@ export class Filter extends Component {
 
                 <div className={styles.forms}>
                     
-                    <input type="text" name="search" placeholder='author or title' onChange = {this.props.change}/>
+                    <input type="text" name="search" placeholder='author or title' onChange = {this.props.change} className={styles.searchBar}/>
                     <label>choose genere
                         <select name="genere" onChange = {this.props.change}>
                             <option value="any">Any</option>
