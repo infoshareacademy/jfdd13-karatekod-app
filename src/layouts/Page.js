@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import BooksListPage from '../pages/BooksListPage';
-import ContactPage from '../pages/ContactPage';
+import Statistics from '../pages/Statistics';
 import AdminPage from '../pages/AdminPage';
 import LoginPage from '../pages/LoginPage';
 import ErrorPage from '../pages/ErrorPage';
@@ -19,9 +19,9 @@ const Page = () => {
                 render={() => (
                     <HomePage /> 
                 )} />
-                 <Route path="/contact"  
+                 <Route path="/statistics"  
                 render={() => (
-                    <ContactPage />
+                    <Statistics />
 
                 )} />
                  <Route path="/admin"  
