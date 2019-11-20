@@ -139,12 +139,12 @@ class AddBooks extends React.Component{ // AddBooks component
 
       <label className={styles.label}>Condition:</label>
       <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
-        this.handleType(event.target.value);}}  name="genre">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+        this.handleCondition(event.target.value);}}  name="genre">
+          <option value="1">1 (very bad)</option>
+          <option value="2">2 (not good)</option>
+          <option value="3">3 (it's ok)</option>
+          <option value="4">4 (good)</option>
+          <option value="5">5 (mint)</option>
           </select>
     
     <button className={styles.button} onClick={(e)=>{
