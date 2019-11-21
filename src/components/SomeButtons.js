@@ -139,7 +139,7 @@ class SomeButtons extends React.Component {
             top: 160,             // offset in pixels from the top of the page
 
             // OPTIONAL PARAMETERS
-            url: 'https://www.sharethis.com', // (defaults to current url)
+            url: 'http://www.karatekod.jfdd13.is-academy.pl/', // (defaults to current url)
             image: 'https://bit.ly/2CMhCMC',  // (defaults to og:image or twitter:image)
             description: 'custom text',       // (defaults to og:description or twitter:description)
             title: 'custom title',            // (defaults to og:title or twitter:title)
