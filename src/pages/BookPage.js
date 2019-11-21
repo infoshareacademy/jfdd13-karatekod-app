@@ -28,10 +28,12 @@ class BookPage extends React.Component{
     render(){
         return (
             <div>
-    <p>{this.state.book.autor}</p>
-    <p>{this.state.book.title}</p>
-    <p>{this.state.book.type}</p>
-    <p>{this.state.book.condition}</p>
+
+    <div className='title'>Title: {this.state.book.title}</div>
+    <div className='genre'>Genre: {this.state.book.type}</div>
+    <div className='condition'>Condition: {this.state.condition}</div>
+    <p>Genre: {this.state.book.type}</p>
+    <p>Condition of the book: {this.state.book.condition}</p>
             
 
          
