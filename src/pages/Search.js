@@ -35,13 +35,13 @@ export default class Search extends Component {
     })
   }
 
-  changeFilterRange() {
+  changeFilterRange(value) {
     this.setState({
       range: value
     })
   }
 
-  filteredData() {value
+  filteredData() {
     let newData = this.state.listingsData.filter((item) => {
       return (this.state.genere === 'any') ? (item.radius <= this.state.range) :
        (item.genere == this.state.genere && item.radius <= this.state.range)
