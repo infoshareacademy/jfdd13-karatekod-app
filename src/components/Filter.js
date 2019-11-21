@@ -26,9 +26,9 @@ export class Filter extends Component {
 
                 <div className={styles.forms}>
                     <div className={styles.searchTextInputs}>
-                        <input type="text" name="search" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
+                        <input type="text" name="autor" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
                         
-                        <input type="text" name="search" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
+                        <input type="text" name="title" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
                     </div>
                     <div >
                     <select name="genere" onChange = {this.props.change} className={styles.dropdown} >
@@ -47,11 +47,12 @@ export class Filter extends Component {
                     
                        
                     <InputRange
-                    name="range"
-        maxValue={20}
-        minValue={0}
-        value={this.props.globalState.range}
-        onChange={this.props.change} />
+                            globalState = {this.props.globalState}
+                            name="range"
+                            maxValue={20}
+                            minValue={0}
+                            value={this.props.globalState.range}
+                            onChange={this.props.change} />
 
 
 

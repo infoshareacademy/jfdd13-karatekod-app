@@ -9,15 +9,17 @@ export default class Search extends Component {
     this.state = {
       
       listingsData,
-      range:5,
+      range:100,
       filteredData: listingsData,
       genere: 'any',
-      search: ''
+      autor: '',
+      title: ''
       
 
     }
     this.change = this.change.bind(this)
     this.filteredData = this.filteredData.bind(this)
+    
 
   }
   change(event) {
@@ -39,15 +41,28 @@ export default class Search extends Component {
 
     if(this.state.search != '') {
       newData = newData.filter((item) => {
-        const author = item.author.toLocaleLowerCase();
-        const searchText = this.state.search.toLocaleLowerCase();
+        const author = item.author.toLowerCase();
+        const searchText = this.state.autor.toLowerCase();
         const outcome = author.match(searchText)
 
         if (outcome != null) {
           return true
         }
       })
-    } 
+    }
+    if(this.state.search != '') {
+      newData = newData.filter((item) => {
+        const title = item.title.toLowerCase();
+        const searchText = this.state.title.toLowerCase();
+        const outcome = title.match(searchText)
+
+        if (outcome != null) {
+          return true
+        }
+      })
+    }
+    
+
 
 
 
