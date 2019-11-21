@@ -104,6 +104,7 @@ export let books = (() => {
 
 
 
+
 const BooksListPage = () => {
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
     const booksList = JSON.parse(localStorage.getItem("bookslist")).map(book => (
@@ -127,6 +128,7 @@ const BooksListPage = () => {
 
         }}/>
         </div>
+
 
 
 
