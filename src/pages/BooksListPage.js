@@ -6,6 +6,7 @@ import styles from "../styles/Books.module.css";
 import AddToFavorites from '../components/AddToFavorites'
 import SomeButtons from '../components/SomeButtons.js';
 import '../styles/SingleBook.css'
+import { tsPropertySignature } from '@babel/types';
 
 export let books = (() => {
     let bookslist = localStorage.getItem("bookslist");
@@ -116,7 +117,8 @@ const BooksListPage = () => {
         <AddToFavorites id={book.id} onClick={() => {
             let newFavorites
             if (favorites.includes(book.id)) {
-                newFavorites = favorites.filter(fav => fav !== book.id)
+                newFavorites = favorites.filter(fav => fav !== book.id);
+               
             } else {
                 newFavorites = [...favorites, book.id]
             }
