@@ -10,7 +10,7 @@ export default class Search extends Component {
     this.state = {
       
       booksList,
-      range:100,
+      range:5,
       filteredData: booksList,
       type: 'any',
       autor: '',
@@ -24,6 +24,9 @@ export default class Search extends Component {
     
 
   }
+
+  
+
   change(event) {
    
     const name = event.target.name
@@ -40,7 +43,9 @@ export default class Search extends Component {
     this.setState({
       range: value
     })
+    this.filteredData();
   }
+
 
   filteredData() {
     let newData = this.state.booksList.filter((item) => {
