@@ -45,7 +45,7 @@ export default class Search extends Component {
   filteredData() {
     let newData = this.state.booksList.filter((item) => {
       return (this.state.type === 'any') ? (item.condition <= this.state.range) :
-       (item.genere == this.state.genere && item.radius <= this.state.range)
+       (item.type == this.state.type && item.condition <= this.state.range)
     })
 
     if(this.state.search != '') {
