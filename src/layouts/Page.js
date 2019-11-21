@@ -9,6 +9,7 @@ import ErrorPage from '../pages/ErrorPage';
 import BookPage from '../pages/BookPage';
 import AddBooks from '../pages/AddBooks'
 import styles from '../styles/Page.module.css';
+import Search from '../pages/Search'
 
 const Page = () => {
     return (
@@ -43,6 +44,11 @@ const Page = () => {
                     <Route path='/addBooks'  
                 render={() => (
                    <AddBooks/>
+
+                )} />
+                <Route path='/search'  
+                render={() => (
+                   <Search/>
 
                 )} />
 

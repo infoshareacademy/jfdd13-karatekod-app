@@ -11,7 +11,8 @@ const list = [
 
     {name: 'statistics', path: '/statistics'},
 
-    {name: 'add book', path: '/addBooks'}   
+    {name: 'add book', path: '/addBooks'},
+    {name: 'search' , path: '/search'}   
 ]
 
 const Navigation = () => {
