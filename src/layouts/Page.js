@@ -34,10 +34,7 @@ const Page = () => {
 
                 )} />
                  <Route path="/book/:id"  
-                render={() => (
-                    <BookPage/>
-
-                )} />
+                component={BookPage} />
                    <Route path="/login"  
                 render={() => (
                     <LoginPage/>
