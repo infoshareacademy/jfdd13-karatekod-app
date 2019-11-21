@@ -48,13 +48,11 @@ export class Filter extends Component {
                        
                     <InputRange
                             globalState = {this.props.globalState}
-                            change = {this.props.change}
-                            name="range"
                             type = "range"
                             maxValue={100}
                             minValue={0}
                             value={this.props.globalState.range}
-                            onChange={this.props.change} />
+                            onChange={this.props.changeFilterRange} />
 
 
 

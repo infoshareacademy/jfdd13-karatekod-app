@@ -18,6 +18,7 @@ export default class Search extends Component {
 
     }
     this.change = this.change.bind(this)
+    this.changeFilterRange = this.changeFilterRange.bind(this)
     this.filteredData = this.filteredData.bind(this)
     
 
@@ -34,7 +35,13 @@ export default class Search extends Component {
     })
   }
 
-  filteredData() {
+  changeFilterRange() {
+    this.setState({
+      range: value
+    })
+  }
+
+  filteredData() {value
     let newData = this.state.listingsData.filter((item) => {
       return (this.state.genere === 'any') ? (item.radius <= this.state.range) :
        (item.genere == this.state.genere && item.radius <= this.state.range)
@@ -84,7 +91,7 @@ export default class Search extends Component {
       
         
         <section id="content-area">
-          <Filter change={this.change} globalState= {this.state} />
+          <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState= {this.state} />
           <Listings listingsData= {this.state.filteredData} />
         </section>
        
