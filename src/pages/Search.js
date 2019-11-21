@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import listingsData from '../Data/Database'
+// import booksListings? from '../Data/Database'
+import {booksList} from '../pages/BooksListPage'
 import Filter from '../components/Filter'
 import Listings from '../components/Listing'
 
@@ -8,10 +9,10 @@ export default class Search extends Component {
     super()
     this.state = {
       
-      listingsData,
+      booksList,
       range:100,
-      filteredData: listingsData,
-      genere: 'any',
+      filteredData: booksList,
+      type: 'any',
       autor: '',
       title: ''
       
@@ -42,14 +43,14 @@ export default class Search extends Component {
   }
 
   filteredData() {
-    let newData = this.state.listingsData.filter((item) => {
-      return (this.state.genere === 'any') ? (item.radius <= this.state.range) :
+    let newData = this.state.booksList.filter((item) => {
+      return (this.state.type === 'any') ? (item.condition <= this.state.range) :
        (item.genere == this.state.genere && item.radius <= this.state.range)
     })
 
     if(this.state.search != '') {
       newData = newData.filter((item) => {
-        const author = item.author.toLowerCase();
+        const author = item.autor.toLowerCase();
         const searchText = this.state.autor.toLowerCase();
         const outcome = author.match(searchText)
 
@@ -92,7 +93,7 @@ export default class Search extends Component {
         
         <section id="content-area">
           <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState= {this.state} />
-          <Listings listingsData= {this.state.filteredData} />
+          <Listings booksList= {this.state.filteredData} />
         </section>
        
      

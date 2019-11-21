@@ -14,17 +14,17 @@ import styles from '../styles/SearchSection.module.css'
      }
 
      loopListings () {
-        const {listingsData} = this.props;
-        if (listingsData == undefined || listingsData == 0) {
+        const {booksList} = this.props;
+        if (booksList == undefined || booksList == 0) {
             return <div style={{fontSize:"40px", gridColumn:"2/4"}}>Sorry but there is no books to swap matching your criteria"</div>
         }
-        return listingsData.map((listing, index) => {
+        return booksList.map((listing, index) => {
             return (
                 <div className = {styles.listingsResults} key={index}>
                 <div className= {styles.listing}>
                     <div className= {styles.listingImg}
                     style={{
-                        background:`url("${listing.image}") no-repeat center center`
+                        background:`url("${listing.imageUrl}") no-repeat center center`
                     
                     }}>
                         
@@ -42,8 +42,8 @@ import styles from '../styles/SearchSection.module.css'
                         </div>
                     </div>
                     <div className= {styles.bottomInfo}>
-                        <p className= {styles.title}>"{listing.title}"" by: {listing.author} {listing.name}</p>
-                        <p className={styles.location}>{listing.radius} km away</p>
+                        <p className= {styles.title}>"{listing.title}"" by:  {listing.autor}</p>
+                        <p className={styles.location}> condition:{listing.condition}</p>
                     </div>
                 </div>
             </div>
