@@ -1,4 +1,4 @@
-
+/* 
 .logoHome{
     width: 270px;
     height: 40px;
@@ -41,7 +41,6 @@ h1{
 
 
 }
-
 .dashboard1Stat{
     margin-left: 50px;
     margin-top: 50px;
@@ -126,4 +125,9 @@ label{
     height: 20px;
     margin-right: 10px;
 
+} */
+
+.row{
+    display: flex;
+    flex-direction: row;
 }
