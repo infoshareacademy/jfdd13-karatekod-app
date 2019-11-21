@@ -38,7 +38,7 @@ export let books = (() => {
                 autor: "Stephen King",
                 type: "horror",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 7
+                condition: 3
             },
             {
                 id: uuid.v4(),
@@ -46,7 +46,7 @@ export let books = (() => {
                 autor: "Robin Cook",
                 type: "thriller",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 10
+                condition: 1
             },
             {
                 id: uuid.v4(),
@@ -62,7 +62,7 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 8
+                condition: 3
             },
             {
                 id: uuid.v4(),
@@ -70,7 +70,7 @@ export let books = (() => {
                 autor: "Stephen King",
                 type: "horror",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 4
+                condition: 3
             },
             {
                 id: uuid.v4(),
@@ -78,7 +78,7 @@ export let books = (() => {
                 autor: "Robin Cook",
                 type: "thriller",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 7
+                condition: 1
             },
             {
                 id: uuid.v4(),
@@ -86,7 +86,7 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 6
+                condition: 2
             },
             {   
                 id: uuid.v4(),
@@ -94,7 +94,7 @@ export let books = (() => {
                 autor: 'Mickiewicz Adam',                
                 type: 'drama',
                 Urlmage: 'https://m.media-amazon.com/images/I/71POgs4xodL._AC_UY218_ML3_.jpg',
-                condition: 4,
+                condition: 4
             },        
             {   
                 id: uuid(),
