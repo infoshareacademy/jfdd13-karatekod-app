@@ -23,6 +23,7 @@ export default class Search extends Component {
 
   }
   change(event) {
+   
     const name = event.target.name
     const value = event.target.value
     this.setState ({
