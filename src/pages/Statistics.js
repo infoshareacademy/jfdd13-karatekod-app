@@ -62,6 +62,8 @@ const Statistics = () => {
         <Graph1/>
         <div>This graph shows our users number growth  from last 4 weeks. As you can see, our app is growing really fast! Join our members now and start book swapping.</div>
         <Graph2/>
+        <p> This pie chart illustrates number of book types avaliable to swap in %. Fantasy is definitely favorite Book Swappers book genre.
+            Find out which type is your favorite!</p>
         </div>
     )
 }
