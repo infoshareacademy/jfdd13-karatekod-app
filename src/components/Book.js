@@ -1,4 +1,5 @@
 import React from 'react';
+import AddToFavorites from './AddToFavorites'
 
 
 
@@ -30,9 +31,13 @@ const Book = (props) => {
                 fontSize: '16px',
                 fontWeight: 'bold'
             }}>
-                condition: {props.condition}</div>
-                
-                
+                <div>
+                condition: {props.condition}
+                </div>
+                </div>
+                <div>
+</div>
+
         </div>
         
     )

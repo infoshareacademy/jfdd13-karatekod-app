@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Book from '../components/Book.js';
 import { Link } from 'react-router-dom';
 import uuid from "uuid";
 import styles from "../styles/Books.module.css";
+import AddToFavorites from '../components/AddToFavorites'
+import SomeButtons from '../components/SomeButtons.js';
+import '../styles/SingleBook.css'
 
 export let books = (() => {
     let bookslist = localStorage.getItem("bookslist");
@@ -101,14 +104,29 @@ export let books = (() => {
 
 
 const BooksListPage = () => {
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
     const booksList = JSON.parse(localStorage.getItem("bookslist")).map(book => (
+        <div className={styles.singleBook}>
 
         <Link to={`/book/${book.id}`}>
-        <div className={styles.singleBook}>
         <img src={book.imageUrl}/>
         <Book key={book.id} {...book} src={book.imageUrl}  />
+        </Link>
+        {favorites.includes(book.id) ? '<3' : ''}
+        <AddToFavorites id={book.id} onClick={() => {
+            let newFavorites
+            if (favorites.includes(book.id)) {
+                newFavorites = favorites.filter(fav => fav !== book.id)
+            } else {
+                newFavorites = [...favorites, book.id]
+            }
+            setFavorites(newFavorites)
+            localStorage.setItem('favorites', JSON.stringify(newFavorites))
+
+        }}/>
         </div>
-    </Link>
+
+
 
     ))
 
@@ -117,6 +135,7 @@ const BooksListPage = () => {
         <div className={styles.books}>
             <h2>List of books</h2>
             <div className={styles.list}>{booksList}</div>
+
         </div>
     );
 }
