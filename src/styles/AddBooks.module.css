@@ -52,6 +52,7 @@
     border-left: none;
     border-right: none;
     font-size: 24px;
+    background-color:#F8BBD0 ;
 }
 .input:focus {
     outline: none;
