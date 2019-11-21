@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import listingsData from '../Data/Database'
+// import listingsData from '../Data/Database'
 import Filter from '../components/Filter'
 import Listings from '../components/Listing'
+// import books from '../pages/BooksListPage'
+import {booksList} from '../pages/BooksListPage'
 
 export default class Search extends Component {
   constructor() {
-    super()
+    super() 
     this.state = {
       
-      listingsData,
-      range:100,
-      filteredData: listingsData,
-      genere: 'any',
+      booksList,
+      condition:100,
+      filteredData: booksList,
+      type: 'any',
       autor: '',
       title: ''
       
@@ -35,33 +37,33 @@ export default class Search extends Component {
   }
 
   filteredData() {
-    let newData = this.state.listingsData.filter((item) => {
-      return (this.state.genere === 'any') ? (item.radius <= this.state.range) :
-       (item.genere == this.state.genere && item.radius <= this.state.range)
+    let newData = this.state.booksList.filter((item) => {
+      return (this.state.type === 'any') ? (item.condition <= this.state.range) :
+       (item.type == this.state.type && item.condition <= this.state.range)
     })
 
     if(this.state.search != '') {
       newData = newData.filter((item) => {
-        const author = item.author.toLowerCase();
+        const autor = item.autor.toLowerCase();
         const searchText = this.state.autor.toLowerCase();
-        const outcome = author.match(searchText)
+        const outcome = autor.match(searchText)
 
         if (outcome != null) {
           return true
         }
       })
     }
-    if(this.state.search != '') {
-      newData = newData.filter((item) => {
-        const title = item.title.toLowerCase();
-        const searchText = this.state.title.toLowerCase();
-        const outcome = title.match(searchText)
+    // if(this.state.search != '') {
+    //   newData = newData.filter((item) => {
+    //     const title = item.title.toLowerCase();
+    //     const searchText = this.state.title.toLowerCase();
+    //     const outcome = title.match(searchText)
 
-        if (outcome != null) {
-          return true
-        }
-      })
-    }
+    //     if (outcome != null) {
+    //       return true
+    //     }
+    //   })
+    // }
     
 
 
@@ -85,7 +87,7 @@ export default class Search extends Component {
         
         <section id="content-area">
           <Filter change={this.change} globalState= {this.state} />
-          <Listings listingsData= {this.state.filteredData} />
+          <Listings booksList= {this.state.filteredData} />
         </section>
        
      

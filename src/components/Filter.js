@@ -9,7 +9,7 @@ import 'react-input-range/lib/css/index.css'
 export class Filter extends Component {
     constructor(){
         super();
-        this.state = {value:1}
+        // this.state = {value:1}
     }
 
 
@@ -31,7 +31,7 @@ export class Filter extends Component {
                         <input type="text" name="title" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
                     </div>
                     <div >
-                    <select name="genere" onChange = {this.props.change} className={styles.dropdown} >
+                    <select name="type" onChange = {this.props.change} className={styles.dropdown} >
                         <option value="any">genere</option>
                         <option value='action'>Action</option>
                         <option value='comedy'>Comedy</option>
@@ -49,7 +49,7 @@ export class Filter extends Component {
                     <InputRange
                             globalState = {this.props.globalState}
                             change = {this.props.change}
-                            name="range"
+                            name="condition"
                             type = "range"
                             maxValue={100}
                             minValue={0}
