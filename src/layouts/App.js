@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styles from '../styles/App.module.css';
-import {BrowserRouter as Router} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom';
 import Header from './Header';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import Page from './Page'
-import SearchBar from './SearchBar'
-
+import Page from './Page';
+import SearchBar from './SearchBar';
+import SomeButtons from '../components/SomeButtons'
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
               <Page className={styles.page}/>
           </main>
           <Footer className={styles.footer}/>
-
+          <SomeButtons />
       </div>
     </Router>
   );

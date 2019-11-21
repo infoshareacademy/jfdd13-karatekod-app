@@ -6,8 +6,8 @@ import Statistics from '../pages/Statistics';
 import AdminPage from '../pages/AdminPage';
 import LoginPage from '../pages/LoginPage';
 import ErrorPage from '../pages/ErrorPage';
-import AddBooks from '../pages/AddBooks'
 import BookPage from '../pages/BookPage';
+import AddBooks from '../pages/AddBooks'
 import styles from '../styles/Page.module.css';
 import Search from '../pages/Search'
 
@@ -35,10 +35,7 @@ const Page = () => {
 
                 )} />
                  <Route path="/book/:id"  
-                render={() => (
-                    <BookPage/>
-
-                )} />
+                component={BookPage} />
                    <Route path="/login"  
                 render={() => (
                     <LoginPage/>

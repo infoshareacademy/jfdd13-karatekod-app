@@ -23,3 +23,26 @@
     width: 250px;
     height: 350px
 }
+
+.favoriteButton {
+    border: 1px solid #c2185b;
+    background: #c2185b;
+    color: white;
+    margin-top: 40px;
+    width: 330px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;  
+}
+
+.favorite {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.favorite:hover {
+cursor: pointer;
+}
