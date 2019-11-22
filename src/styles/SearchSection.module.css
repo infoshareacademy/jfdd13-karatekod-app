@@ -175,6 +175,14 @@ width: 70%;
 margin-left: 20px;
 
 }
+
+.moreDetails span{
+
+    font-size: 16px;
+    text-align: justify;
+
+}
+
 .userName {
 color: rgba(255, 255, 255, 1);
 display: block;
@@ -186,6 +194,7 @@ display: block;
 
 .bottomInfo {
     padding: 20px 15px;
+    text-decoration: none;
 
 
 }

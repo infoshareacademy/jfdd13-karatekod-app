@@ -38,8 +38,9 @@ import styles from '../styles/SearchSection.module.css'
                                 <span className = {styles.postDate}>05.05.2019</span>
                             </div>
                             <div className = {styles.listingDetails}>
-                            <div className = {styles.moreDetails}>  </div>
+                            <div className = {styles.moreDetails}>  
                             <span>{`${listing.description.slice(0,107)}...`} <br/>Click to get more info</span>
+                            </div>
                             </div>
                         </div>
                     </div>
