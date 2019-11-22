@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import Chart from "react-apexcharts";
 
@@ -15,9 +12,12 @@ class Graph2 extends React.Component {
         super(props);
     
         this.state = {
-          options: {},
-          series: [30, 23, 11, 10, 9, 7, 6, 4],
-          labels: ['drama', 'romance', 'thriller', 'guide', 'crime']
+          options: {
+            labels: ["fantasy", "drama", "romance", "thriller", "guides", "crime", "biography", "other"],
+            
+          },
+          series:  [30, 23, 11, 10, 9, 7, 6, 4],
+         
         }
       }
     
@@ -25,7 +25,7 @@ class Graph2 extends React.Component {
     
         return (
           <div className="donut">
-            <Chart  options={this.state.options} series={this.state.series} labels={this.state.labels} type="donut" width="600" />
+            <Chart  options={this.state.options} series={this.state.series} type="donut" width="600" />
           </div>
         );
       }
