@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
-
-
-
+import styles from "../styles/BookPage.module.css"; // imports css styles
 
 let bookslist = JSON.parse(localStorage.getItem("bookslist"))
 
@@ -16,7 +14,6 @@ class BookPage extends React.Component{
         }
     }
 
-
     componentDidMount(){
         const myBook = bookslist.find(book=>book.id===this.state.id)
         this.setState({book:myBook})
@@ -24,21 +21,32 @@ class BookPage extends React.Component{
         console.log(this.state.myBook)
     }
 
-
     render(){
         return (
             <div>
-    <p>{this.state.book.autor}</p>
-    <p>{this.state.book.title}</p>
-    <p>{this.state.book.type}</p>
-    <p>{this.state.book.condition}</p>
-            
-
-         
-            <Link to="/books">back to books list</Link>
-            </div> 
-
-
+            <div className={styles.bookCard}>
+                <div className={styles.bookImage}>
+                    <img src={this.state.book.imageUrl} />
+                </div>
+                <div>
+                    <div className={styles.info}>Title: 
+                        <div className={styles.info2}>{this.state.book.title}</div>
+                    </div>
+                    <div className={styles.info}>Author: 
+                        <div className={styles.info2}>{this.state.book.autor}</div>
+                    </div>
+                    <div className={styles.info}>Genre: 
+                        <div className={styles.info2}>{this.state.book.type}</div>
+                    </div>
+                    <div className={styles.info}>Condition: 
+                        <div className={styles.info2}>{this.state.book.condition}</div>   
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <Link to="/books">back to book list</Link>
+            </div>
+            </div>
         )
     }
 }

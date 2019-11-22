@@ -1,0 +1,15 @@
+.bookCard {
+    background: lightgrey;
+    display: flex;
+    flex-direction: row;
+    height: 200%;
+}
+.bookImage {
+    padding: 1%;
+}
+.info {
+    padding: 1%;
+}
+.info2 {
+    font-size: 25px;
+}
