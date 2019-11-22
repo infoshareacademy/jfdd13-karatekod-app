@@ -47,7 +47,7 @@ class BookPage extends React.Component{
                 </div> 
             </div>
             <div>
-                <Link to="/books">back to book list</Link>
+                <Link className={styles.link} to="/books">back to book list</Link>
             </div>
             </div>
         )
