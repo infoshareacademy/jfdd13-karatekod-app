@@ -224,7 +224,13 @@ display: block;
     grid-template-rows: auto;
     column-gap: 20px;
     align-content: stretch;
+
 }
+.grid a {
+    text-decoration: none;
+    text-align: center;
+}
+
 .active {
     background: pink;
 }

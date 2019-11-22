@@ -45,8 +45,8 @@ import styles from '../styles/SearchSection.module.css'
                         </div>
                     </div>
                     <div className= {styles.bottomInfo}>
-                        <p className= {styles.title}>"{listing.title}"" by:  {listing.autor}</p>
-                        <p className={styles.location}> condition:{listing.condition}</p>
+                        <p className= {styles.title}>{listing.title} <br/>{listing.autor}</p>
+                        <p className={styles.location}>condition: {listing.condition}</p>
                     </div>
                 </div>
             </div>
