@@ -15,12 +15,15 @@ class Graph1 extends React.Component {
           },
           xaxis: {
             categories: ['28.10-03.11', '04.11-10.11', '11.11-17.11', '18.11-today']
+          },
+          fill: {
+            colors: ['#c2185b']
           }
         },
         series: [
           {
             name: "series-1",
-            data: [12053, 18502, 20645, 50253]
+            data: [12053, 18502, 35645, 50253]
           }
         ]
       };
