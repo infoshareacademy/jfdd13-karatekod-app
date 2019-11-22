@@ -39,7 +39,7 @@ import styles from '../styles/SearchSection.module.css'
                             </div>
                             <div className = {styles.listingDetails}>
                             <div className = {styles.moreDetails}>  </div>
-                            <span>{listing.description}</span>
+                            <span>{`${listing.description.slice(0,107)}...`} <br/>Click to get more info</span>
                             </div>
                         </div>
                     </div>
