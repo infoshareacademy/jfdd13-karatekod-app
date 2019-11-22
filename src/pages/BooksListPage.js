@@ -38,7 +38,7 @@ export let books = (() => {
                 autor: "Stephen King",
                 type: "horror",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 7
+                condition: 3
             },
             {
                 id: uuid.v4(),
@@ -46,7 +46,7 @@ export let books = (() => {
                 autor: "Robin Cook",
                 type: "thriller",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 10
+                condition: 1
             },
             {
                 id: uuid.v4(),
@@ -62,7 +62,7 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 8
+                condition: 3
             },
             {
                 id: uuid.v4(),
@@ -70,7 +70,7 @@ export let books = (() => {
                 autor: "Stephen King",
                 type: "horror",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 4
+                condition: 3
             },
             {
                 id: uuid.v4(),
@@ -78,7 +78,7 @@ export let books = (() => {
                 autor: "Robin Cook",
                 type: "thriller",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 7
+                condition: 1
             },
             {
                 id: uuid.v4(),
@@ -86,35 +86,31 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 6
+                condition: 2
             },
-            {   id: uuid(),
-                autor: 'Mickiewicz Adam',
-                
+            {   
+                id: uuid.v4(),
+                title: 'Sonety Krymskie',
+                autor: 'Mickiewicz Adam',                
                 type: 'drama',
-                condition: 4,
-                iUrlmage: 'https://m.media-amazon.com/images/I/71POgs4xodL._AC_UY218_ML3_.jpg',
-                title: 'Sonety Krymskie'
-            },
-        
-            {   id: uuid(),
-                autor: 'Kafka Franz',
-                
+                Urlmage: 'https://m.media-amazon.com/images/I/71POgs4xodL._AC_UY218_ML3_.jpg',
+                condition: 4
+            },        
+            {   
+                id: uuid(),
+                autor: 'Kafka Franz',                
                 type: 'drama',
                 condition: 4,
                 imageUrl: 'https://m.media-amazon.com/images/I/71nOuOkfieL._AC_UY218_ML3_.jpg',
                 title: 'Trial'
-            },
-        
+            },        
             {   id: uuid(),
                 autor: 'Dick Philip',
-                
                 type: 'sci-fi',
                 condition: 3,
                 imageUrl: 'https://m.media-amazon.com/images/I/818R7hS2I1L._AC_UY218_ML3_.jpg',
                 title: 'Valis'
-            },
-        
+            },        
             {   id: uuid(),
                 autor: 'Tokarczuk Olga',
                 
@@ -122,8 +118,7 @@ export let books = (() => {
                 condition: 5,
                 imageUrl: 'https://m.media-amazon.com/images/I/71vT+W7LigL._AC_UY218_ML3_.jpg',
                 title: 'Before-age and other times'
-            },
-        
+            },        
             {   id: uuid(),
                 autor: 'Woolf Virginia',
                 
@@ -131,8 +126,7 @@ export let books = (() => {
                 condition: 5,
                 imageUrl: 'https://m.media-amazon.com/images/I/71u0+xPr12L._AC_UY218_ML3_.jpg',
                 title: 'Orlando'
-            },
-        
+            },        
             {   id: uuid(),
                 autor: 'Nalkowska Zofia',
                 
@@ -140,8 +134,7 @@ export let books = (() => {
                 condition: 3,
                 imageUrl: 'https://m.media-amazon.com/images/I/8152BeGLkTL._AC_UY218_ML3_.jpg',
                 title: 'Boundary'
-            },
-        
+            },        
             {   id: uuid(),
                 autor: 'Eco Umberto',
                 
@@ -149,9 +142,7 @@ export let books = (() => {
                 condition: 1,
                 imageUrl: 'https://m.media-amazon.com/images/I/91H9StSOJGL._AC_UY218_ML3_.jpg',
                 title: 'Name of Rose'  
-            },
-        
-        
+            },      
             {   
                
                 autor: 'King Stephen',

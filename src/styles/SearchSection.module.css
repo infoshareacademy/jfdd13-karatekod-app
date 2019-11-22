@@ -14,7 +14,7 @@ margin-bottom: 50px;
 .forms {
     display: flex;
     width: 100%;
-    justify-content: center;
+    
 }
 
 .searchText {
@@ -39,18 +39,22 @@ margin-bottom: 50px;
 
 .searchTextInputs input {
     width: 40%;
+    margin-right: 30px;
+}
+.searchTextInputs input:first-child {
+    
 }
 
 .dropdown {
  
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     font-family: sans-serif;
     font-weight: 700;
     color: #444;
     line-height: 1.3;
     padding: .6em 1.4em .5em .8em;
-    width: 92px;
+    width: 97px;
     
     box-sizing: border-box;
     margin: 0;
@@ -82,6 +86,16 @@ margin-bottom: 50px;
 }
 .dropdown option {
     font-weight:normal;
+}
+.rangeSlider {
+    width: 10%;
+    align-self: center;
+}
+.sliderDescription {
+    font-size: 14px;
+    color: grey;
+    align-self: center;
+    padding: 0 12px 0 35px;
 }
 
 

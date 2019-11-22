@@ -7,20 +7,13 @@ import 'react-input-range/lib/css/index.css'
 
 
 export class Filter extends Component {
-    constructor(){
-        super();
-        this.state = {value:1}
-    }
-
-
-
-
+    
     render() {
         return (
 
         <div>
 
-            <h4 className={styles.textHeader}>Select criteria for books searching</h4>
+            {/* <h4 className={styles.textHeader}>Select criteria for books searching</h4> */}
             <div className={styles.filter}>
                 
 
@@ -44,24 +37,23 @@ export class Filter extends Component {
                         <option value='sifi'>Sci-Fi</option>
                     </select>
                     </div>
-                    
+                        <p className={styles.sliderDescription}>select book condition</p>
+                       <div className={styles.rangeSlider}>
                        
-                    <InputRange
-                            globalState = {this.props.globalState}
-                            type = "range"
-                            maxValue={100}
-                            minValue={0}
-                            value={this.props.globalState.range}
-                            onChange={this.props.changeFilterRange} />
+                        <InputRange
+                                
+                                globalState = {this.props.globalState}
+                                type = "range"
+                                
+                                maxValue={5}
+                                minValue={1}
+                                value={this.props.globalState.range}
+                                onChange={this.props.changeFilterRange} />
+                                
 
+                        </div>
 
-
-                        {/* <input type="range" name="range" onChange = {this.props.change}
-                            max={100}
-                            min={1}
-                            step={1}
-                            value = {this.props.globalState.range}
-                        > */}
+                        
                     </div>
 
                 
