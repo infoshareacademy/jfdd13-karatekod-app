@@ -39,7 +39,7 @@ import styles from '../styles/SearchSection.module.css'
                             </div>
                             <div className = {styles.listingDetails}>
                             <div className = {styles.moreDetails}>  </div>
-                            <span>More info</span>
+                            <span>{listing.description}</span>
                             </div>
                         </div>
                     </div>
