@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import styles from '../styles/SearchSection.module.css'
 
 
@@ -20,6 +21,7 @@ import styles from '../styles/SearchSection.module.css'
         }
         return booksList.map((listing, index) => {
             return (
+                <Link to={`/book/${listing.id}`}>
                 <div className = {styles.listingsResults} key={index}>
                 <div className= {styles.listing}>
                     <div className= {styles.listingImg}
@@ -47,6 +49,7 @@ import styles from '../styles/SearchSection.module.css'
                     </div>
                 </div>
             </div>
+            </Link>
             )
 
         }
