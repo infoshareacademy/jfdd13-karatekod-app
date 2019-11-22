@@ -1,8 +1,26 @@
 .footer{
-    background: black;
+    background: rgb(36, 36, 36) ;
     color: white;
     padding: 10px 0;
-    text-align: center;
-    text-transform: uppercase;
- 
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
 }
+
+.footerAbout{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline
+}
+
