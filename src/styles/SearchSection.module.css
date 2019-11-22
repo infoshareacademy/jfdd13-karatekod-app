@@ -175,6 +175,14 @@ width: 70%;
 margin-left: 20px;
 
 }
+
+.moreDetails span{
+
+    font-size: 16px;
+    text-align: justify;
+
+}
+
 .userName {
 color: rgba(255, 255, 255, 1);
 display: block;
@@ -186,6 +194,7 @@ display: block;
 
 .bottomInfo {
     padding: 20px 15px;
+    text-decoration: none;
 
 
 }
@@ -215,7 +224,22 @@ display: block;
     grid-template-rows: auto;
     column-gap: 20px;
     align-content: stretch;
+
 }
+.grid a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-style: italic;
+    
+}
+
+.grid p {
+    padding: 5px;
+
+    
+}
+
 .active {
     background: pink;
 }

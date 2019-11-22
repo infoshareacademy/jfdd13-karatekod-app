@@ -38,14 +38,15 @@ import styles from '../styles/SearchSection.module.css'
                                 <span className = {styles.postDate}>05.05.2019</span>
                             </div>
                             <div className = {styles.listingDetails}>
-                            <div className = {styles.moreDetails}>  </div>
-                            <span>More info</span>
+                            <div className = {styles.moreDetails}>  
+                            <span>{`${listing.description.slice(0,107)}...`} <br/>Click to get more info</span>
+                            </div>
                             </div>
                         </div>
                     </div>
                     <div className= {styles.bottomInfo}>
-                        <p className= {styles.title}>"{listing.title}"" by:  {listing.autor}</p>
-                        <p className={styles.location}> condition:{listing.condition}</p>
+                        <p className= {styles.title}>{listing.title} <br/>{listing.autor}</p>
+                        <p className={styles.location}>condition: {listing.condition}</p>
                     </div>
                 </div>
             </div>
