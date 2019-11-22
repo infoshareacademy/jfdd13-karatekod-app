@@ -3,13 +3,26 @@ import {Route, Redirect} from 'react-router-dom'
 
 const permission = true;
 
-const AdminPage = () => {
+class AdminPage extends React.Component {
+
+    constructor(props){
+        super(props)
+    this.state={
+        favorites: JSON.parse(localStorage.getItem('favorites'))
+    }
+}
+    render(){
     return (
         <Route render={() =>(
-            permission ? (<h3>Welcome to BookSwap App!</h3>) :
+            permission ? (
+            <div>
+            <h3>Welcome to BookSwap App!</h3>
+                <div>Favorites: {this.state.favorites}</div>
+                </div>) :
             (<Redirect to="/login" /> )
     )} />
     )
+            }
 }
 
 export default AdminPage

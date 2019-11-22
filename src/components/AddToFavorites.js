@@ -1,26 +1,24 @@
 import React from 'react'
+import styles from '../styles/Books.module.css'
 
 class AddToFavorites extends React.Component {
 constructor(props){
     super(props)
     this.state={
-
+        innerButtonText: "add to favorites"
+    
     }
 }
 
-addToFavorites(){
-
-}
-
-get isFavoriteVisible() {
-    return this.state.todos.some(todo => todo.isDone === true);
-  }
-
 render(){
     return(
-        <button>Add to Favorites</button>
+        <button onClick={() => this.props.onClick()}>{this.state.innerButtonText}</button>
     )
 }
 }
 
 export default AddToFavorites
+
+
+
+
