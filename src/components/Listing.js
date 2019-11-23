@@ -75,17 +75,16 @@ import styles from '../styles/SearchSection.module.css'
         const {currentPage, booksPerPage} = this.state;
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * booksPerPage;
-        const indexofFirsBook = indexOfLastBook - booksPerPage
-        
+        const indexOfFirstBook = indexOfLastBook - booksPerPage
+        const currentBooks = booksList.slice(indexOfFirstBook, indexOfLastBook)
 
 
-        const currentBooks = booksList.slice(indexofFirsBook, indexOfLastBook)
         const renderBooks = currentBooks.map((book, index) => {
             return <div key = {index}>{book}</div>
         })
 
         const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(booksList.lenght / booksPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(booksList.length / booksPerPage); i++) {
             pageNumbers.push(i);
         }
 
