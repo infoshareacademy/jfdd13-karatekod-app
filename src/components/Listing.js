@@ -26,11 +26,13 @@ import styles from '../styles/SearchSection.module.css'
          })
      }
      handleClickNext(event) {
+         const booksList=this.loopListings();
          const nextPage = this.state.currentPage + 1
-         if this.
+         if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
          this.setState ({
              currentPage: nextPage
          })
+        }
      }
      handleClickPrev(event) {
          if (this.state.currentPage > 1) {
