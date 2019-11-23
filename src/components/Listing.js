@@ -45,12 +45,7 @@ import styles from '../styles/SearchSection.module.css'
             })
         }
     }
-    componentDidUpdate() {
-        // let  x = {background:"pink"}
-        // if (this.state.currentPage == event.target.id) {
-        //     event.target.style = {x} 
-        //  }
-    }
+    
 
      loopListings () {
         const {booksList} = this.props;
@@ -96,8 +91,15 @@ import styles from '../styles/SearchSection.module.css'
          }
      
 
+
+
+
+
+
+         
     render() {
 
+       
         const {currentPage, booksPerPage} = this.state;
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * booksPerPage;
