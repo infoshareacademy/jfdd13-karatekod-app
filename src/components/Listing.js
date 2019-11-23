@@ -15,6 +15,9 @@ import styles from '../styles/SearchSection.module.css'
          }
          this.loopListings = this.loopListings.bind(this);
          this.handleClick= this.handleClick.bind(this)
+         this.handleClickNext = this.handleClickNext.bind(this)
+         this.handleClickPrev = this.handleClickPrev.bind(this)
+         
      }
 
      handleClick(event) {
@@ -22,11 +25,28 @@ import styles from '../styles/SearchSection.module.css'
              currentPage: Number(event.target.id)
          })
      }
+     handleClickNext(event) {
+         const nextPage = this.state.currentPage + 1
+         if this.
+         this.setState ({
+             currentPage: nextPage
+         })
+     }
+     handleClickPrev(event) {
+         if (this.state.currentPage > 1) {
+        const prevPage = this.state.currentPage - 1
+        
+        this.setState ({
+            currentPage: prevPage
+        })
+    }
+    }
+
 
      loopListings () {
         const {booksList} = this.props;
         if (booksList == undefined || booksList == 0) {
-            return <div style={{fontSize:"40px", gridColumn:"2/4"}}>Sorry but there is no books to swap matching your criteria"</div>
+            return <div style={{fontSize:"40px"}}>Sorry but there is no books to swap matching your criteria"</div>
         }
         return booksList.map((listing, index) => {
             return (
@@ -112,11 +132,11 @@ import styles from '../styles/SearchSection.module.css'
                         
                 </div>
                 <div className = {styles.pagination}>
-                    <div className = {styles.paginationNav}>prev </div>
+                    <div className = {styles.paginationNav} onClick={this.handleClickPrev}>prev </div>
                     <ul className = {styles.paginationPages}>
                         {renderPageNumbers}
                     </ul>
-                    <div className = {styles.paginationNav}>next</div>
+                    <div className = {styles.paginationNav} onClick= {this.handleClickNext}>next</div>
                 </div>
 
             </>
