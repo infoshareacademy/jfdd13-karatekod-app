@@ -111,6 +111,7 @@ margin-bottom: 50px;
 
 .listingsResults {
     margin-bottom: 60px;
+    padding: 15px;
 
 }
 
@@ -198,10 +199,7 @@ display: block;
 
 
 }
-.pagination {
-    text-align: center;
 
-}
 .pages{
     display: inline-block;
 
@@ -219,11 +217,8 @@ display: block;
 
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    column-gap: 20px;
-    align-content: stretch;
+    display: flex;
+    flex-wrap: wrap;
 
 }
 .grid a {
@@ -242,4 +237,31 @@ display: block;
 
 .active {
     background: pink;
+}
+
+.pagination {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+
+ 
+ }
+
+
+.paginationPages {
+    display: flex;
+}
+.paginationPages li {
+    width: 30px;
+    text-align: center;
+
+}
+.paginationPages li:hover {
+    background-color: pink;
+    cursor: pointer
+}
+.paginationNav:hover {
+    background-color: pink;
+    cursor: pointer
 }

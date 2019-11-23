@@ -76,7 +76,7 @@ import styles from '../styles/SearchSection.module.css'
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * booksPerPage;
         const indexOfFirstBook = indexOfLastBook - booksPerPage
-        const currentBooks = booksList.slice(indexOfFirstBook, indexOfLastBook)
+        const currentBooks=  booksList.slice(indexOfFirstBook, indexOfLastBook)
 
 
         const renderBooks = currentBooks.map((book, index) => {
@@ -90,7 +90,8 @@ import styles from '../styles/SearchSection.module.css'
 
         const renderPageNumbers = pageNumbers.map(number => {
             return (
-            <li 
+            <li
+                
                 key = {number}
                 id = {number}
                 onClick = {this.handleClick}
@@ -104,17 +105,21 @@ import styles from '../styles/SearchSection.module.css'
 
         return (
             
-                <div>
+                <>
                 <div className={styles.grid}>
                        
                        {renderBooks}
                         
                 </div>
-                <ul id="page-numbers">
-                    {renderPageNumbers}
-                </ul>
+                <div className = {styles.pagination}>
+                    <div className = {styles.paginationNav}>prev </div>
+                    <ul className = {styles.paginationPages}>
+                        {renderPageNumbers}
+                    </ul>
+                    <div className = {styles.paginationNav}>next</div>
+                </div>
 
-            </div>
+            </>
             
         )
     }
