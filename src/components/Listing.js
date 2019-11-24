@@ -107,6 +107,8 @@ class Listings extends Component {
                             }
                             localStorage.setItem('favorites', JSON.stringify(newFavorites))
                             this.setState({ favorites: JSON.parse(localStorage.getItem("favorites")) })
+
+
                         }} />
                                     
                                 </div>
