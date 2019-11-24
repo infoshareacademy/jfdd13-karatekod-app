@@ -84,6 +84,9 @@ import styles from '../styles/SearchSection.module.css'
                     </div>
                 </div>
             </Link>
+            
+
+
                     )
                 }       
         
