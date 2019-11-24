@@ -110,7 +110,7 @@ import styles from '../styles/SearchSection.module.css'
 
 
         const renderBooks = currentBooks.map((book, index) => {
-            return <div key = {index}>{book}</div>
+            return <div className={styles.renderBooks} key = {index}>{book}</div>
         })
 
         const pageNumbers = [];
@@ -121,7 +121,7 @@ import styles from '../styles/SearchSection.module.css'
         const renderPageNumbers = pageNumbers.map(number => {
             return (
             <li
-                style = {(this.state.currentPage == number) ? {background:"pink"} : {background: "none"}}
+                style = {(this.state.currentPage == number) ? {color:"pink"} : {color: "grey"}}
                 key = {number}
                 id = {number}
                 onClick = {this.handleClick}
@@ -142,7 +142,7 @@ import styles from '../styles/SearchSection.module.css'
                         
                 </div>
                 <div className = {styles.pagination}>
-                    <div className = {styles.paginationNav} onClick={this.handleClickPrev}>prev </div>
+                    <div className = {styles.paginationNav} onClick={this.handleClickPrev}>prev</div>
                     <ul className = {styles.paginationPages}>
                         {renderPageNumbers}
                     </ul>

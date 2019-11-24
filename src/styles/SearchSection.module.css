@@ -96,6 +96,8 @@ margin-bottom: 50px;
     color: grey;
     align-self: center;
     padding: 0 12px 0 35px;
+    width: 100px;
+    text-align: center;
 }
 
 
@@ -245,6 +247,7 @@ display: block;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    padding-top: 30px;
 
  
  }
@@ -252,17 +255,28 @@ display: block;
 
 .paginationPages {
     display: flex;
+    
 }
 .paginationPages li {
-    width: 30px;
+    width: 40px;
     text-align: center;
+    height: 30px;
 
 }
 .paginationPages li:hover {
-    background-color: pink;
+   
     cursor: pointer
 }
 .paginationNav:hover {
     
     cursor: pointer
+    
 }
+.paginationNav {
+    font-size: 15px;
+    padding-top: 2px;
+}
+/* .renderBooks {
+    margin-left: auto;
+    margin-right: auto;
+} */
