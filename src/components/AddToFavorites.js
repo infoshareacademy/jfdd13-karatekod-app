@@ -12,7 +12,7 @@ constructor(props){
 
 render(){
     return(
-        <button onClick={() => this.props.onClick()}>{this.state.innerButtonText}</button>
+        <img onClick={() => this.props.onClick()} className={styles.like} src='https://www.pikpng.com/pngl/b/306-3065627_instagram-heart-png-clipart-background-discord-heart-emoji.png'></img>
     )
 }
 }

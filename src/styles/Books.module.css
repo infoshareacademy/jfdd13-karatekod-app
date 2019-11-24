@@ -48,3 +48,13 @@
 .favorite:hover {
 cursor: pointer;
 }
+
+.like {
+    max-height: 20px;
+    max-width: 20px;
+}
+
+.like:hover {
+    cursor: pointer;
+    background-color: black;
+    }

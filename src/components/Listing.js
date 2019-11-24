@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/SearchSection.module.css'
 import AddToFavorites from '../components/AddToFavorites'
-
 /*const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
 
 <AddToFavorites id={listing.id} onClick={() => {
@@ -69,16 +68,15 @@ class Listings extends Component {
         return booksList.map((listing, index) => {
             return (
                 <div>
-                    <Link to={`/book/${listing.id}`}>
-                        <div className={styles.listingsResults} key={index}>
-                            <div className={styles.listing}>
+
+                    <div className={styles.listingsResults} key={index}>
+                        <div className={styles.listing}>
+                            <Link to={`/book/${listing.id}`}>
                                 <div className={styles.listingImg}
                                     style={{
                                         background: `url("${listing.imageUrl}") no-repeat center center`
 
                                     }}>
-
-
                                     <div className={styles.details}>
                                         <div className={styles.userImg}></div>
                                         <div className={styles.userDetails}>
@@ -92,16 +90,14 @@ class Listings extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={styles.bottomInfo}>
+                            </Link>
+                            <div className={styles.bottomInfo}>
+                                <div className={styles.bottomInfoDetail}>
                                     <p className={styles.title}>{listing.title} <br />{listing.autor}</p>
                                     <p className={styles.location}>condition: {listing.condition}</p>
-
                                 </div>
-                            </div>
-                        </div>
-                    </Link>
-                    <div style={{textAlign: 'center'}}>
-                        <AddToFavorites id={listing.id} onClick={() => {
+                                <div className={styles.like} style={{ width: '20px', height: '20px'}}>
+                                <AddToFavorites id={listing.id} onClick={() => {
                             let newFavorites
                             if (this.state.favorites.includes(listing.id)) {
                                 newFavorites = this.state.favorites.filter(fav => fav !== listing.id);
@@ -111,9 +107,16 @@ class Listings extends Component {
                             }
                             localStorage.setItem('favorites', JSON.stringify(newFavorites))
                             this.setState({ favorites: JSON.parse(localStorage.getItem("favorites")) })
-
-
                         }} />
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div style={{ textAlign: 'center' }}>
+
                     </div>
                 </div>
 

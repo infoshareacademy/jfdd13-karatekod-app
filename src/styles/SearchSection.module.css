@@ -98,6 +98,10 @@ margin-bottom: 50px;
     padding: 0 12px 0 35px;
 }
 
+.like {
+    max-height: 20px;
+    max-width: 20px;
+}
 
 /*---------------------------------------------------search outcome:--------------------------------------*/
 
@@ -110,7 +114,6 @@ margin-bottom: 50px;
 
 
 .listingsResults {
-    margin-bottom: 60px;
     padding: 15px;
 
 }
@@ -194,9 +197,18 @@ display: block;
 }
 
 .bottomInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px 15px;
     text-decoration: none;
 
+
+}
+
+.bottomInfoDetail{
+text-align: center;
+    text-decoration: none;
 
 }
 
