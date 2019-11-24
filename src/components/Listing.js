@@ -20,6 +20,12 @@ import styles from '../styles/SearchSection.module.css'
          
      }
 
+     componentDidUpdate() {
+
+        this.state.currentPage = 1
+        
+    }
+
      handleClick(event) {
         
          this.setState({
@@ -101,7 +107,6 @@ import styles from '../styles/SearchSection.module.css'
          
     render() {
 
-       
         const {currentPage, booksPerPage} = this.state;
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * booksPerPage;
@@ -130,6 +135,7 @@ import styles from '../styles/SearchSection.module.css'
                 </li>);
         })
 
+       
 
 
 
