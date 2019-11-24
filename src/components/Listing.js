@@ -50,7 +50,7 @@ import styles from '../styles/SearchSection.module.css'
      loopListings () {
         const {booksList} = this.props;
         if (booksList == undefined || booksList == 0) {
-            return <div style={{fontSize:"40px"}}>Sorry but there is no books to swap matching your criteria"</div>
+            return ['   We are sorry but there is no books matching your criteria. Try other titles or come back soon']
         }
         return booksList.map((listing, index) => {
             return (
@@ -90,7 +90,6 @@ import styles from '../styles/SearchSection.module.css'
             )
          }
      
-
 
 
 
