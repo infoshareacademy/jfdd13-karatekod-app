@@ -10,7 +10,8 @@ import styles from '../styles/SearchSection.module.css'
          super()
          this.state = {
             currentPage: 1,
-            booksPerPage: 5
+            booksPerPage: 5,
+            activePage:1
 
          }
          this.loopListings = this.loopListings.bind(this);
@@ -22,14 +23,14 @@ import styles from '../styles/SearchSection.module.css'
 
      componentDidUpdate() {
 
-        this.state.currentPage = 1
+        this.state.currentPage = 1;
         
     }
 
      handleClick(event) {
         
          this.setState({
-             currentPage: Number(event.target.id)
+             currentPage: Number(event.target.id)  //z current
          })
          
      }
