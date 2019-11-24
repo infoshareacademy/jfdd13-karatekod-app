@@ -99,8 +99,10 @@ margin-bottom: 50px;
 }
 
 .like {
-    max-height: 20px;
-    max-width: 20px;
+display: flex;
+flex-direction: row ;
+justify-content: flex-end;
+width: 100%;
 }
 
 /*---------------------------------------------------search outcome:--------------------------------------*/

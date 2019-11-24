@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/SearchSection.module.css'
 import AddToFavorites from '../components/AddToFavorites'
+import heartFilled from '../images/heart2.png'
+import heartEmpty from '../images/heart1.png'
 /*const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
 
 <AddToFavorites id={listing.id} onClick={() => {
@@ -96,7 +98,7 @@ class Listings extends Component {
                                     <p className={styles.title}>{listing.title} <br />{listing.autor}</p>
                                     <p className={styles.location}>condition: {listing.condition}</p>
                                 </div>
-                                <div className={styles.like} style={{ width: '20px', height: '20px'}}>
+                                <div className={styles.like}>
                                 <AddToFavorites id={listing.id} onClick={() => {
                             let newFavorites
                             if (this.state.favorites.includes(listing.id)) {
@@ -109,7 +111,7 @@ class Listings extends Component {
                             this.setState({ favorites: JSON.parse(localStorage.getItem("favorites")) })
 
 
-                        }} />
+                        }} />       {this.state.favorites.includes(listing.id) ? <img style={{width:"25px", height:"25px"}} src={heartFilled}></img>  : <img style={{width:"25px", height:"25px"}} src={heartEmpty}></img> }
                                     
                                 </div>
                             </div>
