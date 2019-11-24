@@ -12,7 +12,8 @@ constructor(props){
 
 render(){
     return(
-        <button onClick={() => this.props.onClick()}>{this.state.innerButtonText}</button>
+        
+        <button onClick={() => this.props.onClick()} className={styles.like}>Add to favorites</button>
     )
 }
 }
