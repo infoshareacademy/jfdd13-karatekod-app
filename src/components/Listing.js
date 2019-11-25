@@ -35,56 +35,31 @@ class Listings extends Component {
 
     }
 
+    handleClick(event) {
 
- class Listings extends Component {
-     constructor() {
-         super()
-         this.state = {
-            currentPage: 1,
-            booksPerPage: 9,
-            activePage:1
+        this.setState({
+            currentPage: Number(event.target.id)
+        })
 
-         }
-         this.loopListings = this.loopListings.bind(this);
-         this.handleClick= this.handleClick.bind(this)
-        //  this.handleClickNext = this.handleClickNext.bind(this)
-        //  this.handleClickPrev = this.handleClickPrev.bind(this)
-         
-     }
-
-     componentDidUpdate() {
-
-        this.state.currentPage = 1;
-        
     }
+    handleClickNext(event) {
+        const booksList = this.loopListings();
+        const nextPage = this.state.currentPage + 1
+        if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
+            this.setState({
+                currentPage: nextPage
+            })
+        }
+    }
+    handleClickPrev(event) {
+        if (this.state.currentPage > 1) {
+            const prevPage = this.state.currentPage - 1
 
-     handleClick(event) {
-        
-         this.setState({
-             currentPage: Number(event.target.id)  //z current
-         })
-         
-     }
-    //  handleClickNext(event) {
-    //      const booksList=this.loopListings();
-    //      const nextPage = this.state.currentPage + 1
-    //         if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
-    //             this.setState ({
-    //                 currentPage: nextPage
-    //             })
-    //         }
-    //     }
-    //  handleClickPrev(event) {
-    //      if (this.state.currentPage > 1) {
-    //         const prevPage = this.state.currentPage - 1
-        
-    //         this.setState ({
-    //             currentPage: prevPage
-    //         })
-    //     }
-    // }
-    
-
+            this.setState({
+                currentPage: prevPage
+            })
+        }
+    }
 
 
     loopListings() {
@@ -149,14 +124,6 @@ class Listings extends Component {
                     </div>
                 </div>
 
-            </Link>
-            
-
-
-                    )
-                }       
-        
-
             )
         }
 
@@ -171,8 +138,8 @@ class Listings extends Component {
 
     render() {
 
-        const {currentPage, booksPerPage} = this.state;
 
+        const { currentPage, booksPerPage } = this.state;
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * booksPerPage;
         const indexOfFirstBook = indexOfLastBook - booksPerPage
@@ -180,9 +147,7 @@ class Listings extends Component {
 
 
         const renderBooks = currentBooks.map((book, index) => {
-
-            return <div className={styles.renderBooks} key = {index}>{book}</div>
-
+            return <div key={index}>{book}</div>
         })
 
         const pageNumbers = [];
@@ -192,19 +157,16 @@ class Listings extends Component {
 
         const renderPageNumbers = pageNumbers.map(number => {
             return (
-
-            <li
-                style = {(this.state.currentPage == number) ? {color:"pink"} : {color: "grey"}}
-                key = {number}
-                id = {number}
-                onClick = {this.handleClick}
-
+                <li
+                    style={(this.state.currentPage == number) ? { background: "pink" } : { background: "none" }}
+                    key={number}
+                    id={number}
+                    onClick={this.handleClick}
                 >
                     {number}
                 </li>);
         })
 
-       
 
 
 
@@ -216,14 +178,12 @@ class Listings extends Component {
                     {renderBooks}
 
                 </div>
-
-                <div className = {styles.pagination}>
-                    {/* <div className = {styles.paginationNav} onClick={this.handleClickPrev}>prev</div> */}
-                    <ul className = {styles.paginationPages}>
+                <div className={styles.pagination}>
+                    <div className={styles.paginationNav} onClick={this.handleClickPrev}>prev </div>
+                    <ul className={styles.paginationPages}>
                         {renderPageNumbers}
                     </ul>
-                    {/* <div className = {styles.paginationNav} onClick= {this.handleClickNext}>next</div> */}
-
+                    <div className={styles.paginationNav} onClick={this.handleClickNext}>next</div>
                 </div>
 
             </>
