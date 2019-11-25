@@ -98,6 +98,12 @@ margin-bottom: 50px;
     padding: 0 12px 0 35px;
 }
 
+.like {
+display: flex;
+flex-direction: row ;
+justify-content: flex-end;
+width: 100%;
+}
 
 /*---------------------------------------------------search outcome:--------------------------------------*/
 
@@ -109,8 +115,9 @@ margin-bottom: 50px;
 }
 
 
+
 .listingsResults {
-    margin-bottom: 60px;
+    padding: 15px;
 
 }
 
@@ -193,15 +200,21 @@ display: block;
 }
 
 .bottomInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px 15px;
     text-decoration: none;
 
 
 }
-.pagination {
-    text-align: center;
+
+.bottomInfoDetail{
+text-align: center;
+    text-decoration: none;
 
 }
+
 .pages{
     display: inline-block;
 
@@ -219,11 +232,9 @@ display: block;
 
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    column-gap: 20px;
-    align-content: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
 
 }
 .grid a {
@@ -242,4 +253,31 @@ display: block;
 
 .active {
     background: pink;
+}
+
+.pagination {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+
+ 
+ }
+
+
+.paginationPages {
+    display: flex;
+}
+.paginationPages li {
+    width: 30px;
+    text-align: center;
+
+}
+.paginationPages li:hover {
+    background-color: pink;
+    cursor: pointer
+}
+.paginationNav:hover {
+    
+    cursor: pointer
 }
