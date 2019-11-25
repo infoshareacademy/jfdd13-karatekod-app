@@ -26,7 +26,7 @@ class Listings extends Component {
         this.state = {
             currentPage: 1,
             booksPerPage: 5,
-            favorites: JSON.parse(localStorage.getItem("favorites")) || []
+            favorites: JSON.parse(localStorage.getItem("favorites"))
         }
         this.loopListings = this.loopListings.bind(this);
         this.handleClick = this.handleClick.bind(this)
