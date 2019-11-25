@@ -99,20 +99,22 @@ class Listings extends Component {
                                     <p className={styles.location}>condition: {listing.condition}</p>
                                 </div>
                                 <div className={styles.like}>
-                                <AddToFavorites id={listing.id} onClick={() => {
-                            let newFavorites
-                            if (this.state.favorites.includes(listing.id)) {
-                                newFavorites = this.state.favorites.filter(fav => fav !== listing.id);
+                                <AddToFavorites id={listing.id} isFavorites = {this.state.favorites.includes(listing.id)} onClick={() => {
+                                    let newFavorites;
+                                    const isFavorites = this.state.favorites.includes(listing.id);
+                                    if (isFavorites) {
+                                        newFavorites = this.state.favorites.filter(fav => fav !== listing.id);
 
-                            } else {
-                                newFavorites = [...this.state.favorites, listing.id]
-                            }
-                            localStorage.setItem('favorites', JSON.stringify(newFavorites))
-                            this.setState({ favorites: JSON.parse(localStorage.getItem("favorites")) })
-
-
-                        }} />       {this.state.favorites.includes(listing.id) ? <img style={{width:"25px", height:"25px"}} src={heartFilled}></img>  : <img style={{width:"25px", height:"25px"}} src={heartEmpty}></img> }
-                                    
+                                    } else {
+                                        newFavorites = [...this.state.favorites, listing.id]
+                                    }
+                                    localStorage.setItem('favorites', JSON.stringify(newFavorites))
+                                    this.setState({ favorites: JSON.parse(localStorage.getItem("favorites"))
+                                        })
+                                    }} />
+                        
+                                        {this.state.favorites.includes(listing.id) ? <img style={{width:"25px", height:"25px"}} src={heartFilled}></img>  : <img style={{width:"25px", height:"25px"}} src={heartEmpty}></img> }
+                                
                                 </div>
                             </div>
                         </div>
