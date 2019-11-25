@@ -7,7 +7,7 @@ import heartEmpty from '../images/heart1.png'
 /*const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
 
 <AddToFavorites id={listing.id} onClick={() => {
-    const newFavorites
+    let newFavorites
     if (favorites.includes(listing.id)) {
         newFavorites = favorites.filter(fav => fav !== listing.id);
        
