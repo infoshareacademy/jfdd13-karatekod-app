@@ -5,14 +5,14 @@ import styles from "../styles/Navigation.module.css";
 
 
 const list = [
-    {name: 'start', path: '/', exact: true},
+
     {name: 'your profile', path: '/admin'},
-    {name: 'book list', path: '/books'},
+
 
     {name: 'dashboard', path: '/statistics'},
 
     {name: 'add book', path: '/addBooks'},
-    {name: 'search' , path: '/search'}   
+    {name: 'search' , path: '/search', exact: true}   
 ]
 
 const Navigation = () => {
