@@ -26,17 +26,6 @@
 
 
 
-.favoriteButton {
-    border: 1px solid #c2185b;
-    background: #c2185b;
-    color: white;
-    margin-top: 40px;
-    width: 330px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;  
-}
 
 .favorite {
     height: 50px;
@@ -53,9 +42,19 @@ cursor: pointer;
     min-width: 30px;
     min-height: 30px;
     margin-right: 10px;
-    
+    border: 1px solid #c2185b;
+    color: #c2185b;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: white;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 200px
 }
 
 .like:hover {
     cursor: pointer;
+    background: #c2185b;
+    color: white
     }
+
