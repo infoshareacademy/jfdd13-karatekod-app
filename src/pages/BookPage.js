@@ -42,7 +42,7 @@ class BookPage extends React.Component{
                         </div>
                     </div>
                     <div className={styles.desc}>Description: 
-                        <div className={styles.info2}>This is a book description jfksaudeuhfdsiuhfsduihfsdiufsdniusvdvbvivsdbdivsbiuvsdbiudsv uhnjkshvu fjoisfijf sfijfsoijfs fsjiosfdjiosdf</div>   
+                        <div className={styles.info2}>{this.state.book.description}</div>   
                     </div>
                 </div> 
             </div>

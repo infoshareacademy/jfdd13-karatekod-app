@@ -46,6 +46,10 @@ export default class Search extends Component {
     this.filteredData();
   }
 
+  componentDidMount(){
+    this.setState({booksList:JSON.parse(localStorage.getItem("bookslist"))})
+  }
+
 
   filteredData() {
     let newData = this.state.booksList.filter((item) => {
