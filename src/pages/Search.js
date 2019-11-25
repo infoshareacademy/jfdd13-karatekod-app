@@ -75,13 +75,8 @@ export default class Search extends Component {
         }
       })
     }
-    
-
-
-
-
     this.setState({
-      filteredData: newData
+    filteredData: newData
     })
     
     

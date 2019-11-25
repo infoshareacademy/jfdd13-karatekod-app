@@ -1,15 +1,30 @@
 .bookCard {
-    background: lightgrey;
     display: flex;
     flex-direction: row;
-    height: 200%;
+    height: 55vh;
+    border-radius: 20px;
 }
+
 .bookImage {
     padding: 1%;
+    height: 350px;
+    width: 300px;
+    border-radius: 20px;
+}
+.bookInfo {
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+}
+.bookInfo2 {
+    width: 30%;
 }
 .info {
-    padding: 1%;
+    padding-bottom: 10%;
 }
 .info2 {
     font-size: 25px;
+}
+.link {
+    /* text-decoration: none; */
 }

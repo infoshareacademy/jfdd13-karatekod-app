@@ -18,7 +18,9 @@ export let books = (() => {
                 autor: "Dmitry Glukhovsky",
                 type: "fantasy",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 5
+                condition: 5,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
+                  
             },
             {
                 id: uuid.v4(),
@@ -26,7 +28,8 @@ export let books = (() => {
                 autor: "J. K. Rowling",
                 type: "fantasy",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 5
+                condition: 5,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -34,7 +37,8 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 4
+                condition: 4,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -42,7 +46,8 @@ export let books = (() => {
                 autor: "Stephen King",
                 type: "horror",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 3
+                condition: 3,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -50,7 +55,8 @@ export let books = (() => {
                 autor: "Robin Cook",
                 type: "thriller",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 1
+                condition: 1,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -58,7 +64,8 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 1
+                condition: 1,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -66,7 +73,8 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 3
+                condition: 3,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -74,7 +82,8 @@ export let books = (() => {
                 autor: "Stephen King",
                 type: "horror",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 3
+                condition: 3,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -82,7 +91,8 @@ export let books = (() => {
                 autor: "Robin Cook",
                 type: "thriller",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 1
+                condition: 1,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
                 id: uuid.v4(),
@@ -90,7 +100,8 @@ export let books = (() => {
                 autor: "Adam Mickiewicz",
                 type: "poetry",
                 imageUrl: "http://placekitten.com/140/190",
-                condition: 2
+                condition: 2,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {   
                 id: uuid.v4(),
@@ -98,84 +109,87 @@ export let books = (() => {
                 autor: 'Mickiewicz Adam',                
                 type: 'drama',
                 Urlmage: 'https://m.media-amazon.com/images/I/71POgs4xodL._AC_UY218_ML3_.jpg',
-                condition: 4
+                condition: 4,
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },        
             {   
-                id: uuid(),
+                id: uuid.v4(),
                 autor: 'Kafka Franz',                
                 type: 'drama',
                 condition: 4,
                 imageUrl: 'https://m.media-amazon.com/images/I/71nOuOkfieL._AC_UY218_ML3_.jpg',
-                title: 'Trial'
+                title: 'Trial',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },        
-            {   id: uuid(),
+            {   id: uuid.v4(),
                 autor: 'Dick Philip',
                 type: 'sci-fi',
                 condition: 3,
                 imageUrl: 'https://m.media-amazon.com/images/I/818R7hS2I1L._AC_UY218_ML3_.jpg',
-                title: 'Valis'
+                title: 'Valis',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },        
-            {   id: uuid(),
+            {   id: uuid.v4(),
                 autor: 'Tokarczuk Olga',
-                
                 type: 'drama',
                 condition: 5,
                 imageUrl: 'https://m.media-amazon.com/images/I/71vT+W7LigL._AC_UY218_ML3_.jpg',
-                title: 'Before-age and other times'
+                title: 'Before-age and other times',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },        
-            {   id: uuid(),
+            {   id: uuid.v4(),
                 autor: 'Woolf Virginia',
-                
                 type: 'drama',
                 condition: 5,
                 imageUrl: 'https://m.media-amazon.com/images/I/71u0+xPr12L._AC_UY218_ML3_.jpg',
-                title: 'Orlando'
+                title: 'Orlando',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },        
-            {   id: uuid(),
+            {   id: uuid.v4(),
                 autor: 'Nalkowska Zofia',
-                
                 type: 'drama',
                 condition: 3,
                 imageUrl: 'https://m.media-amazon.com/images/I/8152BeGLkTL._AC_UY218_ML3_.jpg',
-                title: 'Boundary'
+                title: 'Boundary',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },        
-            {   id: uuid(),
+            {   id: uuid.v4(),
                 autor: 'Eco Umberto',
-                
                 type: 'drama',
                 condition: 1,
                 imageUrl: 'https://m.media-amazon.com/images/I/91H9StSOJGL._AC_UY218_ML3_.jpg',
-                title: 'Name of Rose'  
+                title: 'Name of Rose',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },      
             {   
-               
+                id: uuid.v4(),
                 autor: 'King Stephen',
-                
                 type: 'horror',
                 condition: 5,
                 imageUrl: 'https://m.media-amazon.com/images/I/91DkmcRi4sL._AC_UY218_ML3_.jpg',
-                title: 'Kingdom'
+                title: 'Kingdom',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },
             {
-                id: uuid(),
+                id: uuid.v4(),
                 autor: 'Achmatova Anna',
-                
                 type: 'poetry',
                 condition: 3,
                 imageUrl: 'https://m.media-amazon.com/images/I/91ewNSl222L._AC_UY218_ML3_.jpg',
-                title: 'Poetry-Collection'
+                title: 'Poetry-Collection',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
                 
             },
         
             
         
-            {   id: uuid(),
+            {   id: uuid.v4(),
                 autor: 'Kristeva Julia',
-                
                 type: 'science',
                 condition: 2,
                 imageUrl: 'https://m.media-amazon.com/images/I/91lMICvbU3L._AC_UY218_ML3_.jpg',
-                title: 'Intertextuality'
+                title: 'Intertextuality',
+                description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             }
         ];
         localStorage.setItem('bookslist', JSON.stringify(bookslist));
