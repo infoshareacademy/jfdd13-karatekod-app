@@ -8,18 +8,16 @@ constructor(props){
         innerButtonText: "add to favorites"
     
     }
+   
+    
 }
 
 render(){
     return(
-        
-        <button onClick={() => this.props.onClick()} className={styles.like}>Add to favorites</button>
+        <button onClick={() => this.props.onClick()}>{this.state.innerButtonText}</button>
     )
 }
 }
 
+
 export default AddToFavorites
-
-
-
-

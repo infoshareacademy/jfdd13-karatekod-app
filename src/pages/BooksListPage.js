@@ -216,8 +216,11 @@ const BooksListPage = () => {
         {favorites.includes(book.id) ? '<3' : ''}
         <AddToFavorites id={book.id} onClick={() => {
             let newFavorites
-            if (favorites.includes(book.id)) {
+            if (favorites.includes(book.id)
+            ) {
                 newFavorites = favorites.filter(fav => fav !== book.id);
+               
+              
                
             } else {
                 newFavorites = [...favorites, book.id]

@@ -108,7 +108,8 @@ class Listings extends Component {
                                 newFavorites = [...this.state.favorites, listing.id]
                             }
                             localStorage.setItem('favorites', JSON.stringify(newFavorites))
-                            this.setState({ favorites: JSON.parse(localStorage.getItem("favorites")) })
+                            this.setState({ favorites: JSON.parse(localStorage.getItem("favorites")) 
+                                           })
 
 
                         }} />       {this.state.favorites.includes(listing.id) ? <img style={{width:"25px", height:"25px"}} src={heartFilled}></img>  : <img style={{width:"25px", height:"25px"}} src={heartEmpty}></img> }
