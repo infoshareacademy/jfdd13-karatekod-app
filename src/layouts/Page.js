@@ -18,7 +18,7 @@ const Page = () => {
             <Switch>
                 <Route path="/" exact 
                 render={() => (
-                    <HomePage /> 
+                    <Search/> 
                 )} />
                  <Route path="/statistics"  
                 render={() => (
@@ -46,10 +46,9 @@ const Page = () => {
                    <AddBooks/>
 
                 )} />
-                <Route path='/search'  
+                <Route path="/search"  
                 render={() => (
-                   <Search/>
-
+                    <Search/> 
                 )} />
 
                  <Route  

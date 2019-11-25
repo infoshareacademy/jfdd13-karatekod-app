@@ -7,6 +7,8 @@ import AddToFavorites from '../components/AddToFavorites'
 import SomeButtons from '../components/SomeButtons.js';
 import '../styles/SingleBook.css'
 import { tsPropertySignature } from '@babel/types';
+import star from '../images/star.png';
+
 
 export let books = (() => {
     let bookslist = localStorage.getItem("bookslist");
@@ -213,7 +215,7 @@ const BooksListPage = () => {
         <img src={book.imageUrl}/>
         <Book key={book.id} {...book} src={book.imageUrl}  />
         </Link>
-        {favorites.includes(book.id) ? '<3' : ''}
+        {favorites.includes(book.id) ? <img src={star}/> : ''}
         <AddToFavorites id={book.id} onClick={() => {
             let newFavorites
             if (favorites.includes(book.id)
