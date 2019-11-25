@@ -10,14 +10,14 @@ import styles from '../styles/SearchSection.module.css'
          super()
          this.state = {
             currentPage: 1,
-            booksPerPage: 5,
+            booksPerPage: 9,
             activePage:1
 
          }
          this.loopListings = this.loopListings.bind(this);
          this.handleClick= this.handleClick.bind(this)
-         this.handleClickNext = this.handleClickNext.bind(this)
-         this.handleClickPrev = this.handleClickPrev.bind(this)
+        //  this.handleClickNext = this.handleClickNext.bind(this)
+        //  this.handleClickPrev = this.handleClickPrev.bind(this)
          
      }
 
@@ -34,24 +34,24 @@ import styles from '../styles/SearchSection.module.css'
          })
          
      }
-     handleClickNext(event) {
-         const booksList=this.loopListings();
-         const nextPage = this.state.currentPage + 1
-            if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
-                this.setState ({
-                    currentPage: nextPage
-                })
-            }
-        }
-     handleClickPrev(event) {
-         if (this.state.currentPage > 1) {
-            const prevPage = this.state.currentPage - 1
+    //  handleClickNext(event) {
+    //      const booksList=this.loopListings();
+    //      const nextPage = this.state.currentPage + 1
+    //         if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
+    //             this.setState ({
+    //                 currentPage: nextPage
+    //             })
+    //         }
+    //     }
+    //  handleClickPrev(event) {
+    //      if (this.state.currentPage > 1) {
+    //         const prevPage = this.state.currentPage - 1
         
-            this.setState ({
-                currentPage: prevPage
-            })
-        }
-    }
+    //         this.setState ({
+    //             currentPage: prevPage
+    //         })
+    //     }
+    // }
     
 
      loopListings () {
@@ -149,11 +149,11 @@ import styles from '../styles/SearchSection.module.css'
                         
                 </div>
                 <div className = {styles.pagination}>
-                    <div className = {styles.paginationNav} onClick={this.handleClickPrev}>prev</div>
+                    {/* <div className = {styles.paginationNav} onClick={this.handleClickPrev}>prev</div> */}
                     <ul className = {styles.paginationPages}>
                         {renderPageNumbers}
                     </ul>
-                    <div className = {styles.paginationNav} onClick= {this.handleClickNext}>next</div>
+                    {/* <div className = {styles.paginationNav} onClick= {this.handleClickNext}>next</div> */}
                 </div>
 
             </>
