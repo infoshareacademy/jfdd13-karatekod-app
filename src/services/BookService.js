@@ -1,13 +1,12 @@
  import firebase from "../firebase"
- import uuid from 'uuid'
+
  
  export const addBooks = (title, autor, type, imageUrl, condition, description) =>{
      firebase
      .database()
      .ref("/booksList")
      .push({
-         id: uuid.v4(),
-         title,
+         title,                 // doesnt need uuid, firebase will create unique id for each book
          autor,
          type,
          imageUrl,
@@ -15,6 +14,8 @@
          description
      })
  };
+ 
+
  
  // this is an instance of firebase.database
  // this is reference to our database https://console.firebase.google.com/project/bookswapp-16613/database/booksList
