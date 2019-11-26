@@ -30,10 +30,8 @@ class AddBooks extends React.Component { // AddBooks component
         }
     }
 
-    addBook = (e) => {
-        e.preventDefault()
+    addBook = () => {
         const newBook = {
-            id: uuid.v4(),
             title: this.state.newTitle,
             autor: this.state.newAutor,
             type: this.state.newType,
@@ -71,6 +69,7 @@ class AddBooks extends React.Component { // AddBooks component
                 booksList: [...this.state.booksList, newBook],
                 ...initialState
             })
+            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.newImageUrl, this.state.newCondition, this.state.newDescription)
         }
     };
 
@@ -170,7 +169,7 @@ class AddBooks extends React.Component { // AddBooks component
 
                     <button className={styles.button} onClick={(e) => {
                             this.addBook(e)
-                            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.newImageUrl, this.state.newCondition, this.state.newDescription)
+                            
                         
 
                     }}>
