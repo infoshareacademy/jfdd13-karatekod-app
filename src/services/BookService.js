@@ -15,8 +15,29 @@
      })
  };
  
-
+const prepareBooks = data =>{}  // prepare received data format for operations
  
+
+export const watchBooks = onSuccess => {        // watch for new books
+    return firebase
+    .database()
+    .ref("/booksList")
+    .on('value', dataSnapshot=>{
+    const books = dataSnapshot.val();
+    onSuccess(prepareBooks(books);)
+});
+};
+
+export const stopBooks = () => {        // stop watching for new books
+    firebase        
+    .database()
+    .ref("/booksList")
+    .off()
+}
+
+
+
+
  // this is an instance of firebase.database
  // this is reference to our database https://console.firebase.google.com/project/bookswapp-16613/database/booksList
 
