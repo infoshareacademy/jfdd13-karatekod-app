@@ -178,10 +178,6 @@ class AddBooks extends React.Component { // AddBooks component
             </button>
 
                 </form>
-                <button onClick={() => addBookFire()}>addBookFire</button>
-                <button onClick={() => fetchBooksFire()}>fetchBooksFire</button>
-                <button onClick={() => addBooksFirebase("Wielka Dupa", "Zajebisty autor", "dramat", "http://placekitten.com/140/190", 5, "super książka")}>addBooksFirebase</button>
-
             </div>
         )
     }
