@@ -3,6 +3,7 @@ import styles from "../styles/AddBooks.module.css"; // imports css styles
 import uuid from "uuid";
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
 import Popup from '../components/AddPopup'
+import {addBookFire, fetchBooksFire, addBooksFirebase} from '../services/BookService'
 
 const initialState = {
     newTitle: "",
@@ -176,6 +177,9 @@ class AddBooks extends React.Component { // AddBooks component
             </button>
 
                 </form>
+                <button onClick={()=>addBookFire()}>addBookFire</button>
+                <button onClick={()=>fetchBooksFire()}>fetchBooksFire</button>
+                <button onClick={()=>addBooksFirebase("Wielka Dupa", "Zajebisty autor", "dramat", "http://placekitten.com/140/190", 5, "super książka")}>addBooksFirebase</button>
 
             </div>
         )

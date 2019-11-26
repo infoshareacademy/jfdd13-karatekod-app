@@ -1,7 +1,7 @@
  import firebase from "../firebase"
 
- 
- export const addBooks = (title, autor, type, imageUrl, condition, description) =>{
+
+ export const addBooksFirebase = (title, autor, type, imageUrl, condition, description) =>{
      firebase
      .database()
      .ref("/booksList")
@@ -14,7 +14,7 @@
          description
      })
  };
- 
+ /*
 const prepareBooks = data =>{}  // prepare received data format for operations
  
 
@@ -35,7 +35,24 @@ export const stopBooks = () => {        // stop watching for new books
     .off()
 }
 
+*/
 
+export const fetchBooksFire = () => {
+    return fetch('https://bookswapp-16613.firebaseio.com/booksList.json')
+    .then(response=>response.json())
+    .then(res=>console.log(Object.entries(res)))
+}
+
+
+
+export const addBookFire = (title, autor, type, imageUrl, condition, description) => {
+
+    fetch('https://bookswapp-16613.firebaseio.com/booksList.json', {
+        method: 'POST',
+        body: JSON.stringify({ title: "Lord of the Rings: Fellowship of the Ring", autor: "J.R.R Tolkien", type: "fantasy", imageUrl: "http://placekitten.com/140/190", condition: 4, description: "one of the greatest fantasy books"})
+    });
+
+}
 
 
  // this is an instance of firebase.database
@@ -49,8 +66,7 @@ export const stopBooks = () => {        // stop watching for new books
 
 /*
 {
-    id: uuid.v4(),
-    title: "Metro 2033",
+    title: "Metro 69",
     autor: "Dmitry Glukhovsky",
     type: "fantasy",
     imageUrl: "http://placekitten.com/140/190",
