@@ -3,7 +3,8 @@ import styles from "../styles/AddBooks.module.css"; // imports css styles
 import uuid from "uuid";
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
 import Popup from '../components/AddPopup'
-import {addBookFire, fetchBooksFire, addBooksFirebase} from '../services/BookService'
+import { addBookFire, fetchBooksFire, addBooksFirebase } from '../services/BookService'
+import { thisExpression } from '@babel/types';
 
 const initialState = {
     newTitle: "",
@@ -66,7 +67,6 @@ class AddBooks extends React.Component { // AddBooks component
             })
             return
         } else {
-            alert(`You added "${this.state.newTitle}`)
             this.setState({
                 booksList: [...this.state.booksList, newBook],
                 ...initialState
@@ -154,7 +154,7 @@ class AddBooks extends React.Component { // AddBooks component
                         this.handleImageUrl(event.target.value);
                     }} />
 
-<label className={styles.label}>Condition*:</label>
+                    <label className={styles.label}>Condition*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
                         this.handleCondition(event.target.value);
                     }} name="genre">
@@ -166,20 +166,21 @@ class AddBooks extends React.Component { // AddBooks component
                     </select>
 
                     <label className={styles.label}>Description*:</label>
-                    <textarea value={newDescription} onChange={event=>{this.handleDescription(event.target.value)}} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder="Insert description of the book here" id="txtArea" rows="10" cols="40"></textarea>
+                    <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder="Insert description of the book here" id="txtArea" rows="10" cols="40"></textarea>
 
                     <button className={styles.button} onClick={(e) => {
-                        this.addBook(e);
-
+                            this.addBook(e)
+                            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.newImageUrl, this.state.newCondition, this.state.newDescription)
+                        
 
                     }}>
                         ADD TO BOOKSWAPP
             </button>
 
                 </form>
-                <button onClick={()=>addBookFire()}>addBookFire</button>
-                <button onClick={()=>fetchBooksFire()}>fetchBooksFire</button>
-                <button onClick={()=>addBooksFirebase("Wielka Dupa", "Zajebisty autor", "dramat", "http://placekitten.com/140/190", 5, "super książka")}>addBooksFirebase</button>
+                <button onClick={() => addBookFire()}>addBookFire</button>
+                <button onClick={() => fetchBooksFire()}>fetchBooksFire</button>
+                <button onClick={() => addBooksFirebase("Wielka Dupa", "Zajebisty autor", "dramat", "http://placekitten.com/140/190", 5, "super książka")}>addBooksFirebase</button>
 
             </div>
         )
