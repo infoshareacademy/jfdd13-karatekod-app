@@ -22,7 +22,7 @@ class AdminPage extends React.Component {
                     {this.state.favorites.map(item =>{
                     return (
                         <div>
-                            <Link style={{color:'black'}} to={`/book/${this.state.favorites}`}>fav</Link>
+                            <Link style={{color:'black'}} to={`/book/${item}`}>fav</Link>
                         </div>
                         )
                     })}          
