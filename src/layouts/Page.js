@@ -4,7 +4,7 @@ import HomePage from '../pages/HomePage';
 import BooksListPage from '../pages/BooksListPage';
 import Statistics from '../pages/Statistics';
 import AdminPage from '../pages/AdminPage';
-import LoginPage from '../pages/LoginPage';
+import Login from '../components/Login';
 import ErrorPage from '../pages/ErrorPage';
 import BookPage from '../pages/BookPage';
 import AddBooks from '../pages/AddBooks'
@@ -54,7 +54,7 @@ const Page = () => {
 
                 <Route path= "/login" exact 
                 render={() => (
-                    <LoginPage/> 
+                    <Login/> 
                 )} />
                 
                  <Route  
