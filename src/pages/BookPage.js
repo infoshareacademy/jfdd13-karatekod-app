@@ -3,33 +3,16 @@ import {Link, useParams} from 'react-router-dom';
 import styles from "../styles/BookPage.module.css"; // imports css styles
 import { watchBooks, stopBooks } from '../services/BookService'
 
-let bookslist = JSON.parse(localStorage.getItem("bookslist"))
-/*
-    // PART FOR GETTIN BOOKS FROM FIREBASE
-    const [booksFB, setBooksFB] = useState([]);
-    useEffect(() => {
-        watchBooks(booksFB => {
-          setBooksFB(booksFB);
-        });
-    
-        return () => {
-          stopBooks();
-        };
-      }, []);
-    //
-*/
-
-
 class BookPage extends React.Component{
     constructor(props){
         super(props)
         this.state={
-           bookslist:bookslist,
+           bookslist:[],
            id:this.props.match.params.id,
            book:""
         }
     }
-
+    // fetch books from firebase onmount
     componentDidMount(){
         watchBooks(bookslist => {
             this.setState({bookslist});
@@ -38,8 +21,8 @@ class BookPage extends React.Component{
           });
 
     }
+    // stop fetching books on unmount
     componentWillUnmount(){
-
         stopBooks();
     }
 
