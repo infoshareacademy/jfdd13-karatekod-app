@@ -37,23 +37,28 @@ class Login extends Component {
         return (
             <div>
                 {this.state.isSignedIn ? (
-                <div>Is isSignedIn</div>
-                ): (<>
-                    <div className={styles.login}>
-                    <div className={styles.container}>
-                    <h2>Log in to your account</h2>
-                    <form className={styles.form}>
-                        <label htmlFor="" className={styles.label}> <input className={styles.input} type="text" placeholder="email"/></label>
-                        <label htmlFor="" className={styles.label}> <input className={styles.input} type="password" placeholder="password"/></label>
-                        <button className={styles.button}>LOG IN</button>
-                    </form>
+                    <>
+                        <div>You are sign in</div>
+                        <button onClick = {()=>firebase.auth().signOut()}>Sign out</button>
+                        <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
+                    </>
+                ): (
+                    <>
+                        <div className={styles.login}>
+                        <div className={styles.container}>
+                            <h2>Log in to your account</h2>
+                            <form className={styles.form}>
+                                <label htmlFor="" className={styles.label}> <input className={styles.input} type="text" placeholder="email"/></label>
+                                <label htmlFor="" className={styles.label}> <input className={styles.input} type="password" placeholder="password"/></label>
+                                <button className={styles.button}>LOG IN</button>
+                            </form>
+                        </div>
+            
                     </div>
-        
-                </div>
-                <StyledFirebaseAuth 
-                uiConfig={this.uiConfig}
-                firebaseAuth= {firebase.auth()} 
-                />
+                    <StyledFirebaseAuth 
+                    uiConfig={this.uiConfig}
+                    firebaseAuth= {firebase.auth()} 
+                    />
                 </>
                 )}
             </div>
