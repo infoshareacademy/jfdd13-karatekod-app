@@ -109,7 +109,7 @@ export let books = (() => {
                 title: 'Sonety Krymskie',
                 autor: 'Mickiewicz Adam',                
                 type: 'drama',
-                Urlmage: 'https://m.media-amazon.com/images/I/71POgs4xodL._AC_UY218_ML3_.jpg',
+                imageUrl: 'https://m.media-amazon.com/images/I/71POgs4xodL._AC_UY218_ML3_.jpg',
                 condition: 4,
                 description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
             },        
