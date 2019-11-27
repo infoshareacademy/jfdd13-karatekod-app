@@ -29,8 +29,10 @@ class Login extends Component {
     componentDidMount = () => {
         
         firebase.auth().onAuthStateChanged(user => {
-            this.setState({isSignedIn: !!user})  //if the user is object set to tre if not false
+            this.setState({isSignedIn: !!user}) 
+            console.log(user)
         })
+        
     }
 
     render() {
@@ -41,6 +43,7 @@ class Login extends Component {
                         <div>You are sign in</div>
                         <button onClick = {()=>firebase.auth().signOut()}>Sign out</button>
                         <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
+                        <img src={firebase.auth().currentUser.photoURL}></img>
                     </>
                 ): (
                     <>
