@@ -21,7 +21,7 @@ class AdminPage extends React.Component {
                     return (
                         <div>                     
                             <Link style={{color:'black'}} to={`/book/${item}`}>
-                                fav
+                                favs
                             </Link>
                         </div> 
                         )
