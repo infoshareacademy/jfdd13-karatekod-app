@@ -8,6 +8,7 @@ import SomeButtons from '../components/SomeButtons.js';
 import '../styles/SingleBook.css'
 import { tsPropertySignature } from '@babel/types';
 import star from '../images/star.png';
+import {watchBooks} from '../services/BookService'
 
 
 export let books = (() => {
@@ -207,6 +208,9 @@ export let books = (() => {
 
 
 const BooksListPage = () => {
+
+
+
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
     const booksList = JSON.parse(localStorage.getItem("bookslist")).map(book => (
         <div className={styles.singleBook}>
