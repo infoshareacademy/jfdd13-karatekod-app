@@ -38,11 +38,18 @@ const prepareBooks = bookresponse => {
 export const watchBooks = onSuccess => {
     return firebase
       .database()
-      .ref("/messages")
+      .ref("/booksList")
       .on("value", dataSnapshot => {
         const books = dataSnapshot.val();
         onSuccess(prepareBooks(books));
       });
+  };
+
+  export const stopBooks = () => {
+    firebase
+      .database()
+      .ref("/booksList")
+      .off();
   };
 
 /*
