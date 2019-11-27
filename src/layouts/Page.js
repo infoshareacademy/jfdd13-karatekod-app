@@ -4,12 +4,13 @@ import HomePage from '../pages/HomePage';
 import BooksListPage from '../pages/BooksListPage';
 import Statistics from '../pages/Statistics';
 import AdminPage from '../pages/AdminPage';
-import LoginPage from '../pages/LoginPage';
+import Login from '../components/Login';
 import ErrorPage from '../pages/ErrorPage';
 import BookPage from '../pages/BookPage';
 import AddBooks from '../pages/AddBooks'
 import styles from '../styles/Page.module.css';
 import Search from '../pages/Search'
+// import LoginPage from '..pages/LoginPage'
 
 const Page = () => {
     return (
@@ -36,11 +37,11 @@ const Page = () => {
                 )} />
                  <Route path="/book/:id"  
                 component={BookPage} />
-                   <Route path="/login"  
+                   {/* <Route path="/login"  
                 render={() => (
                     <LoginPage/>
 
-                )} />
+                )} /> */}
                     <Route path='/addBooks'  
                 render={() => (
                    <AddBooks/>
@@ -51,11 +52,17 @@ const Page = () => {
                     <Search/> 
                 )} />
 
+                <Route path= "/login" exact 
+                render={() => (
+                    <Login/> 
+                )} />
+                
                  <Route  
                 render={() => (
                    <ErrorPage/>
 
                 )} />
+               
              </Switch>
         </div>
     )
