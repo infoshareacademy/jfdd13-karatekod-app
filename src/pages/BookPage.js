@@ -1,8 +1,24 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 import styles from "../styles/BookPage.module.css"; // imports css styles
+import { watchBooks, stopBooks } from '../services/BookService'
 
 let bookslist = JSON.parse(localStorage.getItem("bookslist"))
+/*
+    // PART FOR GETTIN BOOKS FROM FIREBASE
+    const [booksFB, setBooksFB] = useState([]);
+    useEffect(() => {
+        watchBooks(booksFB => {
+          setBooksFB(booksFB);
+        });
+    
+        return () => {
+          stopBooks();
+        };
+      }, []);
+    //
+*/
+
 
 class BookPage extends React.Component{
     constructor(props){
@@ -15,6 +31,7 @@ class BookPage extends React.Component{
     }
 
     componentDidMount(){
+
         const myBook = bookslist.find(book=>book.id===this.state.id)
         this.setState({book:myBook})
         console.log(myBook)

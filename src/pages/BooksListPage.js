@@ -220,15 +220,16 @@ const BooksListPage = () => {
           stopBooks();
         };
       }, []);
+
     //
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
     
     //PART FOR RENDERING BOOKS FROM FIREBASE
     const booksList = booksFB.map(book => (
-        <div className={styles.singleBook}>
+        <div key={book.id} className={styles.singleBook}>
         <Link to={`/book/${book.id}`}>
         <img src={book.imageUrl}/>
-        <Book key={book.id} {...book} src={book.imageUrl}  />
+        <Book {...book} src={book.imageUrl}  />
         </Link>
     
     
