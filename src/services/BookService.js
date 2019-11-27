@@ -25,34 +25,6 @@ export const addBooksFirebase = (title, autor, type, imageUrl, condition, descri
 
 //SERVICE FOR GETTING ALL BOOKS FROM DATABASE ON GOOGLE FIREBASE
 
-
-
-
-
-
-
-
-let bookresponse =
-{
-    "-LudJ-WXzY_CnAn3VgZz": {
-        "autor": "J.R.R Tolkien",
-        "condition": 4,
-        "description": "one of the greatest fantasy books",
-        "imageUrl": "http://placekitten.com/140/190",
-        "title": "Lord of the Rings: Fellowship of the Ring",
-        "type": "fantasy"
-    },
-    "-LudJ0UjP1smTM6xcdOg": {
-        "autor": "J.R.R Tolkien",
-        "condition": 4,
-        "description": "one of the greatest fantasy books",
-        "imageUrl": "http://placekitten.com/140/190",
-        "title": "Lord of the Rings: Fellowship of the Ring",
-        "type": "fantasy"
-    }
-}
-
-
 const prepareBooks = bookresponse => {
     return Object.entries(bookresponse).map(arr => {
         const [id, value] = arr;
@@ -72,6 +44,30 @@ export const watchBooks = onSuccess => {
         onSuccess(prepareBooks(books));
       });
   };
+
+/*
+let bookresponse =
+{
+    "-LudJ-WXzY_CnAn3VgZz": {
+        "autor": "J.R.R Tolkien",
+        "condition": 4,
+        "description": "one of the greatest fantasy books",
+        "imageUrl": "http://placekitten.com/140/190",
+        "title": "Lord of the Rings: Fellowship of the Ring",
+        "type": "fantasy"
+    },
+    "-LudJ0UjP1smTM6xcdOg": {
+        "autor": "J.R.R Tolkien",
+        "condition": 4,
+        "description": "one of the greatest fantasy books",
+        "imageUrl": "http://placekitten.com/140/190",
+        "title": "Lord of the Rings: Fellowship of the Ring",
+        "type": "fantasy"
+    }
+}
+*/
+
+
 
 /*
 
