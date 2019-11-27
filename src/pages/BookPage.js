@@ -31,11 +31,16 @@ class BookPage extends React.Component{
     }
 
     componentDidMount(){
+        watchBooks(bookslist => {
+            this.setState({bookslist});
+            const myBook = this.state.bookslist.find(book=>book.id===this.state.id)
+            this.setState({book:myBook})
+          });
 
-        const myBook = bookslist.find(book=>book.id===this.state.id)
-        this.setState({book:myBook})
-        console.log(myBook)
-        console.log(this.state.myBook)
+    }
+    componentWillUnmount(){
+
+        stopBooks();
     }
 
     render(){

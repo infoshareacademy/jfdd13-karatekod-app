@@ -221,6 +221,7 @@ const BooksListPage = () => {
         };
       }, []);
 
+
     //
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
     
