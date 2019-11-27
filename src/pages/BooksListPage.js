@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Book from '../components/Book.js';
 import { Link } from 'react-router-dom';
 import uuid from "uuid";
@@ -209,13 +209,30 @@ export let books = (() => {
 
 const BooksListPage = () => {
 
-
-
+    // PART FOR GETTIN BOOKS FROM FIREBASE
+    const [booksFB, setBooksFB] = useState([]);
+    useEffect(() => {
+        watchBooks(booksFB => {
+          setBooksFB(booksFB);
+        });
+    
+        return () => {
+          stopBooks();
+        };
+      }, []);
+    //
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
-    const booksList = JSON.parse(localStorage.getItem("bookslist")).map(book => (
+    
+    //PART FOR RENDERING BOOKS FROM FIREBASE
+    const booksList = booksFB.map(book => (
         <div className={styles.singleBook}>
-
         <Link to={`/book/${book.id}`}>
+        <img src={book.imageUrl}/>
+        <Book key={book.id} {...book} src={book.imageUrl}  />
+        </Link>
+    
+    
+        {/* <Link to={`/book/${book.id}`}>
         <img src={book.imageUrl}/>
         <Book key={book.id} {...book} src={book.imageUrl}  />
         </Link>
@@ -231,7 +248,8 @@ const BooksListPage = () => {
             setFavorites(newFavorites)
             localStorage.setItem('favorites', JSON.stringify(newFavorites))
 
-        }}/>
+        }}/> */}
+        
         </div>
 
 
