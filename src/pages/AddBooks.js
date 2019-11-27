@@ -2,8 +2,7 @@ import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
 import uuid from "uuid";
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
-import Popup from '../components/AddPopup'
-import { addBookFire, fetchBooksFire, addBooksFirebase, uploadAllBooks } from '../services/BookService'
+import {  addBooksFirebase, watchBooks, stopBooks } from '../services/BookService'
 import { thisExpression } from '@babel/types';
 
 const initialState = {
