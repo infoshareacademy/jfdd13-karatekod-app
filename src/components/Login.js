@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import styles from '../styles/Login.module.css'
+import fire from '../firebase'
 
 
-firebase.initializeApp({
-    apiKey: 'AIzaSyDMJhPvjpApYZzvwxO2TPJ3Sy3k6vv6GFo',
-    authDomain: 'bookswapp-16613.firebaseapp.com'
-})
 
 
 
