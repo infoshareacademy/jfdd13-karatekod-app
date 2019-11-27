@@ -8,7 +8,7 @@ import SomeButtons from '../components/SomeButtons.js';
 import '../styles/SingleBook.css'
 import { tsPropertySignature } from '@babel/types';
 import star from '../images/star.png';
-import {watchBooks, stopBooks} from '../services/BookService'
+import { watchBooks, stopBooks } from '../services/BookService'
 
 
 export let books = (() => {
