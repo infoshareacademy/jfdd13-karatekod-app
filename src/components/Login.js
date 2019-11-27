@@ -2,13 +2,17 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 
+firebase.initializeApp({
+    apiKey: 'AIzaSyDMJhPvjpApYZzvwxO2TPJ3Sy3k6vv6GFo',
+    authDomain: 'bookswapp-16613.firebaseapp.com'
+})
 
-import React, { Component } from 'react'
+
 
 class Login extends Component {
 
 
-    state = {isSignedIn = false}
+    state = {isSignedIn : false}
     uiConfig = {
         signedInFlow: "popup",
         signInOptions: [
@@ -21,11 +25,7 @@ class Login extends Component {
         }
     }
     componentDidMount = () => {
-        firebase.initializeApp({
-            apiKey: 'AIzaSyDMJhPvjpApYZzvwxO2TPJ3Sy3k6vv6GFo',
-            authDomain: 'bookswapp-16613.firebaseapp.com'
-        })
-
+        
         firebase.auth().onAuthStateChanged(user => {
             this.setState({isSignedIn: !!user})  //if the user is object set to tre if not false
         })

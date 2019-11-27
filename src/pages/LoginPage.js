@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from '../styles/Login.module.css'
+import Login from '../components/Login'
+
 
 
 const LoginPage = () => {
@@ -13,6 +15,8 @@ const LoginPage = () => {
                 <button className={styles.button}>LOG IN</button>
             </form>
             </div>
+            <div>or sign-in with :</div>
+            <Login />
 
         </div>
     )
