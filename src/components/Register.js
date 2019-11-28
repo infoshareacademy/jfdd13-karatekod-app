@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from '../styles/Login.module.css';
 import {NavLink} from 'react-router-dom'
 
-const Login = props => {
+const Register = props => {
     console.log(props);
     // const [email, setEmail] = useState("");
     // const [password, setPassword] = useState("");
@@ -10,13 +10,13 @@ const Login = props => {
     return (
         <div className={styles.login}>
             <div className={styles.container}>
-                <h2>Log in to your account</h2>
+                <h2>Register</h2>
                 <form className={styles.form}>
-                    <label htmlFor="" className={styles.label}> <input className={styles.input} type="text" placeholder="email"/></label>
+                    <label htmlFor="" className={styles.label}> <input className={styles.input} type="email" placeholder="email"/></label>
                     <label htmlFor="" className={styles.label}> <input className={styles.input} type="password" placeholder="password"/></label>
-                    <button className={styles.button}>LOG IN</button>
-                    <NavLink to="/register">
-                        <button className={styles.button}>New user? REGISTER</button>
+                    <button className={styles.button}>REGISTER</button>
+                    <NavLink to="/login">
+                        <button className={styles.button}>Existing user? LOG IN</button>
                     </NavLink>
                 </form>
             </div>
@@ -24,4 +24,4 @@ const Login = props => {
     )
 }
 
-export default Login
+export default Register
