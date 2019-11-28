@@ -56,12 +56,6 @@ const Page = () => {
                 render={() => (
                     <Login/> 
                 )} />
-
-
-<Route path= "/booklist" exact 
-                render={() => (
-                    <BooksListPage/> 
-                )} />
                 
                  <Route  
                 render={() => (
