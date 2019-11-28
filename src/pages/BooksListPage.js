@@ -182,10 +182,7 @@ export let books = (() => {
                 title: 'Poetry-Collection',
                 description: `You have to allow the paint to break to make it beautiful. It takes dark in order to show light. We'll play with clouds today. This is a happy place, little squirrels live here and play. Put light against light - you have nothing. Put dark against dark - you have nothing. It's the contrast of light and dark that each give the other one meaning. Making all those little fluffies that live in the clouds.`
                 
-            },
-        
-            
-        
+            },   
             {   id: uuid.v4(),
                 autor: 'Kristeva Julia',
                 type: 'science',
@@ -198,16 +195,10 @@ export let books = (() => {
         localStorage.setItem('bookslist', JSON.stringify(bookslist));
     }
     return JSON.parse(localStorage.getItem("bookslist"))
-
-
 })()
 
-
-
-
-
-
 const BooksListPage = () => {
+
 
     // PART FOR GETTIN BOOKS FROM FIREBASE
     const [booksFB, setBooksFB] = useState([]);
@@ -252,25 +243,18 @@ const BooksListPage = () => {
 
         }}/> */}
         
+
         </div>
-
-
-
-
     ))
-
 
     return (
         <div className={styles.books}>
             <h2>List of books</h2>
             <div className={styles.list}>{booksList}</div>
-
         </div>
     );
 }
 
-
 export let booksList = JSON.parse(localStorage.getItem("bookslist"))
-
 export default BooksListPage
 

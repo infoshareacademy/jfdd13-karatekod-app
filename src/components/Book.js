@@ -1,42 +1,37 @@
 import React from 'react';
-import AddToFavorites from './AddToFavorites'
-
-
-
-
 
 const Book = (props) => {
     return (
         <div style={{
-            margin: '20px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}>
-            <div style={{
-                fontSize: '18px',
-                fontWeight: 'bold'
-            }}>{props.title}</div>
-            <div style={{
-                fontSize: '16px',
-                fontWeight: 'bold'
-            }}>{props.autor}</div>
-            <div style={{
-                fontSize: '16px',
-                fontWeight: 'bold'
-            }}>
-                {props.type}</div>
+                margin: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                    }}>
                 <div style={{
-                fontSize: '16px',
-                fontWeight: 'bold'
-            }}>
-                <div>
-                condition: {props.condition}
-                </div>
-                </div>
-                <div>
-</div>
+                    fontSize: '18px',
+                    fontWeight: 'bold'
+                    }}>{props.title}</div>
+                <div style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                    }}>{props.autor}</div>
+                <div style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                    }}>
+                    {props.type}</div>
+                    <div style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                    }}>
+                    <div>
+                    condition: {props.condition}
+                    </div>
+                    </div>
+                    <div>
+            </div>
 
         </div>
         

@@ -9,8 +9,5 @@ render(){
 }
 }
 
+
 export default AddToFavorites
-
-
-
-
