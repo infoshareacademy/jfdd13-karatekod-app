@@ -1,6 +1,8 @@
 .bookCard {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 55vh;
     border-radius: 20px;
 }

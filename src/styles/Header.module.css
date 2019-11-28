@@ -13,3 +13,14 @@
     transform: translate(-50%, -50%);
     max-width: 100%;
 } 
+
+
+@media screen and (max-width: 600px) {
+    .header{
+        height: 20vh;
+    }
+
+    .headerImg{
+        width: 100vw
+    }
+}

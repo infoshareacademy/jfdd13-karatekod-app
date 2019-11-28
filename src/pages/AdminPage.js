@@ -8,7 +8,7 @@ class AdminPage extends React.Component {
     constructor(props){
     super(props)
         this.state={
-            favorites: JSON.parse(localStorage.getItem('favorites')),
+            favorites: JSON.parse(localStorage.getItem('favorites') || []),
 
         }
             
