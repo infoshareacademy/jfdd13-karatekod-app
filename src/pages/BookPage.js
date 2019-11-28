@@ -1,24 +1,29 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 import styles from "../styles/BookPage.module.css"; // imports css styles
-
-let bookslist = JSON.parse(localStorage.getItem("bookslist"))
+import { watchBooks, stopBooks } from '../services/BookService'
 
 class BookPage extends React.Component{
     constructor(props){
         super(props)
         this.state={
-           bookslist:bookslist,
+           bookslist:[],
            id:this.props.match.params.id,
            book:""
         }
     }
-
+    // fetch books from firebase onmount
     componentDidMount(){
-        const myBook = bookslist.find(book=>book.id===this.state.id)
-        this.setState({book:myBook})
-        console.log(myBook)
-        console.log(this.state.myBook)
+        watchBooks(bookslist => {
+            this.setState({bookslist});
+            const myBook = this.state.bookslist.find(book=>book.id===this.state.id)
+            this.setState({book:myBook})
+          });
+
+    }
+    // stop fetching books on unmount
+    componentWillUnmount(){
+        stopBooks();
     }
 
     render(){
