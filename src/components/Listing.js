@@ -4,6 +4,9 @@ import styles from '../styles/SearchSection.module.css'
 import AddToFavorites from '../components/AddToFavorites'
 import heartFilled from '../images/heart2.png'
 import heartEmpty from '../images/heart1.png'
+import {addFavFirebase} from '../services/FavService'
+import firebase from 'firebase'
+
 /*const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
 
 <AddToFavorites id={listing.id} onClick={() => {
@@ -26,7 +29,8 @@ class Listings extends Component {
         this.state = {
             currentPage: 1,
             booksPerPage: 5,
-            favorites: (JSON.parse(localStorage.getItem("favorites")) || [])
+            favorites: (JSON.parse(localStorage.getItem("favorites")) || []),
+            favs: {}
         }
         this.loopListings = this.loopListings.bind(this);
         this.handleClick = this.handleClick.bind(this)
@@ -59,6 +63,24 @@ class Listings extends Component {
                 currentPage: prevPage
             })
         }
+    }
+
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged(user => {
+            this.setState({ user })
+            if (user) {
+                firebase.database().ref('favorites').child(user.uid).on('value', value => {
+                    this.setState({
+                        favs: value.val()
+                    })
+                })
+            }
+        })
+       
+    }
+
+    componentWillUnmount() {
+        firebase.database().ref('favorites').child(this.state.user.uid).off('value')
     }
 
 
@@ -99,21 +121,15 @@ class Listings extends Component {
                                     <p className={styles.location}>condition: {listing.condition}</p>
                                 </div>
                                 <div className={styles.like}>
-                                <AddToFavorites id={listing.id} isFavorites = {this.state.favorites.includes(listing.id)} onClick={() => {
-                                    let newFavorites;
-                                    const isFavorites = this.state.favorites.includes(listing.id);
-                                    if (isFavorites) {
-                                        newFavorites = this.state.favorites.filter(fav => fav !== listing.id);
-
-                                    } else {
-                                        newFavorites = [...this.state.favorites, listing.id]
-                                    }
-                                    localStorage.setItem('favorites', JSON.stringify(newFavorites))
-                                    this.setState({ favorites: JSON.parse(localStorage.getItem("favorites"))
-                                        })
-                                    }} />
+                                <AddToFavorites id={listing.id} isFavorites = {this.state.favs[listing.id]}
+                                 onClick={() => {
+                                    addFavFirebase(listing.id, firebase.auth().currentUser)
+                                    
+                                   
+                                        }
+                                    } />
                         
-                                        {this.state.favorites.includes(listing.id) ? <img style={{width:"25px", height:"25px"}} src={heartFilled}></img>  : <img style={{width:"25px", height:"25px"}} src={heartEmpty}></img> }
+                                        {this.state.favs[listing.id] ? <img style={{width:"25px", height:"25px"}} src={heartFilled}></img>  : <img style={{width:"25px", height:"25px"}} src={heartEmpty}></img> }
                                 
                                 </div>
                             </div>
