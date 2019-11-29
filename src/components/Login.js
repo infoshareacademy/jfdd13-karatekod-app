@@ -20,7 +20,13 @@ class Login extends Component {
             firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         callbacks: {
-            signInSuccess: () => false
+
+            signInSuccess: (auth) => {
+                firebase.database().ref('/users/' + auth.uid).transaction(data => {
+                    console.log(data);
+                    return {name: 'mike'}
+                })
+            }
         }
     }
     componentDidMount = () => {
