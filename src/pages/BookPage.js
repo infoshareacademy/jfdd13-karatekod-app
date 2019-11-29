@@ -15,11 +15,7 @@ class BookPage extends React.Component{
     // fetch books from firebase onmount
     componentDidMount(){
         watchBooks(bookslist => {
-            this.setState({bookslist});
-            const myBook = this.state.bookslist.find(book=>book.id===this.state.id)
-            this.setState({book:myBook})
-          });
-
+            this.setState({book:bookslist.find(book=>book.id===this.state.id)})})
     }
     // stop fetching books on unmount
     componentWillUnmount(){
