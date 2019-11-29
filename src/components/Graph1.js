@@ -10,9 +10,11 @@ class Graph1 extends React.Component {
   
       this.state = {
         options: {
+         
           chart: {
             id: "basic-bar"
           },
+         
           xaxis: {
             categories: ['28.10-03.11', '04.11-10.11', '11.11-17.11', '18.11-today']
           },
@@ -26,6 +28,7 @@ class Graph1 extends React.Component {
             data: [12053, 18502, 35645, 50253]
           }
         ]
+      
       };
     }
   

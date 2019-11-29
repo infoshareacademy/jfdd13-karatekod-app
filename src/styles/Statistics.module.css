@@ -28,3 +28,19 @@ p{
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 600px) {
+    .graphs{
+        max-width: 80%
+    }
+    .graph1,
+    .graph2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100px
+        
+    }
+
+}
