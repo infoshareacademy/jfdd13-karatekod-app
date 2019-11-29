@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <div className={styles.app}>
-          <Header className={styles.header} />
+          {/* <Header className={styles.header} /> */}
           
           <main>
             <aside>

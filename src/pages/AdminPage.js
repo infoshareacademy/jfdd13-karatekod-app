@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import styles from "../styles/AdminPage.module.css"; 
 
 
 class AdminPage extends React.Component {
@@ -15,7 +15,7 @@ class AdminPage extends React.Component {
     }
         render(){
         return (
-            <div>
+            <div className={styles.admin}>
                 <h3>Welcome to BookSwap App!</h3>
                 <div>Favorites: 
                     

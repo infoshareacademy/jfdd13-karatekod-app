@@ -17,10 +17,10 @@
 
 @media screen and (max-width: 600px) {
     .header{
-        height: 20vh;
+        display: none
     }
 
-    .headerImg{
+    /* .headerImg{
         width: 100vw
-    }
+    } */
 }

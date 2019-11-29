@@ -93,33 +93,29 @@ select {
 }
 
 @media screen and (max-width: 600px) {
+    h1{
+        width: 90%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
     .wrap{
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .form{
-        width: 90%
-    }
-
-    .button{
-        width: 90%
-    }
-
-    .inputError{
-       width: 90%
-    }
-
-    .input{
-        width: 90%
-    }
-
-    .dropdown{
-        width: 90%
-    }
-
+    .form,
+    .button,
+    .inputError,
+    .input,
+    .dropdown,
     .textarea{
         width: 90%
     }
+
 }
