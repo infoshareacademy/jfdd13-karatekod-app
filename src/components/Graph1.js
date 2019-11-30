@@ -34,13 +34,17 @@ class Graph1 extends React.Component {
         this.setState({userNumber:users})
       });
     }
+
+    componentWillUnmount(){
+      stopUsers();
+    }
   
     render() {
       return (
         <div className="app">
           <div className="row">
             <div className="mixed-chart">
-              <h1>BookSwapp has <b style={{color: '#c2185b'}}>{this.state.userNumber}</b> registered users</h1>
+              {this.state.userNumber!==""?<h1>BookSwapp has <b style={{color: '#c2185b'}}>{this.state.userNumber}</b> registered users</h1>:""}
               <Chart
                 options={this.state.options}
                 series={this.state.series}
