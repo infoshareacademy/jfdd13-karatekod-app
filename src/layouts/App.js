@@ -7,10 +7,12 @@ import Footer from './Footer';
 import Page from './Page';
 import SearchBar from './SearchBar';
 import SomeButtons from '../components/SomeButtons'
+import Secure from '../components/Secure'
 
 
 function App() {
   return (
+    <Secure>
     <Router>
       <div className={styles.app}>
           <Header className={styles.header} />
@@ -25,6 +27,7 @@ function App() {
           <SomeButtons />
       </div>
     </Router>
+    </Secure>
   );
 }
 
