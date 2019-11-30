@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from "react-apexcharts";
-import { watchBooks } from "../services/BookService"
+import { watchBooks, stopBooks } from "../services/BookService"
 
 class Graph2 extends React.Component {
   constructor(props) {
@@ -39,6 +39,10 @@ class Graph2 extends React.Component {
       })
         this.setState({series:Object.values(myTypes)})       
     });
+  }
+
+  componentWillUnmount(){
+    stopBooks();
   }
 
   render() {

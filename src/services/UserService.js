@@ -13,7 +13,7 @@ export const watchUsers = onSuccess => {    // service for watching users
       .ref("/users")
       .on("value", dataSnapshot => {
         const users = dataSnapshot.val();
-        onSuccess(prepareBooks(users));
+        onSuccess(prepareUsersCount(users));
       });
   };
 
