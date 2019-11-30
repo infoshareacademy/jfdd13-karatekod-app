@@ -2,10 +2,6 @@ import React from 'react';
 import Graph1  from "../components/Graph1";
 import Graph2  from "../components/Graph2";
 import styles from "../styles/Statistics.module.css"
-import {addBooksFirebase} from "../services/BookService"
-
-
-
 
 const Statistics = () => {
     return(
@@ -24,4 +20,4 @@ const Statistics = () => {
     )
 }
   
-  export default Statistics;
+export default Statistics;
