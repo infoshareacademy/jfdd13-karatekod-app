@@ -29,7 +29,7 @@ class Listings extends Component {
         this.state = {
             currentPage: 1,
             booksPerPage: 5,
-            favorites: (JSON.parse(localStorage.getItem("favorites")) || []),
+            // favorites: (JSON.parse(localStorage.getItem("favorites")) || []),
             favs: {}
         }
         this.loopListings = this.loopListings.bind(this);
@@ -71,7 +71,7 @@ class Listings extends Component {
             if (user) {
                 firebase.database().ref('favorites').child(user.uid).on('value', value => {
                     this.setState({
-                        favs: value.val()
+                        favs: value.val() || {}
                     })
                 })
             }
