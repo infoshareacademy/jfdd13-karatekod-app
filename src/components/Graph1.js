@@ -51,9 +51,7 @@ class Graph1 extends React.Component {
                 type="bar"
                 width="700"
               />
-
             </div>
-
         </div>       
          </div>
       );
