@@ -16,13 +16,6 @@ export const addBooksFirebase = (title, autor, type, imageUrl, condition, descri
         })
 };
 
-
-
-
-
-
-
-
 //SERVICE FOR GETTING ALL BOOKS FROM DATABASE ON GOOGLE FIREBASE
 
 const prepareBooks = bookresponse => {

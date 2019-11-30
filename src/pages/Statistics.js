@@ -2,6 +2,7 @@ import React from 'react';
 import Graph1  from "../components/Graph1";
 import Graph2  from "../components/Graph2";
 import styles from "../styles/Statistics.module.css"
+import {addBooksFirebase} from "../services/BookService"
 
 
 
@@ -19,6 +20,7 @@ const Statistics = () => {
                 <p> This pie chart illustrates number of book types avaliable to swap in %. Fantasy is definitely favorite Book Swappers book genre.
                     Find out which type is your favorite!</p>
             </div>
+            <p></p>
         </div>
     )
 }
