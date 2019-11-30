@@ -2,15 +2,7 @@ import React from 'react';
 import Chart from "react-apexcharts";
 import { watchBooks } from "../services/BookService"
 
-
-
-
-
-
 class Graph2 extends React.Component {
-
-
-
   constructor(props) {
     super(props);
 
@@ -50,7 +42,6 @@ class Graph2 extends React.Component {
   }
 
   render() {
-
     return (
       <div className="donut">
         <Chart options={this.state.options} series={this.state.series} colors={this.state.colors} type="donut" width="600" />
