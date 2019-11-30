@@ -49,10 +49,6 @@ class Graph2 extends React.Component {
     });
   }
 
-    componentWillUnmount(){
-      console.log(this.state)
-    }
-
   render() {
 
     return (
