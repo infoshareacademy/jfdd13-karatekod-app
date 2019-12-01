@@ -51,3 +51,16 @@
 }
 
 
+.loginGrid {
+display: flex;
+max-width: 80%;
+justify-content: space-between;
+margin: auto;
+min-height: 65vh;
+}
+
+.loginBox {
+
+}
+
+

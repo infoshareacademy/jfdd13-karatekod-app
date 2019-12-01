@@ -12,22 +12,23 @@ import Secure from '../components/Secure'
 
 function App() {
   return (
-    <Secure>
+   
     <Router>
       <div className={styles.app}>
           <Header className={styles.header} />
-          
+           <Secure>
           <main>
             <aside>
               <Navigation className={styles.navigation}/>
             </aside>
               <Page className={styles.page}/>
           </main>
+          </Secure>
           <Footer className={styles.footer}/>
           <SomeButtons />
       </div>
     </Router>
-    </Secure>
+    
   );
 }
 

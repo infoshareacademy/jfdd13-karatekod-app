@@ -52,13 +52,24 @@ class Login extends Component {
                         <img src={firebase.auth().currentUser.photoURL}></img>
                     </>
                 ): (
-                    <>
+
+
+
+                <div className = {styles.loginGrid}>
+                
+                <div>basic information</div>
+                <div className={styles.loginBox}>
                         
                     <StyledFirebaseAuth 
                     uiConfig={this.uiConfig}
                     firebaseAuth= {firebase.auth()} 
                     />
-                </>
+                </div>
+                
+                </div>
+                
+                
+                
                 )}
             </div>
         )
