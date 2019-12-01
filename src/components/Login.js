@@ -23,8 +23,11 @@ class Login extends Component {
 
             signInSuccess: (auth) => {
                 firebase.database().ref('/users/' + auth.uid).transaction(data => {
-                    console.log(data);
-                    return {name: 'mike'}
+                    console.log('data ',data);
+                    return {
+                        name: firebase.auth().currentUser.displayName,
+                        created: firebase.auth().currentUser.metadata.creationTime,
+                        lastSingIn: firebase.auth().currentUser.metadata.lastSignInTime}
                 })
             }
         }
