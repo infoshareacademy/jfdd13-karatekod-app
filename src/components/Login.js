@@ -61,9 +61,9 @@ class Login extends Component {
                 <div className = {styles.loginGrid}>
                 
                     
-                    <div className = {styles.logoSection}>
-                        <img src={logo} width='60px'/>
-                        <img src={logoText} width='200px'/>
+                    <div className = {styles.logoSection} >
+                        <img src={logo} className={styles.logo} width="15%"/>
+                        <img src={logoText} className={styles.logoText} width="100%"/>
 
 
                     </div>
