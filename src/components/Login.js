@@ -62,10 +62,15 @@ class Login extends Component {
                 
                     
                     <div className = {styles.logoSection} >
-                        <img src={logo} className={styles.logo} width="15%"/>
-                        <img src={logoText} className={styles.logoText} width="100%"/>
+                       <div className={styles.logo}> <img src={logo}  width="100%"/> </div>
+                      <div className={styles.logoText}>  <img src={logoText}  width="100%"/> </div>
 
 
+                    </div>
+                    <div className={styles.loginDesc}>
+                        Welcome to the world, where your books gain second life. Join the society, where people
+                           share experience through the stories they have red. It's easy like one (Sign in), two
+                           (upload your books), and three (find books to swap)
                     </div>
                     
                     <div className={styles.loginBox}>                            

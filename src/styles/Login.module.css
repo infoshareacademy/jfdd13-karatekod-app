@@ -54,12 +54,18 @@
 .loginGrid {
 display: grid;
 max-width: 80%;
-/* justify-content: center;
-align-items: center; */
+padding-top: 60px;
+padding-bottom: 40px;
 margin: auto;
 min-height: 65vh;
 grid-template-areas: 
 "logo box"
+". box"
+"desc box"
+"desc box"
+"desc box"
+"desc box"
+"desc box"
 "desc box"
 
 }
@@ -75,13 +81,18 @@ grid-area: box;
 .logoSection {
 grid-area: logo;
 display: flex;
+max-height: 50px;
+justify-content: center;
 }
 .logo {
+    width: 10%
     
-    width:15%;
 }
 .logoText {
-    width: 75%;
+   width: 70%
+}
+.loginDesc {
+    grid-area: desc;
 }
 
 
