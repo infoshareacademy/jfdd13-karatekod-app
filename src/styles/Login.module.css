@@ -60,7 +60,9 @@ min-height: 65vh;
 }
 
 .loginBox {
-
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 

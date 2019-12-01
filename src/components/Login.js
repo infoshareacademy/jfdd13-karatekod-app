@@ -3,6 +3,9 @@ import firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import styles from '../styles/Login.module.css'
 import fire from '../firebase'
+import logoText from '../images/logo.png'
+import logo from '../images/logopic.png'
+
 
 
 
@@ -57,14 +60,20 @@ class Login extends Component {
 
                 <div className = {styles.loginGrid}>
                 
-                <div>basic information</div>
-                <div className={styles.loginBox}>
-                        
-                    <StyledFirebaseAuth 
-                    uiConfig={this.uiConfig}
-                    firebaseAuth= {firebase.auth()} 
-                    />
-                </div>
+                    
+                    <div className = {styles.logoSection}>
+                        <img src={logo} width='60px'/>
+                        <img src={logoText} width='200px'/>
+
+
+                    </div>
+                    
+                    <div className={styles.loginBox}>                            
+                        <StyledFirebaseAuth 
+                        uiConfig={this.uiConfig}
+                        firebaseAuth= {firebase.auth()} 
+                        />
+                    </div>
                 
                 </div>
                 
