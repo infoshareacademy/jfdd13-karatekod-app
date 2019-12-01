@@ -63,13 +63,11 @@ margin: auto;
 min-height: 65vh;
 grid-template-areas: 
 "logo box"
-". box"
 "desc box"
 "desc box"
 "desc box"
 "desc box"
-"desc box"
-"desc box"
+
 
 }
 
@@ -96,6 +94,8 @@ justify-content: center;
 }
 .loginDesc {
     grid-area: desc;
+    padding-top: 80px;
+    padding-right: 5px;
 }
 
 
