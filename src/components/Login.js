@@ -6,10 +6,7 @@ import fire from '../firebase'
 import logoText from '../images/logo.png'
 import logo from '../images/logopic.png'
 
-
-
-
-
+import ImageUpload from '../components/ImageUpload'
 
 class Login extends Component {
 
@@ -58,18 +55,13 @@ class Login extends Component {
                         <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
                         
                         <img src={firebase.auth().currentUser.photoURL}></img>
+                        <p>Profile picture</p>
+                        <ImageUpload />
                    
                         </div>
                     </div>
 
-
-
-
-
-
                 ): (
-
-
 
                 <div className = {styles.loginGrid}>
                 
@@ -94,9 +86,6 @@ class Login extends Component {
                     </div>
                 
                 </div>
-                
-                
-                
                 )}
             </div>
         )
