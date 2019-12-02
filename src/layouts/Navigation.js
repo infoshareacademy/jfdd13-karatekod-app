@@ -1,6 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from "../styles/Navigation.module.css";
+import menu1 from '../images/menu1.png';
+
 
 const list = [
     {name: 'your profile', path: '/admin'},
@@ -19,8 +21,8 @@ const Navigation = () => {
     ))
     return (
         <nav className={styles.mainNav}>
-            <div className={styles.menuTitle}>menu</div>
-            <ul>
+            <img src={menu1} className={styles.menuTitle} alt="menu" />
+            <ul clasName={styles.menuUl}>
                 {menu}
             </ul>     
         </nav>
