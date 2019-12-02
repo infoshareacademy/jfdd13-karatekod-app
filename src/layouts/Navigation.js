@@ -13,7 +13,7 @@ const list = [
 
     {name: 'add book', path: '/addBooks'},
     {name: 'search' , path: '/search', exact: true} ,
-    {name: 'sign-in', path: '/login', exact: true}  
+    {name: 'sign-in', path: '/login', exact: true},
 ]
 
 const Navigation = () => {

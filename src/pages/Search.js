@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 // import booksListings? from '../Data/Database'
-import {booksList} from '../pages/BooksListPage'
+
 import Filter from '../components/Filter'
 import Listings from '../components/Listing'
+import { watchBooks, stopBooks } from '../services/BookService'
 
 export default class Search extends Component {
   constructor() {
     super()
     this.state = {
-      
-      booksList,
+      booksList:[],
       range:2,
-      filteredData: booksList,
+      filteredData: [],
       type: 'any',
       autor: '',
       title: ''
@@ -47,8 +47,18 @@ export default class Search extends Component {
   }
 
   componentDidMount(){
-    this.setState({booksList:JSON.parse(localStorage.getItem("bookslist"))})
+    watchBooks(booksList => {
+      this.setState({booksList});
+      this.filteredData()
+
+    });
+
+    
   }
+
+
+
+ 
 
 
   filteredData() {
