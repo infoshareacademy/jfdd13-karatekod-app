@@ -7,13 +7,7 @@ import logoText from '../images/logo.png'
 import logo from '../images/logopic.png'
 
 
-
-
-
-
 class Login extends Component {
-
-
     state = {isSignedIn : false}
     uiConfig = {
         signedInFlow: "popup",
@@ -23,7 +17,6 @@ class Login extends Component {
             firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         callbacks: {
-
             signInSuccess: (auth) => {
                 firebase.database().ref('/users/' + auth.uid).transaction(data => {
                     console.log('data ',data);
@@ -40,8 +33,7 @@ class Login extends Component {
         firebase.auth().onAuthStateChanged(user => {
             this.setState({isSignedIn: !!user}) 
             console.log("user: ",user)
-        })
-        
+        })      
     }
 
     render() {
@@ -62,23 +54,12 @@ class Login extends Component {
                         </div>
                     </div>
 
+                ) : (
 
-
-
-
-
-                ): (
-
-
-
-                <div className = {styles.loginGrid}>
-                
-                    
+              <div className = {styles.loginGrid}>
                     <div className = {styles.logoSection} >
                        <div className={styles.logo}> <img src={logo}  width="100%"/> </div>
                       <div className={styles.logoText}>  <img src={logoText}  width="100%"/> </div>
-
-
                     </div>
                     <div className={styles.loginDesc}>
                         Welcome to the world, where your books gain second life. Join the society, where people
@@ -91,12 +72,8 @@ class Login extends Component {
                         uiConfig={this.uiConfig}
                         firebaseAuth= {firebase.auth()} 
                         />
-                    </div>
-                
+                    </div>              
                 </div>
-                
-                
-                
                 )}
             </div>
         )

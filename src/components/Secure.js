@@ -13,12 +13,6 @@ class Secure extends React.Component {
     firebase.auth().onAuthStateChanged(user => this.setState({ user }));
   }
 
-  // componentWillUnmount() {
-  //   if (unsubscribe) {
-  //     unsubscribe()
-  //   }
-  // }
-
   render() {
     return this.state.user === null ? <Login /> : this.props.children
   }
