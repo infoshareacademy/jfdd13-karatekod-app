@@ -47,7 +47,7 @@ class Login extends Component {
 
                         <div className={styles.userContent}>
                         
-                        <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
+                        <h1>Welcome, {firebase.auth().currentUser.displayName}!</h1>
                         
                         <img src={firebase.auth().currentUser.photoURL}></img>
                    
