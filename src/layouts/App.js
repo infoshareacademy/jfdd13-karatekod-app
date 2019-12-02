@@ -15,8 +15,9 @@ function App() {
    
     <Router>
       <div className={styles.app}>
-          <Header className={styles.header} />
+
            <Secure>
+
           <main>
             <aside>
               <Navigation className={styles.navigation}/>
