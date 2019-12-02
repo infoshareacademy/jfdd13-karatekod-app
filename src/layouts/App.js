@@ -7,24 +7,29 @@ import Footer from './Footer';
 import Page from './Page';
 import SearchBar from './SearchBar';
 import SomeButtons from '../components/SomeButtons'
+import Secure from '../components/Secure'
 
 
 function App() {
   return (
+   
     <Router>
       <div className={styles.app}>
-          {/* <Header className={styles.header} /> */}
-          
+
+           <Secure>
+
           <main>
             <aside>
               <Navigation className={styles.navigation}/>
             </aside>
               <Page className={styles.page}/>
           </main>
+          </Secure>
           <Footer className={styles.footer}/>
           <SomeButtons />
       </div>
     </Router>
+    
   );
 }
 

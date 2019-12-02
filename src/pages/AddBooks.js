@@ -2,9 +2,8 @@ import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
 import uuid from "uuid";
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
-import Popup from '../components/AddPopup'
-import { addBookFire, fetchBooksFire, addBooksFirebase } from '../services/BookService'
 import { thisExpression } from '@babel/types';
+import { addBooksFirebase } from '../services/BookService'
 
 const initialState = {
     newTitle: "",
