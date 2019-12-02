@@ -25,6 +25,10 @@
 }
 
 @media screen and (max-width: 600px) {
-    
+    p{
+        display:inline-block;
+        text-align:center; 
+        padding: 15px
+    }
 
 }
