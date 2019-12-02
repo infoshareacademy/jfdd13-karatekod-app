@@ -14,6 +14,9 @@ nav.mainNav a{
     transition: .2s;
 }
 
+.menuTitle{
+    display: none
+}
 
 nav.mainNav a:hover{
     transform: translateX(20px)
@@ -45,3 +48,52 @@ ul{
     list-style-type: none;
 }
 
+@media screen and (max-width: 600px) {
+    .mainNav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      padding: 0;
+      margin: 0
+    }
+
+    .menuTitle{
+        display: block;
+    }
+
+    nav.mainNav a{
+        display: none
+      }
+
+    nav.mainNav:hover a{
+        display: block;
+        
+    }
+
+    nav.mainNav a.active{
+        border: none;
+    }
+
+    nav.mainNav a:hover{
+        transform: none;
+        margin: 0 auto
+    }
+
+    
+}
+
+
+
+/* nav ul{
+    list-style-type: none;
+    display: none;
+    padding: 0;
+    margin: 0;
+   
+}
+
+nav:hover ul{
+    display:block;
+    justify-content: center;
+} */

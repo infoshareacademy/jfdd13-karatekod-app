@@ -4,8 +4,6 @@ import Graph2  from "../components/Graph2";
 import styles from "../styles/Statistics.module.css"
 
 
-
-
 const Statistics = () => {
     return(
         <div className={styles.graphs}>
