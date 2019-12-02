@@ -132,15 +132,7 @@ class Listings extends Component {
         )
     }
 
-
-
-
-
-
-
     render() {
-
-
         const { currentPage, booksPerPage } = this.state;
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * booksPerPage;
@@ -169,13 +161,9 @@ class Listings extends Component {
                 </li>);
         })
 
-
-
-
         return (
-
             <>
-                <div className={styles.grid}>
+      <div className={styles.grid}>
 
                     {renderBooks}
 
