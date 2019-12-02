@@ -9,31 +9,29 @@ export default class Search extends Component {
   constructor() {
     super()
     this.state = {
-      booksList:[],
-      range:2,
+      booksList: [],
+      range: 2,
       filteredData: [],
       type: 'any',
       autor: '',
       title: ''
-      
-
     }
     this.change = this.change.bind(this)
     this.changeFilterRange = this.changeFilterRange.bind(this)
     this.filteredData = this.filteredData.bind(this)
-    
+
 
   }
 
-  
+
 
   change(event) {
-   
+
     const name = event.target.name
     const value = event.target.value
-    this.setState ({
-      [name]:value
-    }, ()=> {
+    this.setState({
+      [name]: value
+    }, () => {
       console.log(this.state)
       this.filteredData();
     })
@@ -46,28 +44,26 @@ export default class Search extends Component {
     this.filteredData();
   }
 
-  componentDidMount(){
+  componentDidMount() {
     watchBooks(booksList => {
-      this.setState({booksList});
+      this.setState({ booksList });
       this.filteredData()
 
     });
-
-    
   }
 
 
 
- 
+
 
 
   filteredData() {
     let newData = this.state.booksList.filter((item) => {
       return (this.state.type === 'any') ? (item.condition <= this.state.range) :
-       (item.type == this.state.type && item.condition <= this.state.range)
+        (item.type == this.state.type && item.condition <= this.state.range)
     })
 
-    if(this.state.search != '') {
+    if (this.state.search != '') {
       newData = newData.filter((item) => {
         const author = item.autor.toLowerCase();
         const searchText = this.state.autor.toLowerCase();
@@ -78,7 +74,7 @@ export default class Search extends Component {
         }
       })
     }
-    if(this.state.search != '') {
+    if (this.state.search != '') {
       newData = newData.filter((item) => {
         const title = item.title.toLowerCase();
         const searchText = this.state.title.toLowerCase();
@@ -90,28 +86,28 @@ export default class Search extends Component {
       })
     }
     this.setState({
-    filteredData: newData
+      filteredData: newData
     })
-    
-    
+
+
 
   }
 
   render() {
-    
-  return (
-    
-        
-      
-      
-        
-        <section id="content-area">
-          <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState= {this.state} />
-          <Listings booksList= {this.state.filteredData} />
-        </section>
-       
-     
-  );
+
+    return (
+
+
+
+
+
+      <section id="content-area">
+        <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState={this.state} />
+        <Listings booksList={this.state.filteredData} />
+      </section>
+
+
+    );
   }
 }
 

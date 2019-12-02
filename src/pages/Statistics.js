@@ -3,9 +3,6 @@ import Graph1  from "../components/Graph1";
 import Graph2  from "../components/Graph2";
 import styles from "../styles/Statistics.module.css"
 
-
-
-
 const Statistics = () => {
     return(
         <div className={styles.graphs}>
@@ -16,11 +13,11 @@ const Statistics = () => {
             </div>
             <div className={styles.graph2}>
                 <Graph2/>
-                <p> This pie chart illustrates number of book types avaliable to swap in %. Fantasy is definitely favorite Book Swappers book genre.
-                    Find out which type is your favorite!</p>
+                <p> This pie chart illustrates number of book types avaliable to swap in %. Find out which type is your favorite!</p>
             </div>
+            <p></p>
         </div>
     )
 }
   
-  export default Statistics;
+export default Statistics;

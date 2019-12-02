@@ -1,8 +1,6 @@
 import React from 'react';
 import Chart from "react-apexcharts";
-
-
-
+import {watchUsers, stopUsers} from "../services/UserService"
 
 class Graph1 extends React.Component {
     constructor(props) {
@@ -27,9 +25,21 @@ class Graph1 extends React.Component {
             name: "series-1",
             data: [12053, 18502, 35645, 50253]
           }
-        ]
-      
+        ],
+        userNumber: '',
+
       };
+    }
+
+    componentDidMount() {
+      watchUsers(users => { // gets booklist from firebase
+        console.log(users)  // creates array with book types 
+        this.setState({userNumber:users})
+      });
+    }
+
+    componentWillUnmount(){
+      stopUsers();
     }
   
     render() {
@@ -37,15 +47,14 @@ class Graph1 extends React.Component {
         <div className="app">
           <div className="row">
             <div className="mixed-chart">
+              {this.state.userNumber!==""?<h1>BookSwapp has <b style={{color: '#c2185b'}}>{this.state.userNumber}</b> registered users</h1>:""}
               <Chart
                 options={this.state.options}
                 series={this.state.series}
                 type="bar"
                 width="700"
               />
-
             </div>
-
         </div>       
          </div>
       );
