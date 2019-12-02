@@ -5,6 +5,8 @@ import Filter from '../components/Filter'
 import Listings from '../components/Listing'
 import { watchBooks, stopBooks } from '../services/BookService'
 
+export const BOOKS_PER_PAGE = 5
+
 export default class Search extends Component {
   constructor() {
     super()
@@ -14,9 +16,8 @@ export default class Search extends Component {
       filteredData: [],
       type: 'any',
       autor: '',
-      title: ''
-      
-
+      title: '',
+      currentPage: 1
     }
     this.change = this.change.bind(this)
     this.changeFilterRange = this.changeFilterRange.bind(this)
@@ -25,14 +26,13 @@ export default class Search extends Component {
 
   }
 
-  
-
   change(event) {
    
     const name = event.target.name
     const value = event.target.value
     this.setState ({
-      [name]:value
+      [name]:value,
+      currentPage: 1
     }, ()=> {
       console.log(this.state)
       this.filteredData();
@@ -41,7 +41,8 @@ export default class Search extends Component {
 
   changeFilterRange(value) {
     this.setState({
-      range: value
+      range: value,
+      currentPage: 1
     })
     this.filteredData();
   }
@@ -54,6 +55,10 @@ export default class Search extends Component {
     });
 
     
+  }
+
+  componentWillUnmount() {
+    stopBooks()
   }
 
 
@@ -97,6 +102,35 @@ export default class Search extends Component {
 
   }
 
+  get pages () {
+    return Math.ceil(this.state.filteredData.length / BOOKS_PER_PAGE)
+  }
+
+  handleClickNext = () => {
+    if (this.state.currentPage >= this.pages) {
+      return
+    }
+    this.setState({
+      currentPage: this.state.currentPage + 1
+    })
+  }
+
+  handleClickPrev = () => {
+    if (this.state.currentPage <= 1) {
+      return
+    }
+
+    this.setState({
+      currentPage: this.state.currentPage - 1
+    })
+  }
+
+  handleClick = (page) => {
+    this.setState({
+      currentPage: page
+    })
+  }
+
   render() {
     
   return (
@@ -107,7 +141,14 @@ export default class Search extends Component {
         
         <section id="content-area">
           <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState= {this.state} />
-          <Listings booksList= {this.state.filteredData} />
+          <Listings
+            booksList= {this.state.filteredData}
+            currentPage={this.state.currentPage}
+            handleClickNext={this.handleClickNext}
+            handleClickPrev={this.handleClickPrev}
+            handleClick={this.handleClick}
+            pages={this.pages}  
+          />
         </section>
        
      
