@@ -14,6 +14,9 @@ nav.mainNav a{
     transition: .2s;
 }
 
+.menuTitle{
+    display: none
+}
 
 nav.mainNav a:hover{
     transform: translateX(20px)
@@ -45,3 +48,70 @@ ul{
     list-style-type: none;
 }
 
+@media screen and (max-width: 600px) {
+    .mainNav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      padding: 0;
+      margin: 0;
+      transform: none;
+    }
+
+    .menuTitle{
+        display: block;
+        width: 50px;
+        height: 50px
+    }
+
+    nav.mainNav a{
+        display: none;
+        font-weight: none;
+        font-size: 15px;
+        transform: none;
+        width: 250px
+      }
+
+    nav.mainNav:hover a{
+        display:inline-block;
+        text-align:center; 
+
+    }
+
+    nav.mainNav a.active{
+        border: none;
+        transform: none;
+    }
+
+    nav.mainNav a:hover{
+        transform: none;
+        background: #f8bbd0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: none;
+       
+    }
+
+    ul{
+        transform: none;
+    }
+    
+}
+
+
+
+/* nav ul{
+    list-style-type: none;
+    display: none;
+    padding: 0;
+    margin: 0;
+   
+}
+
+nav:hover ul{
+    display:block;
+    justify-content: center;
+} */

@@ -1,10 +1,3 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-}
 
 .userProfile button{
     border: 1px solid #c2185b;
@@ -18,9 +11,6 @@
     font-weight: bold;
     float: right;
     border-radius: 10px;
-    
-
-    
 }
 
 .userProfile button:hover{
@@ -29,62 +19,36 @@
     color: white
 }
 
-.label{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px
-
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-}
-
-.input{
-    width: 330px;
-    height: 40px;
-    border-bottom: 2px solid black;
-    border-top: none;
-    border-left: none;
-    border-right: none
-}
-
-
 .loginGrid {
-display: grid;
-max-width: 80%;
-padding-top: 60px;
-padding-bottom: 40px;
-margin: auto;
-min-height: 65vh;
-grid-template-areas: 
-"logo box"
-"desc box"
-"desc box"
-"desc box"
-"desc box"
-
-
+    display: grid;
+    max-width: 80%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin: auto;
+    min-height: 100vh;
+    grid-template-areas: 
+    "logo box"
+    "desc box"
+    "desc box"
+    "desc box"
+    "desc box"
 }
 
 .loginBox {
-display: flex;
-justify-content: center;
-align-items: center;
-grid-area: box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: box;
 
 }
 
 .logoSection {
-grid-area: logo;
-display: flex;
-max-height: 50px;
-justify-content: center;
+    grid-area: logo;
+    display: flex;
+    max-height: 50px;
+    justify-content: center;
 }
+
 .logo {
     width: 10%
     
@@ -92,6 +56,7 @@ justify-content: center;
 .logoText {
    width: 70%
 }
+
 .loginDesc {
     grid-area: desc;
     padding-top: 80px;
@@ -99,3 +64,18 @@ justify-content: center;
 }
 
 
+@media screen and (max-width: 600px) {
+   .loginGrid{
+       display: flex;
+       flex-direction: column;
+       justify-content: center; 
+   }
+
+   .loginDesc{
+        display:inline-block;
+        text-align:center;    
+        margin-bottom: 30px;
+    }
+
+   
+}

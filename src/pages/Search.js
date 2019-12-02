@@ -16,6 +16,7 @@ export default class Search extends Component {
       autor: '',
       title: ''
     }
+    
     this.change = this.change.bind(this)
     this.changeFilterRange = this.changeFilterRange.bind(this)
     this.filteredData = this.filteredData.bind(this)
