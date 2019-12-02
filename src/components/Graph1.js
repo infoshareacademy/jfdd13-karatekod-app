@@ -44,15 +44,15 @@ class Graph1 extends React.Component {
   
     render() {
       return (
-        <div className="app">
-          <div className="row">
-            <div className="mixed-chart">
+        <div className="app" style={{width:'100%'}}>
+          <div className="row" style={{width:'100%'}}>
+            <div className="mixed-chart" style={{width:'100%'}}>
               {this.state.userNumber!==""?<h1>BookSwapp has <b style={{color: '#c2185b'}}>{this.state.userNumber}</b> registered users</h1>:""}
               <Chart
                 options={this.state.options}
                 series={this.state.series}
                 type="bar"
-                width="700"
+                width="100%"
               />
             </div>
         </div>       
