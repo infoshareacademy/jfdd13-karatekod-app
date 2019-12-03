@@ -38,7 +38,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 {this.state.isSignedIn ? (
                    <div className={styles.userProfile}>
                         
@@ -75,7 +75,7 @@ class Login extends Component {
                     </div>              
                 </div>
                 )}
-            </div>
+            </>
         )
     }
 }

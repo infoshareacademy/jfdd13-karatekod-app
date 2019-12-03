@@ -20,7 +20,19 @@
 }
 
 .loginGrid {
-    display: grid;
+
+   height: 95vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+
+
+
+    
+/* margin-top: 20vh;
+ display: flex;
+    flex-direction: column;
     max-width: 80%;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -31,36 +43,43 @@
     "desc box"
     "desc box"
     "desc box"
-    "desc box"
+    "desc box" */
 }
 
 .loginBox {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: box;
+    grid-area: box; */
 
 }
 
 .logoSection {
-    grid-area: logo;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  /*  grid-area: logo;
     display: flex;
     max-height: 50px;
     justify-content: center;
+    */
 }
 
 .logo {
-    width: 10%
+    max-width: 200px;
+   /* width: 10%*/
     
 }
 .logoText {
-   width: 70%
+   /*width: 70%*/
 }
 
 .loginDesc {
-    grid-area: desc;
+/*    grid-area: desc;
     padding-top: 80px;
     padding-right: 5px;
+    */
 }
 
 
