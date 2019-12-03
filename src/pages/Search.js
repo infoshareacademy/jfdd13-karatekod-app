@@ -5,7 +5,7 @@ import Filter from '../components/Filter'
 import Listings from '../components/Listing'
 import { watchBooks, stopBooks } from '../services/BookService'
 
-export const BOOKS_PER_PAGE = 5
+export const BOOKS_PER_PAGE = 9
 
 export default class Search extends Component {
   constructor() {
@@ -37,6 +37,7 @@ export default class Search extends Component {
       console.log(this.state)
       this.filteredData();
     })
+    
   }
 
   changeFilterRange(value) {
@@ -113,6 +114,7 @@ export default class Search extends Component {
     this.setState({
       currentPage: this.state.currentPage + 1
     })
+    window.scrollTo(0,0)
   }
 
   handleClickPrev = () => {
@@ -123,12 +125,14 @@ export default class Search extends Component {
     this.setState({
       currentPage: this.state.currentPage - 1
     })
+    window.scrollTo(0,0)
   }
 
   handleClick = (page) => {
     this.setState({
       currentPage: page
     })
+    window.scrollTo(0,0)
   }
 
   render() {
