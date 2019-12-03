@@ -25,7 +25,7 @@ export class Filter extends Component {
                     </div>
                     <div >
                     <select name="type" onChange = {this.props.change} className={styles.dropdown} >
-                        <option value="any">genere</option>
+                        <option value="any">genre</option>
                         <option value='action'>Action</option>
                         <option value='comedy'>Comedy</option>
                         <option value='drama'>Drama</option>
