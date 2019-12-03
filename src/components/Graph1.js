@@ -71,7 +71,7 @@ class Graph1 extends React.Component {
         <div className="app" style={{width:'100%'}}>
           <div className="row" style={{width:'100%'}}>
             <div className="mixed-chart" style={{width:'100%', textAlign:'center'}}>
-              {this.state.userNumber!==""?<h3>BookSwapp has <b style={{color: '#c2185b'}}>{this.state.userNumber}</b> registered users</h3>:<h3>Loading statistics...</h3>}
+              {this.state.userNumber!==""?<h3>BookSwapp already has <b style={{color: '#c2185b'}}>{this.state.userNumber}</b> registered users!</h3>:<h3>Loading statistics...</h3>}
               <Chart
                 options={this.state.options}
                 series={this.state.series}
