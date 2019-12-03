@@ -6,7 +6,6 @@ import fire from '../firebase'
 import logoText from '../images/logo.png'
 import logo from '../images/logopic.png'
 
-
 class Login extends Component {
     state = {isSignedIn : false}
     uiConfig = {
@@ -40,17 +39,12 @@ class Login extends Component {
         return (
             <div>
                 {this.state.isSignedIn ? (
-                   <div className={styles.userProfile}>
-                        
+                   <div className={styles.userProfile}>                        
                         <button onClick = {()=>firebase.auth().signOut()} >Sign out</button>
                         <div style={{clear:"both"}}></div>
-
-                        <div className={styles.userContent}>
-                        
-                        <h1>Welcome, {firebase.auth().currentUser.displayName}!</h1>
-                        
-                        <img src={firebase.auth().currentUser.photoURL}></img>
-                   
+                        <div className={styles.userContent}>                        
+                        <h1>Welcome, {firebase.auth().currentUser.displayName}!</h1>                       
+                        <img src={firebase.auth().currentUser.photoURL}></img>                   
                         </div>
                     </div>
 

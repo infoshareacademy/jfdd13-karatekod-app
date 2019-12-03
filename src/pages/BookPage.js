@@ -28,10 +28,10 @@ class BookPage extends React.Component{
             <div className={styles.bookCard}>
                 <img className={styles.bookImage} src={this.state.book.imageUrl} />
                                 <div className={styles.bookInfo}>
-                                                    <div className={styles.bookInfo2}>
-                                                                                <div className={styles.info}>Title: 
-                                                                                    <div className={styles.info2}>{this.state.book.title}</div>
-                                                                                </div>
+                                    <div className={styles.bookInfo2}>
+                                        <div className={styles.info}>Title: 
+                                            <div className={styles.info2}>{this.state.book.title}</div>
+                                              </div>
                                                                     <div className={styles.info}>Author: 
                                                                         <div className={styles.info2}>{this.state.book.autor}</div>
                                                                     </div>

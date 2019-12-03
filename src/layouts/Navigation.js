@@ -1,8 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from "../styles/Navigation.module.css";
-import menu1 from '../images/menu1.png';
-
+import ButtonMenu from '../components/ButtonMenu'
 
 const list = [
     {name: 'your profile', path: '/admin'},
@@ -19,9 +18,10 @@ const Navigation = () => {
             item.exact : false} activeClassName={styles.active}>{item.name}</NavLink>
         </li>
     ))
+
     return (
         <nav className={styles.mainNav}>
-            <img src={menu1} className={styles.menuTitle} alt="menu" />
+            <ButtonMenu/>
             <ul clasName={styles.menuUl}>
                 {menu}
             </ul>     

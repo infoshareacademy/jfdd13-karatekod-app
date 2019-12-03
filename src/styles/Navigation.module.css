@@ -1,56 +1,62 @@
+    nav.mainNav{
+        background: white;
+        padding: 0 30px 30px 0;
+    }
 
-nav.mainNav{
-    background: white;
-    padding: 0 30px 30px 0;
-}
+    nav.mainNav a{
+        display: block;
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 10px;
+        transition: .2s;
+    }
 
-nav.mainNav a{
-    display: block;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 10px;
-    transition: .2s;
-}
+    .menuTitle{
+        display: none
+    }
 
-.menuTitle{
-    display: none
-}
+    nav.mainNav a:hover{
+        transform: translateX(20px)
+    }
 
-nav.mainNav a:hover{
-    transform: translateX(20px)
-}
+    nav.mainNav a.active{
+        color: black;
+        border-left: 10px solid pink;
+        transform: translateX(0)
+    }
 
-nav.mainNav a.active{
-    color: black;
-    border-left: 10px solid pink;
-    transform: translateX(0)
-}
+    nav.mainNav li:nth-child(1) a.active{
+        border-left-color: #6b092a
+    }
 
-nav.mainNav li:nth-child(1) a.active{
-    border-left-color: #6b092a
-}
+    nav.mainNav li:nth-child(2) a.active{
+        border-left-color: #a31e4a
+    }
 
-nav.mainNav li:nth-child(2) a.active{
-    border-left-color: #a31e4a
-}
+    nav.mainNav li:nth-child(3) a.active{
+        border-left-color: #f70052
+    }
 
-nav.mainNav li:nth-child(3) a.active{
-    border-left-color: #f70052
-}
+    nav.mainNav li:nth-child(4) a.active{
+        border-left-color: #fd5f94
+    }
 
-nav.mainNav li:nth-child(4) a.active{
-    border-left-color: #fd5f94
-}
-
-ul{
-    list-style-type: none;
-}
+    ul{
+        list-style-type: none;
+    }
 
 @media screen and (max-width: 600px) {
     .mainNav {
       display: flex;
+      position: fixed;
+      min-height: 20px;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      text-align: center;
+      z-index: 3;
       flex-direction: column;
       justify-content: center;
       align-items: center; 
@@ -61,8 +67,9 @@ ul{
 
     .menuTitle{
         display: block;
-        width: 50px;
-        height: 50px
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
     }
 
     nav.mainNav a{
@@ -74,8 +81,8 @@ ul{
       }
 
     nav.mainNav:hover a{
-        display:inline-block;
-        text-align:center; 
+        display: inline-block;
+        text-align: center; 
 
     }
 
@@ -91,27 +98,11 @@ ul{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: none;
        
-    }
+    } 
 
     ul{
         transform: none;
     }
     
 }
-
-
-
-/* nav ul{
-    list-style-type: none;
-    display: none;
-    padding: 0;
-    margin: 0;
-   
-}
-
-nav:hover ul{
-    display:block;
-    justify-content: center;
-} */
