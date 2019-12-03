@@ -6,6 +6,14 @@
     margin-top: 50px;
 }
 
+.userProfile h1{
+    text-align: center;
+}
+.profilePicture{
+    text-align: center;
+    /* border-radius: 30px; */
+}
+
 .userProfile button{
     border: 1px solid #c2185b;
     background: #c2185b;
@@ -16,11 +24,16 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    float: right;
-    border-radius: 10px;
-    
+    /* float: right; */
+    border-radius: 10px;  
+}
 
-    
+.uploadButton{
+    float: left;
+}
+
+.logoutButton{
+    float: right;
 }
 
 .userProfile button:hover{
@@ -34,14 +47,12 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px
-
 }
 
 .form{
     display: flex;
     flex-direction: column;
     align-items: center;
-  
 }
 
 .input{
@@ -53,49 +64,45 @@
     border-right: none
 }
 
-
 .loginGrid {
-display: grid;
-max-width: 80%;
-padding-top: 60px;
-padding-bottom: 40px;
-margin: auto;
-min-height: 65vh;
-grid-template-areas: 
-"logo box"
-"desc box"
-"desc box"
-"desc box"
-"desc box"
-
-
+    display: grid;
+    max-width: 80%;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    margin: auto;
+    min-height: 65vh;
+    grid-template-areas: 
+    "logo box"
+    "desc box"
+    "desc box"
+    "desc box"
+    "desc box"
 }
 
 .loginBox {
-display: flex;
-justify-content: center;
-align-items: center;
-grid-area: box;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: box;
 }
 
 .logoSection {
-grid-area: logo;
-display: flex;
-max-height: 50px;
-justify-content: center;
+    grid-area: logo;
+    display: flex;
+    max-height: 50px;
+    justify-content: center;
 }
+
 .logo {
     width: 10%
-    
 }
+
 .logoText {
    width: 70%
 }
+
 .loginDesc {
     grid-area: desc;
     padding-top: 80px;
     padding-right: 5px;
 }
-
-

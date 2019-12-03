@@ -3,17 +3,12 @@ import {NavLink} from 'react-router-dom';
 import styles from "../styles/Navigation.module.css";
 
 
-
 const list = [
-
-    {name: 'your profile', path: '/admin'},
-
-
+    {name: 'my profile', path: '/login'},
     {name: 'dashboard', path: '/statistics'},
-
     {name: 'add book', path: '/addBooks'},
     {name: 'search' , path: '/search', exact: true} ,
-    {name: 'sign-in', path: '/login', exact: true},
+    // {name: 'sign-in', path: '/login', exact: true},
 ]
 
 const Navigation = () => {
@@ -28,7 +23,6 @@ const Navigation = () => {
             <ul>
                 {menu}
             </ul>
-       
         </nav>
     )
 }

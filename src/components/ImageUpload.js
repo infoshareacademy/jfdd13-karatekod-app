@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import firebase, { storage } from '../firebase'
+import firebase, { storage } from '../firebase';
+import styles from '../styles/Login.module.css'
 
 class ImageUpload extends Component {
     constructor(props) {
@@ -83,10 +84,13 @@ class ImageUpload extends Component {
 
         return (
             <div>
-                <img src={this.state.url || "https://via.placeholder.com/150"} alt="Profile pic" height= "150" width= "150"/>
+                <div className={styles.profilePicture}>  
+                    <img src={this.state.url || "https://via.placeholder.com/150"} alt="Profile pic" height= "250" width= "250"/>
+                </div>
                 <div>
+                    <p>Change profile picture</p>
                     <input type="file" onChange={this.handleChange}/>
-                    <button onClick={this.handleUpload}>Upload</button>
+                    <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
                     <div>
                         {showProgress && <progress value={this.state.progress} max="100"/>}
                     </div>
