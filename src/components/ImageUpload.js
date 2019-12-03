@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { storage } from '../firebase'
+import firebase, { storage } from '../firebase'
 
 class ImageUpload extends Component {
     constructor(props) {
@@ -16,6 +16,11 @@ class ImageUpload extends Component {
             .handleUpload
             .bind(this);
     }
+
+    componentDidMount() {
+        this.checkIfUserHasProfilePicture()
+    }
+
     handleChange = e => {
         if(e.target.files[0]) {
             const image = e.target.files[0];
@@ -40,13 +45,45 @@ class ImageUpload extends Component {
             storage.ref('images').child(image.name).getDownloadURL().then(url => {
                 console.log(url);
                 this.setState({url})
+                this.updateProfilePicture(url)
             })
         });
     }
+
+    updateProfilePicture = (url) => {
+        // 1. check what user are you logged in
+        const currentUser = firebase.auth().currentUser
+        const id = currentUser.uid
+
+        // 2. get the url and update user profile
+        firebase.database().ref(`/users/${id}/profilePicture`).set(url)
+    }
+
+    checkIfUserHasProfilePicture = async () => {
+        // 1. get current user id
+        const currentUser = firebase.auth().currentUser
+        const id = currentUser.uid
+
+        // 2. fetch current user profile picture
+        const dataSnapshot = await firebase.database().ref(`/users/${id}/profilePicture`).once('value')
+        const profilePictureUrl = dataSnapshot.val()
+
+        // 3. if there is a picture, use it
+        if (profilePictureUrl) {
+            // 4. update state of the component
+            this.setState({
+                url: profilePictureUrl
+            })
+        }
+    }
+
+
     render() {
+        const showProgress = this.state.progress !== 0 && this.state.progress !== 100 
+
         return (
             <div>
-                <progress value={this.state.progress} max="100"/>
+                {showProgress && <progress value={this.state.progress} max="100"/>}
                 <input type="file" onChange={this.handleChange}/>
                 <button onClick={this.handleUpload}>Upload</button>
                 <img src={this.state.url || "https://via.placeholder.com/150"} alt="Profile pic" height= "150" width= "150"/>
