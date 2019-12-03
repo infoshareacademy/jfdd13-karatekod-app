@@ -48,6 +48,10 @@ class AdminPage extends React.Component {
     
     }
 
+    componentWillUnmount() {
+        stopBooks()
+      }
+
     loopFav() {
         const {booksList} = this.state;
         const {favs} = this.state
