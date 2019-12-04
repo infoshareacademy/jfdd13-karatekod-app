@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import firebase from 'firebase'
 import { watchBooks, stopBooks } from '../services/BookService'
-import { books } from './BooksListPage';
+
 import styles from '../styles/SearchSection.module.css'
 import AddToFavorites from '../components/AddToFavorites'
 import {addFavFirebase} from '../services/FavService'
@@ -18,7 +18,7 @@ class AdminPage extends React.Component {
     super(props)
         this.state={
             favs: {},
-            booksList:[],
+            booksList:[]
 
         }
 
@@ -68,7 +68,7 @@ class AdminPage extends React.Component {
         
         console.log(output)
         if (output == undefined || output == 0) {
-            return ['   We are sorry but there is no books matching your criteria. Try other titles or come back soon']
+            return ['you have no favourite books saved yet']
         }
         return output.map((listing, index) => {
             return (
@@ -135,11 +135,14 @@ class AdminPage extends React.Component {
 
         render(){
         return (
-            <div>
+            <>
+            <p>Your favorites</p>
+            <div style={{display:"flex", flexWrap:"wrap"}}>
                 {this.loopFav()}
                 
               
             </div>
+            </>
             )
         }
     }
