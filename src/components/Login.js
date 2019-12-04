@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import styles from '../styles/Login.module.css'
-import fire from '../firebase'
 import logoText from '../images/logo.png'
 import logo from '../images/logopic.png'
-
 import ImageUpload from '../components/ImageUpload'
 
 
