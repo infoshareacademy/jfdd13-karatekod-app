@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from "../styles/Navigation.module.css";
 import ButtonMenu from '../components/ButtonMenu'
+import menu1 from '../images/menu1.png';
+
 
 const list = [
     {name: 'your profile', path: '/admin'},
@@ -12,6 +14,8 @@ const list = [
 ]
 
 const Navigation = () => {
+    const [open, setOpen] = useState(false);
+
     const menu = list.map(item => (
         <li key={item.name}>
             <NavLink to={item.path} exact={item.exact ?
@@ -21,8 +25,8 @@ const Navigation = () => {
 
     return (
         <nav className={styles.mainNav}>
-            <ButtonMenu/>
-            <ul clasName={styles.menuUl}>
+            <img src={menu1} className={styles.menuTitle} onClick={() => setOpen(!open)} />
+            <ul className={open && styles.active}>
                 {menu}
             </ul>     
         </nav>

@@ -71,20 +71,23 @@
         height: 30px;
         margin-top: 10px;
     }
+    nav.mainNav ul {
+        display: none;
+    }
+    nav.mainNav ul.active {
+        display: inline-block;
+    }
+
+    nav.mainNav ul.active a{
+        text-align: center; 
+    }
 
     nav.mainNav a{
-        display: none;
         font-weight: none;
         font-size: 15px;
         transform: none;
         width: 250px
       }
-
-    nav.mainNav:hover a{
-        display: inline-block;
-        text-align: center; 
-
-    }
 
     nav.mainNav a.active{
         border: none;
