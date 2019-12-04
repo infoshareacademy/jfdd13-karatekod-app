@@ -40,7 +40,6 @@ class Listings extends Component {
     }
 
     handleClick(event) {
-
         this.setState({
             currentPage: Number(event.target.id)
         })
@@ -154,8 +153,6 @@ class Listings extends Component {
         const indexOfLastBook = currentPage * booksPerPage;
         const indexOfFirstBook = indexOfLastBook - booksPerPage
         const currentBooks = booksList.slice(indexOfFirstBook, indexOfLastBook)
-
-
         const renderBooks = currentBooks.map((book, index) => {
             return <div key={index}>{book}</div>
         })

@@ -20,14 +20,9 @@ export default class Search extends Component {
     this.change = this.change.bind(this)
     this.changeFilterRange = this.changeFilterRange.bind(this)
     this.filteredData = this.filteredData.bind(this)
-
-
   }
 
-
-
   change(event) {
-
     const name = event.target.name
     const value = event.target.value
     this.setState({
@@ -49,14 +44,8 @@ export default class Search extends Component {
     watchBooks(booksList => {
       this.setState({ booksList });
       this.filteredData()
-
     });
   }
-
-
-
-
-
 
   filteredData() {
     let newData = this.state.booksList.filter((item) => {
@@ -75,6 +64,7 @@ export default class Search extends Component {
         }
       })
     }
+
     if (this.state.search != '') {
       newData = newData.filter((item) => {
         const title = item.title.toLowerCase();
@@ -89,25 +79,14 @@ export default class Search extends Component {
     this.setState({
       filteredData: newData
     })
-
-
-
   }
 
   render() {
-
     return (
-
-
-
-
-
       <section id="content-area">
         <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState={this.state} />
         <Listings booksList={this.state.filteredData} />
       </section>
-
-
     );
   }
 }
