@@ -25,9 +25,12 @@ a:hover{
 }
 
 @media screen and (max-width: 600px) {
-    a{
-    padding: 10px
-        
+    .footerAbout{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;  
     }
+
+    
 
 }
