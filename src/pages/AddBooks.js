@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
-import uuid from "uuid";
+import {hasOnlySpecialCharater} from "../helpers/SpecialCharacters"
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
-import { thisExpression } from '@babel/types';
 import { addBooksFirebase } from '../services/BookService'
 
 const initialState = {
@@ -13,7 +12,6 @@ const initialState = {
     newType: "fantasy",
     newCondition: 1
 }
-
 
 class AddBooks extends React.Component { // AddBooks component
     constructor(props) {
@@ -39,10 +37,12 @@ class AddBooks extends React.Component { // AddBooks component
             description: this.state.newDescription,
 
         }
-        if (this.state.newTitle === "") {
+        if ((this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle)) || (this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor))  || (this.state.newDescription === ""|| hasOnlySpecialCharater(this.state.newDescription))) {
             this.setState({
                 error: {
-                    newTitle: this.state.newTitle === ""
+                    newTitle: this.state.newTitle === "",
+                    newAutor: this.state.newTitle === "",
+                    newDescription: this.state.newDescription === ""
                 }
             })
 
@@ -112,9 +112,8 @@ class AddBooks extends React.Component { // AddBooks component
     }
 
 
-    componentDidUpdate() {
-        localStorage.setItem("bookslist", JSON.stringify(this.state.booksList));    // local storage updates whenever something changes in this component
-    }
+  // local storage updates whenever something changes in this component
+    
 
     render() {
         const { newTitle, newAutor, newType, newImageUrl, newCondition, newDescription, error } = this.state;
@@ -124,12 +123,12 @@ class AddBooks extends React.Component { // AddBooks component
                 <h1>Add your books to the database</h1>
                 <form className={styles.form}>
                     <label className={styles.label} >Title*:</label>
-                    <input required className={styles.input} type="text" name="title" placeholder="Insert title name here" value={newTitle} onChange={event => {
+                    <input className={styles.input} type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
                         this.handleTitle(event.target.value);
                     }} className={error.newTitle ? styles.inputError : styles.input} />
 
                     <label className={styles.label} >Author*:</label>
-                    <input required className={styles.input} type="text" name="autor" placeholder="Insert author name here" value={newAutor} onChange={event => {
+                    <input className={styles.input} type="text" name="autor" placeholder={error.newAutor ? "Please fill out this field" : "Insert author name here"} value={newAutor} onChange={event => {
                         this.handleAutor(event.target.value);
                     }} className={error.newAutor ? styles.inputError : styles.input} />
 
@@ -164,12 +163,13 @@ class AddBooks extends React.Component { // AddBooks component
                     </select>
 
                     <label className={styles.label}>Description*:</label>
-                    <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder="Insert description of the book here" id="txtArea" rows="10" cols="40"></textarea>
+                    <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></textarea>
 
                     <button className={styles.button} onClick={(e) => {
-                            this.addBook(e)
-                            
-                        
+                        e.preventDefault()
+                        this.addBook(e)
+
+
 
                     }}>
                         ADD TO BOOKSWAPP
@@ -186,3 +186,25 @@ class AddBooks extends React.Component { // AddBooks component
 
 
 export default AddBooks
+
+
+let mailValidation = () => {
+    const inputValue = document.querySelector('.sign-in-contact-input').value;
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (regex.test(String(inputValue).toLowerCase()) === true){
+        return true;
+    }
+    else{
+        return false,
+        document.querySelector('.wrong-email').style.display= 'block';
+    }
+  };
+
+
+  let gameRedirect = (e) => {
+    e.preventDefault();
+    if (mailValidation() === true){
+        window.location.replace("game-instructions.html");
+    }
+};
