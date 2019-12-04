@@ -1,4 +1,12 @@
 
+.userProfile h1{
+    text-align: center;
+}
+.profilePicture{
+    text-align: center;
+    /* border-radius: 30px; */
+}
+
 .userProfile button{
     border: 1px solid #c2185b;
     background: #c2185b;
@@ -9,8 +17,18 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
+
+    /* float: right; */
+    border-radius: 10px;  
+}
+
+.uploadButton{
+    float: left;
+}
+
+.logoutButton{
     float: right;
-    border-radius: 10px;
+
 }
 
 .userProfile button:hover{
@@ -19,13 +37,41 @@
     color: white
 }
 
+
+.label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    width: 330px;
+    height: 40px;
+    border-bottom: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none
+}
+
 .loginGrid {
     display: grid;
     max-width: 80%;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 40px;
     margin: auto;
+<<<<<<< HEAD
     height: 100vh;
+=======
+    min-height: 65vh;
+
+>>>>>>> faccda257b6b60abd6b058ea996ac164c3433535
     grid-template-areas: 
     "logo box"
     "desc box"
@@ -50,8 +96,8 @@
 
 .logo {
     width: 10%
-    
 }
+
 .logoText {
    width: 70%
 }
@@ -61,6 +107,7 @@
     padding-top: 80px;
     padding-right: 5px;
 }
+
 
 
 @media screen and (max-width: 600px) {
@@ -89,3 +136,4 @@
     }
    
 }
+
