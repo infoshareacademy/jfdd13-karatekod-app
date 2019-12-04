@@ -6,6 +6,7 @@ import heartFilled from '../images/heart2.png'
 import heartEmpty from '../images/heart1.png'
 import {addFavFirebase} from '../services/FavService'
 import firebase from 'firebase'
+import { BOOKS_PER_PAGE } from '../pages/Search'
 
 /*const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
 
@@ -27,42 +28,44 @@ class Listings extends Component {
     constructor() {
         super()
         this.state = {
-            currentPage: 1,
             booksPerPage: 5,
             // favorites: (JSON.parse(localStorage.getItem("favorites")) || []),
             favs: {}
         }
-        this.loopListings = this.loopListings.bind(this);
-        this.handleClick = this.handleClick.bind(this)
-        this.handleClickNext = this.handleClickNext.bind(this)
-        this.handleClickPrev = this.handleClickPrev.bind(this)
+        // this.loopListings = this.loopListings.bind(this);
+        // this.handleClick = this.handleClick.bind(this)
+        // this.handleClickNext = this.handleClickNext.bind(this)
+        // this.handleClickPrev = this.handleClickPrev.bind(this)
 
     }
 
-    handleClick(event) {
-        this.setState({
-            currentPage: Number(event.target.id)
-        })
 
-    }
-    handleClickNext(event) {
-        const booksList = this.loopListings();
-        const nextPage = this.state.currentPage + 1
-        if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
-            this.setState({
-                currentPage: nextPage
-            })
-        }
-    }
-    handleClickPrev(event) {
-        if (this.state.currentPage > 1) {
-            const prevPage = this.state.currentPage - 1
+    // handleClick(event) {
 
-            this.setState({
-                currentPage: prevPage
-            })
-        }
-    }
+    //     this.setState({
+    //         currentPage: Number(event.target.id)
+    //     })
+
+    // }
+    // handleClickNext(event) {
+    //     const booksList = this.loopListings();
+    //     const nextPage = this.state.currentPage + 1
+    //     if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
+    //         this.setState({
+    //             currentPage: nextPage
+    //         })
+    //     }
+    // }
+    // handleClickPrev(event) {
+    //     if (this.state.currentPage > 1) {
+    //         const prevPage = this.state.currentPage - 1
+
+    //         this.setState({
+    //             currentPage: prevPage
+    //         })
+    //     }
+    // }
+
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
@@ -147,32 +150,44 @@ class Listings extends Component {
         )
     }
 
+
+
+
+    renderPageNumbers = () => {
+        const pageNumbers = new Array(this.props.pages)
+        for (let i = 0; i < this.props.pages; i++) {
+            pageNumbers.push(i + 1)
+        }
+        return pageNumbers.map(number => {
+            return (
+                <li
+                    style={(this.props.currentPage == number) ? { background: "pink" } : { background: "none" }}
+                    key={number}
+                    id={number}
+                    onClick={() => this.props.handleClick(number)}
+                >
+                    {number}
+                </li>);
+        })
+    }
+
+
     render() {
-        const { currentPage, booksPerPage } = this.state;
+
+
+        const { currentPage } = this.props;
+
+   
         const booksList = this.loopListings();
-        const indexOfLastBook = currentPage * booksPerPage;
-        const indexOfFirstBook = indexOfLastBook - booksPerPage
+        const indexOfLastBook = currentPage * BOOKS_PER_PAGE;
+        const indexOfFirstBook = indexOfLastBook - BOOKS_PER_PAGE
         const currentBooks = booksList.slice(indexOfFirstBook, indexOfLastBook)
         const renderBooks = currentBooks.map((book, index) => {
             return <div key={index}>{book}</div>
         })
 
-        const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(booksList.length / booksPerPage); i++) {
-            pageNumbers.push(i);
-        }
 
-        const renderPageNumbers = pageNumbers.map(number => {
-            return (
-                <li
-                    style={(this.state.currentPage == number) ? { background: "pink" } : { background: "none" }}
-                    key={number}
-                    id={number}
-                    onClick={this.handleClick}
-                >
-                    {number}
-                </li>);
-        })
+
 
         return (
             <>
@@ -182,11 +197,11 @@ class Listings extends Component {
 
                 </div>
                 <div className={styles.pagination}>
-                    <div className={styles.paginationNav} onClick={this.handleClickPrev}>prev </div>
+                    <div className={styles.paginationNav} onClick={this.props.handleClickPrev}>prev </div>
                     <ul className={styles.paginationPages}>
-                        {renderPageNumbers}
+                        {this.renderPageNumbers()}
                     </ul>
-                    <div className={styles.paginationNav} onClick={this.handleClickNext}>next</div>
+                    <div className={styles.paginationNav} onClick={this.props.handleClickNext}>next</div>
                 </div>
 
             </>
