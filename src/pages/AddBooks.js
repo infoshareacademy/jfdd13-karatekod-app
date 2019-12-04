@@ -3,7 +3,8 @@ import styles from "../styles/AddBooks.module.css"; // imports css styles
 import uuid from "uuid";
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
 import { thisExpression } from '@babel/types';
-import { addBooksFirebase } from '../services/BookService'
+import { addBooksFirebase } from '../services/BookService';
+import BookImageUpload from '../components/BookImageUpload'
 
 const initialState = {
     newTitle: "",
@@ -122,7 +123,7 @@ class AddBooks extends React.Component { // AddBooks component
         return (
             <div className={styles.wrap}>
                 <h1>Add your books to the database</h1>
-                <form className={styles.form}>
+                <form className={styles.form}>    
                     <label className={styles.label} >Title*:</label>
                     <input required className={styles.input} type="text" name="title" placeholder="Insert title name here" value={newTitle} onChange={event => {
                         this.handleTitle(event.target.value);
@@ -148,9 +149,10 @@ class AddBooks extends React.Component { // AddBooks component
                     </select>
 
                     <label className={styles.label}>Cover photo:</label>
-                    <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
+                    <BookImageUpload /> 
+                    {/* <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
                         this.handleImageUrl(event.target.value);
-                    }} />
+                    }} /> */}
 
                     <label className={styles.label}>Condition*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
@@ -169,9 +171,10 @@ class AddBooks extends React.Component { // AddBooks component
                     <button className={styles.button} onClick={(e) => {
                             this.addBook(e)
                             
-                        
+                       
 
                     }}>
+
                         ADD TO BOOKSWAPP
             </button>
 
