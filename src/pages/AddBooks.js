@@ -45,9 +45,6 @@ class AddBooks extends React.Component { // AddBooks component
                     newDescription: this.state.newDescription==="",
                 }
             })
-
-            console.log(this.state)
-
             return
         } else if (this.state.newAutor === "") {
             this.setState({
@@ -67,6 +64,13 @@ class AddBooks extends React.Component { // AddBooks component
             this.setState({
                 booksList: [...this.state.booksList, newBook],
                 ...initialState
+            }, () => {
+                this.setState({            
+                    error: {
+                    newTitle: false,
+                    newAutor: false,
+                    newDescription: false,
+                }})
             })
             addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.newImageUrl, this.state.newCondition, this.state.newDescription)
         }
@@ -75,7 +79,7 @@ class AddBooks extends React.Component { // AddBooks component
     handleTitle = newValue => {
         if (newValue.length > 40) {
             return;
-        }
+        } 
         this.setState({
             newTitle: newValue
         })
