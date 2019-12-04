@@ -23,7 +23,8 @@ class Login extends Component {
                     return {
                         name: firebase.auth().currentUser.displayName,
                         created: firebase.auth().currentUser.metadata.creationTime,
-                        lastSingIn: firebase.auth().currentUser.metadata.lastSignInTime}
+                        lastSingIn: firebase.auth().currentUser.metadata.lastSignInTime,
+                        profilePicture: firebase.auth().currentUser.profilePicture}
                 })
             }
         }
