@@ -40,9 +40,9 @@ class AddBooks extends React.Component { // AddBooks component
         if ((this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle)) || (this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor))  || (this.state.newDescription === ""|| hasOnlySpecialCharater(this.state.newDescription))) {
             this.setState({
                 error: {
-                    newTitle: this.state.newTitle === "",
-                    newAutor: this.state.newTitle === "",
-                    newDescription: this.state.newDescription === ""
+                    newTitle: this.state.newTitle==="",
+                    newAutor: this.state.newAutor==="",
+                    newDescription: this.state.newDescription==="",
                 }
             })
 
@@ -167,14 +167,10 @@ class AddBooks extends React.Component { // AddBooks component
 
                     <button className={styles.button} onClick={(e) => {
                         e.preventDefault()
-                        this.addBook(e)
-
-
-
+                       this.addBook(e)
                     }}>
                         ADD TO BOOKSWAPP
             </button>
-
                 </form>
             </div>
         )
