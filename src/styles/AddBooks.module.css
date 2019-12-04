@@ -52,8 +52,8 @@
     border-left: none;
     border-right: none;
     font-size: 24px;
-
 }
+
 .input:focus {
     outline: none;
 }
@@ -79,18 +79,44 @@ select {
 }
 
 .textarea {
-
     border: 2px solid black;
     font-size: 24px;
     outline: none;
-
 }
 
 .textareaError {
     outline: 1px solid #c2185b;
     border-bottom: 2px solid #c2185b;
-
     font-size: 24px;
 
+
+}
+
+@media screen and (max-width: 600px) {
+    h1{
+        width: 90%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px
+
+    }
+    .wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form,
+    .button,
+    .inputError,
+    .input,
+    .dropdown,
+    .textarea{
+        width: 90%
+    }
 
 }

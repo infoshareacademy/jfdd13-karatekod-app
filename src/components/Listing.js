@@ -39,6 +39,7 @@ class Listings extends Component {
 
     }
 
+
     // handleClick(event) {
 
     //     this.setState({
@@ -64,6 +65,7 @@ class Listings extends Component {
     //         })
     //     }
     // }
+
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
@@ -174,21 +176,22 @@ class Listings extends Component {
 
 
         const { currentPage } = this.props;
+
+   
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * BOOKS_PER_PAGE;
         const indexOfFirstBook = indexOfLastBook - BOOKS_PER_PAGE
         const currentBooks = booksList.slice(indexOfFirstBook, indexOfLastBook)
-
-
         const renderBooks = currentBooks.map((book, index) => {
             return <div key={index}>{book}</div>
         })
 
 
-        return (
 
+
+        return (
             <>
-                <div className={styles.grid}>
+      <div className={styles.grid}>
 
                     {renderBooks}
 

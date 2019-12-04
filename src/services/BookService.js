@@ -1,5 +1,4 @@
 import firebase from "../firebase"
-import { booksList } from "../pages/BooksListPage";
 
 // SERVICE FOR ADDING NEW BOOKS TO BOOKLIST DATABASE ON GOOGLE FIREBASE
 export const addBooksFirebase = (title, autor, type, imageUrl, condition, description) => {
@@ -15,13 +14,6 @@ export const addBooksFirebase = (title, autor, type, imageUrl, condition, descri
             description
         })
 };
-
-
-
-
-
-
-
 
 //SERVICE FOR GETTING ALL BOOKS FROM DATABASE ON GOOGLE FIREBASE
 

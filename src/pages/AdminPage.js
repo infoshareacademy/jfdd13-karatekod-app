@@ -1,6 +1,7 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
+
 import firebase from 'firebase'
 import { watchBooks, stopBooks } from '../services/BookService'
 
@@ -13,12 +14,15 @@ import heartEmpty from '../images/heart1.png'
 
 
 
+
 class AdminPage extends React.Component {
     constructor(props){
     super(props)
         this.state={
+
             favs: {},
             booksList:[]
+
 
         }
 
@@ -26,6 +30,7 @@ class AdminPage extends React.Component {
 
 
     }
+
 
 
     componentDidMount() {
@@ -114,6 +119,7 @@ class AdminPage extends React.Component {
                                 
                                 </div>
                             </div>
+
                         </div>
                     </div>
 

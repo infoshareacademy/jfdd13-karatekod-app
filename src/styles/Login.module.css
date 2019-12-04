@@ -1,9 +1,9 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+.userProfile h1{
+    text-align: center;
+}
+
+.profilePicture{
+    text-align: center;
 }
 
 .userProfile button{
@@ -16,11 +16,16 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    float: right;
-    border-radius: 10px;
-    
+    border-radius: 10px;  
+}
 
-    
+.uploadButton{
+    float: left;
+}
+
+.logoutButton{
+    float: right;
+
 }
 
 .userProfile button:hover{
@@ -29,19 +34,18 @@
     color: white
 }
 
+
 .label{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px
-
 }
 
 .form{
     display: flex;
     flex-direction: column;
     align-items: center;
-  
 }
 
 .input{
@@ -53,49 +57,73 @@
     border-right: none
 }
 
-
 .loginGrid {
-display: grid;
-max-width: 80%;
-padding-top: 60px;
-padding-bottom: 40px;
-margin: auto;
-min-height: 65vh;
-grid-template-areas: 
-"logo box"
-"desc box"
-"desc box"
-"desc box"
-"desc box"
-
-
+    display: grid;
+    max-width: 80%;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    margin: auto;
+    min-height: 65vh;
+    grid-template-areas: 
+    "logo box"
+    "desc box"
+    "desc box"
+    "desc box"
+    "desc box"
 }
 
 .loginBox {
-display: flex;
-justify-content: center;
-align-items: center;
-grid-area: box;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: box;
 }
 
 .logoSection {
-grid-area: logo;
-display: flex;
-max-height: 50px;
-justify-content: center;
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
 }
+
 .logo {
     width: 10%
-    
 }
+
 .logoText {
    width: 70%
 }
+
 .loginDesc {
     grid-area: desc;
     padding-top: 80px;
     padding-right: 5px;
 }
 
+
+@media screen and (max-width: 600px) {
+   .loginGrid{
+       display: flex;
+       flex-direction: column;
+       justify-content: center; 
+       
+   }
+
+   .loginDesc{
+        display:inline-block;
+        text-align:center;       
+    }
+
+    h1{
+        display: inline-block;
+        text-align: center; 
+    }
+
+    .userProfile{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center
+    }
+   
+}
 

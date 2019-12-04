@@ -15,11 +15,7 @@ class BookPage extends React.Component{
     // fetch books from firebase onmount
     componentDidMount(){
         watchBooks(bookslist => {
-            this.setState({bookslist});
-            const myBook = this.state.bookslist.find(book=>book.id===this.state.id)
-            this.setState({book:myBook})
-          });
-
+            this.setState({book:bookslist.find(book=>book.id===this.state.id)})})
     }
     // stop fetching books on unmount
     componentWillUnmount(){
@@ -28,33 +24,33 @@ class BookPage extends React.Component{
 
     render(){
         return (
-            <div>
+        <div className={styles.container}>
             <div className={styles.bookCard}>
                 <img className={styles.bookImage} src={this.state.book.imageUrl} />
-                <div className={styles.bookInfo}>
-                    <div className={styles.bookInfo2}>
-                        <div className={styles.info}>Title: 
-                            <div className={styles.info2}>{this.state.book.title}</div>
-                        </div>
-                        <div className={styles.info}>Author: 
-                            <div className={styles.info2}>{this.state.book.autor}</div>
-                        </div>
-                        <div className={styles.info}>Genre: 
-                            <div className={styles.info2}>{this.state.book.type}</div>
-                        </div>
-                        <div className={styles.info}>Condition: 
-                            <div className={styles.info2}>{this.state.book.condition}</div>   
-                        </div>
-                    </div>
-                    <div className={styles.desc}>Description: 
-                        <div className={styles.info2}>{this.state.book.description}</div>   
-                    </div>
-                </div> 
+                    <div className={styles.bookInfo}>
+                        <div className={styles.bookInfo2}>
+                            <div className={styles.info}>Title: 
+                                <div className={styles.info2}>{this.state.book.title}</div>
+                                    </div>
+                                        <div className={styles.info}>Author: 
+                                        <div className={styles.info2}>{this.state.book.autor}</div>
+                                        </div>
+                                        <div className={styles.info}>Genre: 
+                                        <div className={styles.info2}>{this.state.book.type}</div>
+                                        </div>
+                                         <div className={styles.info}>Condition: 
+                                        <div className={styles.info2}>{this.state.book.condition}</div>   
+                                        </div>
+                                        </div>
+                                          <div className={styles.desc}>Description: 
+                                       <div className={styles.info2}>{this.state.book.description}</div>   
+                            </div>
+                                </div> 
             </div>
-            <div>
-                <Link className={styles.link} to="/books">back to book list</Link>
-            </div>
-            </div>
+                                <div>
+                                    <Link className={styles.link} to="/search">back to book list</Link>
+                                </div>
+        </div>
         )
     }
 }
