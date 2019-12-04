@@ -58,20 +58,6 @@ class Login extends Component {
 
                 ): (
 
-                <div className = {styles.loginGrid}>
-                
-                    
-
-                        
-                        <h1>Welcome, {firebase.auth().currentUser.displayName}!</h1>
-                        
-                        <img src={firebase.auth().currentUser.photoURL}></img>
-                   
-                        </div>
-                    </div>
-
-                ) : (
-
               <div className = {styles.loginGrid}>
 
                     <div className = {styles.logoSection} >
