@@ -1,10 +1,9 @@
-
 .userProfile h1{
     text-align: center;
 }
+
 .profilePicture{
     text-align: center;
-    /* border-radius: 30px; */
 }
 
 .userProfile button{
@@ -17,8 +16,6 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-
-    /* float: right; */
     border-radius: 10px;  
 }
 
@@ -66,12 +63,7 @@
     padding-top: 60px;
     padding-bottom: 40px;
     margin: auto;
-<<<<<<< HEAD
-    height: 100vh;
-=======
     min-height: 65vh;
-
->>>>>>> faccda257b6b60abd6b058ea996ac164c3433535
     grid-template-areas: 
     "logo box"
     "desc box"
@@ -90,7 +82,6 @@
 .logoSection {
     grid-area: logo;
     display: flex;
-    /* max-height: 50px; */
     justify-content: center;
 }
 
@@ -107,7 +98,6 @@
     padding-top: 80px;
     padding-right: 5px;
 }
-
 
 
 @media screen and (max-width: 600px) {

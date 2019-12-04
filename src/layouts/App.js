@@ -27,7 +27,7 @@ function App() {
           </main>
           </Secure>
           <Footer className={styles.footer}/>
-          {/* <SomeButtons /> */}
+          <SomeButtons />
       </div>
     </Router>
     
