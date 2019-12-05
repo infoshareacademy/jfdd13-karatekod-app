@@ -41,7 +41,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 {this.state.isSignedIn ? (
                    <div className={styles.userProfile}>
                         <button className={styles.logoutButton} onClick = {()=>firebase.auth().signOut()} >Sign out</button>
@@ -64,9 +64,11 @@ class Login extends Component {
                       <div className={styles.logoText}>  <img src={logoText}  width="100%"/> </div>
                     </div>
                     <div className={styles.loginDesc}>
+                        <p>
                         Welcome to the world, where your books gain second life. Join the society, where people
                            share experience through the stories they have red. It's easy like one (Sign in), two
                            (upload your books), and three (find books to swap)
+                           </p>
                     </div>
                     
                     <div className={styles.loginBox}>                            
@@ -77,7 +79,7 @@ class Login extends Component {
                     </div>              
                 </div>
                 )}
-            </div>
+            </>
         )
     }
 }
