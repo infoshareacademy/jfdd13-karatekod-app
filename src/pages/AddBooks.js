@@ -12,7 +12,8 @@ const initialState = {
     newImageUrl: 'http://placekitten.com/140/190',
     newDescription: "",
     newType: "fantasy",
-    newCondition: 1
+    newCondition: 1,
+    uploadedImageUrl:""
 }
 
 
@@ -26,7 +27,8 @@ class AddBooks extends React.Component { // AddBooks component
                 newTitle: false,
                 newAutor: false,
                 newDescription: false,
-            }
+            },
+
         }
     }
 
@@ -112,6 +114,10 @@ class AddBooks extends React.Component { // AddBooks component
         })
     }
 
+    handleBookImageUpload = (url) => {
+        this.setState({uploadedImageUrl:url})
+    }
+
 
     componentDidUpdate() {
         localStorage.setItem("bookslist", JSON.stringify(this.state.booksList));    // local storage updates whenever something changes in this component
@@ -149,7 +155,7 @@ class AddBooks extends React.Component { // AddBooks component
                     </select>
 
                     <label className={styles.label}>Cover photo:</label>
-                    <BookImageUpload /> 
+                    <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
                     {/* <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
                         this.handleImageUrl(event.target.value);
                     }} /> */}
@@ -169,6 +175,7 @@ class AddBooks extends React.Component { // AddBooks component
                     <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder="Insert description of the book here" id="txtArea" rows="10" cols="40"></textarea>
 
                     <button className={styles.button} onClick={(e) => {
+                        console.log(this.state.uploadedImageUrl)
                             this.addBook(e)
                             
                        

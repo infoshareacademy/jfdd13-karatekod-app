@@ -29,6 +29,9 @@ class BookImageUpload extends Component {
     }
     handleUpload = () => {
         const {image} = this.state;
+        if (image === null) {
+            return;
+        }
         const uploadTask = storage.ref(`bookcovers/${image.name}`).put(image);
         uploadTask.on('state_changed',
         (snapshot) => {
@@ -51,9 +54,12 @@ class BookImageUpload extends Component {
     }
 
     updateCoverPicture = (url) => {
+        console.log(url);
         // 1. check what user are you logged in
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
+        this.props.onBookImageUpload(url)
+
 
         // 2. get the url and update book profile
         firebase.database().ref(`/booksList/${id}/coverPicture`).set(url)
@@ -86,7 +92,7 @@ class BookImageUpload extends Component {
                 <div>
                     {/* <p>Upload book cover picture</p> */}
                     <input type="file" onChange={this.handleChange}/>
-                    <button onClick={this.handleUpload}>Upload</button>
+                    <button type="button" onClick={this.handleUpload}>Upload</button>
                     <div>
                         <img src={this.state.url} alt="Book cover pic" height= "100" width= "80"/>
                     </div>
