@@ -9,11 +9,10 @@ import BookImageUpload from '../components/BookImageUpload'
 const initialState = {
     newTitle: "",
     newAutor: "",
-    newImageUrl: 'http://placekitten.com/140/190',
     newDescription: "",
     newType: "fantasy",
     newCondition: 1,
-    uploadedImageUrl:""
+    uploadedImageUrl:'http://placekitten.com/140/190'
 }
 
 
@@ -175,7 +174,6 @@ class AddBooks extends React.Component { // AddBooks component
                     <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder="Insert description of the book here" id="txtArea" rows="10" cols="40"></textarea>
 
                     <button className={styles.button} onClick={(e) => {
-                        console.log(this.state.uploadedImageUrl)
                             this.addBook(e)
                             
                        
