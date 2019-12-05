@@ -55,6 +55,7 @@ class ImageUpload extends Component {
                 console.log(url);
                 this.setState({url})
                 this.updateProfilePicture(url)
+                this.setState({buttons:false})
             })
         });
     }
