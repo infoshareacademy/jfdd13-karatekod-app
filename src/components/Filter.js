@@ -3,20 +3,12 @@ import styles from '../styles/SearchSection.module.css'
 import InputRange from 'react-input-range'
 import 'react-input-range/lib/css/index.css'
 
-
-
-
-export class Filter extends Component {
-    
+export class Filter extends Component {   
     render() {
         return (
-
         <div>
-
             {/* <h4 className={styles.textHeader}>Select criteria for books searching</h4> */}
             <div className={styles.filter}>
-                
-
                 <div className={styles.forms}>
                     <div className={styles.searchTextInputs}>
                         <input type="text" name="autor" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
@@ -25,7 +17,7 @@ export class Filter extends Component {
                     </div>
                     <div >
                     <select name="type" onChange = {this.props.change} className={styles.dropdown} >
-                        <option value="any">genere</option>
+                        <option value="any">genre</option>
                         <option value='action'>Action</option>
                         <option value='comedy'>Comedy</option>
                         <option value='drama'>Drama</option>
@@ -40,24 +32,16 @@ export class Filter extends Component {
                         <p className={styles.sliderDescription}>select book condition</p>
                        <div className={styles.rangeSlider}>
                        
-                        <InputRange
-                                
+                        <InputRange  
                                 globalState = {this.props.globalState}
-                                type = "range"
-                                
+                                type = "range" 
                                 maxValue={5}
                                 minValue={1}
                                 value={this.props.globalState.range}
                                 onChange={this.props.changeFilterRange} />
-                                
-
-                        </div>
-
-                        
+                        </div>         
                     </div>
-
-                
-            </div>
+              </div>
         </div>
         )
     }

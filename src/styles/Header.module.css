@@ -1,6 +1,6 @@
 
 .header{
-    height: 30vh;   
+    height: 20vh;   
     position: relative;
     overflow: hidden; 
  
@@ -12,6 +12,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 100%;
+    filter: brightness(50%);
 } 
 
 
@@ -20,7 +21,4 @@
         display: none
     }
 
-    /* .headerImg{
-        width: 100vw
-    } */
 }

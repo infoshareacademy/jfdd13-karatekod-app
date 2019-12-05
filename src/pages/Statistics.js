@@ -13,7 +13,7 @@ const Statistics = () => {
             </div>
             <div className={styles.graph2}>
                 <Graph2/>
-                <p> This pie chart illustrates number of book types avaliable to swap in %. Find out which type is your favorite!</p>
+                <p> This pie chart illustrates number of book types avaliable to swap. Find out which type is your favorite!</p>
             </div>
             <p></p>
         </div>

@@ -1,3 +1,10 @@
+.userProfile h1{
+    text-align: center;
+}
+
+.profilePicture{
+    text-align: center;
+}
 
 .userProfile button{
     border: 1px solid #c2185b;
@@ -9,14 +16,45 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
+    border-radius: 10px;  
+}
+
+.uploadButton{
+    float: left;
+}
+
+.logoutButton{
     float: right;
-    border-radius: 10px;
+
 }
 
 .userProfile button:hover{
     border: 1px solid #FF9800;
     background: #FF9800;
     color: white
+}
+
+
+.label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    width: 330px;
+    height: 40px;
+    border-bottom: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none
 }
 
 .loginGrid {
@@ -35,10 +73,10 @@
  display: flex;
     flex-direction: column;
     max-width: 80%;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 40px;
     margin: auto;
-    min-height: 100vh;
+    min-height: 65vh;
     grid-template-areas: 
     "logo box"
     "desc box"
@@ -51,7 +89,9 @@
     /* display: flex;
     justify-content: center;
     align-items: center;
+
     grid-area: box; */
+
 
 }
 
@@ -62,16 +102,18 @@
     align-items: center;
   /*  grid-area: logo;
     display: flex;
-    max-height: 50px;
     justify-content: center;
     */
 }
 
 .logo {
+
     max-width: 200px;
    /* width: 10%*/
     
+
 }
+
 .logoText {
    /*width: 70%*/
 }
@@ -89,18 +131,17 @@
        display: flex;
        flex-direction: column;
        justify-content: center; 
+       
    }
 
    .loginDesc{
         display:inline-block;
-        text-align:center;    
-        margin-bottom: 30px;
+        text-align:center;       
     }
 
     h1{
         display: inline-block;
         text-align: center; 
-        margin-top: 50px
     }
 
     .userProfile{
@@ -111,3 +152,4 @@
     }
    
 }
+

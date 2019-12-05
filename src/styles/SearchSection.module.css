@@ -264,6 +264,7 @@ text-align: center;
     }
 
     .forms{
+        margin-top: 50px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -271,7 +272,6 @@ text-align: center;
     
     .searchTextInputs{
         padding-bottom: 10px;
-        width: 700px
     }
 
     .dropdown{
