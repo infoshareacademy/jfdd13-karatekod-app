@@ -20,8 +20,10 @@ class ImageUpload extends Component {
         this.showUpload = this.showUpload.bind(this)
     }
     showUpload () {
+        const {buttons} = this.state
        this.setState({
-           buttons:true
+            
+           buttons: !buttons
        })
         
     }
