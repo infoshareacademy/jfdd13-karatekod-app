@@ -1,9 +1,7 @@
-
 .header{
     height: 20vh;   
     position: relative;
     overflow: hidden; 
- 
 }
 
 .headerImg{
@@ -14,7 +12,6 @@
     max-width: 100%;
     filter: brightness(50%);
 } 
-
 
 @media screen and (max-width: 600px) {
     .header{

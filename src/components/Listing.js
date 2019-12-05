@@ -89,7 +89,7 @@ class Listings extends Component {
     loopListings() {
         const { booksList } = this.props;
         if (booksList == undefined || booksList == 0) {
-            return ['   We are sorry but there is no books matching your criteria. Try other titles or come back soon']
+            return [<p>We are sorry but there is no books matching your criteria. Try other titles or come back soon</p>]
         }
         return booksList.map((listing, index) => {
             return (
@@ -123,7 +123,7 @@ class Listings extends Component {
                                     <p className={styles.location}>condition: {listing.condition}</p>
                                 </div>
                                 <div className={styles.like}>
-                                <AddToFavorites id={listing.id} isFavorites = {this.state.favs[listing.id]}
+                                <AddToFavorites  id={listing.id} isFavorites = {this.state.favs[listing.id]}
                                  onClick={() => {
                                     addFavFirebase(listing.id, firebase.auth().currentUser)
                                     
@@ -137,22 +137,14 @@ class Listings extends Component {
                             </div>
                         </div>
                     </div>
-
-
                     <div style={{ textAlign: 'center' }}>
 
                     </div>
                 </div>
-
             )
         }
-
         )
     }
-
-
-
-
     renderPageNumbers = () => {
         const pageNumbers = new Array(this.props.pages)
         for (let i = 0; i < this.props.pages; i++) {
@@ -170,14 +162,8 @@ class Listings extends Component {
                 </li>);
         })
     }
-
-
     render() {
-
-
-        const { currentPage } = this.props;
-
-   
+        const { currentPage } = this.props;   
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * BOOKS_PER_PAGE;
         const indexOfFirstBook = indexOfLastBook - BOOKS_PER_PAGE
@@ -185,10 +171,6 @@ class Listings extends Component {
         const renderBooks = currentBooks.map((book, index) => {
             return <div key={index}>{book}</div>
         })
-
-
-
-
         return (
             <>
       <div className={styles.grid}>

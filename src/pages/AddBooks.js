@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
-import uuid from "uuid";
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
 import { thisExpression } from '@babel/types';
 import { addBooksFirebase } from '../services/BookService'
+import { Button } from 'bloomer';
+import 'bulma/css/bulma.min.css'
 
 const initialState = {
     newTitle: "",
@@ -166,15 +167,8 @@ class AddBooks extends React.Component { // AddBooks component
                     <label className={styles.label}>Description*:</label>
                     <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder="Insert description of the book here" id="txtArea" rows="10" cols="40"></textarea>
 
-                    <button className={styles.button} onClick={(e) => {
-                            this.addBook(e)
-                            
-                        
-
-                    }}>
-                        ADD TO BOOKSWAPP
-            </button>
-
+                        <Button isColor='danger' onClick={(e) => {
+                            this.addBook(e)}} className={styles.button}>Add to BookSwapp</Button>
                 </form>
             </div>
         )

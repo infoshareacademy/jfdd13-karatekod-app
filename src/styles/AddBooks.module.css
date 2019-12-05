@@ -6,15 +6,11 @@
     margin-top: 50px;
 }
 .button{
-    border: 1px solid #c2185b;
-    background: #c2185b;
     color: white;
-    margin-top: 40px;
+    margin-top: 10px;
     width: 330px;
-    height: 40px;
     cursor: pointer;
     font-size: 20px;
-    font-weight: bold;    
 }
 
 .button:hover{

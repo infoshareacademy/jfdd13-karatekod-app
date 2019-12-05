@@ -21,6 +21,7 @@
     border-bottom: 1px solid grey;
     
 }
+
 .searchTextInputs {
     display: flex;
     justify-content: center;
@@ -98,8 +99,9 @@
 
 .like {
     display: flex;
-    flex-direction: row ;
+    flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     width: 100%;
 }
 
@@ -126,11 +128,13 @@
     -moz-box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
     box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
     border-radius: 5px;
+    width: 250px;
+    height: 430px
 }
 
 .listingImg {
     background-size: cover;
-    min-height: 200px;
+    height: 200px;
     color: white;
     position: relative;
 }
@@ -189,14 +193,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 15px;
+    justify-content: center;
+    padding: 10px 15px;
     text-decoration: none;
+    width: 100%
 }
 
 .bottomInfoDetail{
-text-align: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
     text-decoration: none;
-
+    width: 100%
 }
 
 .pages{
@@ -242,15 +253,18 @@ text-align: center;
 .paginationPages {
     display: flex;
 }
+
 .paginationPages li {
     width: 30px;
     text-align: center;
 
 }
+
 .paginationPages li:hover {
     background-color: pink;
     cursor: pointer
 }
+
 .paginationNav:hover {  
     cursor: pointer
 }
