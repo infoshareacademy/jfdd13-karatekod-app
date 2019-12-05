@@ -37,7 +37,7 @@ class AddBooks extends React.Component { // AddBooks component
             title: this.state.newTitle,
             autor: this.state.newAutor,
             type: this.state.newType,
-            imageUrl: "http://placekitten.com/140/190",
+            imageUrl: this.state.uploadedImageUrl,
             condition: this.state.newCondition,
             description: this.state.newDescription,
 
@@ -71,7 +71,7 @@ class AddBooks extends React.Component { // AddBooks component
                 booksList: [...this.state.booksList, newBook],
                 ...initialState
             })
-            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.newImageUrl, this.state.newCondition, this.state.newDescription)
+            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
         }
     };
 
