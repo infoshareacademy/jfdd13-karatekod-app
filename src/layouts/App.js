@@ -5,20 +5,17 @@ import Header from './Header';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Page from './Page';
-import SearchBar from './SearchBar';
 import SomeButtons from '../components/SomeButtons'
 import Secure from '../components/Secure'
 
 
 
 function App() {
-  return (
-   
+  return ( 
     <Router>
       <div className={styles.app}>
-
            <Secure>
-
+           <Header/>
           <main>
             <aside>
               <Navigation className={styles.navigation}/>
@@ -30,7 +27,6 @@ function App() {
           <SomeButtons />
       </div>
     </Router>
-    
   );
 }
 

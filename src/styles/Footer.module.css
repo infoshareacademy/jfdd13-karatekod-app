@@ -5,6 +5,8 @@
     font-size: 13px;
     display: flex;
     justify-content: center;
+    max-height: 40px;
+    min-height: 5vh;
 }
 
 .footerAbout{
@@ -13,7 +15,6 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
 
 a{
     color: white;
@@ -30,7 +31,5 @@ a:hover{
         flex-direction: row;
         justify-content: space-evenly;  
     }
-
-    
 
 }

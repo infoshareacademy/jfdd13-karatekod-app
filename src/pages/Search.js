@@ -5,6 +5,8 @@ import Filter from '../components/Filter'
 import Listings from '../components/Listing'
 import { watchBooks, stopBooks } from '../services/BookService'
 
+export const BOOKS_PER_PAGE = 9
+
 export default class Search extends Component {
   constructor() {
     super()
@@ -14,33 +16,36 @@ export default class Search extends Component {
       filteredData: [],
       type: 'any',
       autor: '',
-      title: ''
+
+      title: '',
+      currentPage: 1
+
     }
     
     this.change = this.change.bind(this)
     this.changeFilterRange = this.changeFilterRange.bind(this)
     this.filteredData = this.filteredData.bind(this)
-
-
   }
 
-
-
   change(event) {
-
     const name = event.target.name
     const value = event.target.value
-    this.setState({
-      [name]: value
-    }, () => {
+
+    this.setState ({
+      [name]:value,
+      currentPage: 1
+    }, ()=> {
+
       console.log(this.state)
       this.filteredData();
     })
+    
   }
 
   changeFilterRange(value) {
     this.setState({
-      range: value
+      range: value,
+      currentPage: 1
     })
     this.filteredData();
   }
@@ -49,12 +54,17 @@ export default class Search extends Component {
     watchBooks(booksList => {
       this.setState({ booksList });
       this.filteredData()
-
     });
   }
 
 
+  componentWillUnmount() {
+    stopBooks()
+  }
 
+
+
+ 
 
 
 
@@ -75,6 +85,7 @@ export default class Search extends Component {
         }
       })
     }
+
     if (this.state.search != '') {
       newData = newData.filter((item) => {
         const title = item.title.toLowerCase();
@@ -89,26 +100,64 @@ export default class Search extends Component {
     this.setState({
       filteredData: newData
     })
+  }
 
+  get pages () {
+    return Math.ceil(this.state.filteredData.length / BOOKS_PER_PAGE)
+  }
 
+  handleClickNext = () => {
+    if (this.state.currentPage >= this.pages) {
+      return
+    }
+    this.setState({
+      currentPage: this.state.currentPage + 1
+    })
+    window.scrollTo(0,0)
+  }
 
+  handleClickPrev = () => {
+    if (this.state.currentPage <= 1) {
+      return
+    }
+
+    this.setState({
+      currentPage: this.state.currentPage - 1
+    })
+    window.scrollTo(0,0)
+  }
+
+  handleClick = (page) => {
+    this.setState({
+      currentPage: page
+    })
+    window.scrollTo(0,0)
   }
 
   render() {
 
-    return (
+    
+  return (
+    
+        
+      
+      
+        
+        <section id="content-area">
+          <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState= {this.state} />
+          <Listings
+            booksList= {this.state.filteredData}
+            currentPage={this.state.currentPage}
+            handleClickNext={this.handleClickNext}
+            handleClickPrev={this.handleClickPrev}
+            handleClick={this.handleClick}
+            pages={this.pages}  
+          />
+        </section>
+       
+     
+  );
 
-
-
-
-
-      <section id="content-area">
-        <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState={this.state} />
-        <Listings booksList={this.state.filteredData} />
-      </section>
-
-
-    );
   }
 }
 
