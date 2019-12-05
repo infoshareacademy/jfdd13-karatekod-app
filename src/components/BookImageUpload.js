@@ -62,7 +62,7 @@ class BookImageUpload extends Component {
 
 
         // 2. get the url and update book profile
-        firebase.database().ref(`/booksList/${id}/coverPicture`).set(url)
+
     }
 
     checkIfBookHasCoverPicture = async () => {
