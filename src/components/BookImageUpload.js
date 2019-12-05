@@ -94,7 +94,8 @@ class BookImageUpload extends Component {
                     <input type="file" onChange={this.handleChange}/>
                     <button type="button" onClick={this.handleUpload}>Upload</button>
                     <div>
-                        <img src={this.state.url} alt="Book cover pic" height= "100" width= "80"/>
+                        {/* <img src={this.state.url} alt="Book cover pic" height= "100" width= "80"/> */}
+                        {showProgress && <progress value={this.state.progress} max="100"/>}
                     </div>
                 </div>
             </div>
