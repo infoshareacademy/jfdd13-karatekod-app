@@ -10,8 +10,7 @@
     border: 1px solid #c2185b;
     background: #c2185b;
     color: white;
-    margin-top: 40px;
-    width: 230px;
+     width: 230px;
     height: 40px;
     cursor: pointer;
     font-size: 20px;
@@ -124,6 +123,10 @@
         align-items: center
     }
    
+}
+
+.userHeader {
+    display: flex;
 }
 
 

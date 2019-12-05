@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase, { storage } from '../firebase';
-import styles from '../styles/Login.module.css'
+import styles from '../styles/ImageUpload.module.css'
 
 class ImageUpload extends Component {
     constructor(props) {
@@ -8,7 +8,8 @@ class ImageUpload extends Component {
         this.state = {
             image: null,
             url: '',
-            progress: 0
+            progress: 0,
+            buttons: false
         }
         this.handleChange = this
             .handleChange
@@ -16,6 +17,13 @@ class ImageUpload extends Component {
             this.handleUpload = this
             .handleUpload
             .bind(this);
+        this.showUpload = this.showUpload.bind(this)
+    }
+    showUpload () {
+       this.setState({
+           buttons:true
+       })
+        
     }
 
     componentDidMount() {
@@ -83,17 +91,20 @@ class ImageUpload extends Component {
         const showProgress = this.state.progress !== 0 && this.state.progress !== 100 
 
         return (
-            <div>
+            <div className={styles.profilPictureEdit}>
                 <div className={styles.profilePicture}>  
                     <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" height= "200" width= "200" className={styles.userImg}/>
                 </div>
+                {showProgress && <progress value={this.state.progress} max="100"/>}
                 <div>
-                    <p>Change profile picture</p>
+                    <div onClick={this.showUpload}>Change profile picture</div>
+                    { (this.state.buttons) ? (
+                    <div className={styles.uploadButtons}>
                     <input type="file" onChange={this.handleChange}/>
                     <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
-                    <div>
-                        {showProgress && <progress value={this.state.progress} max="100"/>}
-                    </div>
+                    </div>): (null)
+                    }   
+                    
                 </div>
             </div>
         )

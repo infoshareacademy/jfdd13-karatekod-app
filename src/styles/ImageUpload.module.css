@@ -4,3 +4,11 @@
 .userImg {
     border-radius: 50%;
 }
+/* .profilPictureEdit {
+    display: flex;
+    flex-direction: column;
+} */
+
+.uploadButtons {
+    /* display: none; */
+}
