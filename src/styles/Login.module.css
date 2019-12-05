@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-.userProfile button{
+.userProfile .button{
     border: 1px solid #c2185b;
     background: #c2185b;
     color: white;
@@ -16,14 +16,13 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 10px;  
+    border-radius: 10px; 
+    float: right; 
 }
 
-.uploadButton{
-    float: left;
-}
 
-.logoutButton{
+
+.loginButton{
     float: right;
 
 }
@@ -120,10 +119,11 @@
 
     .userProfile{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: center;
         align-items: center
     }
    
 }
+
 

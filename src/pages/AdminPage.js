@@ -1,10 +1,8 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
-
 import firebase from 'firebase'
 import { watchBooks, stopBooks } from '../services/BookService'
-
 import styles from '../styles/SearchSection.module.css'
 import AddToFavorites from '../components/AddToFavorites'
 import {addFavFirebase} from '../services/FavService'
@@ -15,7 +13,8 @@ import heartEmpty from '../images/heart1.png'
 
 
 
-class AdminPage extends React.Component {
+
+class Favs extends React.Component {
     constructor(props){
     super(props)
         this.state={
@@ -153,4 +152,4 @@ class AdminPage extends React.Component {
         }
     }
  
-export default AdminPage
+export default Favs
