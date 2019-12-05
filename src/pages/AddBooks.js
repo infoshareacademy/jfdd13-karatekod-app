@@ -2,15 +2,19 @@ import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
 import {hasOnlySpecialCharater} from "../helpers/SpecialCharacters"
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
-import { addBooksFirebase } from '../services/BookService'
+
+import { thisExpression } from '@babel/types';
+import { addBooksFirebase } from '../services/BookService';
+import BookImageUpload from '../components/BookImageUpload'
+
 
 const initialState = {
     newTitle: "",
     newAutor: "",
-    newImageUrl: 'http://placekitten.com/140/190',
     newDescription: "",
     newType: "fantasy",
-    newCondition: 1
+    newCondition: 1,
+    uploadedImageUrl:'http://placekitten.com/140/190'
 }
 
 class AddBooks extends React.Component { // AddBooks component
@@ -23,7 +27,8 @@ class AddBooks extends React.Component { // AddBooks component
                 newTitle: false,
                 newAutor: false,
                 newDescription: false,
-            }
+            },
+
         }
     }
 
@@ -32,7 +37,7 @@ class AddBooks extends React.Component { // AddBooks component
             title: this.state.newTitle,
             autor: this.state.newAutor,
             type: this.state.newType,
-            imageUrl: "http://placekitten.com/140/190",
+            imageUrl: this.state.uploadedImageUrl,
             condition: this.state.newCondition,
             description: this.state.newDescription,
 
@@ -72,7 +77,7 @@ class AddBooks extends React.Component { // AddBooks component
                     newDescription: false,
                 }})
             })
-            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.newImageUrl, this.state.newCondition, this.state.newDescription)
+            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
         }
     };
 
@@ -115,6 +120,10 @@ class AddBooks extends React.Component { // AddBooks component
         })
     }
 
+    handleBookImageUpload = (url) => {
+        this.setState({uploadedImageUrl:url})
+    }
+
 
   // local storage updates whenever something changes in this component
     
@@ -125,7 +134,7 @@ class AddBooks extends React.Component { // AddBooks component
         return (
             <div className={styles.wrap}>
                 <h1>Add your books to the database</h1>
-                <form className={styles.form}>
+                <form className={styles.form}>    
                     <label className={styles.label} >Title*:</label>
                     <input className={styles.input} type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
                         this.handleTitle(event.target.value);
@@ -151,9 +160,10 @@ class AddBooks extends React.Component { // AddBooks component
                     </select>
 
                     <label className={styles.label}>Cover photo:</label>
-                    <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
+                    <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
+                    {/* <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
                         this.handleImageUrl(event.target.value);
-                    }} />
+                    }} /> */}
 
                     <label className={styles.label}>Condition*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
@@ -170,9 +180,14 @@ class AddBooks extends React.Component { // AddBooks component
                     <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></textarea>
 
                     <button className={styles.button} onClick={(e) => {
-                        e.preventDefault()
-                       this.addBook(e)
+                            e.preventDefault()
+                            this.addBook(e)
+                            
+                       
+
+
                     }}>
+
                         ADD TO BOOKSWAPP
             </button>
                 </form>
@@ -187,24 +202,3 @@ class AddBooks extends React.Component { // AddBooks component
 
 export default AddBooks
 
-
-let mailValidation = () => {
-    const inputValue = document.querySelector('.sign-in-contact-input').value;
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (regex.test(String(inputValue).toLowerCase()) === true){
-        return true;
-    }
-    else{
-        return false,
-        document.querySelector('.wrong-email').style.display= 'block';
-    }
-  };
-
-
-  let gameRedirect = (e) => {
-    e.preventDefault();
-    if (mailValidation() === true){
-        window.location.replace("game-instructions.html");
-    }
-};
