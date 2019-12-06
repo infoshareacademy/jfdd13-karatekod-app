@@ -43,7 +43,7 @@ class AddBooks extends React.Component { // AddBooks component
             description: this.state.newDescription,
 
         }
-        this.notify()
+
 
         if ((this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle)) || (this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor))  || (this.state.newDescription === ""|| hasOnlySpecialCharater(this.state.newDescription))) {
             this.setState({
@@ -81,6 +81,7 @@ class AddBooks extends React.Component { // AddBooks component
                 }})
             })
             addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
+            this.notify()
 
 
             
