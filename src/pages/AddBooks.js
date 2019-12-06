@@ -2,11 +2,10 @@ import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
 import {hasOnlySpecialCharater} from "../helpers/SpecialCharacters"
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
-
-import { thisExpression } from '@babel/types';
+import {ToastContainer, toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 import { addBooksFirebase } from '../services/BookService';
 import BookImageUpload from '../components/BookImageUpload'
-
 
 const initialState = {
     newTitle: "",
@@ -32,6 +31,8 @@ class AddBooks extends React.Component { // AddBooks component
         }
     }
 
+    notify = () => toast('Book added!')
+
     addBook = () => {
         const newBook = {
             title: this.state.newTitle,
@@ -42,6 +43,8 @@ class AddBooks extends React.Component { // AddBooks component
             description: this.state.newDescription,
 
         }
+
+
         if ((this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle)) || (this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor))  || (this.state.newDescription === ""|| hasOnlySpecialCharater(this.state.newDescription))) {
             this.setState({
                 error: {
@@ -78,6 +81,9 @@ class AddBooks extends React.Component { // AddBooks component
                 }})
             })
             addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
+            this.notify()
+
+            
         }
     };
 
@@ -181,16 +187,15 @@ class AddBooks extends React.Component { // AddBooks component
 
                     <button className={styles.button} onClick={(e) => {
                             e.preventDefault()
-                            this.addBook(e)
-                            
-                       
-
-
+                            this.addBook(e)                  
                     }}>
-
                         ADD TO BOOKSWAPP
             </button>
                 </form>
+                <ToastContainer
+                hideProgressBar={true}
+                position="bottom-right"
+                />
             </div>
         )
     }
