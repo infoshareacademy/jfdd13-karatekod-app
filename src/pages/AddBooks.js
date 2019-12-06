@@ -45,30 +45,16 @@ class AddBooks extends React.Component { // AddBooks component
         }
 
 
-        if ((this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle)) || (this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor))  || (this.state.newDescription === ""|| hasOnlySpecialCharater(this.state.newDescription))) {
+        if (this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle) || this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor) || this.state.newDescription === "" || hasOnlySpecialCharater(this.state.newDescription)) {
             this.setState({
                 error: {
-                    newTitle: this.state.newTitle==="",
-                    newAutor: this.state.newAutor==="",
-                    newDescription: this.state.newDescription==="",
+                    newTitle: this.state.newTitle==="" || hasOnlySpecialCharater(this.state.newTitle),
+                    newAutor: this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor),
+                    newDescription: this.state.newDescription === "" || hasOnlySpecialCharater(this.state.newDescription)
                 }
             })
             return
-        } else if (this.state.newAutor === "") {
-            this.setState({
-                error: {
-                    newAutor: this.state.newAutor === ""
-                }
-            })
-            return
-        } else if (this.state.newDescription === "") {
-            this.setState({
-                error: {
-                    newDescription: this.state.newDescription === ""
-                }
-            })
-            return
-        } else {
+        }  else {
             this.setState({
                 booksList: [...this.state.booksList, newBook],
                 ...initialState
