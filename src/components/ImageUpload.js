@@ -40,6 +40,7 @@ class ImageUpload extends Component {
     }
     handleUpload = () => {
         const {image} = this.state;
+        if (image) { 
         const uploadTask = storage.ref(`images/${image.name}`).put(image);
         uploadTask.on('state_changed',
         (snapshot) => {
@@ -60,7 +61,7 @@ class ImageUpload extends Component {
                 this.setState({buttons:false})
             })
         });
-    }
+    } }
 
     updateProfilePicture = (url) => {
         // 1. check what user are you logged in
