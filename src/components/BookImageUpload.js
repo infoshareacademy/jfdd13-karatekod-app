@@ -32,6 +32,10 @@ class BookImageUpload extends Component {
         if (image === null) {
             return;
         }
+
+        const isFileImage = image && image['type'].split('/')[0] === 'image'
+        if (!isFileImage) { alert('wrong file type')}
+
         const uploadTask = storage.ref(`bookcovers/${image.name}`).put(image);
         uploadTask.on('state_changed',
         (snapshot) => {
