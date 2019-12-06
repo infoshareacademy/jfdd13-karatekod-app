@@ -12,3 +12,18 @@
 .uploadButtons {
     /* display: none; */
 }
+
+.profilPictureEdit {
+    display: grid;
+    grid-template-areas: "picture";
+}
+
+
+.profilePicture {
+    grid-area: picture;
+}
+
+.loadPicSec {
+    grid-area: picture;
+    
+}

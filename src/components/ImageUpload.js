@@ -99,12 +99,12 @@ class ImageUpload extends Component {
                 <div className={styles.profilePicture}>  
                     <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" height= "200" width= "200" className={styles.userImg}/>
                 </div>
-                {showProgress && <progress value={this.state.progress} max="100"/>}
-                <div>
+                {/* {showProgress && <progress value={this.state.progress} max="100"/>} */}
+                <div className={styles.loadPicSec}>
                     <div onClick={this.showUpload}>Change profile picture</div>
                     { (this.state.buttons) ? (
                     <div className={styles.uploadButtons}>
-                    <input type="file" onChange={this.handleChange}/>
+                    <input type="file" onChange={this.handleChange} accept="image/*"/>
                     <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
                     </div>): (null)
                     }   
