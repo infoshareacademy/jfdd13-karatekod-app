@@ -3,7 +3,7 @@ import styles from "../styles/AddBooks.module.css"; // imports css styles
 import {hasOnlySpecialCharater} from "../helpers/SpecialCharacters"
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
 
-import { thisExpression } from '@babel/types';
+import {ToastContainer, toast} from "react-toastify"
 import { addBooksFirebase } from '../services/BookService';
 import BookImageUpload from '../components/BookImageUpload'
 
