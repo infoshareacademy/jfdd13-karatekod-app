@@ -5,7 +5,7 @@ import Filter from '../components/Filter'
 import Listings from '../components/Listing'
 import { watchBooks, stopBooks } from '../services/BookService'
 
-export const BOOKS_PER_PAGE = 9
+export const BOOKS_PER_PAGE = 12
 
 export default class Search extends Component {
   constructor() {
