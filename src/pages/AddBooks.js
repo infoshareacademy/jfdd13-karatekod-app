@@ -79,6 +79,7 @@ class AddBooks extends React.Component { // AddBooks component
                 }})
             })
             addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
+            this.notify()
         }
     };
 
