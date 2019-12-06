@@ -95,22 +95,26 @@ class ImageUpload extends Component {
         const showProgress = this.state.progress !== 0 && this.state.progress !== 100 
 
         return (
+            <>
             <div className={styles.profilPictureEdit}>
-                <div className={styles.profilePicture}>  
+                <div className={styles.profilePicture} >  
                     <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" height= "200" width= "200" className={styles.userImg}/>
                 </div>
                 {/* {showProgress && <progress value={this.state.progress} max="100"/>} */}
-                <div className={styles.loadPicSec}>
-                    <div onClick={this.showUpload}>Change profile picture</div>
-                    { (this.state.buttons) ? (
-                    <div className={styles.uploadButtons}>
-                    <input type="file" onChange={this.handleChange} accept="image/*"/>
-                    <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
-                    </div>): (null)
-                    }   
+                
+            <div className={styles.backOfProfilePic} onClick={this.showUpload}>Click here to upload image</div>
+             </div>
+             <div className={styles.loadPicSec} >
                     
-                </div>
-            </div>
+             { (this.state.buttons) ? (
+             <div className={styles.uploadButtons}>
+             <input type="file" onChange={this.handleChange} accept="image/*"/>
+             <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
+             </div>): (null)
+             }   
+             
+         </div>
+         </>
         )
     }
 }
