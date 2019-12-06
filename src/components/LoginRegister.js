@@ -22,7 +22,29 @@ export default class LoginRegister extends Component {
     render() {
         return (
             <div className={styles.form_block}>
-                <div className={styles.formType}>{this.state.formType}</div>
+                <div className={styles.formType}>{this.state.formType}</div>  
+                <div className={styles.loginInputs}>
+                <form>
+                    <input type="text"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    name="email"
+                    />
+                     <input type="text"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                    name="password"
+                    />
+                     <input type="text"
+                    value={this.state.displayName}
+                    onChange={this.handleChange}
+                    name="displayName"
+                    />
+
+                </form>
+                
+                
+                </div>
             </div>
         )
     }
