@@ -32,7 +32,6 @@ class AddBooks extends React.Component { // AddBooks component
     }
 
     notify = () => toast('Book added!')
-
     addBook = () => {
         const newBook = {
             title: this.state.newTitle,
@@ -43,8 +42,6 @@ class AddBooks extends React.Component { // AddBooks component
             description: this.state.newDescription,
 
         }
-
-
         if (this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle) || this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor) || this.state.newDescription === "" || hasOnlySpecialCharater(this.state.newDescription)) {
             this.setState({
                 error: {
@@ -67,13 +64,9 @@ class AddBooks extends React.Component { // AddBooks component
                 }})
             })
             addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
-            this.notify()
-
-
-            
+            this.notify()           
         }
     };
-
     handleTitle = newValue => {
         if (newValue.length > 40) {
             return;
@@ -105,25 +98,17 @@ class AddBooks extends React.Component { // AddBooks component
             newCondition: newValue
         })
     }
-
     handleDescription = newValue => {
 
         this.setState({
             newDescription: newValue
         })
     }
-
     handleBookImageUpload = (url) => {
         this.setState({uploadedImageUrl:url})
     }
-
-
-  // local storage updates whenever something changes in this component
-    
-
     render() {
         const { newTitle, newAutor, newType, newImageUrl, newCondition, newDescription, error } = this.state;
-
         return (
             <div className={styles.wrap}>
                 <h1>Add your books to the database</h1>
@@ -151,13 +136,8 @@ class AddBooks extends React.Component { // AddBooks component
                         <option value="biography">biography</option>
                         <option value="other">other</option>
                     </select>
-
                     <label className={styles.label}>Cover photo:</label>
                     <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
-                    {/* <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
-                        this.handleImageUrl(event.target.value);
-                    }} /> */}
-
                     <label className={styles.label}>Condition*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
                         this.handleCondition(event.target.value);
@@ -168,7 +148,6 @@ class AddBooks extends React.Component { // AddBooks component
                         <option value="4">4 (good)</option>
                         <option value="5">5 (mint)</option>
                     </select>
-
                     <label className={styles.label}>Description*:</label>
                     <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></textarea>
 
@@ -187,10 +166,5 @@ class AddBooks extends React.Component { // AddBooks component
         )
     }
 }
-
-
-
-
-
 export default AddBooks
 
