@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import firebase from '../firebase'
+import styles from '../styles/LoginRegister.module.css'
 
 
 
@@ -7,10 +8,21 @@ import firebase from '../firebase'
 
 
 export default class LoginRegister extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            errors: '',
+            formType:'login',
+            loginBtn: true,
+            displayName: ''
+        }
+    }
     render() {
         return (
-            <div>
-                
+            <div className={styles.form_block}>
+                <div className={styles.formType}>{this.state.formType}</div>
             </div>
         )
     }
