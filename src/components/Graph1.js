@@ -35,7 +35,7 @@ class Graph1 extends React.Component {
     componentDidMount() {
       watchUsers(users=>{
         let dataArr = users.map(x=>moment(x).format('YYY-MM-DD').slice(2))
-        console.log(dataArr)
+
         let users7DaysAgo = dataArr.filter(x=>x===moment().subtract(7,'d').format('YYYY-MM-DD')).length
         let users6DaysAgo = dataArr.filter(x=>x===moment().subtract(6,'d').format('YYYY-MM-DD')).length
         let users5DaysAgo = dataArr.filter(x=>x===moment().subtract(5,'d').format('YYYY-MM-DD')).length
@@ -57,9 +57,7 @@ class Graph1 extends React.Component {
       var date2DaysAgo = moment().subtract(2,'d').format('YYYY-MM-DD');
       var date1DaysAgo = moment().subtract(1,'d').format('YYYY-MM-DD');
       this.setState({options:{xaxis:{categories:[date7DaysAgo, date6DaysAgo, date5DaysAgo, date4DaysAgo, date3DaysAgo, date2DaysAgo, date1DaysAgo]}}})
-      // y axis on 1st graph
-
-      // 
+  
     }
 
     componentWillUnmount(){

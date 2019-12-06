@@ -13,7 +13,7 @@ const initialState = {
     newDescription: "",
     newType: "fantasy",
     newCondition: 1,
-    uploadedImageUrl:'http://placekitten.com/140/190'
+    uploadedImageUrl:'https://firebasestorage.googleapis.com/v0/b/bookswapp-16613.appspot.com/o/bookcovers%2Flogopic.png?alt=media&token=f65eb097-c4ad-4f79-928a-b189b0b2bad7'
 }
 
 class AddBooks extends React.Component { // AddBooks component
@@ -43,7 +43,7 @@ class AddBooks extends React.Component { // AddBooks component
             description: this.state.newDescription,
 
         }
-
+        this.notify()
 
         if ((this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle)) || (this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor))  || (this.state.newDescription === ""|| hasOnlySpecialCharater(this.state.newDescription))) {
             this.setState({
@@ -81,7 +81,7 @@ class AddBooks extends React.Component { // AddBooks component
                 }})
             })
             addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
-            this.notify()
+
 
             
         }
@@ -194,7 +194,7 @@ class AddBooks extends React.Component { // AddBooks component
                 </form>
                 <ToastContainer
                 hideProgressBar={true}
-                position="bottom-right"
+                position="bottom-center"
                 />
             </div>
         )

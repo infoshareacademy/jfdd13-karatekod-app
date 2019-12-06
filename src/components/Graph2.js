@@ -48,7 +48,7 @@ class Graph2 extends React.Component {
   render() {
     return (
       <div style={{width:'100%'}}>
-        <Chart options={this.state.options} series={this.state.series} colors={this.state.colors} type="donut" width="100%" />
+        <Chart options={this.state.options} series={this.state.series} colors={this.state.colors} type="donut" width="90%" />
       </div>
     );
   }
