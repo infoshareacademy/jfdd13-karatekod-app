@@ -183,16 +183,12 @@ class AddBooks extends React.Component { // AddBooks component
 
                     <button className={styles.button} onClick={(e) => {
                             e.preventDefault()
-                            this.addBook(e)
-                            
-                       
-
-
+                            this.addBook(e)                  
                     }}>
-
                         ADD TO BOOKSWAPP
             </button>
                 </form>
+                <ToastContainer/>
             </div>
         )
     }
