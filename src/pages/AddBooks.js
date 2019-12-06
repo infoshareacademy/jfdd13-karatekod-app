@@ -3,9 +3,9 @@ import styles from "../styles/AddBooks.module.css"; // imports css styles
 import {hasOnlySpecialCharater} from "../helpers/SpecialCharacters"
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
 import {ToastContainer, toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 import { addBooksFirebase } from '../services/BookService';
 import BookImageUpload from '../components/BookImageUpload'
-
 
 const initialState = {
     newTitle: "",
