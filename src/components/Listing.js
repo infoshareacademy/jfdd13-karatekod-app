@@ -189,7 +189,7 @@ class Listings extends Component {
         const indexOfFirstBook = indexOfLastBook - BOOKS_PER_PAGE
         const currentBooks = booksList.slice(indexOfFirstBook, indexOfLastBook)
         const renderBooks = currentBooks.map((book, index) => {
-            return <div key={index}>{book}</div>
+            return <div style={{width: "300px"}}key={index}>{book}</div>
         })
 
 
