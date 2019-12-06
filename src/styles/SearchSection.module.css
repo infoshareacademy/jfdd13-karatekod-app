@@ -134,9 +134,11 @@
 
 .listingImg {
     background-size: cover;
-    height: 200px;
+    height: 240px;
+    width: 200px;
     color: white;
     position: relative;
+    margin-top: 10px;
 }
 
 .details {

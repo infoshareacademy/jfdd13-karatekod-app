@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## BookSwapp
+Web application created to exchange books. This application was created as a team project during front-end bootcamp.
+
+## About application
+
+### Creators
+Karol Antonowicz 
+Karol Andracki
+Karolina Michalak
+Tuomas Juhanila
+
 ## Available Scripts
 
 In the project directory, you can run:

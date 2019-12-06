@@ -97,11 +97,17 @@ class Listings extends Component {
 
                     <div className={styles.listingsResults} key={index}>
                         <div className={styles.listing}>
-                            <Link to={`/book/${listing.id}`}>
-                                <div className={styles.listingImg}
-                                    style={{
-                                        background: `url("${listing.imageUrl}") no-repeat center center`
-
+                        <Link to={`/book/${listing.id}`} 
+                            style={{
+                                display: "flex",
+                                justifyContent: "center"
+                                }}>
+                            <div className={styles.listingImg}
+                                style={{
+                                    backgroundImage: `url("${listing.imageUrl}")`,
+                                    backgroundPosition: 'center center',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundSize: 'cover'
                                     }}>
                                     <div className={styles.details}>
                                         <div className={styles.userImg}></div>

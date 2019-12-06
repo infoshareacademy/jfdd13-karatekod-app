@@ -1,30 +1,20 @@
 import React from 'react';
 import styles from "../styles/AddBooks.module.css"; // imports css styles
-<<<<<<< HEAD
-=======
-import {hasOnlySpecialCharater} from "../helpers/SpecialCharacters"
->>>>>>> f385ee58038139a363f4633935cccc782e82a37c
 import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
-
 import { thisExpression } from '@babel/types';
-<<<<<<< HEAD
 import { addBooksFirebase } from '../services/BookService'
 import { Button } from 'bloomer';
 import 'bulma/css/bulma.min.css'
-=======
-import { addBooksFirebase } from '../services/BookService';
-import BookImageUpload from '../components/BookImageUpload'
-
->>>>>>> f385ee58038139a363f4633935cccc782e82a37c
 
 const initialState = {
     newTitle: "",
     newAutor: "",
+    newImageUrl: 'http://placekitten.com/140/190',
     newDescription: "",
     newType: "fantasy",
-    newCondition: 1,
-    uploadedImageUrl:'http://placekitten.com/140/190'
+    newCondition: 1
 }
+
 
 class AddBooks extends React.Component { // AddBooks component
     constructor(props) {
@@ -36,8 +26,7 @@ class AddBooks extends React.Component { // AddBooks component
                 newTitle: false,
                 newAutor: false,
                 newDescription: false,
-            },
-
+            }
         }
     }
 
@@ -46,19 +35,20 @@ class AddBooks extends React.Component { // AddBooks component
             title: this.state.newTitle,
             autor: this.state.newAutor,
             type: this.state.newType,
-            imageUrl: this.state.uploadedImageUrl,
+            imageUrl: "http://placekitten.com/140/190",
             condition: this.state.newCondition,
             description: this.state.newDescription,
 
         }
-        if ((this.state.newTitle === "" || hasOnlySpecialCharater(this.state.newTitle)) || (this.state.newAutor === "" || hasOnlySpecialCharater(this.state.newAutor))  || (this.state.newDescription === ""|| hasOnlySpecialCharater(this.state.newDescription))) {
+        if (this.state.newTitle === "") {
             this.setState({
                 error: {
-                    newTitle: this.state.newTitle==="",
-                    newAutor: this.state.newAutor==="",
-                    newDescription: this.state.newDescription==="",
+                    newTitle: this.state.newTitle === ""
                 }
             })
+
+            console.log(this.state)
+
             return
         } else if (this.state.newAutor === "") {
             this.setState({
@@ -78,22 +68,15 @@ class AddBooks extends React.Component { // AddBooks component
             this.setState({
                 booksList: [...this.state.booksList, newBook],
                 ...initialState
-            }, () => {
-                this.setState({            
-                    error: {
-                    newTitle: false,
-                    newAutor: false,
-                    newDescription: false,
-                }})
             })
-            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.uploadedImageUrl, this.state.newCondition, this.state.newDescription)
+            addBooksFirebase(this.state.newTitle, this.state.newAutor, this.state.newType, this.state.newImageUrl, this.state.newCondition, this.state.newDescription)
         }
     };
 
     handleTitle = newValue => {
         if (newValue.length > 40) {
             return;
-        } 
+        }
         this.setState({
             newTitle: newValue
         })
@@ -129,13 +112,10 @@ class AddBooks extends React.Component { // AddBooks component
         })
     }
 
-    handleBookImageUpload = (url) => {
-        this.setState({uploadedImageUrl:url})
+
+    componentDidUpdate() {
+        localStorage.setItem("bookslist", JSON.stringify(this.state.booksList));    // local storage updates whenever something changes in this component
     }
-
-
-  // local storage updates whenever something changes in this component
-    
 
     render() {
         const { newTitle, newAutor, newType, newImageUrl, newCondition, newDescription, error } = this.state;
@@ -143,14 +123,14 @@ class AddBooks extends React.Component { // AddBooks component
         return (
             <div className={styles.wrap}>
                 <h1>Add your books to the database</h1>
-                <form className={styles.form}>    
+                <form className={styles.form}>
                     <label className={styles.label} >Title*:</label>
-                    <input className={styles.input} type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
+                    <input required className={styles.input} type="text" name="title" placeholder="Insert title name here" value={newTitle} onChange={event => {
                         this.handleTitle(event.target.value);
                     }} className={error.newTitle ? styles.inputError : styles.input} />
 
                     <label className={styles.label} >Author*:</label>
-                    <input className={styles.input} type="text" name="autor" placeholder={error.newAutor ? "Please fill out this field" : "Insert author name here"} value={newAutor} onChange={event => {
+                    <input required className={styles.input} type="text" name="autor" placeholder="Insert author name here" value={newAutor} onChange={event => {
                         this.handleAutor(event.target.value);
                     }} className={error.newAutor ? styles.inputError : styles.input} />
 
@@ -169,10 +149,9 @@ class AddBooks extends React.Component { // AddBooks component
                     </select>
 
                     <label className={styles.label}>Cover photo:</label>
-                    <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
-                    {/* <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
+                    <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
                         this.handleImageUrl(event.target.value);
-                    }} /> */}
+                    }} />
 
                     <label className={styles.label}>Condition*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
@@ -186,33 +165,16 @@ class AddBooks extends React.Component { // AddBooks component
                     </select>
 
                     <label className={styles.label}>Description*:</label>
-                    <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></textarea>
-
-<<<<<<< HEAD
-                        <Button isColor='danger' onClick={(e) => {
-                            this.addBook(e)}} className={styles.button}>Add to BookSwapp</Button>
-=======
+                    <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder="Insert description of the book here" id="txtArea" rows="10" cols="40"></textarea>
+{/* 
                     <button className={styles.button} onClick={(e) => {
-                            e.preventDefault()
-                            this.addBook(e)
-                            
-                       
-
-
-                    }}>
-
-                        ADD TO BOOKSWAPP
-            </button>
->>>>>>> f385ee58038139a363f4633935cccc782e82a37c
+                            this.addBook(e)}}> */}
+                     <Button isColor='danger' onClick={(e) => {
+                            this.addBook(e)}}>Add to BookSwapp</Button>
                 </form>
             </div>
         )
     }
 }
 
-
-
-
-
 export default AddBooks
-
