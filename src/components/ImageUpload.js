@@ -94,7 +94,7 @@ class ImageUpload extends Component {
             <>
                 <div className={styles.profilPictureEdit}>
                     <div className={styles.profilePicture} >
-                        <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" height="200" width="200" className={styles.userImg} />
+                        <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" className={styles.userImg} />
                     </div>
                     {/* {showProgress && <progress value={this.state.progress} max="100"/>} */}
 
