@@ -27,7 +27,6 @@ class ImageUpload extends Component {
         })
 
     }
-
     componentDidMount() {
         this.checkIfUserHasProfilePicture()
     }
@@ -71,7 +70,6 @@ class ImageUpload extends Component {
         // 1. check what user are you logged in
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
-
         // 2. get the url and update user profile
         firebase.database().ref(`/users/${id}/profilePicture`).set(url)
     }
@@ -79,11 +77,9 @@ class ImageUpload extends Component {
         // 1. get current user id
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
-
         // 2. fetch current user profile picture
         const dataSnapshot = await firebase.database().ref(`/users/${id}/profilePicture`).once('value')
         const profilePictureUrl = dataSnapshot.val()
-
         // 3. if there is a picture, use it
         if (profilePictureUrl) {
             // 4. update state of the component
@@ -101,7 +97,6 @@ class ImageUpload extends Component {
                         <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" className={styles.userImg} />
                     </div>
                     {/* {showProgress && <progress value={this.state.progress} max="100"/>} */}
-
                 </div>
                 <div className={styles.loadPicSec} >
                     {(this.state.buttons) ? (
@@ -111,11 +106,9 @@ class ImageUpload extends Component {
                             <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
                         </div>) : (null)
                     }
-
                 </div>
             </>
         )
     }
 }
-
 export default ImageUpload;
