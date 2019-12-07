@@ -89,7 +89,7 @@ class Favs extends React.Component {
     render() {
         return (
             <>
-                <div className={styles.favContainer} style={{ display: "flex", flexDirection: 'column', alignItems:'center' }}>
+                <div className={styles.favContainer} >
                     {this.loopFav()}
                 </div>
             </>
