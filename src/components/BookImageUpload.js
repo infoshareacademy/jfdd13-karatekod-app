@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import firebase, { storage } from '../firebase';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class BookImageUpload extends Component {
+    notify = () => toast("Wrong file type");
     constructor(props) {
         super(props);
         this.state = {
@@ -32,12 +35,19 @@ class BookImageUpload extends Component {
         if (image === null) {
             return;
         }
+
+        const isFileImage = image && image['type'].split('/')[0] === 'image'
+        if (!isFileImage) {
+            this.notify()
+    }
+
         const uploadTask = storage.ref(`bookcovers/${image.name}`).put(image);
         uploadTask.on('state_changed',
         (snapshot) => {
             // progress function
             const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
             this.setState({progress})
+        
         },
         (error) => {
             // error function
@@ -59,6 +69,7 @@ class BookImageUpload extends Component {
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
         this.props.onBookImageUpload(url)
+
 
 
         // 2. get the url and update book profile
@@ -98,6 +109,9 @@ class BookImageUpload extends Component {
                         {showProgress && <progress value={this.state.progress} max="100"/>}
                     </div>
                 </div>
+                <ToastContainer 
+                 hideProgressBar={true}
+                 position="bottom-right"/>
             </div>
         )
     }

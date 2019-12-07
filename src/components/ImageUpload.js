@@ -81,6 +81,8 @@ class ImageUpload extends Component {
             })
         }
     }
+
+
     render() {
         const showProgress = this.state.progress !== 0 && this.state.progress !== 100
         return (
