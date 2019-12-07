@@ -61,8 +61,8 @@ class Favs extends React.Component {
                             <div className={styles.bookImageFav}
                             style={{
                                 background: `url("${listing.imageUrl}")`,
-                                width: '80px',
-                                height: '80px',
+                                width: '95px',
+                                height: '95px',
                                 backgroundSize: 'cover',
                             }}>
                             </div>
