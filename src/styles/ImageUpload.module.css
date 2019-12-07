@@ -21,17 +21,16 @@
 }
 
 .inputFileLabel {
-    font-size: 0.8em;
+    font-size: 0.6em;
     font-weight: 700;
-    color: white;
-    background-color: black;
+    color: black;
     display: inline-block;
 }
 
 .inputFileLabel:focus,
 .inputFileLabel:hover {
-    background-color: red;
     cursor: pointer;
+    text-decoration: underline;
 
 }
 
