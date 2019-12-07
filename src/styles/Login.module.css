@@ -176,11 +176,11 @@
     }
 
     .userContent {
-        padding-top: 12%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        color: #C2355B;
     }
 
     .userInfo {

@@ -9,7 +9,7 @@ class ImageUpload extends Component {
             image: null,
             url: '',
             progress: 0,
-            buttons: false
+            buttons: true,
         }
         this.handleChange = this
             .handleChange
@@ -23,7 +23,7 @@ class ImageUpload extends Component {
         const {buttons} = this.state
        this.setState({
             
-           buttons: !buttons
+           buttons: true
        })
         
     }
