@@ -36,24 +36,10 @@ class BookImageUpload extends Component {
             return;
         }
 
-
-
-    
-        // const isFileImage = image && image['type'].split('/')[0] === 'image'
-        // if (!isFileImage) { 
-        //    alert('wrong file type')
-        // }
-
         const isFileImage = image && image['type'].split('/')[0] === 'image'
         if (!isFileImage) {
             this.notify()
-            
-    
     }
-
-       
-
-                    
 
         const uploadTask = storage.ref(`bookcovers/${image.name}`).put(image);
         uploadTask.on('state_changed',
@@ -125,7 +111,7 @@ class BookImageUpload extends Component {
                 </div>
                 <ToastContainer 
                  hideProgressBar={true}
-                 position="top-right"/>
+                 position="bottom-right"/>
             </div>
         )
     }
