@@ -37,6 +37,9 @@
         justify-content: space-around;
         align-items: flex-start;
         padding-left: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
 
 }
 
@@ -84,6 +87,9 @@
         justify-content: space-around;
         align-items: flex-end;
         padding-left: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
 
 }
 
@@ -91,6 +97,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .small {
