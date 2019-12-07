@@ -26,6 +26,15 @@ export default class LoginRegister extends Component {
         })
     }
 
+    login = e => {
+        e.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .catch((error)=>{
+            console.log(error)
+            this.setState({errors:error.message})
+        })
+    }
+
     render() {
         return (
             <div className={styles.form_block}>
@@ -50,6 +59,7 @@ export default class LoginRegister extends Component {
                      <input type="submit"
                     className={styles.submitBtn}
                     value="login"
+                    onClick={this.login}
                     />
 
                 </form>
