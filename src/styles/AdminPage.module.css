@@ -16,6 +16,30 @@
     margin: 0;
 }
 
-title{
+.title{
     color: black;
+    font-size: 1rem;
+}
+/*
+.navLinkFav{
+    width: '80%';
+     color: 'black';
+      display: 'flex';
+       flex-direction: 'row';
+        justify-content: 'space-between';
+}*/
+
+.bookDetailsFav {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center
+
+}
+
+.bookImageFav {
+    
+    
+
 }

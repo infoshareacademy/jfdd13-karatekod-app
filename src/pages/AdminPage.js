@@ -55,24 +55,37 @@ class Favs extends React.Component {
         }
         return output.map((listing, index) => {
             return (
-                    <Link to={`/book/${listing.id}`} style={{width:'500px', color: 'black'}}>
+                <div>
+                    <Link to={`/book/${listing.id}`} className={styles.navLinkFav} style={{ width: '80%', color: 'black', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }} >
                         <div style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'space-evenly'
+                        }}>
+                            <div className={styles.bookImageFav}
+                            style={{
                                 background: `url("${listing.imageUrl}")`,
                                 width: '50px',
                                 height: '50px',
-                                backgroundSize: 'cover'
+                                backgroundSize: 'cover',
                             }}>
-                        </div>
-                        <p className={styles.title}>{listing.title}{listing.autor}{listing.condition}</p>
-                        <div className={styles.like}>
-                            <AddToFavorites id={listing.id} isFavorites={this.state.favs[listing.id]}
-                                onClick={() => {
-                                    addFavFirebase(listing.id, firebase.auth().currentUser)
-                                }
-                                } />
-                            {this.state.favs[listing.id] ? <img style={{ width: "25px", height: "25px" }} src={heartFilled}></img> : <img style={{ width: "25px", height: "25px" }} src={heartEmpty}></img>}
+                            </div>
+                            <div className={styles.bookDetailsFav} >
+                                <p className={styles.title}>{listing.title}</p>
+                                <p className={styles.title}>{listing.autor}</p>
+                                <p className={styles.title}>{listing.condition}</p>
+                            </div>
                         </div>
                     </Link>
+                    <div className={styles.like}>
+                        <AddToFavorites id={listing.id} isFavorites={this.state.favs[listing.id]}
+                            onClick={() => {
+                                addFavFirebase(listing.id, firebase.auth().currentUser)
+                            }
+                            } />
+                        {this.state.favs[listing.id] ? <img style={{ width: "25px", height: "25px" }} src={heartFilled}></img> : <img style={{ width: "25px", height: "25px" }} src={heartEmpty}></img>}
+                    </div>
+                </div>
             )
         }
         )
@@ -80,7 +93,7 @@ class Favs extends React.Component {
     render() {
         return (
             <>
-                <div style={{ display: "flex", flexDirection:'column' }}>
+                <div style={{ display: "flex", flexDirection: 'column' }}>
                     {this.loopFav()}
                 </div>
             </>
