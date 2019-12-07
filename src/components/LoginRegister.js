@@ -38,13 +38,13 @@ export default class LoginRegister extends Component {
 
     register = e => {
         e.preventDefault();
-        let name = this.state.displayName
-        
+        // let name = this.state.displayName
+        (this.state.password === this.state.password1)?(
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then(()=> {
             const user = firebase.auth().currentUser;
-            user.updateProfile({displayName:name})
-            console.log(user.displayName)
+            user.updateProfile({displayName:this.state.displayName})
+            
         })
         .then (()=> {
             const user = firebase.auth().currentUser;
@@ -59,6 +59,7 @@ export default class LoginRegister extends Component {
             console.log(error)
             this.setState({errors:error.message})
         })
+        ):(this.setState({errors:'password does not match'}))
     }
 
     
@@ -108,11 +109,13 @@ export default class LoginRegister extends Component {
                     value={this.state.email}
                     onChange={this.handleChange}
                     name="email"
+                    placeholder="e-mail"
                     />
                      <input type="password"
                     value={this.state.password}
                     onChange={this.handleChange}
                     name="password"
+                    placeholder="password"
                     />
                     {(this.state.formType==='Register new user')?
                     (<>
@@ -120,11 +123,13 @@ export default class LoginRegister extends Component {
                     value={this.state.password1}
                     onChange={this.handleChange}
                     name="password1"
+                    placeholder="confirm password"
                     />
                      <input type="text"
                     value={this.state.displayName}
                     onChange={this.handleChange}
                     name="displayName"
+                    placeholder="name"
                     />
                     </>):null}
                     
