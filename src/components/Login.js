@@ -50,18 +50,13 @@ class Login extends Component {
                                 {/* <img src={firebase.auth().currentUser.photoURL}></img> */}
                                 <ImageUpload />
                                 <div className={styles.userInfo}>
-                                    <p>Username:</p>
-                                    <p>{firebase.auth().currentUser.displayName}</p>
-                                    <p>Favorite genre:</p>
-                                    <p>{firebase.auth().currentUser.displayName}</p>
-                                    <p>x favorite books</p>
-                                    <p>{firebase.auth().currentUser.displayName}</p>
+                                    <p className={styles.userInfoNameMain}>{firebase.auth().currentUser.displayName}</p>
+                                    <p className={styles.userInfoName}>Favorite genre: {firebase.auth().currentUser.displayName}</p>
+                                    <p className={styles.userInfoName}>Favorite books: {firebase.auth().currentUser.displayName}</p>
                                 </div>
                             </div>
-
                             <Favs />
                     </div>
-
                 ) : (
 
                         <div className={styles.loginGrid}>
