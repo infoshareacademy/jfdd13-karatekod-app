@@ -55,39 +55,24 @@ class Favs extends React.Component {
         }
         return output.map((listing, index) => {
             return (
-                <div style={{width:'100%'}} >
-                            <Link to={`/book/${listing.id}`}>
-                                <div className={styles.listingImg}
-                                    style={{
-                                        background: `url("${listing.imageUrl}") no-repeat center center`
-                                    }}>
-                                    <div className={styles.details}>
-                                        <div className={styles.userImg}></div>
-                                        <div className={styles.userDetails}>
-                                            <span className={styles.userName}>Anna</span>
-                                            <span className={styles.postDate}>05.05.2019</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                            <div className={styles.bottomInfo}>
-                                <div className={styles.bottomInfoDetail}>
-                                    <p className={styles.title}>{listing.title} <br />{listing.autor}</p>
-                                    <p className={styles.location}>condition: {listing.condition}</p>
-                                </div>
-                                <div className={styles.like}>
-                                    <AddToFavorites id={listing.id} isFavorites={this.state.favs[listing.id]}
-                                        onClick={() => {
-                                            addFavFirebase(listing.id, firebase.auth().currentUser)
-                                        }
-                                        } />
-                                    {this.state.favs[listing.id] ? <img style={{ width: "25px", height: "25px" }} src={heartFilled}></img> : <img style={{ width: "25px", height: "25px" }} src={heartEmpty}></img>}
-                                </div>
-
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
-                    </div>
-                </div>
+                    <Link to={`/book/${listing.id}`} style={{width:'500px', color: 'black'}}>
+                        <div style={{
+                                background: `url("${listing.imageUrl}")`,
+                                width: '50px',
+                                height: '50px',
+                                backgroundSize: 'cover'
+                            }}>
+                        </div>
+                        <p className={styles.title}>{listing.title}{listing.autor}{listing.condition}</p>
+                        <div className={styles.like}>
+                            <AddToFavorites id={listing.id} isFavorites={this.state.favs[listing.id]}
+                                onClick={() => {
+                                    addFavFirebase(listing.id, firebase.auth().currentUser)
+                                }
+                                } />
+                            {this.state.favs[listing.id] ? <img style={{ width: "25px", height: "25px" }} src={heartFilled}></img> : <img style={{ width: "25px", height: "25px" }} src={heartEmpty}></img>}
+                        </div>
+                    </Link>
             )
         }
         )
