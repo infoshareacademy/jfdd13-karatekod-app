@@ -17,7 +17,8 @@ export default class LoginRegister extends Component {
             formType:'login',
             loginBtn: true,
             displayName: '',
-            password1: ''
+            password1: '',
+            resetPassword: false
         }
     }
 
