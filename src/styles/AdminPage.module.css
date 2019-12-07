@@ -1,26 +1,26 @@
-.admin{
+.admin {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin-top: 50px
-
 }
 
-.listingAdmin{
+.listingAdmin {
     background-color: red;
 }
 
-.listingImg{
+.listingImg {
     margin: 0;
 }
 
-.title{
+.title {
     color: black;
     font-size: 1rem;
     padding: 0;
 }
+
 /*
 .navLinkFav{
     width: '80%';
@@ -32,14 +32,14 @@
 
 .bookDetailsFav {
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-        padding-left: 10px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
 }
 
@@ -49,7 +49,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
+    box-shadow: 3px -3px 24px -1px rgba(0, 0, 0, 0.33);
     border-radius: 5px;
     padding: 10px;
     margin-top: 15px;
@@ -70,10 +70,17 @@
 
 }
 
-.smallBreak{
+.smallBreak {
     content: "";
     margin: 1px 0 1px 0;
     line-height: 1%;
+}
+
+.favContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 @media screen and (max-width: 600px) {
@@ -82,7 +89,7 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-    
+
     }
 
     .bookDetailsFav {
@@ -96,33 +103,33 @@
         white-space: nowrap;
         overflow: hidden;
 
-}
+    }
 
-.title {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-.small {
-    font-size: 0.6rem;
-    padding: 0;
+    .small {
+        font-size: 0.6rem;
+        padding: 0;
 
-}
+    }
 
-.smallBreak{
-    content: "";
-    margin: 1px 0 1px 0;
-    line-height: 1%;
-}
+    .smallBreak {
+        content: "";
+        margin: 1px 0 1px 0;
+        line-height: 1%;
+    }
 
-.favWrap {
-    margin: 15px auto 15px auto;
-    width: 90%;
-}
+    .favWrap {
+        margin: 15px auto 15px auto;
+        width: 90%;
+    }
 
 
 }
