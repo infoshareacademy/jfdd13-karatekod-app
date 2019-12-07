@@ -52,8 +52,8 @@ class Login extends Component {
                                 <div className={styles.userInfo}></div>   
                                 <ImageUpload />
                             </div>
-                            <section style={{width:'100%'}}>
-                <div style={{textAlign:'center'}}><h5>Your favorites</h5></div>
+                            <section style={{width:'100%', marginTop:'20px'}}>
+                <div style={{textAlign:'center'}}><h4>Your favorite books</h4></div>
                             <Favs />
                             </section>
                     </div>
