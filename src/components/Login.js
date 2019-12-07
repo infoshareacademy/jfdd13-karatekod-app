@@ -53,6 +53,7 @@ class Login extends Component {
                                 <ImageUpload />
                             </div>
                             <section style={{width:'100%'}}>
+                <div style={{textAlign:'center'}}><h5>Your favorites</h5></div>
                             <Favs />
                             </section>
                     </div>
