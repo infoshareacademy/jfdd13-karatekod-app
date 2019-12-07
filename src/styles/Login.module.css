@@ -125,8 +125,8 @@
 
 .userContent {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -134,8 +134,8 @@
     padding: 0.5rem 0.5 rem 1rem 0.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center
-
+    align-items: center;
+    justify-content: space-between;
 }
 
 .userInfoName {
@@ -176,7 +176,7 @@
     }
 
     .userContent {
-        padding-top: 10%;
+        padding-top: 12%;
         display: flex;
         flex-direction: column;
         justify-content: center;
