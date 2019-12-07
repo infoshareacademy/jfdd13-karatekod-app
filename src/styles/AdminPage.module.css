@@ -49,10 +49,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
+    width: 80%;
+    box-shadow: 3px -3px 24px -1px rgba(0,0,0,0.33);
     border-radius: 5px;
-    */
-
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .bookDetails {

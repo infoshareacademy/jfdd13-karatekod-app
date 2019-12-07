@@ -56,7 +56,7 @@ class Favs extends React.Component {
         return output.map((listing, index) => {
             return (
                 <div className={styles.favWrap}>
-                    <Link to={`/book/${listing.id}`} className={styles.navLinkFav} style={{ width: '80%', color: 'black', display: 'flex', flexDirection: 'row', justifyContent: 'center' }} >
+                    <Link to={`/book/${listing.id}`} className={styles.navLinkFav} style={{ width: '100%', color: 'black', display: 'flex', flexDirection: 'row', justifyContent: 'center' }} >
                         <div className={styles.bookDetails}>
                             <div className={styles.bookImageFav}
                             style={{
