@@ -67,9 +67,9 @@ class Favs extends React.Component {
                             }}>
                             </div>
                             <div className={styles.bookDetailsFav} >
-                                <p className={styles.title}><i>{listing.title}</i></p>
-                                <p className={styles.title}>{listing.autor}</p>
-                                <p className={styles.title}>{listing.condition}</p>
+                                <p className={styles.title}><p className={styles.small}>Title: </p><i>{listing.title}</i></p>
+                                <p className={styles.title}><p className={styles.small}>Author: </p>{listing.autor}</p>
+                                <p className={styles.title}><p className={styles.small}>Condition: </p>{listing.condition}</p>
                             </div>
                         </div>
                     </Link>
