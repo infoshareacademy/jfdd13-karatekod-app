@@ -16,7 +16,8 @@ export default class LoginRegister extends Component {
             errors: '',
             formType:'login',
             loginBtn: true,
-            displayName: ''
+            displayName: '',
+            password1: ''
         }
     }
 
@@ -39,24 +40,28 @@ export default class LoginRegister extends Component {
         e.preventDefault();
         let name = this.state.displayName
         
-        
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(function(){
-            var user = firebase.auth().currentUser;
-            user.updateProfile({
-            displayName: name
-     
-            })}
-        )
-        .catch((error)=>{
+        .then(()=> {
+            const user = firebase.auth().currentUser;
+            user.updateProfile({displayName:name})
+            console.log(user.displayName)
+        })
+        .then (()=> {
+            const user = firebase.auth().currentUser;
+            firebase.database().ref('/users/' + user.uid).set( {
+                    name: user.displayName,
+                    created: user.metadata.creationTime,
+                    lastSingIn: user.metadata.lastSignInTime,
+                    profilePicture: user.profilePicture
+            })
+        })
+         .catch((error)=>{
             console.log(error)
             this.setState({errors:error.message})
         })
-       
-       
     }
-    
 
+    
 
     getAction = action => {
         if (action == 'register') {
@@ -66,7 +71,7 @@ export default class LoginRegister extends Component {
                 errors:''
             })
          } else {
-             this.setState({formType: 'Register new user', loginBtn: true, errors: ''})
+             this.setState({formType: 'Login', loginBtn: true, errors: ''})
 
            }
         }
@@ -79,7 +84,7 @@ export default class LoginRegister extends Component {
         let submitBtn = this.state.loginBtn ?
             (<input type="submit"
                 className={styles.submitBtn}
-                value="login"
+                value="enter"
                 onClick={this.login}
             />) : 
             (<input type="submit"
@@ -109,11 +114,20 @@ export default class LoginRegister extends Component {
                     onChange={this.handleChange}
                     name="password"
                     />
+                    {(this.state.formType==='Register new user')?
+                    (<>
+                    <input type="password"
+                    value={this.state.password1}
+                    onChange={this.handleChange}
+                    name="password1"
+                    />
                      <input type="text"
                     value={this.state.displayName}
                     onChange={this.handleChange}
                     name="displayName"
                     />
+                    </>):null}
+                    
                      {submitBtn}
 
                 </form>
