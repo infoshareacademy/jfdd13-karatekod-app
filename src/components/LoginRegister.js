@@ -7,6 +7,8 @@ import styles from '../styles/LoginRegister.module.css'
 
 
 
+
+
 export default class LoginRegister extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +51,7 @@ export default class LoginRegister extends Component {
         })
         .then (()=> {
             const user = firebase.auth().currentUser;
-            firebase.database().ref('/users/' + user.uid).set( {
+            firebase.database().ref('/users/' + user.uid).push( {
                     name: user.displayName,
                     created: user.metadata.creationTime,
                     lastSingIn: user.metadata.lastSignInTime,
@@ -63,7 +65,15 @@ export default class LoginRegister extends Component {
         ):(this.setState({errors:'password does not match'}))
     }
 
-    
+    componentWillUnmount(){
+         const users = () => {
+            firebase
+              .database()
+              .ref("/users"+ firebase.auth().currentUser.displayName)
+              .off();
+          };
+          users()
+    }
 
     getAction = action => {
         if (action == 'register') {
@@ -77,6 +87,13 @@ export default class LoginRegister extends Component {
 
            }
         }
+    resetPassword = e => {
+        e.preventDefault();
+        this.setState({resetPassword:true})
+    }
+
+
+    
     
 
     render() {
@@ -97,6 +114,9 @@ export default class LoginRegister extends Component {
         let login_rgister = this.state.loginBtn ? 
             (<button className={styles.registerBtn} onClick={()=>this.getAction('register')}>Register</button>) : 
             (<button className={styles.registerBtn} onClick={()=>this.getAction('login')}>Login</button>)
+        let resetPassBtn = this.state.loginBtn?
+            (<button className={styles.resetBtn} onClick={this.resetPassword}>forgot Password?</button>) :
+            null
 
 
 
@@ -135,9 +155,11 @@ export default class LoginRegister extends Component {
                     </>):null}
                     
                      {submitBtn}
+                     {resetPassBtn}
 
                 </form>
                 {login_rgister}
+
                 
                 
                 </div>
