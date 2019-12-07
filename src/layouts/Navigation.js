@@ -27,7 +27,7 @@ const Navigation = () => {
             <img src={menu1} className={styles.menuTitle} onClick={() => setOpen(!open)} />
             <ul className={open && styles.active}>
                 {menu}
-                <li onClick={()=>{firebase.auth().signOut()}}className={styles.active} key="sign out"><NavLink to="/login">Sign Out</NavLink></li>
+                <li className={styles.active} key="sign out"><NavLink onClick={()=>{firebase.auth().signOut()}} to="/login">Sign Out</NavLink></li>
             </ul>
         </nav>
     )
