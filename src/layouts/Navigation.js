@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from "../styles/Navigation.module.css";
 import menu1 from '../images/menu1.png';
+import firebase from 'firebase'
 
 const list = [
     {name: 'my profile', path: '/login'},
