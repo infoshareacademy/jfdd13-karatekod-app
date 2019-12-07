@@ -123,6 +123,31 @@
     */
 }
 
+.userContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.userInfo {
+    padding: 0.5rem 0.5 rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userInfoName {
+    font-size: 1rem;
+    padding: 0;
+}
+
+.userInfoNameMain {
+    font-size: 1.5rem;
+    padding: 0;
+}
+
 
 @media screen and (max-width: 600px) {
    .loginGrid{
@@ -143,10 +168,38 @@
     }
 
     .userProfile{
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center
+    }
+
+    .userContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #C2355B;
+        margin-top: 10%;
+    }
+
+    .userInfo {
+        padding: 0.5rem 0.5 rem 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center
+
+    }
+
+    .userInfoName {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .userInfoNameMain {
+        font-size: 1.5rem;
+        padding: 0;
     }
    
 }
