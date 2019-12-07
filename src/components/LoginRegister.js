@@ -40,6 +40,10 @@ export default class LoginRegister extends Component {
                     onChange={this.handleChange}
                     name="displayName"
                     />
+                     <input type="submit"
+                    className={styles.submitBtn}
+                    value="login"
+                    />
 
                 </form>
                 
