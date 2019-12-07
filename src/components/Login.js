@@ -45,16 +45,15 @@ class Login extends Component {
             <>
                 {this.state.isSignedIn ? (
                    <div className={styles.userProfile}>
-                        <button className={styles.logoutButton, styles.button} onClick = {()=>firebase.auth().signOut()} >Sign out</button>
                         <div style={{clear:"both"}}></div>
                         <div className={styles.userHeader}>
-                        <div className={styles.userContent}>
-
-                            
+                        <div className={styles.userContent}>                          
                             <h5>Hi {firebase.auth().currentUser.displayName}, great to see you!</h5>  
                             {/* <img src={firebase.auth().currentUser.photoURL}></img> */}
-                            <ImageUpload />
+                            <ImageUpload style={{width: '100%'}}/>
+                            <button className={styles.logoutButton, styles.button} onClick = {()=>firebase.auth().signOut()} >Sign out</button>
                         </div>
+                        
                         <Favs />
                         </div>
                     </div>
