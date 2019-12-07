@@ -7,7 +7,7 @@ const list = [
     {name: 'my profile', path: '/login'},
     {name: 'dashboard', path: '/statistics'},
     {name: 'add book', path: '/addBooks'},
-    {name: 'search' , path: '/search', exact: true} ,
+    {name: 'search' , path: '/search', exact: true},
 ]
 
 const Navigation = () => {
@@ -20,11 +20,13 @@ const Navigation = () => {
         </li>
     ))
 
+
     return (
         <nav className={styles.mainNav}>
             <img src={menu1} className={styles.menuTitle} onClick={() => setOpen(!open)} />
             <ul className={open && styles.active}>
                 {menu}
+                <li className={styles.active} key="sign out"><NavLink to="/login">Sign Out</NavLink></li>
             </ul>
         </nav>
     )
