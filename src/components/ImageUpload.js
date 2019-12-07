@@ -35,7 +35,11 @@ class ImageUpload extends Component {
     handleChange = e => {
         if (e.target.files[0]) {
             const image = e.target.files[0];
-            this.setState(() => ({ image }));
+            this.setState({ image },
+                ()=>{
+                    this.handleUpload()
+                    this.setState({image:null})
+                });
         }
     }
     handleUpload = () => {
