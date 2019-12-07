@@ -45,7 +45,6 @@ class Login extends Component {
             <>
                 {this.state.isSignedIn ? (
                     <div className={styles.userProfile}>
-                        <h1>Hello, {firebase.auth().currentUser.displayName}!</h1>
                         <div style={{ clear: "both" }}></div>
                             <div className={styles.userContent}>
                                 {/* <img src={firebase.auth().currentUser.photoURL}></img> */}
