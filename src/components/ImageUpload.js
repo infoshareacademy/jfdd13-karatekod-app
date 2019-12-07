@@ -17,16 +17,9 @@ class ImageUpload extends Component {
         this.handleUpload = this
             .handleUpload
             .bind(this);
-        this.showUpload = this.showUpload.bind(this)
-    }
-    showUpload() {
-        const { buttons } = this.state
-        this.setState({
-
-            buttons: true
-        })
 
     }
+
     componentDidMount() {
         this.checkIfUserHasProfilePicture()
     }
@@ -99,13 +92,10 @@ class ImageUpload extends Component {
                     {/* {showProgress && <progress value={this.state.progress} max="100"/>} */}
                 </div>
                 <div className={styles.loadPicSec} >
-                    {(this.state.buttons) ? (
                         <div className={styles.uploadButtons}>
                             <label for="file" className={styles.inputFileLabel}>Choose new Profile Picture</label>
                             <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*" style={{ width: '100%' }} name="file" id="file" />
-                            <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
-                        </div>) : (null)
-                    }
+                        </div>
                 </div>
             </>
         )
