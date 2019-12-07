@@ -1,0 +1,52 @@
+.uploadButton{
+    float: left;
+}
+.userImg {
+    border-radius: 50%;
+}
+/* .profilPictureEdit {
+    display: flex;
+    flex-direction: column;
+} */
+
+.uploadButtons {
+    /* display: none; */
+}
+
+.profilPictureEdit {
+    display: grid;
+    grid-template-areas: "picture";
+}
+
+
+.profilePicture {
+    grid-area: picture;
+}
+
+.loadPicSec {
+    
+    
+}
+.backOfProfilePic {
+    grid-area: picture;
+    width: 200px;
+    height: 200px;
+    opacity: .0;
+    border-radius:50%;
+    transition: 0.5s ease-in;
+    animation: opacity;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.backOfProfilePic:hover {
+   
+    opacity: .5;
+    background: black;
+    color:white;
+    cursor: pointer;
+   
+
+}

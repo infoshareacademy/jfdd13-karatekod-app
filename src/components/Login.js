@@ -5,6 +5,7 @@ import styles from '../styles/Login.module.css'
 import logoText from '../images/logo.png'
 import logo from '../images/logopic.png'
 import ImageUpload from '../components/ImageUpload'
+import Favs from '../pages/AdminPage'
 
 
 class Login extends Component {
@@ -44,14 +45,17 @@ class Login extends Component {
             <>
                 {this.state.isSignedIn ? (
                    <div className={styles.userProfile}>
-                        <button className={styles.logoutButton} onClick = {()=>firebase.auth().signOut()} >Sign out</button>
+                        <button className={styles.logoutButton, styles.button} onClick = {()=>firebase.auth().signOut()} >Sign out</button>
                         <div style={{clear:"both"}}></div>
+                        <div className={styles.userHeader}>
                         <div className={styles.userContent}>
 
-                            <h1>Welcome to BookSwApp</h1>
-                            <h1>{firebase.auth().currentUser.displayName}</h1>  
-                            <img src={firebase.auth().currentUser.photoURL}></img>
+                            
+                            <h5>Hi {firebase.auth().currentUser.displayName}, great to see you!</h5>  
+                            {/* <img src={firebase.auth().currentUser.photoURL}></img> */}
                             <ImageUpload />
+                        </div>
+                        <Favs />
                         </div>
                     </div>
 
