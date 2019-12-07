@@ -61,13 +61,13 @@ class Favs extends React.Component {
                             <div className={styles.bookImageFav}
                             style={{
                                 background: `url("${listing.imageUrl}")`,
-                                width: '100px',
-                                height: '100px',
+                                width: '80px',
+                                height: '80px',
                                 backgroundSize: 'cover',
                             }}>
                             </div>
                             <div className={styles.bookDetailsFav} >
-                                <p className={styles.title}>{listing.title}</p>
+                                <p className={styles.title}><i>{listing.title}</i></p>
                                 <p className={styles.title}>{listing.autor}</p>
                                 <p className={styles.title}>{listing.condition}</p>
                             </div>

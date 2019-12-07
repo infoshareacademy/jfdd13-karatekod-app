@@ -125,7 +125,7 @@
 
 .userContent {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }

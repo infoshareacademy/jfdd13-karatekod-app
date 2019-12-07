@@ -19,6 +19,7 @@
 .title{
     color: black;
     font-size: 1rem;
+    padding: 0;
 }
 /*
 .navLinkFav{
@@ -32,9 +33,10 @@
 .bookDetailsFav {
 
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding-left: 10px;
 
 }
 
@@ -50,7 +52,29 @@
 .bookDetails {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
+
+}
+
+@media screen and (max-width: 600px) {
+    .bookDetails {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    
+    }
+
+    .bookDetailsFav {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding-left: 0;
+
+}
+
 
 }
