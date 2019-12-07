@@ -19,6 +19,13 @@ export default class LoginRegister extends Component {
             displayName: ''
         }
     }
+
+    handleChange = e => {
+        this.setState({
+            [e.target.name]:e.target.value
+        })
+    }
+
     render() {
         return (
             <div className={styles.form_block}>
@@ -30,7 +37,7 @@ export default class LoginRegister extends Component {
                     onChange={this.handleChange}
                     name="email"
                     />
-                     <input type="text"
+                     <input type="password"
                     value={this.state.password}
                     onChange={this.handleChange}
                     name="password"
