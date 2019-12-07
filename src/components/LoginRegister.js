@@ -37,12 +37,25 @@ export default class LoginRegister extends Component {
 
     register = e => {
         e.preventDefault();
+        let name = this.state.displayName
+        
+        
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then(function(){
+            var user = firebase.auth().currentUser;
+            user.updateProfile({
+            displayName: name
+     
+            })}
+        )
         .catch((error)=>{
             console.log(error)
             this.setState({errors:error.message})
         })
+       
+       
     }
+    
 
 
     getAction = action => {
