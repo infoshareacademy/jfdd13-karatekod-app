@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase'
 import { watchBooks, stopBooks } from '../services/BookService'
-import styles from '../styles/SearchSection.module.css'
+import styles from '../styles/AdminPage.module.css'
 import AddToFavorites from '../components/AddToFavorites'
 import { addFavFirebase } from '../services/FavService'
 import heartFilled from '../images/heart2.png'
@@ -55,9 +55,7 @@ class Favs extends React.Component {
         }
         return output.map((listing, index) => {
             return (
-                <div>
-                    <div className={styles.listingsResults} key={index}>
-                        <div className={styles.listing}>
+                <div style={{width:'100%'}} >
                             <Link to={`/book/${listing.id}`}>
                                 <div className={styles.listingImg}
                                     style={{
@@ -68,11 +66,6 @@ class Favs extends React.Component {
                                         <div className={styles.userDetails}>
                                             <span className={styles.userName}>Anna</span>
                                             <span className={styles.postDate}>05.05.2019</span>
-                                        </div>
-                                        <div className={styles.listingDetails}>
-                                            <div className={styles.moreDetails}>
-                                                <span>{`${listing.description.slice(0, 107)}...`} <br />Click to get more info</span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -90,8 +83,7 @@ class Favs extends React.Component {
                                         } />
                                     {this.state.favs[listing.id] ? <img style={{ width: "25px", height: "25px" }} src={heartFilled}></img> : <img style={{ width: "25px", height: "25px" }} src={heartEmpty}></img>}
                                 </div>
-                            </div>
-                        </div>
+
                     </div>
                     <div style={{ textAlign: 'center' }}>
                     </div>
