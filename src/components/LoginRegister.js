@@ -34,11 +34,36 @@ export default class LoginRegister extends Component {
             this.setState({errors:error.message})
         })
     }
+    getAction = action => {
+        if (action === 'register') {
+            this.setState({
+                formType: 'Register new user',
+                loginBtn: false,
+                errors:''
+            })
+        }
+    }
 
     render() {
 
         let errorNotification = this.state.errors ?
-        (<div className={styles.error}>invalid user or password</div>) : null
+            (<div className={styles.error}>invalid user or password</div>) : null
+        let submitBtn = this.state.loginBtn ?
+            (<input type="submit"
+                className={styles.submitBtn}
+                value="login"
+                onClick={this.login}
+            />) : 
+            (<input type="submit"
+            className={styles.submitBtn}
+            value="login"
+            onClick={this.register}
+            />)
+        let login_rgister = this.state.loginBtn ? 
+            (<button className={styles.registerBtn} onClick={this.getAction('register')}>Register</button>) : 
+            (<button className={styles.registerBtn} onClick={this.getAction('login')}>Login</button>)
+
+
 
         return (
             <div className={styles.form_block}>
@@ -61,13 +86,10 @@ export default class LoginRegister extends Component {
                     onChange={this.handleChange}
                     name="displayName"
                     />
-                     <input type="submit"
-                    className={styles.submitBtn}
-                    value="login"
-                    onClick={this.login}
-                    />
+                     {submitBtn}
 
                 </form>
+                {login_rgister}
                 
                 
                 </div>
