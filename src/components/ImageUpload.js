@@ -108,7 +108,7 @@ class ImageUpload extends Component {
                     
              { (this.state.buttons) ? (
              <div className={styles.uploadButtons}>
-                 <label for="file">Choose new Profile Picture</label>
+                 <label for="file" className={styles.inputFileLabel}>Choose new Profile Picture</label>
              <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*" style={{width:'100%'}} name="file" id="file"/> 
              <button className={styles.uploadButton} onClick={this.handleUpload}>Upload</button>
              </div>): (null)
