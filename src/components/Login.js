@@ -52,7 +52,9 @@ class Login extends Component {
                                 <div className={styles.userInfo}></div>   
                                 <ImageUpload />
                             </div>
+                            <section style={{width:'100%'}}>
                             <Favs />
+                            </section>
                     </div>
                 ) : (
 
