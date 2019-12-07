@@ -1,6 +1,3 @@
-.uploadButton{
-    float: left;
-}
 .userImg {
     border-radius: 50%;
 }
@@ -8,17 +5,10 @@
     display: flex;
     flex-direction: column;
 } */
-
-.uploadButtons {
-    /* display: none; */
-}
-
 .profilPictureEdit {
     display: grid;
     grid-template-areas: "picture";
 }
-
-
 .profilePicture {
     grid-area: picture;
 }
