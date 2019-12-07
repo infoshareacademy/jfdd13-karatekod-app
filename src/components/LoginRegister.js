@@ -36,10 +36,15 @@ export default class LoginRegister extends Component {
     }
 
     render() {
+
+        let errorNotification = this.state.errors ?
+        (<div className={styles.error}>invalid user or password</div>) : null
+
         return (
             <div className={styles.form_block}>
                 <div className={styles.formType}>{this.state.formType}</div>  
                 <div className={styles.loginInputs}>
+                {errorNotification}
                 <form>
                     <input type="text"
                     value={this.state.email}
