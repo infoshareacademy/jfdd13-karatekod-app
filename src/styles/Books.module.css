@@ -49,6 +49,15 @@ cursor: pointer;
     width: 200px
 }
 
+.likeHeart{
+    width:25px;
+    height:25px;
+}
+
+.likeHeart:hover{
+    cursor: pointer;
+}
+
 .like:hover {
     cursor: pointer;
     background: #c2185b;
