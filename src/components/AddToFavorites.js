@@ -5,9 +5,18 @@ import heartFilled from '../images/heart2.png'
 import heartEmpty from '../images/heart1.png'
 
 class AddToFavorites extends React.Component {
+    constructor(props){
+        super(props)
+        this.state={
+            isFav: "",
+        }
+    }
+    isFav(){
+        this.props.isFavorites?(console.log('true')):(console.log('false'))
+    }
 render(){
     return(   
-        <img className={styles.likeHeart} onClick={this.props.onClick} src={this.props.isFavorites ? heartFilled:heartEmpty}></img>
+        <img className={styles.likeHeart} onMouseEnter={()=>{this.isFav(); console.log('enter')}} onMouseLeave={()=>{this.isFav(); console.log('leave')}} onClick={this.props.onClick} src={this.props.isFavorites ? heartFilled:heartEmpty}></img>
     )
 }
 }
