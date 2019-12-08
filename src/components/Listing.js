@@ -85,10 +85,7 @@ class Listings extends Component {
                                     
                                    
                                         }
-                                    } />
-                        
-                                        {this.state.favs[listing.id] ? <img style={{width:"25px", height:"25px"}} src={heartFilled}></img>  : <img style={{width:"25px", height:"25px"}} src={heartEmpty}></img> }
-                                
+                                    } />                               
                                 </div>
                             </div>
                         </div>
