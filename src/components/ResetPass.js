@@ -15,7 +15,8 @@ export default class ResetPass extends Component {
         let auth = firebase.auth();
         let {email} = this.state
         if (email != '' ) {
-
+            auth.sendPasswordResetEmail(email)
+            .then(console.log('email has been send'))
         } else {
             console.log('empty email')
         }
