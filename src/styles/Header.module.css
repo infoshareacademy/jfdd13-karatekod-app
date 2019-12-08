@@ -16,6 +16,28 @@
     z-index: 1
 } 
 
+.logoBook{
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        margin-left: 150px;
+        margin-top: 40px
+}
+
+.logoText{
+        position: absolute;
+        width: 320px;
+        height: 50px;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        margin-left: 230px;
+        margin-top: 50px
+}
+
 
 @media screen and (max-width: 600px) {
     .header{

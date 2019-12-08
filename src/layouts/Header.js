@@ -12,36 +12,12 @@ const Header = () => {
             <Switch>
                 <Route path="/"  
                 render={() =>(
-                    
-                <div>
-                <img className={styles.headerImg} src={photo4} alt="header"/>
-                <img style={{
-                    position: 'absolute',
-                    width: '70px',
-                    height: '70px',
-                    top: 0,
-                    left: 0,
-                    zIndex: 1000,
-                    marginLeft: '150px',
-                    marginTop: '40px'
-                }} src={logopic}/>
-                <img style={{
-                    position: 'absolute',
-                    width: '320px',
-                    height: '50px',
-                    top: 0,
-                    left: 0,
-                    zIndex: 1000,
-                    marginLeft: '230px',
-                    marginTop: '50px'
-                }} src={logoWhite}/>
+                    <div>
+                        <img className={styles.headerImg} src={photo4} alt="header"/>
+                        <img className={styles.logoBook} src={logopic}/>
+                        <img className={styles.logoText} src={logoWhite}/>
                     </div>
-                               
-
-                                
-                
-                
-                )} />
+              )} />
             </Switch>
      </div>
     )
