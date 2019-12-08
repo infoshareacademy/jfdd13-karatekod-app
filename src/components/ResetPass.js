@@ -4,14 +4,22 @@ import firebase from '../firebase'
 
 
 export default class ResetPass extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             email:''
         }
+    this.resetPass = this.resetPass.bind(this)
     }
     resetPass() {
-        console.log('reset pas')
+        let auth = firebase.auth();
+        let {email} = this.state
+        if (email != '' ) {
+
+        } else {
+            console.log('empty email')
+        }
+
     }
     handleInput = e => {
         this.setState({
