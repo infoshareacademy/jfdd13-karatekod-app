@@ -65,32 +65,31 @@ export default class LoginRegister extends Component {
             this.setState({
                 errors:'Please, confirm the password'
             })
-        } else 
-        
-        {
+        } else {
             (this.state.password === this.state.password1)?(
-            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-            
-            .then(credential => {
+                firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                 
-                return firebase.database().ref('/users/' + credential.user.uid).set({
-                  email: credential.user.email,
-                  uid: credential.user.uid,
-                  created: credential.user.metadata.creationTime
-                });
-              })
+                .then(credential => {
+                    
+                    return firebase.database().ref('/users/' + credential.user.uid).set({
+                    email: credential.user.email,
+                    uid: credential.user.uid,
+                    created: credential.user.metadata.creationTime
+                    });
+                })
+                .then(()=> {
+                    firebase.auth().currentUser.updateProfile({displayName:this.state.displayName})
+                    })           
             
-
-            
-            .catch((error)=>{
-                if (error.code == "auth/invalid-email") {
-                    this.setState({errors : "Invalid e-mail format"})
-                } else {
-                    this.setState({errors:error.message})}
-            })
-            ):
-            (this.setState({errors:'password and its confirmation do not match'}))
-        } 
+                .catch((error)=>{
+                    if (error.code == "auth/invalid-email") {
+                        this.setState({errors : "Invalid e-mail format"})
+                    } else {
+                        this.setState({errors:error.message})}
+                })
+            ):(
+            this.setState({errors:'password and its confirmation do not match'}))
+        }    
     }
 
     
