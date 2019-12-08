@@ -21,7 +21,7 @@ class Login extends Component {
         signedInFlow: "popup",
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID
+            
         ],
         callbacks: {
             signInSuccess: (auth) => {
@@ -81,7 +81,8 @@ class Login extends Component {
                     </div>
                     
                     <div className={styles.loginBox}> 
-                        <LoginRegister />                           
+                        <LoginRegister />    
+                                             
                         <StyledFirebaseAuth 
                         uiConfig={this.uiConfig}
                         firebaseAuth= {firebase.auth()} 

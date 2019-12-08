@@ -17,11 +17,12 @@ export default class LoginRegister extends Component {
             email: '',
             password: '',
             errors: '',
-            formType:'login',
+            formType:'LOGIN',
             loginBtn: true,
             displayName: '',
             password1: '',
-            resetPassword: false
+            resetPassword: false,
+            messages: ''
         }
         this.resetPass = this.resetPass.bind(this)
         this.backToLogin = this.backToLogin.bind(this)
@@ -87,25 +88,34 @@ export default class LoginRegister extends Component {
                 if (error.code == "auth/invalid-email") {
                     this.setState({errors : "Invalid e-mail format"})
                 } else {
-                this.setState({errors:error.message})}
+                    this.setState({errors:error.message})}
             })
-            ):(this.setState({errors:'password and its confirmation do not match'}))
+            ):
+            (this.setState({errors:'password and its confirmation do not match'}))
         } 
     }
 
     
 
-    getAction = action => {
+    switchButton = action => {
         
         
         if (action == 'register') {
             this.setState({
-                formType: 'Register new user',
+                formType: 'REGISTER NEW USER',
                 loginBtn: false,
                 errors:''
             })
          } else {
-             this.setState({formType: 'Login', loginBtn: true, errors: ''})
+             this.setState({
+                 formType: 'LOGIN', 
+                 loginBtn: true, 
+                 errors: '',
+                 password:'',
+                 password1:'',
+                 displayName:'',
+                 email: ''
+                })
 
            }
         }
@@ -113,7 +123,10 @@ export default class LoginRegister extends Component {
         e.preventDefault();
         this.setState({
             resetPassword:true,
-            errors:''})
+            errors:'',
+            email: '',
+            formType:'RESET PASSWORD'
+        })
     }
     resetPass() {
         let auth = firebase.auth();
@@ -129,7 +142,8 @@ export default class LoginRegister extends Component {
             auth.sendPasswordResetEmail(email)
             .then(
                 this.setState({
-                    errors:'Check your email-box for instructions how to set a new password.',
+                    errors:'',
+                    messages:'Check your email-box for instructions how to set a new password.',
                     email:''})
                 )
             .catch((error) => {console.log(error)})
@@ -139,9 +153,13 @@ export default class LoginRegister extends Component {
     backToLogin() {
         this.setState({
             resetPassword: false,
-             email: '',
+            email: '',
             errors: '',
-            password: ''
+            password: '',
+            password1:'',
+            displayName: '',
+            messages:'',
+            formType: 'LOGIN'
         })
     }
     validateEmail(email) {
@@ -153,6 +171,8 @@ export default class LoginRegister extends Component {
 
         let errorNotification = this.state.errors ?
             (<div className={styles.error}>{this.state.errors}</div>) : null
+        let msgNotification = this.state.messages ?
+            (<div className={styles.messageNotification}>{this.state.messages}</div>) : null
         let submitBtn = this.state.loginBtn ?
             (<button
                 className={styles.submitBtn}
@@ -165,8 +185,8 @@ export default class LoginRegister extends Component {
             onClick={this.register}
             >register</button>)
         let login_rgister = this.state.loginBtn ? 
-            (<button className={styles.registerBtn} onClick={(e)=>this.getAction('register')}>Register</button>) : 
-            (<button className={styles.registerBtn} onClick={(e)=>this.getAction('login')}>Login</button>)
+            (<button className={styles.registerBtn} onClick={(e)=>this.switchButton('register')}>register</button>) : 
+            (<button className={styles.registerBtn} onClick={(e)=>this.switchButton('login')}>Login</button>)
         let resetPassBtn = this.state.loginBtn?
             (<p className={styles.resetInfo} onClick={this.resetPassword}>forgot Password?</p>) :
             null
@@ -193,7 +213,7 @@ export default class LoginRegister extends Component {
                                 name="password"
                                 placeholder="password"
                                 />
-                                {(this.state.formType==='Register new user')?
+                                {(this.state.formType==='REGISTER NEW USER')?
                                 (<>
                                 <input type="password"
                                 value={this.state.password1}
@@ -207,28 +227,43 @@ export default class LoginRegister extends Component {
                                 name="displayName"
                                 placeholder="name"
                                 />
-                                </>):null}
-                                
-                            
-
+                                </>):null}                              
                             </form>
                             {submitBtn}
                             {login_rgister}
-                            {resetPassBtn}
-                            
-                            
+                            {resetPassBtn}                           
+                          
                         </div>
                     </>
                 ):(
                 
-                    <div className={styles.resetPassContainer}>
+                    <>
+                        <div className={styles.formType}>{this.state.formType}</div>
+                        <div className={styles.loginInputs}>
                         {errorNotification}
-                        <input type="email" name="email" onChange={this.handleChange}></input>
-                        <button onClick={this.resetPass}>Reset Password</button>
-                        <button onClick={this.backToLogin}>back to login</button>
-                    
-                
-                    </div>
+                        {msgNotification}
+                        <input 
+                            type="text" 
+                            name="email" 
+                            onChange={this.handleChange}
+                            className={styles.inputResetPass}
+                            placeholder="enter email">
+                            
+                        </input>
+                        <div className={styles.resetButtonsFlex}>
+                            <button
+                                onClick={this.resetPass}
+                                className={styles.buttonReset}>
+                                    reset password
+                            </button>
+                            <button 
+                                onClick={this.backToLogin}
+                                className={styles.back2Login}>
+                                    back to login
+                            </button>
+                        </div>
+                     </div>
+                    </>
                 )}
              </div>
             )

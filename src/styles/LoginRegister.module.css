@@ -19,6 +19,9 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     background: pink;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
 
 }
 .loginInputs {
@@ -38,16 +41,6 @@ input[type='text'], input[type='password'] {
 
 
 }
-/* .submitBtn {
-    height: 30px;
-    padding: 4px 10px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    cursor: pointer;
-
-} */
-
 
 .registerBtn {
     float:right;
@@ -58,12 +51,16 @@ input[type='text'], input[type='password'] {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 3px;
+    color:red;
+    border: 1px solid red;
+    font-size: 14px;
+    background: white;
 }
 button {
     border: 1px solid #c2185b;
     background: #c2185b;
     color: white;
-     width: 100px;
+    width: 100px;
     height: 25px;
     cursor: pointer;
     font-size: 16px;
@@ -78,8 +75,32 @@ button:hover {
 .resetInfo {
     font-size: 10px;
     text-decoration: underline;
-    color:blue
+    color:blue;
+    padding-top: 10px;
+    padding-left: 4px;
+    display: inline;
 }
 .resetInfo:hover {
     cursor: pointer
 }
+.buttonReset{
+    font-size: 10px;
+}
+.back2Login{
+    font-size: 10px;
+    float: right;
+}
+.messageNotification {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background: white;
+    font-size: 14px;
+}
+.resetButtonsFlex {
+    padding: 0px 15px;
+}
+.inputResetPass {
+    padding-top: 40px;
+}
+
