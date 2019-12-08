@@ -79,6 +79,7 @@ class Login extends Component {
                             </div>
 
                             <div className={styles.loginBox}>
+                                <LoginRegister />
                                 <StyledFirebaseAuth
                                     uiConfig={this.uiConfig}
                                     firebaseAuth={firebase.auth()}
