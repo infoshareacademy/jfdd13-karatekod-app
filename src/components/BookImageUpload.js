@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import firebase, { storage } from '../firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Button } from 'bloomer'; 
+import 'bulma/css/bulma.min.css'
 
 class BookImageUpload extends Component {
     notify = () => toast("Wrong file type");
@@ -92,10 +94,7 @@ class BookImageUpload extends Component {
                 url: coverPictureUrl
             })
         }
-
-
     }
-
 
     render() {
         const showProgress = this.state.progress !== 0 && this.state.progress !== 100 
@@ -105,7 +104,7 @@ class BookImageUpload extends Component {
                 <div>
                     {/* <p>Upload book cover picture</p> */}
                     <input type="file" onChange={this.handleChange}/>
-                    <button type="button" onClick={this.handleUpload}>Upload</button>
+                    <Button isColor="danger" style={{borderRadius: '20px'}} type="button" onClick={this.handleUpload}>Upload</Button>
                     <div>
                         {/* <img src={this.state.url} alt="Book cover pic" height= "100" width= "80"/> */}
                         {showProgress && <progress value={this.state.progress} max="100"/>}
