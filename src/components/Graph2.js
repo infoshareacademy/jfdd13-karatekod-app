@@ -17,7 +17,6 @@ class Graph2 extends React.Component {
       },
       series: [],
       types: {},
-
     }
   }
   componentDidMount() {

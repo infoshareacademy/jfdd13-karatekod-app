@@ -8,7 +8,16 @@ class Graph1 extends React.Component {
     super(props);
     this.state = {
       options: {
+        dataLabels:{
+          enabled:true,
 
+        },
+        tooltip:{
+          enabled: true,
+          marker:{
+            show:false
+          }
+        },
         chart: {
           id: "basic-bar"
         },
