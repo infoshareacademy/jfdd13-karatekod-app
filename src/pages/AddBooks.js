@@ -6,6 +6,8 @@ import {ToastContainer, toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import { addBooksFirebase } from '../services/BookService';
 import BookImageUpload from '../components/BookImageUpload';
+import { Button } from 'bloomer'; 
+import 'bulma/css/bulma.min.css'
 
 
 const initialState = {
@@ -178,12 +180,12 @@ class AddBooks extends React.Component {
                     <label className={styles.label}>Description*:</label>
                     <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></textarea>
 
-                    <button className={styles.button} onClick={(e) => {
+                    <Button isColor='danger' className={styles.button} onClick={(e) => {
                             e.preventDefault()
                             this.addBook(e)                  
                     }}>
                         ADD TO BOOKSWAPP
-            </button>
+                    </Button>
                 </form>
                 <ToastContainer
                 hideProgressBar={true}

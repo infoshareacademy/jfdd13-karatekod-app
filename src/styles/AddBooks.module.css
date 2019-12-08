@@ -6,28 +6,21 @@
     margin-top: 50px;
 }
 .button{
-    border: 1px solid #c2185b;
-    background: #c2185b;
     color: white;
-    margin-top: 40px;
-    width: 330px;
-    height: 40px;
+    margin-top: 10px;
+    width: 300px;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;    
+    font-size: 20px;  
+    border-radius: 20px 
 }
 
-.button:hover{
-    border: 1px solid #FF9800;
-    background: #FF9800;
-    color: white
-}
 .label{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px
 }
+
 .dropdown{
     text-align: center;
     width: 330px;
