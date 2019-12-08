@@ -3,7 +3,8 @@ import firebase, { storage } from '../firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from 'bloomer'; 
-import 'bulma/css/bulma.min.css'
+import 'bulma/css/bulma.min.css';
+import styles from '../styles/BookImageUpload.module.css'
 
 class BookImageUpload extends Component {
     notify = () => toast("Wrong file type");
@@ -101,7 +102,7 @@ class BookImageUpload extends Component {
 
         return (
             <div>
-                <div>
+                <div className={styles.imageUpload}>
                     {/* <p>Upload book cover picture</p> */}
                     <input type="file" onChange={this.handleChange}/>
                     <Button isColor="danger" style={{borderRadius: '20px'}} type="button" onClick={this.handleUpload}>Upload</Button>
