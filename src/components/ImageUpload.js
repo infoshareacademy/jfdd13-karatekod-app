@@ -21,6 +21,7 @@ class ImageUpload extends Component {
 
     componentDidMount() {
         this.checkIfUserHasProfilePicture()
+        console.log(firebase.auth().currentUser)
     }
 
     handleChange = e => {
@@ -81,19 +82,20 @@ class ImageUpload extends Component {
                         <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" className={styles.userImg} />
                     </div>
                 </div>
+                <label for="file" className={styles.inputFileLabel}>Change profile picture</label>
                 <div className={styles.loadPicSec} >
                     <div className={styles.uploadButtons}>
-                        <label for="file" className={styles.inputFileLabel}>Choose new Profile Picture</label>
+                        
                         <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*" style={{ width: '100%' }} name="file" id="file" />
                     </div>
                     <div className={styles.skill}>
-                        <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Username:</p>
+                        <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Favorite genre:</p>
                             <h2 className={styles.nameTitle} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
                         </div>
                         <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Username:</p>
                             <h2 className={styles.nameTitleFirst} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
                         </div>
-                        <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Username:</p>
+                        <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Favorite books:</p>
                             <h2 className={styles.nameTitle} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
                         </div>
                     </div>
