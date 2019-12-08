@@ -6,4 +6,8 @@
         align-items: center;
     }
 
+    .imageUploadButton{
+        margin-top: 5px
+    }
+
 }
