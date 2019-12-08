@@ -55,7 +55,17 @@ export default class LoginRegister extends Component {
 
     register = e => {
         e.preventDefault();
-        if (this.state.email !=='' && this.state.password !=='')
+        if (this.state.email =='' || this.state.password ==''){
+            this.setState({
+                errors:'Email and/or password cannot be an empty field'
+            })
+        }
+        else if (this.state.password1 == '') {
+            this.setState({
+                errors:'Please, confirm the password'
+            })
+        } else 
+        
         {
             (this.state.password === this.state.password1)?(
             firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -80,11 +90,7 @@ export default class LoginRegister extends Component {
                 this.setState({errors:error.message})}
             })
             ):(this.setState({errors:'password and its confirmation do not match'}))
-        } else {
-            this.setState({
-                errors:'Email and/or password cannot be an empty field'
-            })
-        }
+        } 
     }
 
     
