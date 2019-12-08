@@ -6,16 +6,18 @@ import logoText from '../images/logo.png'
 import logo from '../images/logopic.png'
 import ImageUpload from '../components/ImageUpload'
 import Favs from '../pages/AdminPage'
+import LoginRegister from './LoginRegister'
 
 
 class Login extends Component {
+
     state = { isSignedIn: false }
+
     uiConfig = {
         signedInFlow: "popup",
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID
+            
         ],
         callbacks: {
             signInSuccess: (auth) => {
@@ -31,6 +33,9 @@ class Login extends Component {
             }
         }
     }
+
+    
+
     componentDidMount = () => {
 
         firebase.auth().onAuthStateChanged(user => {
@@ -44,6 +49,7 @@ class Login extends Component {
         return (
             <>
                 {this.state.isSignedIn ? (
+
                     <div className={styles.userProfile}>
                         <div style={{ clear: "both" }}></div>
                             <div className={styles.userContent}>
@@ -58,6 +64,7 @@ class Login extends Component {
                 ) : (
 
                         <div className={styles.loginGrid}>
+
 
                             <div className={styles.logoSection} >
                                 <div className={styles.logo}> <img src={logo} width="100%" /> </div>
@@ -79,6 +86,7 @@ class Login extends Component {
                             </div>
                         </div>
                     )}
+
             </>
         )
     }
