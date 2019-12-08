@@ -70,20 +70,18 @@ export default class LoginRegister extends Component {
         {
             (this.state.password === this.state.password1)?(
             firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(()=> {
-                const user = firebase.auth().currentUser;
-                user.updateProfile({displayName:this.state.displayName})
+            
+            .then(credential => {
                 
-            })
-            .then (()=> {
-                const user = firebase.auth().currentUser;
-                firebase.database().ref('/users/' + user.uid).set( {
-                        name: user.displayName,
-                        created: user.metadata.creationTime,
-                        lastSingIn: user.metadata.lastSignInTime,
-                        profilePicture: user.profilePicture
-                })
-            })
+                return firebase.database().ref('/users/' + credential.user.uid).set({
+                  email: credential.user.email,
+                  uid: credential.user.uid,
+                  created: credential.user.metadata.creationTime
+                });
+              })
+            
+
+            
             .catch((error)=>{
                 if (error.code == "auth/invalid-email") {
                     this.setState({errors : "Invalid e-mail format"})
