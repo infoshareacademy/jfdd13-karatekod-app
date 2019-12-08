@@ -47,7 +47,6 @@ class Login extends Component {
                     <div className={styles.userProfile}>
                         <div style={{ clear: "both" }}></div>
                             <div className={styles.userContent}>
-                                {/* <img src={firebase.auth().currentUser.photoURL}></img> */}
                                 <div className={styles.userInfo}></div>   
                                 <ImageUpload />
                             </div>

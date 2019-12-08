@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
-import styles from "../styles/BookPage.module.css"; // imports css styles
+import styles from "../styles/BookPage.module.css"; 
 import { watchBooks, stopBooks } from '../services/BookService'
 
 class BookPage extends React.Component{
@@ -12,12 +12,10 @@ class BookPage extends React.Component{
            book:""
         }
     }
-    // fetch books from firebase onmount
     componentDidMount(){
         watchBooks(bookslist => {
             this.setState({book:bookslist.find(book=>book.id===this.state.id)})})
     }
-    // stop fetching books on unmount
     componentWillUnmount(){
         stopBooks();
     }
