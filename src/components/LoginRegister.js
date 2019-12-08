@@ -39,7 +39,11 @@ export default class LoginRegister extends Component {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .catch((error)=>{
             console.log(error)
-            this.setState({errors:error.message})
+            if (error.code == "auth/wrong-password" || error.code == "auth/wrong-password") {
+            this.setState({errors:"Invalid user or password"})
+            } else if (error.code == "auth/invalid-email") {
+                this.setState({errors : "Invalid e-mail format"})
+            }
         })
     }
 
@@ -63,10 +67,12 @@ export default class LoginRegister extends Component {
             })
         })
          .catch((error)=>{
-            console.log(error)
-            this.setState({errors:error.message})
+            if (error.code == "auth/invalid-email") {
+                this.setState({errors : "Invalid e-mail format"})
+            } else {
+            this.setState({errors:error.message})}
         })
-        ):(this.setState({errors:'password does not match'}))
+        ):(this.setState({errors:'password and its confirmation do not match'}))
     }
 
     
@@ -87,7 +93,9 @@ export default class LoginRegister extends Component {
         }
     resetPassword = e => {
         e.preventDefault();
-        this.setState({resetPassword:true})
+        this.setState({
+            resetPassword:true,
+            errors:''})
     }
     resetPass() {
         let auth = firebase.auth();
