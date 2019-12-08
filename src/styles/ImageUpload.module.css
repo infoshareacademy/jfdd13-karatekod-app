@@ -1,31 +1,49 @@
-.uploadButton{
-    float: left;
-}
 .userImg {
     border-radius: 50%;
+    height: 200px;
+   width: 200px;
 }
 /* .profilPictureEdit {
     display: flex;
     flex-direction: column;
 } */
-
-.uploadButtons {
-    /* display: none; */
-}
-
 .profilPictureEdit {
     display: grid;
     grid-template-areas: "picture";
 }
-
-
 .profilePicture {
     grid-area: picture;
 }
 
 .loadPicSec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
     
+}
+
+.inputFileLabel {
+    font-size: 0.6em;
+    font-weight: 700;
+    color: black;
+    display: inline-block;
+}
+
+.inputFileLabel:focus,
+.inputFileLabel:hover {
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+
+.inputFileHidden {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 .backOfProfilePic {
     grid-area: picture;

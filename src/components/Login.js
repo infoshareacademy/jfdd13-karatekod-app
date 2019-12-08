@@ -10,13 +10,9 @@ import LoginRegister from './LoginRegister'
 
 
 class Login extends Component {
-    constructor() {
-        super();
-        this.state = {
-            isSignedIn : false,
-           
-        }
-    }
+
+    state = { isSignedIn: false }
+
     uiConfig = {
         signedInFlow: "popup",
         signInOptions: [
@@ -26,12 +22,13 @@ class Login extends Component {
         callbacks: {
             signInSuccess: (auth) => {
                 firebase.database().ref('/users/' + auth.uid).transaction(data => {
-                    console.log('data ',data);
+                    console.log('data ', data);
                     return {
                         name: firebase.auth().currentUser.displayName,
                         created: firebase.auth().currentUser.metadata.creationTime,
                         lastSingIn: firebase.auth().currentUser.metadata.lastSignInTime,
-                        profilePicture: firebase.auth().currentUser.profilePicture}
+                        profilePicture: firebase.auth().currentUser.profilePicture
+                    }
                 })
             }
         }
@@ -40,56 +37,56 @@ class Login extends Component {
     
 
     componentDidMount = () => {
-        
-        firebase.auth().onAuthStateChanged(user => {
-            this.setState({isSignedIn: !!user}) 
-            console.log("user: ",user)
 
-        }) 
+        firebase.auth().onAuthStateChanged(user => {
+            this.setState({ isSignedIn: !!user })
+            console.log("user: ", user)
+
+        })
 
     }
-
     render() {
         return (
             <>
                 {this.state.isSignedIn ? (
-                   <div className={styles.userProfile}>
-                        <button className={styles.logoutButton} className={styles.button} onClick = {()=>firebase.auth().signOut()} >Sign out</button>
-                        <div style={{clear:"both"}}></div>
-                        <div className={styles.userHeader}>
-                        <div className={styles.userContent}>
 
-                            
-                            <h5>Hi {firebase.auth().currentUser.displayName}, great to see you!</h5>  
-                            {/* <img src={firebase.auth().currentUser.photoURL}></img> */}
-                            <ImageUpload />
+                    <div className={styles.userProfile}>
+                        <div style={{ clear: "both" }}></div>
+                            <div className={styles.userContent}>
+                                <div className={styles.userInfo}></div>   
+                                <ImageUpload />
+                            </div>
+                            <section style={{width:'100%', marginTop:'20px'}}>
+                <div style={{textAlign:'center'}}><h4>Your favorite books</h4></div>
+                            <Favs />
+                            </section>
+                    </div>
+                ) : (
+
+                        <div className={styles.loginGrid}>
+
+
+                            <div className={styles.logoSection} >
+                                <div className={styles.logo}> <img src={logo} width="100%" /> </div>
+                                <div className={styles.logoText}>  <img src={logoText} width="100%" /> </div>
+                            </div>
+                            <div className={styles.loginDesc}>
+                                <p>
+                                    Welcome to the world, where your books gain second life. Join the society, where people
+                                       share experience through the stories they have red. It's easy like one (Sign in), two
+                                       (upload your books), and three (find books to swap)
+                           </p>
+                            </div>
+
+                            <div className={styles.loginBox}>
+                                <StyledFirebaseAuth
+                                    uiConfig={this.uiConfig}
+                                    firebaseAuth={firebase.auth()}
+                                />
+                            </div>
                         </div>
-                        <Favs />
-                        </div>
-                    </div>
+                    )}
 
-                ): (
-
-              <div className = {styles.loginGrid}>
-
-                    <div className = {styles.logoSection} >
-                       <div className={styles.logo}> <img src={logo}  width="100%"/> </div>
-                      <div className={styles.logoText}>  <img src={logoText}  width="100%"/> </div>
-                    </div>
-                    <div className={styles.loginDesc}>
-                        
-                    </div>
-                    
-                    <div className={styles.loginBox}> 
-                        <LoginRegister />    
-                                             
-                        <StyledFirebaseAuth 
-                        uiConfig={this.uiConfig}
-                        firebaseAuth= {firebase.auth()} 
-                        />
-                    </div>              
-                </div>
-                )}
             </>
         )
     }

@@ -7,7 +7,6 @@ export class Filter extends Component {
     render() {
         return (
         <div>
-            {/* <h4 className={styles.textHeader}>Select criteria for books searching</h4> */}
             <div className={styles.filter}>
                 <div className={styles.forms}>
                     <div className={styles.searchTextInputs}>
