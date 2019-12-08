@@ -86,7 +86,7 @@ class ImageUpload extends Component {
                 <div className={styles.loadPicSec} >
                     <div className={styles.uploadButtons}>
                         
-                        <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*" style={{ width: '100%' }} name="file" id="file" />
+                        <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*"  name="file" id="file" />
                     </div>
                     <div className={styles.skill}>
                         <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Favorite genre:</p>
