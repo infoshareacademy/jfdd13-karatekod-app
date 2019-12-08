@@ -6,36 +6,36 @@ class Graph2 extends React.Component {
     super(props);
     this.state = {
       options: {
-        labels: ["fantasy", "drama", "romance", "thriller", "guides", "crime", "biography", "other"],
+        labels: [],
         fill: {
           colors: ['#c2185b', '#e94989', '#f4a4c4', '#ff0080', '#00ccff', '#ff0066', '#ff66ff', '#3399ff']
         },
         colors: ['#c2185b', '#e94989', '#f4a4c4', '#ff0080', '#00ccff', '#ff0066', '#ff66ff', '#3399ff']
       },
       series: [],
-      booksList: [],
       types: {},
     }
   }
   componentDidMount() {
     watchBooks(booksList => {
       let types = booksList.map(x => x.type)
+      console.log(types)
       let myTypes = types.reduce((result, next) => {
         result[next] = (result[next] || 0) + 1;
         return result;
       }, {})
-      this.setState({ types: myTypes })
-      this.setState({ names: [Object.keys(myTypes)] })
-      this.setState({ counts: [Object.values(myTypes)] })
-      this.setState({
+      //this.setState({ types: myTypes })
+      this.setState({ options:{labels: Object.keys(myTypes) }})
+      //this.setState({ counts: [Object.values(myTypes)] }, ()=>console.log(this.state.counts, myTypes, Object.keys(myTypes), Object.values(myTypes)))
+      /*this.setState({
         options: {
           fill: {
             colors: ['#c2185b', '#e94989', '#f4a4c4', '#ff0080', '#00ccff', '#ff0066', '#ff66ff', '#3399ff']
           },
           colors: ['#c2185b', '#e94989', '#f4a4c4', '#ff0080', '#00ccff', '#ff0066', '#ff66ff', '#3399ff'],
         }
-      })
-      this.setState({ series: Object.values(myTypes) })
+      })*/
+      this.setState({ series: Object.values(myTypes) }, ()=>console.log(this.state.series))
     });
   }
   componentWillUnmount() {
