@@ -198,9 +198,6 @@ export let books = (() => {
 })()
 
 const BooksListPage = () => {
-
-
-    // PART FOR GETTIN BOOKS FROM FIREBASE
     const [booksFB, setBooksFB] = useState([]);
     useEffect(() => {
         watchBooks(booksFB => {
@@ -213,10 +210,8 @@ const BooksListPage = () => {
       }, []);
 
 
-    //
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
     
-    //PART FOR RENDERING BOOKS FROM FIREBASE
     const booksList = booksFB.map(book => (
         <div key={book.id} className={styles.singleBook}>
         <Link to={`/book/${book.id}`}>

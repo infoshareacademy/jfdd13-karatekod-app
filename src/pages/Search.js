@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import booksListings? from '../Data/Database'
-
 import Filter from '../components/Filter'
 import Listings from '../components/Listing'
 import { watchBooks, stopBooks } from '../services/BookService'
@@ -57,16 +55,9 @@ export default class Search extends Component {
     });
   }
 
-
   componentWillUnmount() {
     stopBooks()
   }
-
-
-
- 
-
-
 
   filteredData() {
     let newData = this.state.booksList.filter((item) => {
@@ -135,14 +126,7 @@ export default class Search extends Component {
   }
 
   render() {
-
-    
-  return (
-    
-        
-      
-      
-        
+  return (    
         <section id="content-area">
           <Filter change={this.change} changeFilterRange={this.changeFilterRange} globalState= {this.state} />
           <Listings

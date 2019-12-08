@@ -5,7 +5,8 @@ import { booksList } from '../pages/BooksListPage'
 import {ToastContainer, toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import { addBooksFirebase } from '../services/BookService';
-import BookImageUpload from '../components/BookImageUpload'
+import BookImageUpload from '../components/BookImageUpload';
+
 
 const initialState = {
     newTitle: "",
