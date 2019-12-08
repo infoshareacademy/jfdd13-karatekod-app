@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
-import { validate } from '@babel/types';
+
 
 
 
@@ -35,44 +35,56 @@ export default class LoginRegister extends Component {
     }
 
     login = e => {
-        e.preventDefault();
-        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .catch((error)=>{
-            console.log(error)
-            if (error.code == "auth/wrong-password" || error.code == "auth/wrong-password") {
-            this.setState({errors:"Invalid user or password"})
-            } else if (error.code == "auth/invalid-email") {
-                this.setState({errors : "Invalid e-mail format"})
-            }
-        })
+        if (this.state.email !=='' && this.state.password !==''){
+            e.preventDefault();
+            firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .catch((error)=>{
+                console.log(error)
+                if (error.code == "auth/wrong-password" || error.code == "auth/wrong-password") {
+                this.setState({errors:"Invalid user or password"})
+                } else if (error.code == "auth/invalid-email") {
+                    this.setState({errors : "Invalid e-mail format"})
+                }
+            })
+        } else {
+            this.setState({
+                errors:'Email and/or password cannot be an empty field'
+            })
+        }
     }
 
     register = e => {
         e.preventDefault();
-        // let name = this.state.displayName
-        (this.state.password === this.state.password1)?(
-        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(()=> {
-            const user = firebase.auth().currentUser;
-            user.updateProfile({displayName:this.state.displayName})
-            
-        })
-        .then (()=> {
-            const user = firebase.auth().currentUser;
-            firebase.database().ref('/users/' + user.uid).set( {
-                    name: user.displayName,
-                    created: user.metadata.creationTime,
-                    lastSingIn: user.metadata.lastSignInTime,
-                    profilePicture: user.profilePicture
+        if (this.state.email !=='' && this.state.password !=='')
+        {
+            (this.state.password === this.state.password1)?(
+            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then(()=> {
+                const user = firebase.auth().currentUser;
+                user.updateProfile({displayName:this.state.displayName})
+                
             })
-        })
-         .catch((error)=>{
-            if (error.code == "auth/invalid-email") {
-                this.setState({errors : "Invalid e-mail format"})
-            } else {
-            this.setState({errors:error.message})}
-        })
-        ):(this.setState({errors:'password and its confirmation do not match'}))
+            .then (()=> {
+                const user = firebase.auth().currentUser;
+                firebase.database().ref('/users/' + user.uid).set( {
+                        name: user.displayName,
+                        created: user.metadata.creationTime,
+                        lastSingIn: user.metadata.lastSignInTime,
+                        profilePicture: user.profilePicture
+                })
+            })
+            .catch((error)=>{
+                if (error.code == "auth/invalid-email") {
+                    this.setState({errors : "Invalid e-mail format"})
+                } else {
+                this.setState({errors:error.message})}
+            })
+            ):(this.setState({errors:'password and its confirmation do not match'}))
+        } else {
+            this.setState({
+                errors:'Email and/or password cannot be an empty field'
+            })
+        }
     }
 
     
@@ -101,7 +113,7 @@ export default class LoginRegister extends Component {
         let auth = firebase.auth();
         let {email} = this.state
         if (email == '') {            
-            this.setState({errors: "This field cannot be empty. Enter an email"})
+            this.setState({errors: "Please, type an email provided during registration to BookswApp"})
         }
         else if (!this.validateEmail(email)) {
             this.setState({errors:'Email has invalid format'})
@@ -109,7 +121,11 @@ export default class LoginRegister extends Component {
         
         else {
             auth.sendPasswordResetEmail(email)
-            .then(this.setState({errors:'Check your email-box for instructions how to set a new password. '}))
+            .then(
+                this.setState({
+                    errors:'Check your email-box for instructions how to set a new password.',
+                    email:''})
+                )
             .catch((error) => {console.log(error)})
         }
 
@@ -119,17 +135,13 @@ export default class LoginRegister extends Component {
             resetPassword: false,
              email: '',
             errors: '',
-            password: '',
+            password: ''
         })
     }
     validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    }
-    
-
-    
-    
+    }  
 
     render() {
 
@@ -201,21 +213,21 @@ export default class LoginRegister extends Component {
                             
                         </div>
                     </>
-        ):
-        (
-            <div className={styles.resetPassContainer}>
-                {errorNotification}
-                <input type="email" name="email" onChange={this.handleChange}></input>
-                <button onClick={this.resetPass}>Reset Password</button>
-                <button onClick={this.backToLogin}>back to login</button>
-            
-        
-            </div>
-        )}
-            </div>
-        )
+                ):(
+                
+                    <div className={styles.resetPassContainer}>
+                        {errorNotification}
+                        <input type="email" name="email" onChange={this.handleChange}></input>
+                        <button onClick={this.resetPass}>Reset Password</button>
+                        <button onClick={this.backToLogin}>back to login</button>
+                    
+                
+                    </div>
+                )}
+             </div>
+            )
+        }
     }
-}
 
 
 
