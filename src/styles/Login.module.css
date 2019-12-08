@@ -1,52 +1,52 @@
-.userProfile h1{
+.userProfile h1 {
     text-align: center;
 }
 
-.profilePicture{
+.profilePicture {
     text-align: center;
 }
 
-.userProfile .button{
+.userProfile .button {
     border: 1px solid #c2185b;
     background: #c2185b;
     color: white;
-     width: 230px;
+    width: 230px;
     height: 40px;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 10px; 
-    float: right; 
+    border-radius: 10px;
+    float: right;
 }
 
 
 
-.loginButton{
+.loginButton {
     float: right;
 
 }
 
-.userProfile button:hover{
+.userProfile button:hover {
     border: 1px solid #FF9800;
     background: #FF9800;
     color: white
 }
 
 
-.label{
+.label {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.input{
+.input {
     width: 330px;
     height: 40px;
     border-bottom: 2px solid black;
@@ -57,30 +57,12 @@
 
 .loginGrid {
 
-   height: 95vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   margin: 0 5vh;
-
-
-
-
-    
-/* margin-top: 20vh;
- display: flex;
+    height: 95vh;
+    display: flex;
     flex-direction: column;
-    max-width: 80%;
-    padding-top: 60px;
-    padding-bottom: 40px;
-    margin: auto;
-    min-height: 65vh;
-    grid-template-areas: 
-    "logo box"
-    "desc box"
-    "desc box"
-    "desc box"
-    "desc box" */
+    justify-content: center;
+    margin: 0 5vh;
+
 }
 
 .loginBox {
@@ -98,7 +80,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-  /*  grid-area: logo;
+    /*  grid-area: logo;
     display: flex;
     justify-content: center;
     */
@@ -107,17 +89,17 @@
 .logo {
 
     max-width: 200px;
-   /* width: 10%*/
-    
+    /* width: 10%*/
+
 
 }
 
 .logoText {
-   /*width: 70%*/
+    /*width: 70%*/
 }
 
 .loginDesc {
-/*    grid-area: desc;
+    /*    grid-area: desc;
     padding-top: 80px;
     padding-right: 5px;
     */
@@ -128,6 +110,9 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    box-shadow: 0px 2px 10px;
+
+
 }
 
 .userInfo {
@@ -150,24 +135,24 @@
 
 
 @media screen and (max-width: 600px) {
-   .loginGrid{
-       display: flex;
-       flex-direction: column;
-       justify-content: center; 
-       
-   }
+    .loginGrid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-   .loginDesc{
-        display:inline-block;
-        text-align:center;       
     }
 
-    h1{
+    .loginDesc {
         display: inline-block;
-        text-align: center; 
+        text-align: center;
     }
 
-    .userProfile{
+    h1 {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .userProfile {
 
         display: flex;
         flex-direction: column;
@@ -182,6 +167,12 @@
         align-items: center;
         color: #C2355B;
         margin-top: 10%;
+        width: 100%;
+        background-color: #F8BBD0;
+        background-size: cover;
+        box-shadow: 0px 1px 10px;
+
+
     }
 
     .userInfo {
@@ -189,7 +180,6 @@
         display: flex;
         flex-direction: column;
         align-items: center
-
     }
 
     .userInfoName {
@@ -201,11 +191,9 @@
         font-size: 1.5rem;
         padding: 0;
     }
-   
+
 }
 
 .userHeader {
     display: flex;
 }
-
-

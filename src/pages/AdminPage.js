@@ -9,6 +9,7 @@ import { addFavFirebase } from '../services/FavService'
 import heartFilled from '../images/heart2.png'
 import heartEmpty from '../images/heart1.png'
 
+
 class Favs extends React.Component {
     constructor(props) {
         super(props)
@@ -67,9 +68,9 @@ class Favs extends React.Component {
                             }}>
                             </div>
                             <div className={styles.bookDetailsFav} >
-                                <p className={styles.title}><p className={styles.small}>Title: </p><br className={styles.smallBreak}/><i>{listing.title}</i></p>
-                                <p className={styles.title}><p className={styles.small}>Author: </p><br className={styles.smallBreak}/>{listing.autor}</p>
-                                <p className={styles.title}><p className={styles.small}>Condition: </p><br className={styles.smallBreak}/>{listing.condition}</p>
+                                <p className={styles.title}><span className={styles.small}>Title: </span><br className={styles.smallBreak}/><i>{listing.title}</i></p>
+                                <p className={styles.title}><span className={styles.small}>Author: </span><br className={styles.smallBreak}/>{listing.autor}</p>
+                                <p className={styles.title}><span className={styles.small}>Condition: </span><br className={styles.smallBreak}/>{listing.condition}</p>
                             </div>
                         </div>
                     </Link>
