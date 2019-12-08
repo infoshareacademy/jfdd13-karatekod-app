@@ -8,64 +8,14 @@ import {addFavFirebase} from '../services/FavService'
 import firebase from 'firebase'
 import { BOOKS_PER_PAGE } from '../pages/Search'
 
-/*const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
-
-<AddToFavorites id={listing.id} onClick={() => {
-    let newFavorites
-    if (favorites.includes(listing.id)) {
-        newFavorites = favorites.filter(fav => fav !== listing.id);
-       
-    } else {
-        newFavorites = [...favorites, listing.id]
-    }
-    setFavorites(newFavorites)
-    localStorage.setItem('favorites', JSON.stringify(newFavorites))
-
-}}/>
-*/
-
 class Listings extends Component {
     constructor() {
         super()
         this.state = {
             booksPerPage: 5,
-            // favorites: (JSON.parse(localStorage.getItem("favorites")) || []),
             favs: {}
         }
-        // this.loopListings = this.loopListings.bind(this);
-        // this.handleClick = this.handleClick.bind(this)
-        // this.handleClickNext = this.handleClickNext.bind(this)
-        // this.handleClickPrev = this.handleClickPrev.bind(this)
-
     }
-
-
-    // handleClick(event) {
-
-    //     this.setState({
-    //         currentPage: Number(event.target.id)
-    //     })
-
-    // }
-    // handleClickNext(event) {
-    //     const booksList = this.loopListings();
-    //     const nextPage = this.state.currentPage + 1
-    //     if (this.state.currentPage < Math.ceil(booksList.length / this.state.booksPerPage)) {
-    //         this.setState({
-    //             currentPage: nextPage
-    //         })
-    //     }
-    // }
-    // handleClickPrev(event) {
-    //     if (this.state.currentPage > 1) {
-    //         const prevPage = this.state.currentPage - 1
-
-    //         this.setState({
-    //             currentPage: prevPage
-    //         })
-    //     }
-    // }
-
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
@@ -179,11 +129,7 @@ class Listings extends Component {
 
 
     render() {
-
-
         const { currentPage } = this.props;
-
-   
         const booksList = this.loopListings();
         const indexOfLastBook = currentPage * BOOKS_PER_PAGE;
         const indexOfFirstBook = indexOfLastBook - BOOKS_PER_PAGE
@@ -191,9 +137,6 @@ class Listings extends Component {
         const renderBooks = currentBooks.map((book, index) => {
             return <div style={{width: "300px"}}key={index}>{book}</div>
         })
-
-
-
 
         return (
             <>

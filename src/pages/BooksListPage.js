@@ -223,27 +223,6 @@ const BooksListPage = () => {
         <img src={book.imageUrl}/>
         <Book {...book} src={book.imageUrl}  />
         </Link>
-    
-    
-        {/* <Link to={`/book/${book.id}`}>
-        <img src={book.imageUrl}/>
-        <Book key={book.id} {...book} src={book.imageUrl}  />
-        </Link>
-        {favorites.includes(book.id) ? <img src={star}/> : ''}
-        <AddToFavorites id={book.id} onClick={() => {
-            let newFavorites
-            if (favorites.includes(book.id)) {
-                newFavorites = favorites.filter(fav => fav !== book.id);
-               
-            } else {
-                newFavorites = [...favorites, book.id]
-            }
-            setFavorites(newFavorites)
-            localStorage.setItem('favorites', JSON.stringify(newFavorites))
-
-        }}/> */}
-        
-
         </div>
     ))
 

@@ -92,6 +92,8 @@ class BookImageUpload extends Component {
                 url: coverPictureUrl
             })
         }
+
+
     }
 
 
@@ -111,7 +113,8 @@ class BookImageUpload extends Component {
                 </div>
                 <ToastContainer 
                  hideProgressBar={true}
-                 position="bottom-right"/>
+                 position="bottom-right"
+                 />
             </div>
         )
     }
