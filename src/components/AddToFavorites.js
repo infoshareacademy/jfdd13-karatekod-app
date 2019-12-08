@@ -7,7 +7,7 @@ import heartEmpty from '../images/heart1.png'
 class AddToFavorites extends React.Component {
 render(){
     return(   
-        <img className={styles.like} onClick={this.props.onClick} src={this.props.isFavorites ? heartFilled:heartEmpty}></img>
+        <img className={styles.likeHeart} onClick={this.props.onClick} src={this.props.isFavorites ? heartFilled:heartEmpty}></img>
     )
 }
 }
