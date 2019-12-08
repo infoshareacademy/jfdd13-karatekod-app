@@ -30,7 +30,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 15px 5px 15px;
 }
 
@@ -112,4 +112,10 @@ p {
     cursor: pointer;
    
 
+}
+
+@media screen and (max-width: 600px) {
+.skill {
+    justify-content: space-between;
+}
 }
