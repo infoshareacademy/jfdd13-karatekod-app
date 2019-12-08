@@ -17,7 +17,7 @@ export default class LoginRegister extends Component {
             email: '',
             password: '',
             errors: '',
-            formType:'LOGIN',
+            formType:'LOGIN TO BOOKSWAPP',
             loginBtn: true,
             displayName: '',
             password1: '',
@@ -108,7 +108,7 @@ export default class LoginRegister extends Component {
             })
          } else {
              this.setState({
-                 formType: 'LOGIN', 
+                 formType: 'LOGIN TO BOOKSWAPP', 
                  loginBtn: true, 
                  errors: '',
                  password:'',
@@ -143,7 +143,7 @@ export default class LoginRegister extends Component {
             .then(
                 this.setState({
                     errors:'',
-                    messages:'Check your email-box for instructions how to set a new password.',
+                    messages:'An email has been sent to provided adress. Check your email-box for instructions how to set a new password.',
                     email:''})
                 )
             .catch((error) => {console.log(error)})
@@ -159,7 +159,7 @@ export default class LoginRegister extends Component {
             password1:'',
             displayName: '',
             messages:'',
-            formType: 'LOGIN'
+            formType: 'LOGIN TO BOOKSWAPP'
         })
     }
     validateEmail(email) {
@@ -225,7 +225,7 @@ export default class LoginRegister extends Component {
                                 value={this.state.displayName}
                                 onChange={this.handleChange}
                                 name="displayName"
-                                placeholder="name"
+                                placeholder="name (optional)"
                                 />
                                 </>):null}                              
                             </form>
