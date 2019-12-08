@@ -31,9 +31,11 @@ class Listings extends Component {
        
     }
 
-    componentWillUnmount() {
-        firebase.database().ref('favorites').child(this.state.user.uid).off('value')
-    }
+    // componentWillUnmount() {
+        
+        
+    //     firebase.database().ref('favorites').child(this.state.user.uid).off('value')
+    // }
 
 
     loopListings() {
@@ -142,14 +144,15 @@ class Listings extends Component {
                     {renderBooks}
 
                 </div>
-                <div className={styles.pagination}>
+                {(booksList == undefined || booksList == 0) ?
+                (<div className={styles.pagination}>
                     <div className={styles.paginationNav} onClick={this.props.handleClickPrev}>prev </div>
                     <ul className={styles.paginationPages}>
                         {this.renderPageNumbers()}
                     </ul>
                     <div className={styles.paginationNav} onClick={this.props.handleClickNext}>next</div>
-                </div>
-
+                </div>) : null
+                }
             </>
 
         )
