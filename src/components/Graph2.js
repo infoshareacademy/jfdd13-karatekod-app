@@ -24,17 +24,7 @@ class Graph2 extends React.Component {
         result[next] = (result[next] || 0) + 1;
         return result;
       }, {})
-      //this.setState({ types: myTypes })
       this.setState({ options:{labels: Object.keys(myTypes) }})
-      //this.setState({ counts: [Object.values(myTypes)] }, ()=>console.log(this.state.counts, myTypes, Object.keys(myTypes), Object.values(myTypes)))
-      /*this.setState({
-        options: {
-          fill: {
-            colors: ['#c2185b', '#e94989', '#f4a4c4', '#ff0080', '#00ccff', '#ff0066', '#ff66ff', '#3399ff']
-          },
-          colors: ['#c2185b', '#e94989', '#f4a4c4', '#ff0080', '#00ccff', '#ff0066', '#ff66ff', '#3399ff'],
-        }
-      })*/
       this.setState({ series: Object.values(myTypes) }, ()=>console.log(this.state.series))
     });
   }
