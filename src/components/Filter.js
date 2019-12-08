@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styles from '../styles/SearchSection.module.css'
 import InputRange from 'react-input-range'
 import 'react-input-range/lib/css/index.css'
+import { Input, Select } from 'bloomer'; 
+import 'bulma/css/bulma.min.css'
 
 export class Filter extends Component {   
     render() {
@@ -10,12 +12,15 @@ export class Filter extends Component {
             <div className={styles.filter}>
                 <div className={styles.forms}>
                     <div className={styles.searchTextInputs}>
-                        <input type="text" name="autor" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
-                        
-                        <input type="text" name="title" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
+                        <Input isColor="danger" type="text" name="autor" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
+                        <Input isColor="danger" type="text" name="title" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
                     </div>
                     <div >
-                    <select name="type" onChange = {this.props.change} className={styles.dropdown} >
+                    <Select isColor="danger"
+                    name="type" 
+                    onChange = {this.props.change} 
+                    // className={styles.dropdown
+                     >
                         <option value="any">genre</option>
                         <option value='action'>Action</option>
                         <option value='comedy'>Comedy</option>
@@ -26,7 +31,7 @@ export class Filter extends Component {
                         <option value='romance'>Romance</option>
                         <option value='science'>Science</option>
                         <option value='sifi'>Sci-Fi</option>
-                    </select>
+                    </Select>
                     </div>
                         <p className={styles.sliderDescription}>select book condition</p>
                        <div className={styles.rangeSlider}>
