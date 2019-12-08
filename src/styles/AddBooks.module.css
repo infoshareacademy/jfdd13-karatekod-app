@@ -86,6 +86,17 @@ select {
 
 }
 
+.selects{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.select1{
+    margin-right: 60px
+}
+
 
 
 @media screen and (max-width: 600px) {
@@ -115,4 +126,15 @@ select {
         width: 90%
     }
 
+    .selects{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .select1{
+        margin-right: 0
+    }
+    
 }

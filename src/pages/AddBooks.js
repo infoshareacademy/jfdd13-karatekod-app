@@ -150,26 +150,44 @@ class AddBooks extends React.Component {
                         this.handleAutor(event.target.value);
                     }} className={error.newAutor ? styles.inputError : styles.input} />
 
-                    <label className={styles.label} >Genre*:</label>
-                    <Select isColor="danger"
-                    // className={styles.dropdown}
-                     type="text" name="type" value={newType} onChange={event => {
-                        this.handleType(event.target.value);
-                    }} name="genre">
-                        <option value="fantasy">fantasy</option>
-                        <option value="drama">drama</option>
-                        <option value="romance">romance</option>
-                        <option value="thriller">thriller</option>
-                        <option value="guide">guide</option>
-                        <option value="crime">crime</option>
-                        <option value="biography">biography</option>
-                        <option value="other">other</option>
-                    </Select>
+
+                    <div className={styles.selects}>
+                        <div className={styles.select1}>
+                        <label className={styles.label} >Genre*:</label>
+                        <Select isColor="danger"
+                        type="text" name="type" value={newType} onChange={event => {
+                            this.handleType(event.target.value);
+                        }} name="genre">
+                            <option value="fantasy">fantasy</option>
+                            <option value="drama">drama</option>
+                            <option value="romance">romance</option>
+                            <option value="thriller">thriller</option>
+                            <option value="guide">guide</option>
+                            <option value="crime">crime</option>
+                            <option value="biography">biography</option>
+                            <option value="other">other</option>
+                        </Select>
+                        </div>
+
+                        <div className={styles.select2}>
+                        <label className={styles.label}>Condition*:</label>
+
+                        <Select isColor="danger"
+                        type="text" name="type" value={newCondition} onChange={event => {
+                            this.handleCondition(event.target.value);
+                        }} name="genre">
+                            <option value="1">1 (very bad)</option>
+                            <option value="2">2 (not good)</option>
+                            <option value="3">3 (it's ok)</option>
+                            <option value="4">4 (good)</option>
+                            <option value="5">5 (mint)</option>
+                        </Select>
+                        </div>
+                    </div>
                     <label className={styles.label}>Cover photo:</label>
                     <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
-                    <label className={styles.label}>Condition*:</label>
-                    <Select isColor="danger"
-                    // className={styles.dropdown} 
+                    {/* <label className={styles.label}>Condition*:</label> */}
+                    {/* <Select isColor="danger"
                     type="text" name="type" value={newCondition} onChange={event => {
                         this.handleCondition(event.target.value);
                     }} name="genre">
@@ -178,7 +196,7 @@ class AddBooks extends React.Component {
                         <option value="3">3 (it's ok)</option>
                         <option value="4">4 (good)</option>
                         <option value="5">5 (mint)</option>
-                    </Select>
+                    </Select> */}
 
                     <label className={styles.label}>Description*:</label>
                     <TextArea  isSize="large" value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></TextArea>

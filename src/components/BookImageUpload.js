@@ -24,7 +24,6 @@ class BookImageUpload extends Component {
 
     notify = () => toast("Wrong file type");
 
-
     componentDidMount() {
         this.checkIfBookHasCoverPicture()
     }
