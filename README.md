@@ -2,16 +2,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## BookSwapp
 Web application created to exchange books. This application was created as a team project during front-end bootcamp.
-[BookSwapp](http://app.karatekod.jfdd13.is-academy.pl/).
+[BookSwapp live](http://app.karatekod.jfdd13.is-academy.pl/).
 
 ## About application
 This app was created with [React](https://reactjs.org/)
 
 ### Creators
--Karol Antonowicz [GitHub](https://github.com/karol-antonowicz) [Linkedin](https://www.linkedin.com/in/karol-antonowicz/)
--Karol Andracki [GitHub](https://github.com/Karol-Andracki) [Linkedin](https://www.linkedin.com/in/karol-andracki-b60a35181/)
--Karolina Michalak [GitHub](https://github.com/karolina-michalak) [Linkedin](https://www.linkedin.com/in/michalak-karolina/)
--Tuomas Juhanila [GitHub](https://github.com/TuomasJuhanila) [Linkedin](https://www.linkedin.com/in/tuomas-juhanila-20232635/)
+- Karol Antonowicz [GitHub](https://github.com/karol-antonowicz) [Linkedin](https://www.linkedin.com/in/karol-antonowicz/)
+- Karol Andracki [GitHub](https://github.com/Karol-Andracki) [Linkedin](https://www.linkedin.com/in/karol-andracki-b60a35181/)
+- Karolina Michalak [GitHub](https://github.com/karolina-michalak) [Linkedin](https://www.linkedin.com/in/michalak-karolina/)
+- Tuomas Juhanila [GitHub](https://github.com/TuomasJuhanila) [Linkedin](https://www.linkedin.com/in/tuomas-juhanila-20232635/)
 
 ## Available Scripts
 
