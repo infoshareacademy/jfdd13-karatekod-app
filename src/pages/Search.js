@@ -14,7 +14,6 @@ export default class Search extends Component {
       filteredData: [],
       type: 'any',
       autor: '',
-
       title: '',
       currentPage: 1
 

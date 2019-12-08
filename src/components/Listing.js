@@ -133,20 +133,25 @@ class Listings extends Component {
         const renderBooks = currentBooks.map((book, index) => {
             return <div style={{width: "300px"}}key={index}>{book}</div>
         })
+        const books = this.props.booksList
 
         return (
             <>
-                <div className={styles.grid}>
-                    {renderBooks}
-                </div>
-                {(booksList == undefined || booksList == 0) ?
-                    (<div className={styles.pagination}>
+                
+                {(books.length !=0) ?
+                    (<><div className={styles.grid}>
+                        {renderBooks}
+                    </div>
+                    
+                    <div className={styles.pagination}>
                         <div className={styles.paginationNav} onClick={this.props.handleClickPrev}>prev </div>
                         <ul className={styles.paginationPages}>
                             {this.renderPageNumbers()}
                         </ul>
                         <div className={styles.paginationNav} onClick={this.props.handleClickNext}>next</div>
-                    </div>) : null
+                    </div></>
+                    
+                    ) : <div>no books matching your criteria</div>
                 }
             </>
 
