@@ -7,6 +7,9 @@ class Graph2 extends React.Component {
     this.state = {
       options: {
         labels: [],
+        legend: {
+          show: false
+        },
         fill: {
           colors: ['#c2185b', '#e94989', '#f4a4c4', '#ff0080', '#00ccff', '#ff0066', '#ff66ff', '#3399ff']
         },
@@ -14,6 +17,7 @@ class Graph2 extends React.Component {
       },
       series: [],
       types: {},
+
     }
   }
   componentDidMount() {
