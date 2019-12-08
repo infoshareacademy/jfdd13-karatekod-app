@@ -8,14 +8,21 @@ class Graph1 extends React.Component {
     super(props);
     this.state = {
       options: {
-        dataLabels:{
-          enabled:true,
-
-        },
-        tooltip:{
+        dataLabels: {
           enabled: true,
-          marker:{
-            show:false
+          formatter: function (value) {
+            return value.toFixed(0)
+          }
+        },
+        tooltip: {
+          enabled: true,
+          marker: {
+            show: false
+          },
+          y: {
+            formatter: function (value) {
+              return value.toFixed(0)
+            }
           }
         },
         chart: {
@@ -24,6 +31,13 @@ class Graph1 extends React.Component {
 
         xaxis: {
           categories: []
+        },
+        yaxis: {
+          labels: {
+            formatter: function (value) {
+              return value.toFixed(0)
+            }
+          }
         },
         fill: {
           colors: ['#c2185b']
