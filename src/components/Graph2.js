@@ -19,13 +19,12 @@ class Graph2 extends React.Component {
   componentDidMount() {
     watchBooks(booksList => {
       let types = booksList.map(x => x.type)
-      console.log(types)
       let myTypes = types.reduce((result, next) => {
         result[next] = (result[next] || 0) + 1;
         return result;
       }, {})
       this.setState({ options:{labels: Object.keys(myTypes) }})
-      this.setState({ series: Object.values(myTypes) }, ()=>console.log(this.state.series))
+      this.setState({ series: Object.values(myTypes) })
     });
   }
   componentWillUnmount() {
