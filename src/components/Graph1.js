@@ -24,6 +24,7 @@ class Graph1 extends React.Component {
               return value.toFixed(0)
             }
           }
+
         },
         chart: {
           id: "basic-bar"
@@ -50,6 +51,7 @@ class Graph1 extends React.Component {
         }
       ],
       userNumber: '',
+
 
     };
   }

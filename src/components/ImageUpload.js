@@ -17,7 +17,6 @@ class ImageUpload extends Component {
         this.handleUpload = this
             .handleUpload
             .bind(this);
-
     }
 
     componentDidMount() {
@@ -40,16 +39,13 @@ class ImageUpload extends Component {
             const uploadTask = storage.ref(`images/${image.name}`).put(image);
             uploadTask.on('state_changed',
                 (snapshot) => {
-                    // progress function
                     const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
                     this.setState({ progress })
                 },
                 (error) => {
-                    // error function
                     console.log(error)
                 },
                 () => {
-                    // complete function
                     storage.ref('images').child(image.name).getDownloadURL().then(url => {
                         console.log(url);
                         this.setState({ url })
@@ -60,27 +56,22 @@ class ImageUpload extends Component {
         }
     }
     updateProfilePicture = (url) => {
-        // 1. check what user are you logged in
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
-        // 2. get the url and update user profile
         firebase.database().ref(`/users/${id}/profilePicture`).set(url)
     }
     checkIfUserHasProfilePicture = async () => {
-        // 1. get current user id
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
-        // 2. fetch current user profile picture
         const dataSnapshot = await firebase.database().ref(`/users/${id}/profilePicture`).once('value')
         const profilePictureUrl = dataSnapshot.val()
-        // 3. if there is a picture, use it
         if (profilePictureUrl) {
-            // 4. update state of the component
             this.setState({
                 url: profilePictureUrl
             })
         }
     }
+
     render() {
         const showProgress = this.state.progress !== 0 && this.state.progress !== 100
         return (
@@ -89,7 +80,6 @@ class ImageUpload extends Component {
                     <div className={styles.profilePicture} >
                         <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" className={styles.userImg} />
                     </div>
-                    {/* {showProgress && <progress value={this.state.progress} max="100"/>} */}
                 </div>
                 <div className={styles.loadPicSec} >
                         <div className={styles.uploadButtons}>

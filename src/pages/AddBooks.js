@@ -1,11 +1,14 @@
 import React from 'react';
-import styles from "../styles/AddBooks.module.css"; // imports css styles
+import styles from "../styles/AddBooks.module.css"; 
 import {hasOnlySpecialCharater} from "../helpers/SpecialCharacters"
-import { booksList } from '../pages/BooksListPage' // imports booksList from the bookListPage.js
+import { booksList } from '../pages/BooksListPage' 
 import {ToastContainer, toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import { addBooksFirebase } from '../services/BookService';
-import BookImageUpload from '../components/BookImageUpload'
+import BookImageUpload from '../components/BookImageUpload';
+import { Button } from 'bloomer'; 
+import 'bulma/css/bulma.min.css'
+
 
 const initialState = {
     newTitle: "",
@@ -16,7 +19,7 @@ const initialState = {
     uploadedImageUrl:'http://placekitten.com/140/190'
 }
 
-class AddBooks extends React.Component { // AddBooks component
+class AddBooks extends React.Component { 
     constructor(props) {
         super(props)
         this.state = {
@@ -130,10 +133,6 @@ class AddBooks extends React.Component { // AddBooks component
         this.setState({uploadedImageUrl:url})
     }
 
-
-  // local storage updates whenever something changes in this component
-    
-
     render() {
         const { newTitle, newAutor, newType, newImageUrl, newCondition, newDescription, error } = this.state;
 
@@ -167,10 +166,6 @@ class AddBooks extends React.Component { // AddBooks component
 
                     <label className={styles.label}>Cover photo:</label>
                     <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
-                    {/* <input className={styles.input} type="text" name="imageUrl" placeholder="URL, ex. http://placekitten.com/140/190 " value={newImageUrl} onChange={event => {
-                        this.handleImageUrl(event.target.value);
-                    }} /> */}
-
                     <label className={styles.label}>Condition*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
                         this.handleCondition(event.target.value);
@@ -185,12 +180,12 @@ class AddBooks extends React.Component { // AddBooks component
                     <label className={styles.label}>Description*:</label>
                     <textarea value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></textarea>
 
-                    <button className={styles.button} onClick={(e) => {
+                    <Button isColor='danger' className={styles.button} onClick={(e) => {
                             e.preventDefault()
                             this.addBook(e)                  
                     }}>
                         ADD TO BOOKSWAPP
-            </button>
+                    </Button>
                 </form>
                 <ToastContainer
                 hideProgressBar={true}
