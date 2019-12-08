@@ -59,7 +59,6 @@ class BookImageUpload extends Component {
         () => {
             // complete function
             storage.ref('bookcovers').child(image.name).getDownloadURL().then(url => {
-                console.log(url);
                 this.setState({url})
                 this.updateCoverPicture(url)
             })
@@ -67,7 +66,6 @@ class BookImageUpload extends Component {
     }
 
     updateCoverPicture = (url) => {
-        console.log(url);
         // 1. check what user are you logged in
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
