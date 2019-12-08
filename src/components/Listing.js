@@ -31,11 +31,11 @@ class Listings extends Component {
        
     }
 
-    // componentWillUnmount() {
+    componentWillUnmount() {
         
         
-    //     firebase.database().ref('favorites').child(this.state.user.uid).off('value')
-    // }
+        firebase.database().ref('favorites').child(this.state.user.uid).off('value')
+    }
 
 
     loopListings() {
@@ -139,19 +139,17 @@ class Listings extends Component {
 
         return (
             <>
-      <div className={styles.grid}>
-
+                <div className={styles.grid}>
                     {renderBooks}
-
                 </div>
                 {(booksList == undefined || booksList == 0) ?
-                (<div className={styles.pagination}>
-                    <div className={styles.paginationNav} onClick={this.props.handleClickPrev}>prev </div>
-                    <ul className={styles.paginationPages}>
-                        {this.renderPageNumbers()}
-                    </ul>
-                    <div className={styles.paginationNav} onClick={this.props.handleClickNext}>next</div>
-                </div>) : null
+                    (<div className={styles.pagination}>
+                        <div className={styles.paginationNav} onClick={this.props.handleClickPrev}>prev </div>
+                        <ul className={styles.paginationPages}>
+                            {this.renderPageNumbers()}
+                        </ul>
+                        <div className={styles.paginationNav} onClick={this.props.handleClickNext}>next</div>
+                    </div>) : null
                 }
             </>
 
