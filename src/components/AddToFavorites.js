@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from '../styles/Books.module.css';
-import { Button } from 'bloomer'; 
 import 'bulma/css/bulma.min.css'
+import heartFilled from '../images/heart2.png'
+import heartEmpty from '../images/heart1.png'
 
 class AddToFavorites extends React.Component {
 render(){
     return(   
-        <Button isColor='danger' onClick={this.props.onClick} className={styles.like}>{this.props.isFavorites ? 'remove from favorites' : 'add to favorites'}</Button>
+        <img className={styles.like} onClick={this.props.onClick} src={this.props.isFavorites ? heartFilled:heartEmpty}></img>
     )
 }
 }
