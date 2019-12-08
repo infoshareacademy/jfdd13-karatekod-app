@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
+import { validate } from '@babel/types';
 
 
 
@@ -24,6 +25,7 @@ export default class LoginRegister extends Component {
         }
         this.resetPass = this.resetPass.bind(this)
         this.backToLogin = this.backToLogin.bind(this)
+        this.validateEmail = this.validateEmail.bind(this)
     }
 
     handleChange = e => {
@@ -53,7 +55,7 @@ export default class LoginRegister extends Component {
         })
         .then (()=> {
             const user = firebase.auth().currentUser;
-            firebase.database().ref('/users/' + user.uid).push( {
+            firebase.database().ref('/users/' + user.uid).set( {
                     name: user.displayName,
                     created: user.metadata.creationTime,
                     lastSingIn: user.metadata.lastSignInTime,
@@ -70,6 +72,8 @@ export default class LoginRegister extends Component {
     
 
     getAction = action => {
+        
+        
         if (action == 'register') {
             this.setState({
                 formType: 'Register new user',
@@ -88,18 +92,31 @@ export default class LoginRegister extends Component {
     resetPass() {
         let auth = firebase.auth();
         let {email} = this.state
-        if (email != '' ) {
+        if (email == '') {            
+            this.setState({errors: "This field cannot be empty. Enter an email"})
+        }
+        else if (!this.validateEmail(email)) {
+            this.setState({errors:'Email has invalid format'})
+        }
+        
+        else {
             auth.sendPasswordResetEmail(email)
-            .then(console.log('email has been send'))
+            .then(this.setState({errors:'Check your email-box for instructions how to set a new password. '}))
             .catch((error) => {console.log(error)})
-            
-        } else {
-            console.log('empty email')
         }
 
     }
     backToLogin() {
-        this.setState({resetPassword:false, email:''})
+        this.setState({
+            resetPassword: false,
+             email: '',
+            errors: '',
+            password: '',
+        })
+    }
+    validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
     }
     
 
@@ -111,21 +128,21 @@ export default class LoginRegister extends Component {
         let errorNotification = this.state.errors ?
             (<div className={styles.error}>{this.state.errors}</div>) : null
         let submitBtn = this.state.loginBtn ?
-            (<input type="submit"
+            (<button
                 className={styles.submitBtn}
                 value="enter"
                 onClick={this.login}
-            />) : 
-            (<input type="submit"
+            >enter</button>) : 
+            (<button type="submit"
             className={styles.submitBtn}
             value="register"
             onClick={this.register}
-            />)
+            >register</button>)
         let login_rgister = this.state.loginBtn ? 
-            (<button className={styles.registerBtn} onClick={()=>this.getAction('register')}>Register</button>) : 
-            (<button className={styles.registerBtn} onClick={()=>this.getAction('login')}>Login</button>)
+            (<button className={styles.registerBtn} onClick={(e)=>this.getAction('register')}>Register</button>) : 
+            (<button className={styles.registerBtn} onClick={(e)=>this.getAction('login')}>Login</button>)
         let resetPassBtn = this.state.loginBtn?
-            (<button className={styles.resetBtn} onClick={this.resetPassword}>forgot Password?</button>) :
+            (<p className={styles.resetInfo} onClick={this.resetPassword}>forgot Password?</p>) :
             null
 
 
@@ -134,58 +151,58 @@ export default class LoginRegister extends Component {
             <div className={styles.form_block}>
                 {!this.state.resetPassword ? (
                     <>
-                    <div className={styles.formType}>{this.state.formType}</div>  
-                    <div className={styles.loginInputs}>
-                    {errorNotification}
-                    <form>
-                        <input type="text"
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                        name="email"
-                        placeholder="e-mail"
-                        />
-                        <input type="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        name="password"
-                        placeholder="password"
-                        />
-                        {(this.state.formType==='Register new user')?
-                        (<>
-                        <input type="password"
-                        value={this.state.password1}
-                        onChange={this.handleChange}
-                        name="password1"
-                        placeholder="confirm password"
-                        />
-                        <input type="text"
-                        value={this.state.displayName}
-                        onChange={this.handleChange}
-                        name="displayName"
-                        placeholder="name"
-                        />
-                        </>):null}
-                        
-                        {submitBtn}
-                        {resetPassBtn}
+                        <div className={styles.formType}>{this.state.formType}</div>  
+                        <div className={styles.loginInputs}>
+                            {errorNotification}
+                            <form>
+                                <input type="text"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                name="email"
+                                placeholder="e-mail"
+                                />
+                                <input type="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                                name="password"
+                                placeholder="password"
+                                />
+                                {(this.state.formType==='Register new user')?
+                                (<>
+                                <input type="password"
+                                value={this.state.password1}
+                                onChange={this.handleChange}
+                                name="password1"
+                                placeholder="confirm password"
+                                />
+                                <input type="text"
+                                value={this.state.displayName}
+                                onChange={this.handleChange}
+                                name="displayName"
+                                placeholder="name"
+                                />
+                                </>):null}
+                                
+                            
 
-                    </form>
-                    {login_rgister}
-
-                    
-                    
-                    </div>
+                            </form>
+                            {submitBtn}
+                            {login_rgister}
+                            {resetPassBtn}
+                            
+                            
+                        </div>
                     </>
         ):
         (
             <div className={styles.resetPassContainer}>
+                {errorNotification}
+                <input type="email" name="email" onChange={this.handleChange}></input>
+                <button onClick={this.resetPass}>Reset Password</button>
+                <button onClick={this.backToLogin}>back to login</button>
+            
         
-            <input type="email" name="email" onChange={this.handleChange}></input>
-            <button onClick={this.resetPass}>Reset Password</button>
-            <button onClick={this.backToLogin}>back to login</button>
-        
-        
-        </div>
+            </div>
         )}
             </div>
         )

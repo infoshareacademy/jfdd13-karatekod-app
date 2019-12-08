@@ -12,7 +12,7 @@
     background-color: rgba(0,0,0,.1)
 
 }
-.formType {  /*id title*/
+.formType {  
     padding: 10px;
     font-size: 10px;
     text-align:center;
@@ -38,7 +38,7 @@ input[type='text'], input[type='password'] {
 
 
 }
-.submitBtn {
+/* .submitBtn {
     height: 30px;
     padding: 4px 10px;
     -webkit-border-radius: 3px;
@@ -46,25 +46,40 @@ input[type='text'], input[type='password'] {
     border-radius: 3px;
     cursor: pointer;
 
-}
-.submitBtn:hover {
-    background: yellow;
-}
+} */
+
+
 .registerBtn {
     float:right;
-    background: green;
-    height: 30px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-top: -35px
+    
 }
-.registerBtn:hover {
-    background: pink;
-}
+
 .error {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 3px;
+}
+button {
+    border: 1px solid #c2185b;
+    background: #c2185b;
+    color: white;
+     width: 100px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px; 
+}
+button:hover {
+    border: 1px solid #FF9800;
+    background: #FF9800;
+    color: white
+}
+.resetInfo {
+    font-size: 10px;
+    text-decoration: underline;
+    color:blue
+}
+.resetInfo:hover {
+    cursor: pointer
 }
