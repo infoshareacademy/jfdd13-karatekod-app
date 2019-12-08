@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
+import ResetPass from './ResetPass'
 
 
 
@@ -122,47 +123,52 @@ export default class LoginRegister extends Component {
 
         return (
             <div className={styles.form_block}>
-                <div className={styles.formType}>{this.state.formType}</div>  
-                <div className={styles.loginInputs}>
-                {errorNotification}
-                <form>
-                    <input type="text"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                    name="email"
-                    placeholder="e-mail"
-                    />
-                     <input type="password"
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                    name="password"
-                    placeholder="password"
-                    />
-                    {(this.state.formType==='Register new user')?
-                    (<>
-                    <input type="password"
-                    value={this.state.password1}
-                    onChange={this.handleChange}
-                    name="password1"
-                    placeholder="confirm password"
-                    />
-                     <input type="text"
-                    value={this.state.displayName}
-                    onChange={this.handleChange}
-                    name="displayName"
-                    placeholder="name"
-                    />
-                    </>):null}
+                {!this.state.resetPassword ? (
+                    <>
+                    <div className={styles.formType}>{this.state.formType}</div>  
+                    <div className={styles.loginInputs}>
+                    {errorNotification}
+                    <form>
+                        <input type="text"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                        name="email"
+                        placeholder="e-mail"
+                        />
+                        <input type="password"
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                        name="password"
+                        placeholder="password"
+                        />
+                        {(this.state.formType==='Register new user')?
+                        (<>
+                        <input type="password"
+                        value={this.state.password1}
+                        onChange={this.handleChange}
+                        name="password1"
+                        placeholder="confirm password"
+                        />
+                        <input type="text"
+                        value={this.state.displayName}
+                        onChange={this.handleChange}
+                        name="displayName"
+                        placeholder="name"
+                        />
+                        </>):null}
+                        
+                        {submitBtn}
+                        {resetPassBtn}
+
+                    </form>
+                    {login_rgister}
+
                     
-                     {submitBtn}
-                     {resetPassBtn}
-
-                </form>
-                {login_rgister}
-
-                
-                
-                </div>
+                    
+                    </div>
+                    </>
+        ):
+        <ResetPass />}
             </div>
         )
     }
