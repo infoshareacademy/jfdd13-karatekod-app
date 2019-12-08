@@ -41,7 +41,7 @@ export default class LoginRegister extends Component {
             firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .catch((error)=>{
                 console.log(error)
-                if (error.code == "auth/wrong-password" || error.code == "auth/wrong-password") {
+                if (error.code == "auth/wrong-password" || error.code == "auth/user-not-found") {
                 this.setState({errors:"Invalid user or password"})
                 } else if (error.code == "auth/invalid-email") {
                     this.setState({errors : "Invalid e-mail format"})
