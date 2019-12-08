@@ -81,13 +81,11 @@ class Listings extends Component {
                                     <p className={styles.location}>condition: {listing.condition}</p>
                                 </div>
                                 <div className={styles.like}>
-                                <AddToFavorites id={listing.id} isFavorites = {this.state.favs[listing.id]}
-                                 onClick={() => {
-                                    addFavFirebase(listing.id, firebase.auth().currentUser)
-                                    
-                                   
-                                        }
-                                    } />                               
+                                    <AddToFavorites id={listing.id} isFavorites = {this.state.favs[listing.id]}
+                                    onClick={() => {
+                                        addFavFirebase(listing.id, firebase.auth().currentUser)
+                                        }} 
+                                    />                               
                                 </div>
                             </div>
                         </div>
@@ -99,8 +97,7 @@ class Listings extends Component {
                     </div>
                 </div>
 
-            )
-        }
+            )}
 
         )
     }

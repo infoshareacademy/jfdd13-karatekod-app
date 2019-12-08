@@ -94,6 +94,9 @@
     color: grey;
     align-self: center;
     padding: 0 12px 0 35px;
+    width: 200px;
+    text-align: center;
+    margin-right:10px
 }
 
 .like {
