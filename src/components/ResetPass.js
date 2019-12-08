@@ -17,6 +17,8 @@ export default class ResetPass extends Component {
         if (email != '' ) {
             auth.sendPasswordResetEmail(email)
             .then(console.log('email has been send'))
+            .catch((error) => {console.log(error)})
+            
         } else {
             console.log('empty email')
         }

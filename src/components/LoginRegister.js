@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
-import ResetPass from './ResetPass'
 
 
 
@@ -23,6 +22,8 @@ export default class LoginRegister extends Component {
             password1: '',
             resetPassword: false
         }
+        this.resetPass = this.resetPass.bind(this)
+        this.backToLogin = this.backToLogin.bind(this)
     }
 
     handleChange = e => {
@@ -66,15 +67,7 @@ export default class LoginRegister extends Component {
         ):(this.setState({errors:'password does not match'}))
     }
 
-    componentWillUnmount(){
-         const users = () => {
-            firebase
-              .database()
-              .ref("/users"+ firebase.auth().currentUser.displayName)
-              .off();
-          };
-          users()
-    }
+    
 
     getAction = action => {
         if (action == 'register') {
@@ -92,7 +85,23 @@ export default class LoginRegister extends Component {
         e.preventDefault();
         this.setState({resetPassword:true})
     }
+    resetPass() {
+        let auth = firebase.auth();
+        let {email} = this.state
+        if (email != '' ) {
+            auth.sendPasswordResetEmail(email)
+            .then(console.log('email has been send'))
+            .catch((error) => {console.log(error)})
+            
+        } else {
+            console.log('empty email')
+        }
 
+    }
+    backToLogin() {
+        this.setState({resetPassword:false, email:''})
+    }
+    
 
     
     
@@ -168,7 +177,16 @@ export default class LoginRegister extends Component {
                     </div>
                     </>
         ):
-        <ResetPass />}
+        (
+            <div className={styles.resetPassContainer}>
+        
+            <input type="email" name="email" onChange={this.handleChange}></input>
+            <button onClick={this.resetPass}>Reset Password</button>
+            <button onClick={this.backToLogin}>back to login</button>
+        
+        
+        </div>
+        )}
             </div>
         )
     }
