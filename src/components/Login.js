@@ -42,7 +42,6 @@ class Login extends Component {
         return (
             <>
                 {this.state.isSignedIn ? (
-
                     <div className={styles.userProfile}>
                         <div style={{ clear: "both" }}></div>
                             <div className={styles.userContent}>

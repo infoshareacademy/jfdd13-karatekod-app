@@ -165,7 +165,6 @@ class AddBooks extends React.Component {
                         <option value="biography">biography</option>
                         <option value="other">other</option>
                     </Select>
-
                     <label className={styles.label}>Cover photo:</label>
                     <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
                     <label className={styles.label}>Condition*:</label>
@@ -191,10 +190,10 @@ class AddBooks extends React.Component {
                         ADD TO BOOKSWAPP
                     </Button>
                 </form>
-                <ToastContainer
-                hideProgressBar={true}
-                position="bottom-right"
-                />
+                    <ToastContainer
+                    hideProgressBar={true}
+                    position="top-right"
+                    />
             </div>
         )
     }

@@ -7,7 +7,6 @@ import 'bulma/css/bulma.min.css';
 import styles from '../styles/BookImageUpload.module.css'
 
 class BookImageUpload extends Component {
-    notify = () => toast("Wrong file type");
     constructor(props) {
         super(props);
         this.state = {
@@ -22,6 +21,9 @@ class BookImageUpload extends Component {
             .handleUpload
             .bind(this);
     }
+
+    notify = () => toast("Wrong file type");
+
 
     componentDidMount() {
         this.checkIfBookHasCoverPicture()
@@ -111,7 +113,7 @@ class BookImageUpload extends Component {
                 </div>
                 <ToastContainer 
                  hideProgressBar={true}
-                 position="bottom-right"
+                 position="top-right"
                  />
             </div>
         )
