@@ -140,19 +140,19 @@ class AddBooks extends React.Component {
                 <h1>Add your books to the database</h1>
                 <form className={styles.form}>    
                     <label className={styles.label} >Title*:</label>
-                    <input className={styles.input} type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
+                    <input type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
                         this.handleTitle(event.target.value);
                     }} className={error.newTitle ? styles.inputError : styles.input} />
 
                     <label className={styles.label} >Author*:</label>
-                    <input className={styles.input} type="text" name="autor" placeholder={error.newAutor ? "Please fill out this field" : "Insert author name here"} value={newAutor} onChange={event => {
+                    <input type="text" name="autor" placeholder={error.newAutor ? "Please fill out this field" : "Insert author name here"} value={newAutor} onChange={event => {
                         this.handleAutor(event.target.value);
                     }} className={error.newAutor ? styles.inputError : styles.input} />
 
                     <label className={styles.label} >Genre*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newType} onChange={event => {
                         this.handleType(event.target.value);
-                    }} name="genre">
+                    }} >
                         <option value="fantasy">fantasy</option>
                         <option value="drama">drama</option>
                         <option value="romance">romance</option>
@@ -168,7 +168,7 @@ class AddBooks extends React.Component {
                     <label className={styles.label}>Condition*:</label>
                     <select className={styles.dropdown} type="text" name="type" value={newCondition} onChange={event => {
                         this.handleCondition(event.target.value);
-                    }} name="genre">
+                    }} >
                         <option value="1">1 (very bad)</option>
                         <option value="2">2 (not good)</option>
                         <option value="3">3 (it's ok)</option>
