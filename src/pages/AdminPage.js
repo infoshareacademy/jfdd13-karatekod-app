@@ -50,7 +50,6 @@ class Favs extends React.Component {
                 } else { return }
             })
         })
-        console.log(output)
         if (output == undefined || output == 0) {
             return ['Loading your favourite books...']
         }

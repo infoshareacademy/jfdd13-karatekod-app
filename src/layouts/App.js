@@ -5,7 +5,6 @@ import Header from './Header';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Page from './Page';
-import SomeButtons from '../components/SomeButtons'
 import Secure from '../components/Secure'
 
 
@@ -23,7 +22,7 @@ function App() {
           </main>
           </Secure>
           <Footer className={styles.footer}/>
-          <SomeButtons />
+          
       </div>
     </Router>
   );
