@@ -312,4 +312,8 @@ text-align: center;
         align-items: center;
     }
 
+    .searchText {
+        font-size: 20px
+    }
+
 } 
