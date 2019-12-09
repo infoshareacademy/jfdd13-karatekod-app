@@ -276,8 +276,16 @@ text-align: center;
     
     .searchTextInputs{
         padding-bottom: 10px;
-        display: inline-block
+        display: flex;
+        flex-direction: column;  
+        justify-content: center; 
+        align-items: center;     
         
+    }
+
+    .searchTextInputs input {
+        width: 80%;
+        margin-right: 30px;
     }
 
     .dropdown{
