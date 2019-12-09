@@ -74,8 +74,12 @@
         display: none;
     }
     nav.mainNav ul.active {
-        display: inline-block;
-    }
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;  
+        padding: 0 0 10px;
+         }
 
     nav.mainNav ul.active a{
         text-align: center; 
