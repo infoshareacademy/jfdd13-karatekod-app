@@ -11,7 +11,9 @@ import LoginRegister from './LoginRegister'
 
 class Login extends Component {
 
-    state = { isSignedIn: false }
+    state = { isSignedIn: false,
+    user: null,
+ }
 
     uiConfig = {
         signedInFlow: "popup",
@@ -40,11 +42,25 @@ class Login extends Component {
 
         firebase.auth().onAuthStateChanged(user => {
             this.setState({ isSignedIn: !!user })
-            console.log("user: ", user)
-
+            if(user) {
+                firebase.database().ref(`users/${user.uid}`).on('value', dataSnapshot => {
+                    const user = dataSnapshot.val()
+                    this.setState ({
+                        user:user
+                    })
+                })
+            }
         })
-
+     
+    
     }
+
+        componentWillUnmount() {
+            if (this.state.user) {
+            firebase.database().ref(`users/${this.state.user.uid}`).off('value')}
+        }
+
+
     render() {
         return (
             <>
@@ -56,6 +72,7 @@ class Login extends Component {
                                 <div className={styles.userInfo}></div>   
                                 <ImageUpload />
                             </div>
+                            <h2>{firebase.auth().currentUser.displayName}</h2>
                             <section style={{width:'100%', marginTop:'20px'}}>
                 <div style={{textAlign:'center'}}><h4>Your favorite books</h4></div>
                             <Favs />

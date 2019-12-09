@@ -86,7 +86,7 @@ class ImageUpload extends Component {
                             <label for="file" className={styles.inputFileLabel}>Choose new Profile Picture</label>
                             <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*" style={{ width: '100%' }} name="file" id="file" />
                         </div>
-                        <h2>{firebase.auth().currentUser.displayName}</h2>
+                        {/* <h2>{firebase.auth().currentUser.displayName}</h2> */}
                 </div>
             </>
         )
