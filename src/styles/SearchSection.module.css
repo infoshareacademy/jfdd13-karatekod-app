@@ -261,6 +261,14 @@ text-align: center;
     cursor: pointer
 }
 
+@media screen and (max-width: 100px) {
+    .searchTextInputs{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
  @media screen and (max-width: 600px) {
     .listings, .listingImg, .results, .listingsResults{
         display: flex;
@@ -278,8 +286,16 @@ text-align: center;
     
     .searchTextInputs{
         padding-bottom: 10px;
-        display: inline-block
+        display: flex;
+        flex-direction: column;  
+        justify-content: center; 
+        align-items: center;     
         
+    }
+
+    .searchTextInputs input {
+        width: 80%;
+        margin-right: 30px;
     }
 
     .dropdown{
@@ -304,6 +320,10 @@ text-align: center;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .searchText {
+        font-size: 20px
     }
 
 } 

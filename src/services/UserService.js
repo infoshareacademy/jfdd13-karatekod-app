@@ -1,13 +1,11 @@
 import firebase from "../firebase"
 
-// this service is for watching for new registered users (dashboard statistics)
-
 const prepareUsersCountNumber = response => {
-    return Object.keys(response).length     // returns number of users registered in bookswapp
+    return Object.keys(response).length    
     };
 
 
-export const watchUsersNumber = onSuccess => {    // service for watching users
+export const watchUsersNumber = onSuccess => {  
     return firebase
       .database()
       .ref("/users")
@@ -18,7 +16,7 @@ export const watchUsersNumber = onSuccess => {    // service for watching users
   };
 
   const prepareUsersCreated = response => {
-    return response     // returns number of users registered in bookswapp
+    return response     
     };
 
 export const watchUsers = onSuccess => {
@@ -33,8 +31,7 @@ export const watchUsers = onSuccess => {
   })
 }
 
-
-  export const stopUsers = () => {      // stop watching for users (for ex. on component unmounting)
+  export const stopUsers = () => {     
     firebase
       .database()
       .ref("/users")

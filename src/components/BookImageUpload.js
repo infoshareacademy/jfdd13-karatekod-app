@@ -48,17 +48,14 @@ class BookImageUpload extends Component {
         const uploadTask = storage.ref(`bookcovers/${image.name}`).put(image);
         uploadTask.on('state_changed',
         (snapshot) => {
-            // progress function
             const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
             this.setState({progress})
         
         },
         (error) => {
-            // error function
             console.log(error)
         },
         () => {
-            // complete function
             storage.ref('bookcovers').child(image.name).getDownloadURL().then(url => {
                 this.setState({url})
                 this.updateCoverPicture(url)
@@ -67,29 +64,17 @@ class BookImageUpload extends Component {
     }
 
     updateCoverPicture = (url) => {
-        // 1. check what user are you logged in
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
         this.props.onBookImageUpload(url)
-
-
-
-        // 2. get the url and update book profile
-
     }
 
     checkIfBookHasCoverPicture = async () => {
-        // 1. get current user id
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
-
-        // 2. fetch current book cover picture
         const dataSnapshot = await firebase.database().ref(`/booksList/${id}/coverPicture`).once('value')
         const coverPictureUrl = dataSnapshot.val()
-
-        // 3. if there is a picture, use it
         if (coverPictureUrl) {
-            // 4. update state of the component
             this.setState({
                 url: coverPictureUrl
             })
@@ -98,15 +83,12 @@ class BookImageUpload extends Component {
 
     render() {
         const showProgress = this.state.progress !== 0 && this.state.progress !== 100 
-
         return (
             <div>
                 <div className={styles.imageUpload}>
-                    {/* <p>Upload book cover picture</p> */}
                     <input type="file" onChange={this.handleChange}/>
                     <Button className={styles.imageUploadButton} isColor="danger" style={{borderRadius: '20px'}} type="button" onClick={this.handleUpload}>Upload</Button>
                     <div>
-                        {/* <img src={this.state.url} alt="Book cover pic" height= "100" width= "80"/> */}
                         {showProgress && <progress value={this.state.progress} max="100"/>}
                     </div>
                 </div>
