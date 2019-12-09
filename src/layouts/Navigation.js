@@ -27,7 +27,7 @@ const Navigation = (props) => {
 
             <ul className={open && styles.active}>
                 {menu}
-            <li className={styles.active} key="sign out"><Button onClick={()=>{
+            <li className={styles.active} key="sign out" ><Button onClick={()=>{
                 firebase.auth().signOut().then(() => {
                     props.history.replace('/')
                 })
