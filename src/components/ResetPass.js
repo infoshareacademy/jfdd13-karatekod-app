@@ -32,15 +32,10 @@ export default class ResetPass extends Component {
 
     render() {
         return (
-        <div className={styles.resetPassContainer}>
-        
+        <div className={styles.resetPassContainer}>      
             <input type="email" name="email" onChange={this.handleInput}></input>
-            <button onClick={this.resetPass}>Reset Password</button>
-        
-        
+            <button onClick={this.resetPass}>Reset Password</button>      
         </div>
         )
     }
-
-
 }

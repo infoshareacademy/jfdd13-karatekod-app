@@ -10,11 +10,10 @@ export default class Search extends Component {
     super()
     this.state = {
       booksList: [],
-      range: 2,
+      range: 3,
       filteredData: [],
       type: 'any',
       autor: '',
-
       title: '',
       currentPage: 1
 

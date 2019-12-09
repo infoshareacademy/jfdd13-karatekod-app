@@ -2,13 +2,11 @@ import React, {Component} from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
 
-
-
-
-
-
-
-
+const stopUser = () => {
+    firebase
+      .database()
+      .ref("/users")
+      .off();
 
 export default class LoginRegister extends Component {
     constructor(props) {
@@ -65,34 +63,31 @@ export default class LoginRegister extends Component {
             this.setState({
                 errors:'Please, confirm the password'
             })
-        } else 
-        
-        {
+        } else {
             (this.state.password === this.state.password1)?(
-            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(()=> {
-                const user = firebase.auth().currentUser;
-                user.updateProfile({displayName:this.state.displayName})
+                firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                 
-            })
-            .then (()=> {
-                const user = firebase.auth().currentUser;
-                firebase.database().ref('/users/' + user.uid).set( {
-                        name: user.displayName,
-                        created: user.metadata.creationTime,
-                        lastSingIn: user.metadata.lastSignInTime,
-                        profilePicture: user.profilePicture
+                .then(credential => {
+                    
+                    return firebase.database().ref('/users/' + credential.user.uid).set({
+                    email: credential.user.email,
+                    uid: credential.user.uid,
+                    created: credential.user.metadata.creationTime
+                    });
                 })
-            })
-            .catch((error)=>{
-                if (error.code == "auth/invalid-email") {
-                    this.setState({errors : "Invalid e-mail format"})
-                } else {
-                    this.setState({errors:error.message})}
-            })
-            ):
-            (this.setState({errors:'password and its confirmation do not match'}))
-        } 
+                .then(()=> {
+                    firebase.auth().currentUser.updateProfile({displayName:this.state.displayName})
+                    })           
+            
+                .catch((error)=>{
+                    if (error.code == "auth/invalid-email") {
+                        this.setState({errors : "Invalid e-mail format"})
+                    } else {
+                        this.setState({errors:error.message})}
+                })
+            ):(
+            this.setState({errors:'password and its confirmation do not match'}))
+        }    
     }
 
     
@@ -165,7 +160,12 @@ export default class LoginRegister extends Component {
     validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    }  
+    }
+    componentWillUnmount(){
+          stopUser()
+    }
+      
+    
 
     render() {
 
@@ -269,8 +269,4 @@ export default class LoginRegister extends Component {
             )
         }
     }
-
-
-
-
-
+}

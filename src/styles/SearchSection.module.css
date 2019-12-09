@@ -1,15 +1,13 @@
 .filter {
     min-height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 50px;
 }
 
 .forms {
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
     
 }
 
@@ -18,17 +16,15 @@
     font-size: 30px;
     text-align: center;
     border: none;
-    border-bottom: 1px solid grey;
     
 }
 .searchTextInputs {
     display: flex;
     justify-content: center;
-    max-width: 50%;
+    padding-top: 7px
 
 }
 .searchText:focus {
-    background-color: lightgray;
     font-size: 25;
     outline: none;
 }
@@ -36,6 +32,7 @@
 .searchTextInputs input {
     width: 40%;
     margin-right: 30px;
+    min-width: 99px;
 }
 
 
@@ -93,7 +90,10 @@
     font-size: 14px;
     color: grey;
     align-self: center;
-    padding: 0 12px 0 35px;
+    padding: 0 30px 0 35px;
+    width: 200px;
+    text-align: center;
+    margin-right:10px
 }
 
 .like {
@@ -218,6 +218,10 @@ text-align: center;
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 30px;
+    justify-content: center;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .grid a {
     text-decoration: none;
@@ -257,6 +261,14 @@ text-align: center;
     cursor: pointer
 }
 
+@media screen and (max-width: 100px) {
+    .searchTextInputs{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
  @media screen and (max-width: 600px) {
     .listings, .listingImg, .results, .listingsResults{
         display: flex;
@@ -268,12 +280,22 @@ text-align: center;
     .forms{
         margin-top: 50px;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        text-align: center;
     }
     
     .searchTextInputs{
         padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;  
+        justify-content: center; 
+        align-items: center;     
+        
+    }
+
+    .searchTextInputs input {
+        width: 80%;
+        margin-right: 30px;
     }
 
     .dropdown{
@@ -298,6 +320,10 @@ text-align: center;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .searchText {
+        font-size: 20px
     }
 
 } 

@@ -30,6 +30,8 @@ class Listings extends Component {
     }
 
     componentWillUnmount() {
+        
+        
         firebase.database().ref('favorites').child(this.state.user.uid).off('value')
     }
 
@@ -77,13 +79,11 @@ class Listings extends Component {
                                     <p className={styles.location}>condition: {listing.condition}</p>
                                 </div>
                                 <div className={styles.like}>
-                                <AddToFavorites id={listing.id} isFavorites = {this.state.favs[listing.id]}
-                                 onClick={() => {
-                                    addFavFirebase(listing.id, firebase.auth().currentUser)
-                                    
-                                   
-                                        }
-                                    } />                               
+                                    <AddToFavorites id={listing.id} isFavorites = {this.state.favs[listing.id]}
+                                    onClick={() => {
+                                        addFavFirebase(listing.id, firebase.auth().currentUser)
+                                        }} 
+                                    />                               
                                 </div>
                             </div>
                         </div>
@@ -95,8 +95,7 @@ class Listings extends Component {
                     </div>
                 </div>
 
-            )
-        }
+            )}
 
         )
     }
@@ -132,22 +131,26 @@ class Listings extends Component {
         const renderBooks = currentBooks.map((book, index) => {
             return <div style={{width: "300px"}}key={index}>{book}</div>
         })
+        const books = this.props.booksList
 
         return (
             <>
-      <div className={styles.grid}>
-
-                    {renderBooks}
-
-                </div>
-                <div className={styles.pagination}>
-                    <div className={styles.paginationNav} onClick={this.props.handleClickPrev}>prev </div>
-                    <ul className={styles.paginationPages}>
-                        {this.renderPageNumbers()}
-                    </ul>
-                    <div className={styles.paginationNav} onClick={this.props.handleClickNext}>next</div>
-                </div>
-
+                
+                {(books.length !=0) ?
+                    (<><div className={styles.grid}>
+                        {renderBooks}
+                    </div>
+                    
+                    <div className={styles.pagination}>
+                        <div className={styles.paginationNav} onClick={this.props.handleClickPrev}>prev </div>
+                        <ul className={styles.paginationPages}>
+                            {this.renderPageNumbers()}
+                        </ul>
+                        <div className={styles.paginationNav} onClick={this.props.handleClickNext}>next</div>
+                    </div></>
+                    
+                    ) : <div>no books matching your criteria</div>
+                }
             </>
 
         )

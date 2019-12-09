@@ -9,60 +9,21 @@ import BookPage from '../pages/BookPage';
 import AddBooks from '../pages/AddBooks'
 import styles from '../styles/Page.module.css';
 import Search from '../pages/Search'
-// import LoginPage from '..pages/LoginPage'
 
 const Page = () => {
     return (
-
         <div className={styles.page}>
             <Switch>
-                <Route path="/" exact 
-                render={() => (
-                    <Search/> 
-                )} />
-                 <Route path="/statistics"  
-                render={() => (
-                    <Statistics />
-
-                )} />
-                 <Route path="/admin"  
-                render={() => (
-                    <AdminPage/>
-                )} />
-                 <Route path="/books"  
-                render={() => (
-                    <BooksListPage/>
-
-                )} />
-                 <Route path="/book/:id"  
-                component={BookPage} />
-                   {/* <Route path="/login"  
-                render={() => (
-                    <LoginPage/>
-
-                )} /> */}
-                    <Route path='/addBooks'  
-                render={() => (
-                   <AddBooks/>
-
-                )} />
-                <Route path="/search"  
-                render={() => (
-                    <Search/> 
-                )} />
-
-                <Route path= "/login" exact 
-                render={() => (
-                    <Login/> 
-                )} />
-                
-                 <Route  
-                render={() => (
-                   <ErrorPage/>
-
-                )} />
-               
-             </Switch>
+                <Route path="/" exact render={() => (<Search/> )} />
+                <Route path="/statistics"  render={() => (<Statistics />)} />
+                <Route path="/admin"  render={() => (<AdminPage/>)} />
+                <Route path="/books" render={() => (<BooksListPage/>)} />
+                <Route path="/book/:id"  component={BookPage} />
+                <Route path='/addBooks'  render={() => (<AddBooks/>)} />
+                <Route path="/search" render={() => (<Search/> )} />
+                <Route path= "/login" exact render={() => (<Login/> )} />
+                <Route render={() => (<ErrorPage/>)} />
+            </Switch>
         </div>
     )
 }

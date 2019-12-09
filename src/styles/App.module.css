@@ -23,11 +23,6 @@ main {
     width: 100%
 }
 
-aside{
-    min-width: 250px;
-}
-
-
 @media screen and (max-width: 600px) {
     .app{
         width: 100%;

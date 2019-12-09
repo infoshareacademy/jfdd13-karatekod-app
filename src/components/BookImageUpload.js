@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import firebase, { storage } from '../firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Button } from 'bloomer'; 
+import 'bulma/css/bulma.min.css';
+import styles from '../styles/BookImageUpload.module.css'
 
 class BookImageUpload extends Component {
-    notify = () => toast("Wrong file type");
     constructor(props) {
         super(props);
         this.state = {
@@ -19,6 +21,8 @@ class BookImageUpload extends Component {
             .handleUpload
             .bind(this);
     }
+
+    notify = () => toast("Wrong file type");
 
     componentDidMount() {
         this.checkIfBookHasCoverPicture()
@@ -44,19 +48,15 @@ class BookImageUpload extends Component {
         const uploadTask = storage.ref(`bookcovers/${image.name}`).put(image);
         uploadTask.on('state_changed',
         (snapshot) => {
-            // progress function
             const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
             this.setState({progress})
         
         },
         (error) => {
-            // error function
             console.log(error)
         },
         () => {
-            // complete function
             storage.ref('bookcovers').child(image.name).getDownloadURL().then(url => {
-                console.log(url);
                 this.setState({url})
                 this.updateCoverPicture(url)
             })
@@ -64,56 +64,40 @@ class BookImageUpload extends Component {
     }
 
     updateCoverPicture = (url) => {
-        console.log(url);
+
         // 1. check what user are you logged in
-        //const currentUser = firebase.auth().currentUser
-        //const id = currentUser.uid
-        this.props.onBookImageUpload(url)
-
-
-
-        // 2. get the url and update book profile
-
-    }
-
-    checkIfBookHasCoverPicture = async () => {
-        // 1. get current user id
         const currentUser = firebase.auth().currentUser
         const id = currentUser.uid
 
-        // 2. fetch current book cover picture
+        this.props.onBookImageUpload(url)
+    }
+
+    checkIfBookHasCoverPicture = async () => {
+        const currentUser = firebase.auth().currentUser
+        const id = currentUser.uid
         const dataSnapshot = await firebase.database().ref(`/booksList/${id}/coverPicture`).once('value')
         const coverPictureUrl = dataSnapshot.val()
-
-        // 3. if there is a picture, use it
         if (coverPictureUrl) {
-            // 4. update state of the component
             this.setState({
                 url: coverPictureUrl
             })
         }
-
-
     }
-
 
     render() {
         const showProgress = this.state.progress !== 0 && this.state.progress !== 100 
-
         return (
             <div>
-                <div>
-                    {/* <p>Upload book cover picture</p> */}
+                <div className={styles.imageUpload}>
                     <input type="file" onChange={this.handleChange}/>
-                    <button type="button" onClick={this.handleUpload}>Upload</button>
+                    <Button className={styles.imageUploadButton} isColor="danger" style={{borderRadius: '20px'}} type="button" onClick={this.handleUpload}>Upload</Button>
                     <div>
-                        {/* <img src={this.state.url} alt="Book cover pic" height= "100" width= "80"/> */}
                         {showProgress && <progress value={this.state.progress} max="100"/>}
                     </div>
                 </div>
                 <ToastContainer 
                  hideProgressBar={true}
-                 position="bottom-right"
+                 position="top-right"
                  />
             </div>
         )
