@@ -176,11 +176,11 @@ class AddBooks extends React.Component {
                         type="text" name="type" value={newCondition} onChange={event => {
                             this.handleCondition(event.target.value);
                         }} name="genre">
-                            <option value="1">1 (very bad)</option>
-                            <option value="2">2 (not good)</option>
+                            <option value="1">1 (mint)</option>
+                            <option value="2">2 (good)</option>
                             <option value="3">3 (it's ok)</option>
-                            <option value="4">4 (good)</option>
-                            <option value="5">5 (mint)</option>
+                            <option value="4">4 (not good)</option>
+                            <option value="5">5 (bad)</option>
                         </Select>
                         </div>
                     </div>
