@@ -63,6 +63,7 @@ class Favs extends React.Component {
                             style={{
                                 background: `url("${listing.imageUrl}")`,
                                 width: '95px',
+                                minHeight:'100px',
                                 backgroundSize: 'cover',
                             }}>
                             </div>

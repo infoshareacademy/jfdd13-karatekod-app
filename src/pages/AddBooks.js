@@ -16,7 +16,7 @@ const initialState = {
     newDescription: "",
     newType: "fantasy",
     newCondition: 1,
-    uploadedImageUrl:'http://placekitten.com/140/190'
+    uploadedImageUrl:'https://firebasestorage.googleapis.com/v0/b/bookswapp-16613.appspot.com/o/bookcovers%2Flogopic.png?alt=media&token=f65eb097-c4ad-4f79-928a-b189b0b2bad7'
 }
 
 class AddBooks extends React.Component { 

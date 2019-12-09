@@ -110,7 +110,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    box-shadow: 0px 2px 10px;
+    //box-shadow: 0px 2px 10px;
 
 
 }
@@ -168,7 +168,7 @@
         color: #C2355B;
         margin-top: 10%;
         width: 100%;
-        background-color: #F8BBD0;
+        background-color: white;
         background-size: cover;
         box-shadow: 0px 1px 10px;
 
