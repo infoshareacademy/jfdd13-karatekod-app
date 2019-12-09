@@ -25,7 +25,7 @@ const Navigation = (props) => {
         <nav className={styles.mainNav}>
             <img src={menu1} className={styles.menuTitle} onClick={() => setOpen(!open)} />
 
-            <ul className={open && styles.active}>
+            <ul className={open && styles.active} onClick={() => setOpen(!open)} >
                 {menu}
             <li className={styles.active} key="sign out" ><Button onClick={()=>{
                 firebase.auth().signOut().then(() => {
