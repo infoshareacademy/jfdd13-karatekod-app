@@ -2,19 +2,11 @@ import React, {Component} from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
 
-
-
 const stopUser = () => {
     firebase
       .database()
       .ref("/users")
       .off();
-  };
-
-
-
-
-
 
 export default class LoginRegister extends Component {
     constructor(props) {

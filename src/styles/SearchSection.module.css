@@ -1,9 +1,5 @@
 .filter {
     min-height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 50px;
 }
 
@@ -20,17 +16,15 @@
     font-size: 30px;
     text-align: center;
     border: none;
-    border-bottom: 1px solid grey;
     
 }
 .searchTextInputs {
     display: flex;
     justify-content: center;
-    max-width: 50%;
+    padding-top: 7px
 
 }
 .searchText:focus {
-    background-color: lightgray;
     font-size: 25;
     outline: none;
 }
@@ -278,12 +272,14 @@ text-align: center;
     .forms{
         margin-top: 50px;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        text-align: center;
     }
     
     .searchTextInputs{
         padding-bottom: 10px;
+        display: inline-block
+        
     }
 
     .dropdown{

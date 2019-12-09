@@ -7,9 +7,6 @@ import Footer from './Footer';
 import Page from './Page';
 import SomeButtons from '../components/SomeButtons'
 import Secure from '../components/Secure'
-import logoWhite from '../images/logoWhite.png';
-
-
 
 
 function App() {
