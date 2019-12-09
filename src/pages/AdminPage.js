@@ -6,8 +6,8 @@ import { watchBooks, stopBooks } from '../services/BookService'
 import styles from '../styles/AdminPage.module.css'
 import AddToFavorites from '../components/AddToFavorites'
 import { addFavFirebase } from '../services/FavService'
-import heartFilled from '../images/heart2.png'
-import heartEmpty from '../images/heart1.png'
+//import heartFilled from '../images/heart2.png'
+//import heartEmpty from '../images/heart1.png'
 
 
 class Favs extends React.Component {
