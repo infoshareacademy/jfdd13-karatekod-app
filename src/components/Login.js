@@ -17,8 +17,7 @@ class Login extends Component {
         signedInFlow: "popup",
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            
-        ],
+            ],
         callbacks: {
             signInSuccess: (auth) => {
                 firebase.database().ref('/users/' + auth.uid).transaction(data => {

@@ -19,7 +19,6 @@ export class Filter extends Component {
                     <Select isColor="danger"
                     name="type" 
                     onChange = {this.props.change} 
-                    // className={styles.dropdown
                      >
                         <option value="any">genre</option>
                         <option value='action'>Action</option>

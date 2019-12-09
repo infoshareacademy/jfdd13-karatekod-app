@@ -186,18 +186,6 @@ class AddBooks extends React.Component {
                     </div>
                     <label className={styles.label}>Cover photo:</label>
                     <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
-                    {/* <label className={styles.label}>Condition*:</label> */}
-                    {/* <Select isColor="danger"
-                    type="text" name="type" value={newCondition} onChange={event => {
-                        this.handleCondition(event.target.value);
-                    }} name="genre">
-                        <option value="1">1 (very bad)</option>
-                        <option value="2">2 (not good)</option>
-                        <option value="3">3 (it's ok)</option>
-                        <option value="4">4 (good)</option>
-                        <option value="5">5 (mint)</option>
-                    </Select> */}
-
                     <label className={styles.label}>Description*:</label>
                     <TextArea  isSize="large" value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></TextArea>
 

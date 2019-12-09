@@ -3,11 +3,7 @@ import Book from '../components/Book.js';
 import { Link } from 'react-router-dom';
 import uuid from "uuid";
 import styles from "../styles/Books.module.css";
-import AddToFavorites from '../components/AddToFavorites'
-import SomeButtons from '../components/SomeButtons.js';
 import '../styles/SingleBook.css'
-import { tsPropertySignature } from '@babel/types';
-import star from '../images/star.png';
 import { watchBooks, stopBooks } from '../services/BookService'
 
 
