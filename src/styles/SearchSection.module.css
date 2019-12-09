@@ -38,6 +38,7 @@
 .searchTextInputs input {
     width: 40%;
     margin-right: 30px;
+    min-width: 99px;
 }
 
 
