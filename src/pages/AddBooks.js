@@ -133,7 +133,7 @@ class AddBooks extends React.Component {
     }
 
     render() {
-        const { newTitle, newAutor, newType, newImageUrl, newCondition, newDescription, error } = this.state;
+        const { newTitle, newAutor, newType, newCondition, newDescription, error } = this.state;
 
         return (
             <div className={styles.wrap}>
