@@ -32,19 +32,29 @@ export class Filter extends Component {
                         <option value='sifi'>Sci-Fi</option>
                     </Select>
                     </div>
-                        <p className={styles.sliderDescription}>select book condition</p>
-                       <div className={styles.rangeSlider}>
-                       
+                    <div style={{maxWidth:"500px", minWidth:"400px", display:"flex"}}>
+                    <p className={styles.sliderDescription}>select book condition: from 1 (perfect) to 5 (bad)</p>
+                    <div className={styles.rangeSlider} style={{width:'60%', paddingRight:'90px'}}>
+                    
                         <InputRange  
                                 globalState = {this.props.globalState}
                                 type = "range" 
                                 maxValue={5}
                                 minValue={1}
                                 value={this.props.globalState.range}
-                                onChange={this.props.changeFilterRange} />
-                        </div>         
-                    </div>
-              </div>
+                                onChange={this.props.changeFilterRange}
+                                formatLabel={value => 
+                                    (value==1) ? `perfect only`:
+                                    (value==2)?`perfect and good `:
+                                    (value==3)?'perfect, good and used':
+                                    (value==4)? 'all but bad':
+                                    (value==5)? 'all books':
+                                    (value==0)? 'condition':null}     
+                        />
+                    </div> 
+                    </div>        
+                </div>
+            </div>
         </div>
         )
     }
