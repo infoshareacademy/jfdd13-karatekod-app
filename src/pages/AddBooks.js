@@ -30,7 +30,6 @@ class AddBooks extends React.Component {
                 newAutor: false,
                 newDescription: false,
             },
-
         }
     }
 

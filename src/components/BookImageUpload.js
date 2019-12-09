@@ -67,7 +67,7 @@ class BookImageUpload extends Component {
         console.log(url);
         // 1. check what user are you logged in
         const currentUser = firebase.auth().currentUser
-        const id = currentUser.uid
+        //const id = currentUser.uid
         this.props.onBookImageUpload(url)
 
 
