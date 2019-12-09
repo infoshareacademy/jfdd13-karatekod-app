@@ -89,14 +89,14 @@ class ImageUpload extends Component {
                         <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*"  name="file" id="file" />
                     </div>
                     <div className={styles.skill}>
-                        <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Favorite genre:</p>
-                            <h2 className={styles.nameTitle} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
+                        <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>Favorite genre:</p>
+                            <h2 className={styles.nameTitlePink} >{firebase.auth().currentUser.displayName}</h2>
                         </div>
                         <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Username:</p>
                             <h2 className={styles.nameTitleFirst} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
                         </div>
-                        <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Favorite books:</p>
-                            <h2 className={styles.nameTitle} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
+                        <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>Favorite books:</p>
+                            <h2 className={styles.nameTitlePink} >{firebase.auth().currentUser.displayName}</h2>
                         </div>
                     </div>
                 </div>
