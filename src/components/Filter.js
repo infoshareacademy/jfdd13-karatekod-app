@@ -12,11 +12,11 @@ export class Filter extends Component {
             <div className={styles.filter}>
                 <div className={styles.forms}>
                     <div className={styles.searchTextInputs}>
-                        <Input isColor="danger" type="text" name="autor" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
-                        <Input isColor="danger" type="text" name="title" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
+                        <Input isColor="black" type="text" name="autor" placeholder='author' onChange = {this.props.change} className={styles.searchText}/>
+                        <Input isColor="black" type="text" name="title" placeholder='title' onChange = {this.props.change} className={styles.searchText}/>
                     </div>
                     <div >
-                    <Select isColor="danger"
+                    <Select isColor="black"
                     name="type" 
                     onChange = {this.props.change} 
                      >

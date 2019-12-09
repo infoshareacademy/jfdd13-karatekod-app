@@ -141,12 +141,12 @@ class AddBooks extends React.Component {
                 <h1>Add your books to the database</h1>
                 <form className={styles.form}>    
                     <label className={styles.label} >Title*:</label>
-                    <Input isColor="danger" className={styles.input} type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
+                    <Input isColor="black" className={styles.input} type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
                         this.handleTitle(event.target.value);
                     }} className={error.newTitle ? styles.inputError : styles.input} />
 
                     <label className={styles.label} >Author*:</label>
-                    <Input isColor="danger" className={styles.input} type="text" name="autor" placeholder={error.newAutor ? "Please fill out this field" : "Insert author name here"} value={newAutor} onChange={event => {
+                    <Input isColor="black" className={styles.input} type="text" name="autor" placeholder={error.newAutor ? "Please fill out this field" : "Insert author name here"} value={newAutor} onChange={event => {
                         this.handleAutor(event.target.value);
                     }} className={error.newAutor ? styles.inputError : styles.input} />
 
@@ -154,7 +154,7 @@ class AddBooks extends React.Component {
                     <div className={styles.selects}>
                         <div className={styles.select1}>
                         <label className={styles.label} >Genre*:</label>
-                        <Select isColor="danger"
+                        <Select isColor="black"
                         type="text" name="type" value={newType} onChange={event => {
                             this.handleType(event.target.value);
                         }} name="genre">
@@ -172,7 +172,7 @@ class AddBooks extends React.Component {
                         <div className={styles.select2}>
                         <label className={styles.label}>Condition*:</label>
 
-                        <Select isColor="danger"
+                        <Select isColor="black"
                         type="text" name="type" value={newCondition} onChange={event => {
                             this.handleCondition(event.target.value);
                         }} name="genre">
