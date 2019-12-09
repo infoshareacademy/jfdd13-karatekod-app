@@ -22,7 +22,6 @@ class Login extends Component {
         callbacks: {
             signInSuccess: (auth) => {
                 firebase.database().ref('/users/' + auth.uid).transaction(data => {
-                    console.log('data ', data);
                     return {
                         name: firebase.auth().currentUser.displayName,
                         created: firebase.auth().currentUser.metadata.creationTime,
@@ -34,22 +33,15 @@ class Login extends Component {
         }
     }
 
-    
-
     componentDidMount = () => {
-
         firebase.auth().onAuthStateChanged(user => {
             this.setState({ isSignedIn: !!user })
-            console.log("user: ", user)
-
         })
-
     }
     render() {
         return (
             <>
                 {this.state.isSignedIn ? (
-
                     <div className={styles.userProfile}>
                         <div style={{ clear: "both" }}></div>
                             <div className={styles.userContent}>

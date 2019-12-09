@@ -22,11 +22,14 @@ a{
 }
 
 a:hover{
-    text-decoration: underline
+    text-decoration: underline;
+    color: #ff9800
 }
 
 @media screen and (max-width: 600px) {
     .footerAbout{
+        width: 100%;
+        font-size: 10px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;  

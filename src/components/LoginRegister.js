@@ -2,14 +2,6 @@ import React, {Component} from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
 
-
-
-
-
-
-
-
-
 export default class LoginRegister extends Component {
     constructor(props) {
         super(props);
