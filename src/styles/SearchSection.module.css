@@ -251,6 +251,14 @@ text-align: center;
     cursor: pointer
 }
 
+@media screen and (max-width: 100px) {
+    .searchTextInputs{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
  @media screen and (max-width: 600px) {
     .listings, .listingImg, .results, .listingsResults{
         display: flex;
