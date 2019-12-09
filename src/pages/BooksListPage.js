@@ -204,14 +204,11 @@ const BooksListPage = () => {
           stopBooks();
         };
       }, []);
-
-
-    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
     
     const booksList = booksFB.map(book => (
         <div key={book.id} className={styles.singleBook}>
         <Link to={`/book/${book.id}`}>
-        <img src={book.imageUrl}/>
+        <img src={book.imageUrl} alt={book.imageUrl}/>
         <Book {...book} src={book.imageUrl}  />
         </Link>
         </div>

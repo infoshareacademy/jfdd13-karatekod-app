@@ -21,15 +21,16 @@ class ImageUpload extends Component {
 
     componentDidMount() {
         this.checkIfUserHasProfilePicture()
+        console.log(firebase.auth().currentUser)
     }
 
     handleChange = e => {
         if (e.target.files[0]) {
             const image = e.target.files[0];
             this.setState({ image },
-                ()=>{
+                () => {
                     this.handleUpload()
-                    this.setState({image:null})
+                    this.setState({ image: null })
                 });
         }
     }
@@ -73,7 +74,7 @@ class ImageUpload extends Component {
     }
 
     render() {
-        const showProgress = this.state.progress !== 0 && this.state.progress !== 100
+        //const showProgress = this.state.progress !== 0 && this.state.progress !== 100
         return (
             <>
                 <div className={styles.profilPictureEdit}>
@@ -81,12 +82,23 @@ class ImageUpload extends Component {
                         <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" className={styles.userImg} />
                     </div>
                 </div>
+                <label for="file" className={styles.inputFileLabel}>Change profile picture</label>
                 <div className={styles.loadPicSec} >
-                        <div className={styles.uploadButtons}>
-                            <label for="file" className={styles.inputFileLabel}>Choose new Profile Picture</label>
-                            <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*" style={{ width: '100%' }} name="file" id="file" />
+                    <div className={styles.uploadButtons}>
+                        
+                        <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*"  name="file" id="file" />
+                    </div>
+                    <div className={styles.skill}>
+                        <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>Favorite genre:</p>
+                            <h2 className={styles.nameTitlePink} >{firebase.auth().currentUser.displayName}</h2>
                         </div>
-                        <h2>{firebase.auth().currentUser.displayName}</h2>
+                        <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Username:</p>
+                            <h2 className={styles.nameTitleFirst} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
+                        </div>
+                        <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>Favorite books:</p>
+                            <h2 className={styles.nameTitlePink} >{firebase.auth().currentUser.displayName}</h2>
+                        </div>
+                    </div>
                 </div>
             </>
         )

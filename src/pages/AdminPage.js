@@ -6,8 +6,9 @@ import { watchBooks, stopBooks } from '../services/BookService'
 import styles from '../styles/AdminPage.module.css'
 import AddToFavorites from '../components/AddToFavorites'
 import { addFavFirebase } from '../services/FavService'
-import heartFilled from '../images/heart2.png'
-import heartEmpty from '../images/heart1.png'
+//import heartFilled from '../images/heart2.png'
+//import heartEmpty from '../images/heart1.png'
+
 
 class Favs extends React.Component {
     constructor(props) {
@@ -62,14 +63,14 @@ class Favs extends React.Component {
                             style={{
                                 background: `url("${listing.imageUrl}")`,
                                 width: '95px',
-                                height: '95px',
+                                minHeight:'100px',
                                 backgroundSize: 'cover',
                             }}>
                             </div>
                             <div className={styles.bookDetailsFav} >
-                                <p className={styles.title}><p className={styles.small}>Title: </p><br className={styles.smallBreak}/><i>{listing.title}</i></p>
-                                <p className={styles.title}><p className={styles.small}>Author: </p><br className={styles.smallBreak}/>{listing.autor}</p>
-                                <p className={styles.title}><p className={styles.small}>Condition: </p><br className={styles.smallBreak}/>{listing.condition}</p>
+                                <p className={styles.title}><span className={styles.small}>Title: </span><br className={styles.smallBreak}/><i>{listing.title}</i></p>
+                                <p className={styles.title}><span className={styles.small}>Author: </span><br className={styles.smallBreak}/>{listing.autor}</p>
+                                <p className={styles.title}><span className={styles.small}>Condition: </span><br className={styles.smallBreak}/>{listing.condition}</p>
                             </div>
                         </div>
                     </Link>

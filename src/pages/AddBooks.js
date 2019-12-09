@@ -16,7 +16,7 @@ const initialState = {
     newDescription: "",
     newType: "fantasy",
     newCondition: 1,
-    uploadedImageUrl:'http://placekitten.com/140/190'
+    uploadedImageUrl:'https://firebasestorage.googleapis.com/v0/b/bookswapp-16613.appspot.com/o/bookcovers%2Flogopic.png?alt=media&token=f65eb097-c4ad-4f79-928a-b189b0b2bad7'
 }
 
 class AddBooks extends React.Component { 
@@ -30,7 +30,6 @@ class AddBooks extends React.Component {
                 newAutor: false,
                 newDescription: false,
             },
-
         }
     }
 
@@ -134,21 +133,25 @@ class AddBooks extends React.Component {
     }
 
     render() {
-        const { newTitle, newAutor, newType, newImageUrl, newCondition, newDescription, error } = this.state;
+        const { newTitle, newAutor, newType, newCondition, newDescription, error } = this.state;
 
         return (
             <div className={styles.wrap}>
                 <h1>Add your books to the database</h1>
                 <form className={styles.form}>    
                     <label className={styles.label} >Title*:</label>
+
                     <Input isColor="black" className={styles.input} type="text" name="title" placeholder={error.newTitle ? "Please fill out this field" : "Insert title name here"} value={newTitle} onChange={event => {
+
                         this.handleTitle(event.target.value);
                     }} className={error.newTitle ? styles.inputError : styles.input} />
 
                     <label className={styles.label} >Author*:</label>
+
                     <Input isColor="black" className={styles.input} type="text" name="autor" placeholder={error.newAutor ? "Please fill out this field" : "Insert author name here"} value={newAutor} onChange={event => {
                         this.handleAutor(event.target.value);
                     }} className={error.newAutor ? styles.inputError : styles.input} />
+
 
 
                     <div className={styles.selects}>
@@ -186,6 +189,7 @@ class AddBooks extends React.Component {
                     </div>
                     <label className={styles.label}>Cover photo:</label>
                     <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
+
                     <label className={styles.label}>Description*:</label>
                     <TextArea  isSize="large" value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></TextArea>
 

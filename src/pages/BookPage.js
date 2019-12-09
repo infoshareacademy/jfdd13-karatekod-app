@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import styles from "../styles/BookPage.module.css"; 
 import { watchBooks, stopBooks } from '../services/BookService'
 
@@ -24,7 +24,7 @@ class BookPage extends React.Component{
         return (
         <div className={styles.container}>
             <div className={styles.bookCard}>
-                <img className={styles.bookImage} src={this.state.book.imageUrl} />
+                <img className={styles.bookImage} alt={this.state.book.imageUrl} src={this.state.book.imageUrl} />
                     <div className={styles.bookInfo}>
                         <div className={styles.bookInfo2}>
                             <div className={styles.info}>Title: 

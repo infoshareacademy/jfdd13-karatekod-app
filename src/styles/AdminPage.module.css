@@ -46,7 +46,7 @@
 
 .favWrap {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     box-shadow: 3px -3px 24px -1px rgba(0, 0, 0, 0.33);
@@ -62,6 +62,7 @@
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
+    padding-left: 15px;
 
 }
 

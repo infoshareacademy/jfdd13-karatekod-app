@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 import styles from "../styles/Navigation.module.css";
 import menu1 from '../images/menu1.png';
 import firebase from 'firebase';
@@ -13,7 +13,7 @@ const list = [
     {name: 'search' , path: '/search', exact: true},
 ]
 
-const Navigation = () => {
+const Navigation = (props) => {
     const [open, setOpen] = useState(false);
     const menu = list.map(item => (
         <li key={item.name}>
@@ -24,12 +24,21 @@ const Navigation = () => {
     return (
         <nav className={styles.mainNav}>
             <img src={menu1} className={styles.menuTitle} onClick={() => setOpen(!open)} />
-                <ul className={open && styles.active} onClick={() => setOpen(!open)}>
-                    {menu}
-                    <li className={styles.active} key="sign out"><NavLink onClick={()=>{firebase.auth().signOut()}} to="/"><Button isColor='danger' style={{borderRadius: '20px'}}>SIGN OUT</Button></NavLink></li>           
-                </ul>
+
+            <ul className={open && styles.active}>
+                {menu}
+            <li className={styles.active} key="sign out"><Button onClick={()=>{
+                firebase.auth().signOut().then(() => {
+                    props.history.replace('/')
+                })
+            }} isColor='danger' style={{borderRadius: '20px'}}>SIGN OUT</Button></li>
+            
+            
+            
+            </ul>
+
         </nav>
     )
 }
 
-export default Navigation
+export default withRouter(Navigation)
