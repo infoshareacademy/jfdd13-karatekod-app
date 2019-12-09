@@ -28,8 +28,9 @@ export class Filter extends Component {
                         <option value='sifi'>Sci-Fi</option>
                     </select>
                     </div>
+                    <div style={{width:"500px", display:"flex"}}>
                     <p className={styles.sliderDescription}>select book condition: from 1 (perfect) to 5 (bad)</p>
-                    <div className={styles.rangeSlider}>
+                    <div className={styles.rangeSlider} style={{width:'60%', paddingRight:'90px'}}>
                     
                         <InputRange  
                                 globalState = {this.props.globalState}
@@ -46,7 +47,8 @@ export class Filter extends Component {
                                     (value==5)? 'all books':
                                     (value==0)? 'condition':null}     
                         />
-                    </div>         
+                    </div> 
+                    </div>        
                 </div>
             </div>
         </div>
