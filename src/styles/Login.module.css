@@ -58,29 +58,11 @@
 .loginGrid {
 
    height: 95vh;
-   display: flex;
+   /* display: flex; */
    flex-direction: column;
    justify-content: center;
    margin: 0 5vh;
-
-
-
-
-    
-/* margin-top: 20vh;
- display: flex;
-    flex-direction: column;
-    max-width: 80%;
-    padding-top: 60px;
-    padding-bottom: 40px;
-    margin: auto;
-    min-height: 65vh;
-    grid-template-areas: 
-    "logo box"
-    "desc box"
-    "desc box"
-    "desc box"
-    "desc box" */
+   padding-top: 100px;
 }
 
 .loginBox {
