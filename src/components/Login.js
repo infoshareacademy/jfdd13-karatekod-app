@@ -11,7 +11,9 @@ import LoginRegister from './LoginRegister'
 
 class Login extends Component {
 
-    state = { isSignedIn: false }
+    state = { 
+        isSignedIn: false,
+        user: null }
 
     uiConfig = {
         signedInFlow: "popup",
@@ -33,10 +35,26 @@ class Login extends Component {
     }
 
     componentDidMount = () => {
+
         firebase.auth().onAuthStateChanged(user => {
             this.setState({ isSignedIn: !!user })
+            if(user) {
+                firebase.database().ref(`users/${user.uid}`).on('value', dataSnapshot => {
+                    const user = dataSnapshot.val()
+                    this.setState ({
+                        user:user
+                    })
+                })
+            }
         })
+     
+    
     }
+    componentWillUnmount() {
+        if (this.state.user) {
+            firebase.database().ref(`users/${this.state.user.uid}`).off('value')}
+    }
+
     render() {
         return (
             <>
