@@ -35,7 +35,7 @@ export class Filter extends Component {
                                 globalState = {this.props.globalState}
                                 type = "range" 
                                 maxValue={5}
-                                minValue={0}
+                                minValue={1}
                                 value={this.props.globalState.range}
                                 onChange={this.props.changeFilterRange}
                                 formatLabel={value => 
