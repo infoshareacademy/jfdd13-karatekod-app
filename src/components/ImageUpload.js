@@ -23,18 +23,6 @@ class ImageUpload extends Component {
 
     componentDidMount() {
         this.checkIfUserHasProfilePicture()
-        console.log(firebase.auth().currentUser)
-
-        console.log(firebase.auth().onAuthStateChanged(user => {
-            this.setState({ user })
-            if (user) {
-                firebase.database().ref('favorites').child(user.uid).on('value', value => {
-                    this.setState({
-                        favs: value.val() || {}
-                    })
-                })
-            }
-        }))
     }
 
     handleChange = e => {
