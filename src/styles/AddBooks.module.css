@@ -51,6 +51,10 @@
 .input:focus {
     outline: none;
 }
+
+textarea:focus{
+    outline: none
+}
 .wrap {
     display: flex;
     justify-content: center;
@@ -73,7 +77,7 @@ select {
 }
 
 .textarea {
-    border: 2px solid black;
+    border: 1px solid black;
     font-size: 24px;
     outline: none;
 }

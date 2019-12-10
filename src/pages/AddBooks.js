@@ -191,7 +191,7 @@ class AddBooks extends React.Component {
                     <BookImageUpload onBookImageUpload={this.handleBookImageUpload}/> 
 
                     <label className={styles.label}>Description*:</label>
-                    <TextArea  isSize="large" value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></TextArea>
+                    <TextArea isSize="large" value={newDescription} onChange={event => { this.handleDescription(event.target.value) }} className={error.newDescription ? styles.textareaError : styles.textarea} placeholder={error.newDescription ? "Please fill out this field" : "Insert description of the book here"} id="txtArea" rows="10" cols="40"></TextArea>
 
                     <Button isColor='danger' className={styles.button} onClick={(e) => {
                             e.preventDefault()

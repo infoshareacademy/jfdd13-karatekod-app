@@ -47,6 +47,10 @@
         list-style-type: none;
     }
 
+    nav{
+        width: 200px
+    }
+
 @media screen and (max-width: 600px) {
     .mainNav {
       display: flex;
