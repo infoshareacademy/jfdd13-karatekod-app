@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase, { storage } from '../firebase';
+import {watchBooks} from '../services/BookService'
 import styles from '../styles/ImageUpload.module.css'
 
 class ImageUpload extends Component {
@@ -10,6 +11,8 @@ class ImageUpload extends Component {
             url: '',
             progress: 0,
             buttons: true,
+            booksList: [],
+            favsNumber: "",
         }
         this.handleChange = this
             .handleChange
@@ -23,6 +26,29 @@ class ImageUpload extends Component {
 
     componentDidMount() {
         this.checkIfUserHasProfilePicture()
+        const currentUser = firebase.auth().currentUser
+        const id = currentUser.uid
+
+        
+        const watchUsersFavs = (id) => {        // added for favs number
+            return firebase
+            .database()
+            .ref(`favorites/${id}`)
+            .on('value', dataSnapshot => {
+              const users = dataSnapshot.val()
+              const favs = Object.keys(users).length
+              this.setState({favsNumber:favs})
+            })
+          }
+          watchUsersFavs(id)
+
+
+        watchBooks(booksList => {
+            let booksList1 = Object.values(booksList)
+            let booksListId = booksList1.map(book=>book.id) // id wszystkich książek
+        });
+
+
     }
 
     handleChange = e => {
@@ -97,7 +123,7 @@ class ImageUpload extends Component {
                             <h2 className={styles.nameTitleFirst} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
                         </div>
                         <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>Favorite books:</p>
-                            <h2 className={styles.nameTitlePink} >{firebase.auth().currentUser.displayName}</h2>
+        <h2 className={styles.nameTitlePink} >{this.state.favsNumber}</h2>
                         </div>
                     </div>
                 </div>
