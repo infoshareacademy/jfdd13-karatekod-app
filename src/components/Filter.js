@@ -20,7 +20,7 @@ export class Filter extends Component {
                     name="type" 
                     onChange = {this.props.change} 
                      >
-                        <option value="any">genre</option>
+                        <option value="any">all genres</option>
                         <option value="fantasy">fantasy</option>
                         <option value="drama">drama</option>
                         <option value="romance">romance</option>
