@@ -57,7 +57,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       text-align: center;
       z-index: 3;
       flex-direction: column;
