@@ -116,7 +116,7 @@ class ImageUpload extends Component {
             <>
                 <div className={styles.profilPictureEdit}>
                     <div className={styles.profilePicture} >
-                        <img src={this.state.url || "https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg"} alt="Profile pic" className={styles.userImg} />
+                        <img src={this.state.url || "https://firebasestorage.googleapis.com/v0/b/bookswapp-16613.appspot.com/o/bookcovers%2Favatar-placeholder.jpg?alt=media&token=c4654369-96ee-4150-92e8-7b0a57977e91"} alt="Profile pic" className={styles.userImg} />
                     </div>
                 </div>
                 <label for="file" className={styles.inputFileLabel}>Change profile picture</label>
