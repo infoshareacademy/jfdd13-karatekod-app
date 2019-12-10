@@ -60,11 +60,7 @@ class Listings extends Component {
                                         backgroundSize: 'cover'
                                     }}>
                                     <div className={styles.details}>
-                                        <div className={styles.userImg}></div>
-                                        <div className={styles.userDetails}>
-                                            <span className={styles.userName}>Anna</span>
-                                            <span className={styles.postDate}>05.05.2019</span>
-                                        </div>
+                                        
                                         <div className={styles.listingDetails}>
                                             <div className={styles.moreDetails}>
                                                 <span>{`${listing.description.slice(0, 107)}...`} <br />Click to get more info</span>

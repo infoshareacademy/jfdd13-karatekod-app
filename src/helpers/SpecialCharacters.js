@@ -3,3 +3,8 @@ export function hasOnlySpecialCharater(val) {
     return (pattern.test(val));
 }
 
+export function hasOnlySpecialCharaterAndNumbers(val) {
+    var pattern = /^[^a-zA-Z]+$/;
+    return (pattern.test(val));
+}
+

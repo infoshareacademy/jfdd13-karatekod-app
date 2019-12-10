@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
+import {hasOnlySpecialCharaterAndNumbers} from '../helpers/SpecialCharacters'
 
-const stopUser = () => {
-    firebase
-        .database()
-        .ref("/users")
-        .off();
-}
+
 
 
 export default class LoginRegister extends Component {
@@ -27,6 +23,10 @@ export default class LoginRegister extends Component {
         this.resetPass = this.resetPass.bind(this)
         this.backToLogin = this.backToLogin.bind(this)
         this.validateEmail = this.validateEmail.bind(this)
+        this.handleBlur = this.handleBlur.bind(this)
+        this.handleBlurPassConf=this.handleBlurPassConf.bind(this)
+        this.handleBlurPass = this.handleBlurPass.bind(this)
+        
     }
 
     handleChange = e => {
@@ -64,6 +64,14 @@ export default class LoginRegister extends Component {
         else if (this.state.password1 == '') {
             this.setState({
                 errors: 'Please, confirm the password'
+            })
+        } else if (hasOnlySpecialCharaterAndNumbers(this.state.displayName)) {
+            this.setState({
+                errors:'The name cannot contain only numbers and/or special characters'
+            })
+        } else if (this.state.displayName.length<3 || this.state.displayName.length>12) {
+            this.setState({
+                errors : 'name has to be min 3 and max 12 characters '
             })
         } else {
             (this.state.password === this.state.password1) ? (
@@ -165,9 +173,65 @@ export default class LoginRegister extends Component {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
-    componentWillUnmount() {
-        stopUser()
+    
+    
+    handleBlur = e => {
+        if (this.state.email == '') {
+            this.setState({
+                errors: 'Email cannot be an empty field'
+            })
+        } else {
+            this.setState({
+                errors:''
+            })
+        }
+        if (!this.validateEmail(this.state.email)) {
+            this.setState({ errors: 'Email has invalid format' })
+        } else {
+            this.setState({
+                errors:''
+            })
+        }
+       
     }
+    handleBlurPassConf = e =>{        
+        if (this.state.password !== '') {
+            if (this.state.password1 == '') {
+            this.setState({
+                errors: 'Please, confirm the password'
+            })
+        } else {
+            this.setState({
+                errors:''
+            })
+        }
+        if (this.state.password != this.state.password1 && this.state.password1 != '') {
+            this.setState({
+                errors: 'Password and its confirmation does not match'
+            })
+        }else {
+            this.setState({
+                errors:''
+            })
+        }
+        }else {
+        this.setState({
+            errors:''
+        })
+    }
+    }
+    handleBlurPass = e => {
+        if (this.state.password == '') {
+            this.setState({
+                errors: 'Password cannot be an empty field'
+            })
+        } else {
+            this.setState({
+                errors:''
+            })
+        }
+    }
+    
 
 
 
@@ -182,12 +246,14 @@ export default class LoginRegister extends Component {
                 className={styles.submitBtn}
                 value="enter"
                 onClick={this.login}
-            >enter</button>) :
+                >enter
+            </button>) :
             (<button type="submit"
                 className={styles.submitBtn}
                 value="register"
                 onClick={this.register}
-            >register</button>)
+                >register
+            </button>)
         let login_rgister = this.state.loginBtn ?
             (<button className={styles.registerBtn} onClick={(e) => this.switchButton('register')}>register</button>) :
             (<button className={styles.registerBtn} onClick={(e) => this.switchButton('login')}>Login</button>)
@@ -210,12 +276,14 @@ export default class LoginRegister extends Component {
                                     onChange={this.handleChange}
                                     name="email"
                                     placeholder="e-mail"
+                                    onBlur={this.handleBlur}
                                 />
                                 <input type="password"
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                     name="password"
                                     placeholder="password"
+                                    onBlur = {this.handleBlurPass}
                                 />
                                 {(this.state.formType === 'REGISTER NEW USER') ?
                                     (<>
@@ -224,12 +292,13 @@ export default class LoginRegister extends Component {
                                             onChange={this.handleChange}
                                             name="password1"
                                             placeholder="confirm password"
+                                            onBlur={this.handleBlurPassConf}
                                         />
                                         <input type="text"
                                             value={this.state.displayName}
                                             onChange={this.handleChange}
                                             name="displayName"
-                                            placeholder="name (optional)"
+                                            placeholder="name (min 3 and max 12 characters)"
                                         />
                                     </>) : null}
                             </form>

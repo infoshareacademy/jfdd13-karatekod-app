@@ -21,15 +21,14 @@ export class Filter extends Component {
                     onChange = {this.props.change} 
                      >
                         <option value="any">genre</option>
-                        <option value='action'>Action</option>
-                        <option value='comedy'>Comedy</option>
-                        <option value='drama'>Drama</option>
-                        <option value='fantasy'>Fantasy</option>
-                        <option value='horror'>Horror</option>
-                        <option value='poetry'>Poetry</option>
-                        <option value='romance'>Romance</option>
-                        <option value='science'>Science</option>
-                        <option value='sifi'>Sci-Fi</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="drama">drama</option>
+                        <option value="romance">romance</option>
+                        <option value="thriller">thriller</option>
+                        <option value="guide">guide</option>
+                        <option value="crime">crime</option>
+                        <option value="biography">biography</option>
+                        <option value="other">other</option>
                     </Select>
                     </div>
                     <div style={{maxWidth:"500px", minWidth:"400px", display:"flex"}}>
