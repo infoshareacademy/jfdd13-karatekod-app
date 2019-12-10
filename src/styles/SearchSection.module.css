@@ -30,9 +30,7 @@
 }
 
 .searchTextInputs input {
-    width: 40%;
     margin-right: 30px;
-    min-width: 99px;
 }
 
 
@@ -289,13 +287,17 @@ text-align: center;
         display: flex;
         flex-direction: column;  
         justify-content: center; 
-        align-items: center;     
+        align-content: center;  
+        width: 90vw;
+        
         
     }
 
     .searchTextInputs input {
-        width: 80%;
         margin-right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .dropdown{
