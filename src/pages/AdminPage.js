@@ -50,9 +50,9 @@ class Favs extends React.Component {
                 } else { return }
             })
         })
-        if (output == undefined || output == 0) {
+        if (output == undefined || output == null) {
             return ['Loading your favourite books...']
-        }
+        } else if (output == 0) { return ['It looks like you have no books in your favorites']}
         return output.map((listing, index) => {
             return (
                 <div className={styles.favWrap}>
