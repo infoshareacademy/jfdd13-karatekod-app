@@ -52,6 +52,7 @@ cursor: pointer;
 .likeHeart{
     width:25px;
     height:25px;
+    max-width: none;
 }
 
 .likeHeart:hover{
