@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import firebase from '../firebase'
 import styles from '../styles/LoginRegister.module.css'
+import {hasOnlySpecialCharaterAndNumbers} from '../helpers/SpecialCharacters'
 
-const stopUser = () => {
-    firebase
-        .database()
-        .ref("/users")
-        .off();
-}
+
 
 
 export default class LoginRegister extends Component {
@@ -68,6 +64,14 @@ export default class LoginRegister extends Component {
         else if (this.state.password1 == '') {
             this.setState({
                 errors: 'Please, confirm the password'
+            })
+        } else if (hasOnlySpecialCharaterAndNumbers(this.state.displayName)) {
+            this.setState({
+                errors:'The name cannot contain only numbers and special characters'
+            })
+        } else if (this.state.displayName.length<3 || this.state.displayName.length>12) {
+            this.setState({
+                errors : 'name has to be min 3 and max 12 characters '
             })
         } else {
             (this.state.password === this.state.password1) ? (
@@ -169,9 +173,8 @@ export default class LoginRegister extends Component {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
-    componentWillUnmount() {
-        stopUser()
-    }
+    
+    
     handleBlur = e => {
         if (this.state.email == '') {
             this.setState({
@@ -268,7 +271,7 @@ export default class LoginRegister extends Component {
                                             value={this.state.displayName}
                                             onChange={this.handleChange}
                                             name="displayName"
-                                            placeholder="name (optional)"
+                                            placeholder="name (min 3 and max 12 characters)"
                                         />
                                     </>) : null}
                             </form>
