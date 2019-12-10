@@ -36,7 +36,7 @@ class ImageUpload extends Component {
             .ref(`favorites/${id}`)
             .on('value', dataSnapshot => {
               const users = dataSnapshot.val()
-              const favs = Object.keys(users).length
+              const favs = users?Object.keys(users).length:0
               this.setState({favsNumber:favs})
             })
           }
@@ -133,7 +133,7 @@ class ImageUpload extends Component {
                             <h2 className={styles.nameTitleFirst} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
                         </div>
                         <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>Favorite books:</p>
-        <h2 className={styles.nameTitlePink} >{this.state.favsNumber}</h2>
+        <h2 className={styles.nameTitlePink} >{this.state.favsNumber?this.state.favsNumber:0}</h2>
                         </div>
                     </div>
                 </div>
