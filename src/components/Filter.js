@@ -31,7 +31,8 @@ export class Filter extends Component {
                         <option value="other">other</option>
                     </Select>
                     </div>
-                    <div style={{maxWidth:"500px", minWidth:"400px", display:"flex"}}>
+                    <div className={styles.divv}
+                     >
                     <p className={styles.sliderDescription}>select book condition: from 1 (perfect) to 5 (bad)</p>
                     <div className={styles.rangeSlider} style={{width:'60%', paddingRight:'90px'}}>
                     

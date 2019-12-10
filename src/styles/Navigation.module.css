@@ -47,13 +47,17 @@
         list-style-type: none;
     }
 
+    nav{
+        width: 200px
+    }
+
 @media screen and (max-width: 600px) {
     .mainNav {
       display: flex;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       text-align: center;
       z-index: 3;
       flex-direction: column;

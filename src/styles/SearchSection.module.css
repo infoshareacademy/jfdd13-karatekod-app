@@ -11,6 +11,12 @@
     
 }
 
+.divv{
+   max-width: 500px;
+   min-width: 400px;
+display: flex
+
+}
 .searchText {
     height: 40px;
     font-size: 30px;
@@ -30,9 +36,7 @@
 }
 
 .searchTextInputs input {
-    width: 40%;
     margin-right: 30px;
-    min-width: 99px;
 }
 
 
@@ -289,13 +293,17 @@ text-align: center;
         display: flex;
         flex-direction: column;  
         justify-content: center; 
-        align-items: center;     
+        align-content: center;  
+        width: 90%;
+        
         
     }
 
     .searchTextInputs input {
-        width: 80%;
         margin-right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .dropdown{
@@ -324,6 +332,14 @@ text-align: center;
 
     .searchText {
         font-size: 20px
+    }
+
+    .divv{
+        min-width: 0
+    }
+
+    .sliderDescription{
+        margin-right: 30px
     }
 
 } 
