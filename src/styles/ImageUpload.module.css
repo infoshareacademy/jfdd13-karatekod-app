@@ -41,7 +41,7 @@
 }
 
 .skillsSmallsPink {
-    color: #E91E63;
+    color: white;
     margin: 0;
     font-size: 0.55rem;
 }
@@ -57,7 +57,7 @@
 }
 
 .skillBigPink {
-    color: #E91E63;
+    color: white;
     font-size: 1rem;
     margin: 0;
     display: flex;

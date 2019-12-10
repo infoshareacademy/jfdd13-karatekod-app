@@ -51,6 +51,16 @@ class ImageUpload extends Component {
 
     }
 
+    componentWillUnmount(){
+        const stopFavs = () => {
+            firebase
+              .database()
+              .ref("/favorites")
+              .off();
+          };
+          stopFavs();
+    }
+
     handleChange = e => {
         if (e.target.files[0]) {
             const image = e.target.files[0];
