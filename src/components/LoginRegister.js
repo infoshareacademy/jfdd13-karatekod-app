@@ -67,7 +67,7 @@ export default class LoginRegister extends Component {
             })
         } else if (hasOnlySpecialCharaterAndNumbers(this.state.displayName)) {
             this.setState({
-                errors:'The name cannot contain only numbers and special characters'
+                errors:'The name cannot contain only numbers and/or special characters'
             })
         } else if (this.state.displayName.length<3 || this.state.displayName.length>12) {
             this.setState({
@@ -180,9 +180,17 @@ export default class LoginRegister extends Component {
             this.setState({
                 errors: 'Email cannot be an empty field'
             })
+        } else {
+            this.setState({
+                errors:''
+            })
         }
         if (!this.validateEmail(this.state.email)) {
             this.setState({ errors: 'Email has invalid format' })
+        } else {
+            this.setState({
+                errors:''
+            })
         }
        
     }
@@ -192,17 +200,34 @@ export default class LoginRegister extends Component {
             this.setState({
                 errors: 'Please, confirm the password'
             })
+        } else {
+            this.setState({
+                errors:''
+            })
         }
         if (this.state.password != this.state.password1 && this.state.password1 != '') {
             this.setState({
                 errors: 'Password and its confirmation does not match'
             })
-        }}
+        }else {
+            this.setState({
+                errors:''
+            })
+        }
+        }else {
+        this.setState({
+            errors:''
+        })
+    }
     }
     handleBlurPass = e => {
         if (this.state.password == '') {
             this.setState({
                 errors: 'Password cannot be an empty field'
+            })
+        } else {
+            this.setState({
+                errors:''
             })
         }
     }
@@ -221,12 +246,14 @@ export default class LoginRegister extends Component {
                 className={styles.submitBtn}
                 value="enter"
                 onClick={this.login}
-            >enter</button>) :
+                >enter
+            </button>) :
             (<button type="submit"
                 className={styles.submitBtn}
                 value="register"
                 onClick={this.register}
-            >register</button>)
+                >register
+            </button>)
         let login_rgister = this.state.loginBtn ?
             (<button className={styles.registerBtn} onClick={(e) => this.switchButton('register')}>register</button>) :
             (<button className={styles.registerBtn} onClick={(e) => this.switchButton('login')}>Login</button>)
