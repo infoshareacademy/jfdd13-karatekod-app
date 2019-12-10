@@ -112,11 +112,11 @@ class ImageUpload extends Component {
 
     whichRank = () =>{
         if (this.state.favsNumber === null || this.state.favsNumber < 4) {
-            return 'noob' 
+            return 'Noob' 
         } else if (this.state.favsNumber<7) {
-            return 'bookworm'
+            return 'Bookworm'
         } else {
-            return 'book lover'
+            return 'Book lover'
         }
         
         
