@@ -48,11 +48,11 @@ class ImageUpload extends Component {
             this.setState({progress})
         },
         (error) => {
-            console.log(error)
+
         },
         () => {
             storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                console.log(url);
+
                 this.setState({url})
                 this.updateProfilePicture(url)
                 this.setState({buttons:false})

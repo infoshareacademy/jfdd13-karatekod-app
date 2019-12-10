@@ -53,7 +53,6 @@ class BookImageUpload extends Component {
         
         },
         (error) => {
-            console.log(error)
         },
         () => {
             storage.ref('bookcovers').child(image.name).getDownloadURL().then(url => {

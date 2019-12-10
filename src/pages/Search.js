@@ -32,8 +32,6 @@ export default class Search extends Component {
       [name]:value,
       currentPage: 1
     }, ()=> {
-
-      console.log(this.state)
       this.filteredData();
     })
     

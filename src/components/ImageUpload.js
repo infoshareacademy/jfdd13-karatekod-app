@@ -81,11 +81,9 @@ class ImageUpload extends Component {
                     this.setState({ progress })
                 },
                 (error) => {
-                    console.log(error)
                 },
                 () => {
                     storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                        console.log(url);
                         this.setState({ url })
                         this.updateProfilePicture(url)
                         this.setState({ buttons: false })
@@ -121,7 +119,6 @@ class ImageUpload extends Component {
     }
 
     render() {
-        //const showProgress = this.state.progress !== 0 && this.state.progress !== 100
         return (
             <>
                 <div className={styles.profilPictureEdit}>

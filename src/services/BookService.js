@@ -12,7 +12,6 @@ export const addBooksFirebase = (title, autor, type, imageUrl, condition, descri
             condition,
             description
         })
-        console.log(autor)
 };
 
 const prepareBooks = bookresponse => {
