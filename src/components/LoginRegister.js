@@ -27,6 +27,10 @@ export default class LoginRegister extends Component {
         this.resetPass = this.resetPass.bind(this)
         this.backToLogin = this.backToLogin.bind(this)
         this.validateEmail = this.validateEmail.bind(this)
+        this.handleBlur = this.handleBlur.bind(this)
+        this.handleBlurPassConf=this.handleBlurPassConf.bind(this)
+        this.handleBlurPass = this.handleBlurPass.bind(this)
+        
     }
 
     handleChange = e => {
@@ -168,6 +172,38 @@ export default class LoginRegister extends Component {
     componentWillUnmount() {
         stopUser()
     }
+    handleBlur = e => {
+        if (this.state.email == '') {
+            this.setState({
+                errors: 'Email cannot be an empty field'
+            })
+        }
+        if (!this.validateEmail(this.state.email)) {
+            this.setState({ errors: 'Email has invalid format' })
+        }
+       
+    }
+    handleBlurPassConf = e =>{        
+        if (this.state.password !== '') {
+            if (this.state.password1 == '') {
+            this.setState({
+                errors: 'Please, confirm the password'
+            })
+        }
+        if (this.state.password != this.state.password1 && this.state.password1 != '') {
+            this.setState({
+                errors: 'Password and its confirmation does not match'
+            })
+        }}
+    }
+    handleBlurPass = e => {
+        if (this.state.password == '') {
+            this.setState({
+                errors: 'Password cannot be an empty field'
+            })
+        }
+    }
+    
 
 
 
@@ -210,12 +246,14 @@ export default class LoginRegister extends Component {
                                     onChange={this.handleChange}
                                     name="email"
                                     placeholder="e-mail"
+                                    onBlur={this.handleBlur}
                                 />
                                 <input type="password"
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                     name="password"
                                     placeholder="password"
+                                    onBlur = {this.handleBlurPass}
                                 />
                                 {(this.state.formType === 'REGISTER NEW USER') ?
                                     (<>
@@ -224,6 +262,7 @@ export default class LoginRegister extends Component {
                                             onChange={this.handleChange}
                                             name="password1"
                                             placeholder="confirm password"
+                                            onBlur={this.handleBlurPassConf}
                                         />
                                         <input type="text"
                                             value={this.state.displayName}
