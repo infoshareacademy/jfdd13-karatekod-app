@@ -111,15 +111,13 @@ class ImageUpload extends Component {
     }
 
     whichRank = () =>{
-        if (this.state.favsNumber === null || this.state.favsNumber < 4) {
+        if ( this.state.favsNumber < 4) {
             return 'Noob' 
         } else if (this.state.favsNumber<7) {
             return 'Bookworm'
         } else {
             return 'Book lover'
-        }
-        
-        
+        }        
     }
 
     render() {
@@ -138,17 +136,17 @@ class ImageUpload extends Component {
                         <input className={styles.inputFileHidden} type="file" onChange={this.handleChange} accept="image/*"  name="file" id="file" />
                     </div>
                     <div className={styles.skill}>
-                        <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>
+                        <div className={styles.skillBigPink}><p styles={{lineHeight:'24px'}} className={styles.skillsSmallsPink}>
                             Rank:
 
                             </p>
-                            <h2 className={styles.nameTitlePink} >{this.whichRank()}</h2>
+                            <h2 className={this.state.favsNumber?styles.nameTitlePink:styles.nameTitlePinkPink} >{this.whichRank()}</h2>
                         </div>
                         <div className={styles.skillBig}><p className={styles.skillsSmallsP}>Username:</p>
                             <h2 className={styles.nameTitleFirst} style={{ color: 'white' }}>{firebase.auth().currentUser.displayName}</h2>
                         </div>
                         <div className={styles.skillBigPink}><p className={styles.skillsSmallsPink}>Favorite books:</p>
-        <h2 className={styles.nameTitlePink} >{this.state.favsNumber?this.state.favsNumber:0}</h2>
+        <h2 className={this.state.favsNumber?styles.nameTitlePink:styles.nameTitlePinkPink} >{this.state.favsNumber?this.state.favsNumber:0}</h2>
                         </div>
                     </div>
                 </div>
