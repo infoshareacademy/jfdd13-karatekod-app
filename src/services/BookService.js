@@ -5,7 +5,7 @@ export const addBooksFirebase = (title, autor, type, imageUrl, condition, descri
         .database()
         .ref("/booksList")
         .push({
-            title,          
+            title,
             autor,
             type,
             imageUrl,
@@ -26,18 +26,18 @@ const prepareBooks = bookresponse => {
 
 export const watchBooks = onSuccess => {
     return firebase
-      .database()
-      .ref("/booksList")
-      .on("value", dataSnapshot => {
-        const books = dataSnapshot.val();
-        onSuccess(prepareBooks(books));
-      });
-  };
+        .database()
+        .ref("/booksList")
+        .on("value", dataSnapshot => {
+            const books = dataSnapshot.val();
+            onSuccess(prepareBooks(books));
+        });
+};
 
-  export const stopBooks = () => {
+export const stopBooks = () => {
     firebase
-      .database()
-      .ref("/booksList")
-      .off();
-  };
+        .database()
+        .ref("/booksList")
+        .off();
+};
 

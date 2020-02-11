@@ -16,7 +16,11 @@ class AddToFavorites extends React.Component {
     }
 render(){
     return(   
-        <img alt="like" className={styles.likeHeart} onMouseEnter={()=>{this.isFav(); console.log('enter')}} onMouseLeave={()=>{this.isFav(); console.log('leave')}} onClick={this.props.onClick} src={this.props.isFavorites ? heartFilled:heartEmpty}></img>
+        <img alt="like" className={styles.likeHeart} onMouseEnter={()=>{this.isFav(); console.log('enter')}} onMouseLeave={()=>{this.isFav(); console.log('leave')}} onClick={this.props.onClick} 
+        src={this.props.isFavorites ? heartFilled:heartEmpty}>
+            
+
+        </img>
     )
 }
 }
